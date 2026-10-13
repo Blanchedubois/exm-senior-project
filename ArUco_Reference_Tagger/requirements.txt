@@ -1,0 +1,9 @@
+# Phase 1 (ArUco recognition, headless)
+numpy
+opencv-contrib-python>=4.8
+tifffile
+scipy
+# Phase 2+ (GUI)
+PySide6
+pyqtgraph
+pandas

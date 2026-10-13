@@ -145,3 +145,74 @@ Tolerances come from the W-series findings: corner refinement at this PSF is goo
 The `tags_pose.csv` export in Phase 7 is exactly the §2.1 record per image, plus the Phase-5
 uncertainties. Getting the record right here, with the decode-margin fields that make a wrong id
 visible, is what lets identity be trusted everywhere downstream.
+
+## 6. As built (2026-10-13)
+
+What changed from the plan above once the code met the dummy frames, with the measured numbers.
+
+**Files.** `rwtag/io.py` (loader + two 8-bit conversions), `rwtag/aruco/{design,tags,pose,fit}.py`,
+`scripts/find_aruco.py`, `tests/test_phase1_aruco.py`, `tests/run_all.py`,
+`ArUco_Tracker_V2/tools/make_dummy_series.py`. `rwtag/aruco/detect.py`'s dot and dash code was
+**not** ported yet (Phase 3).
+
+**Corner refinement: contour, not sub-pixel.** On the dummy frames OpenCV's
+`CORNER_REFINE_CONTOUR` gave a median centre error of 0.18 px (max 0.45) against 0.42 px
+(max 0.98) for `CORNER_REFINE_SUBPIX` at every window size tried. Contour is the default
+(`ArucoParams.corner_refine`); the others remain selectable.
+
+**Rotation from four edges.** The TL→TR edge alone gave rotation errors up to 5°. Averaging the
+four edge directions gives a median error of 0.11° and a maximum of 0.45° per tag, and the
+frame median tracks the applied rotation to 0.05°.
+
+**Handedness cannot come from corner order.** OpenCV returns every tag's corners clockwise
+whatever the image, so the V1 corner-order check always returned the expected sign. Handedness
+now comes from (a) the bit pattern per tag — the Hamming distance of the mirrored bits to the
+dictionary (`mirror_dist`) against that of the direct read; a mirrored frame reads better
+mirrored — and (b) the determinant of the design → image affine when 3 or more tags fit it,
+which overrides the vote. For `DICT_4X4_50` four ids (8, 9, 17, 47) have a mirror within one bit
+of another id; only 17 is in the V2 design, so it abstains from the vote. On a mirrored dummy
+frame the one tag that still decoded is reported as "undetermined", never as the expected
+orientation.
+
+**8-bit conversion for decoding.** The V1 percentile stretch (0.5–99.5 %) saturates the tags at
+high expansion, where the printed features are a tiny fraction of the frame and the 99.5th
+percentile sits near the noise floor; the dark modules then erode to thin strokes and the bits
+misread (at λ = 4 only 1 of 4 in-frame tags decoded, one of them as a wrong id). `io.to_uint8_robust`
+sets the black point at the median and the white point at the maximum of a 3×3-median-filtered
+copy, and all four corner tags decode at λ = 4 and 6. The percentile stretch stays for display.
+
+**Expansion from a raw frame is approximate.** The dummy camera's barrel distortion (k1 = −0.05)
+magnifies the frame corners by up to 9 %, so an affine through the tag centres of an *uncorrected*
+frame reports λ high by 1.8 % at λ = 1 and by 5.7 % at λ = 6, when only the four corner tags are
+in view. On a lens-free run the same fit recovers λ to 0.03 % at every expansion (1, 1.5, 2, 3,
+4, 6) with the handedness −1 throughout. The exact value therefore belongs to Phase 3, after the
+Stage-1 correction; `find_aruco.py` prints the raw-frame value with that caveat.
+
+**RANSAC gate.** The affine's inlier threshold is half a tag side (about 22 px) rather than a
+fixed 12 px, so residual lens distortion and gel warp keep their tags while a misdecoded id, which
+lands a whole box away, is still rejected.
+
+**Dummy-frame generator.** Two corrections found by the tests: the simulator's `place()` warps
+with whatever lobes it is given, so the unwarped reference frame now receives no lobes; and a
+sixth preset `opt_nolens` (no lens distortion) exists for tests that need an exact affine.
+Truth positions are given in both the raw (distorted) and the undistorted frame; the edge-band
+flag in the detector is evaluated in raw coordinates, the truth's `in_frame` in undistorted ones,
+so the two disagree for a tag straddling the band — expected, and irrelevant once Phase 2
+detects on corrected frames.
+
+**Measured on the standard runs**
+
+| quantity | value |
+|---|---|
+| tags decoded, every frame of every run | all in-frame tags (36 / 36 at λ ≤ 1.5, 16 at λ = 2, 4 at λ ≥ 3) |
+| centre error vs truth, λ = 1 | median 0.18 px, max 0.45 px |
+| centre error, warped + lens, all λ | max 0.64 px |
+| tag rotation error | median 0.11°, max 0.45° |
+| frame rotation error | ≤ 0.05° |
+| λ from the affine, lens-free frames | within 0.03 % at λ = 1 … 6 |
+| wrong ids returned as usable | 0 (one misread at λ = 4 was classed ambiguous and excluded) |
+| real V1 glyph frame | 0 tags, no error |
+
+**Test gates as set:** centre < 0.6 px at λ = 1 and < 0.8 px on warped frames; tag rotation
+median < 0.6°, max < 1.5°; frame rotation < 0.3°; λ < 0.5 % on lens-free frames and < 10 % on
+raw distorted frames; mirrored frame never reported as the expected orientation.
