@@ -2,6 +2,7 @@
 # iCloud folder (older trackers, zips, archives) stays local.
 /*
 !/.gitignore
+!/README.md
 !/ArUco_Reference_Tagger/
 !/ArUco_Tracker_V2/
 !/Reference_Warp_Tagger/
