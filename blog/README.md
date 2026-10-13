@@ -4,6 +4,7 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-10-13 | [How each dot gets an error bar, and why the camera gain matters](2026-10-13-error-model-and-camera-gain.md) |
 | 2026-10-13 | [The Nanoscribe marker workshop: sizing the ArUco print for the real microscope](2026-10-13-nanoscribe-marker-workshop.md) |
 | 2026-10-13 | [Repo opened, port of the V1 tagger begins](2026-10-13-repo-opened.md) |
 
