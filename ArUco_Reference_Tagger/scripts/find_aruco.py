@@ -42,7 +42,8 @@ def draw(u8, tags, pose, path):
         cv2.circle(vis, tuple(c[0]), 5, (255, 255, 255), -1)                # TL marked
         cv2.arrowedLine(vis, tuple(c[0]), tuple(c[1]), col[::-1], 2, tipLength=0.25)
         cx, cy = np.round(t.centre_px).astype(int)
-        cv2.putText(vis, f"{t.aruco_id} {t.rot_deg:+.1f}", (cx + 8, cy - 8),
+        half = int(round(0.5 * t.side_px))
+        cv2.putText(vis, f"id {t.aruco_id}  {t.rot_deg:+.1f}", (cx - half, cy + half + 18),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, col[::-1], 2, cv2.LINE_AA)
     cv2.putText(vis, pose.summary(), (12, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.7,
                 (255, 255, 255), 2, cv2.LINE_AA)
