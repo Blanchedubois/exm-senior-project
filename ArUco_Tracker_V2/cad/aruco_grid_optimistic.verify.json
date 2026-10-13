@@ -1,0 +1,24 @@
+{
+ "extent_um": [
+  750.0,
+  750.0
+ ],
+ "n_dots": 17825,
+ "expected_dots": 17825,
+ "max_pos_err_um": 0.04952995562176305,
+ "raster_tol_um": 0.16666666666666666,
+ "pitch_um": 5.0,
+ "tags_decoded": 36,
+ "tags_total": 36,
+ "checks": {
+  "dot count exact": true,
+  "dot position < 1 px (0.167 um)": true,
+  "pitch within 1 px (0.167 um)": true,
+  "all tags decode": true,
+  "outer extent == 750 um": true
+ },
+ "pass_": true,
+ "exact_geometry_err_um": 0.0,
+ "exact_pitch_um": 5.000140779268122,
+ "exact_ok": true
+}

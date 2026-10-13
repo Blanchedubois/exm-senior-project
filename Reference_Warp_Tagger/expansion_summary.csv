@@ -1,0 +1,7 @@
+# expansion summary · initial = 1.5x 1.5XMISTstitchedimg-stitched-0.ome.tif
+image,expected_x_absolute,expected_vs_initial,measured_vs_initial,sigma,median,n_strain_points,n_dot_pairs,dot_pair_frac,status
+2× (2.0XMISTstitchedimg-stit),2.0,1.3333,1.3041,0.0137,1.3042,1996,1996,0.998,ok
+2.5× (2.5XMISTstitchedimg-stit),2.5,1.6667,1.6477,0.0242,1.6487,1207,1207,0.998,ok
+3× (3.0XMISTstitchedimg-stit),3.0,2.0,2.0208,0.0396,2.0231,583,583,1.0,ok
+3.5× (3.5XMISTstitchedimg-stit),3.5,2.3333,2.4148,0.0598,2.4212,443,443,1.0,ok
+4.2× (4.2XMISTstitchedimg-stit),4.2,2.8,2.9819,0.0798,2.9903,299,299,1.0,ok

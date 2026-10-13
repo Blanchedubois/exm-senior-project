@@ -1,0 +1,87 @@
+
+=== OPTIMISTIC  tag 23.0 um · PSF 1.91 · pitch 5.00 um · top-hat 13 px · edge band 48 um ===
+seed    λ    tags  sign  affine  dots in    det  tagged  correct  recov  rms px     bias x,y  rms-b   warp  t(s)
+   0  1.0  36/36     -1    1.55   17,825 17,824  17,824   100.0%   100%   0.201[-0.03, 0.05]  0.194   0.18   0.6
+   0  1.5  34/36     -1    2.44   17,825 17,829  17,824   100.0%   100%   0.227[-0.05, 0.06]  0.214   0.15   0.4
+   0  2.0  16/16     -1    3.02   13,824 13,276  13,276   100.0%    96%   0.250[-0.06, 0.07]  0.233   0.16   0.4
+   0  3.0   8/8      -1    3.08    6,112  5,872   5,870   100.0%    96%   0.253[-0.07, 0.08]  0.230   0.15   0.4
+   0  4.0   4/4      -1    2.84    3,444  3,300   3,298   100.0%    96%   0.264 [-0.08, 0.1]  0.233   0.14   0.3
+   0  6.0   4/4      -1    2.82    1,398  1,370   1,360   100.0%    97%   0.266[-0.08, 0.12]  0.223   0.09   0.3
+   1  1.0  36/36     -1    1.56   17,825 17,825  17,825   100.0%   100%   0.204[-0.03, 0.05]  0.195   0.18   0.5
+   1  1.5  34/36     -1    2.38   17,825 17,828  17,825   100.0%   100%   0.225[-0.04, 0.05]  0.214   0.15   0.5
+   1  2.0  16/16     -1    3.01   13,822 13,270  13,270   100.0%    96%   0.248[-0.06, 0.07]  0.231   0.15   0.4
+   1  3.0   8/8      -1    3.10    6,110  5,879   5,879   100.0%    96%   0.254[-0.07, 0.08]  0.230   0.15   0.3
+   1  4.0   4/4      -1    2.84    3,434  3,309   3,303   100.0%    96%   0.266 [-0.08, 0.1]  0.233   0.14   0.3
+   1  6.0   4/4      -1    2.90    1,396  1,367   1,358   100.0%    97%   0.269[-0.09, 0.12]  0.224   0.09   0.3
+  degraded map, λ6, 2 known tag(s): similarity(centres) · affine 5.7 px · correct 100.0% · recovered 97%
+  degraded map, λ6, 1 known tag(s): single tag (scale from dot lattice) · affine 12.1 px · correct 100.0% · recovered 97%
+  series: λ1 OK(baseline, 18340) · λ1.5 OK(direct, 18338) · λ2 OK(direct, 13567) · λ3 OK(direct, 5978) · λ4 OK(direct, 3337) · λ6 OK(direct, 1368)
+  refinement (seed 0):  λ1.0: none 0.233px (de-biased 0.227) 0.2s gauss 0.201px (de-biased 0.194) 0.2s fit 0.193px (de-biased 0.186) 2.9s   λ4.0: none 0.301px (de-biased 0.275) 0.1s gauss 0.264px (de-biased 0.233) 0.2s fit 0.265px (de-biased 0.234) 0.6s
+    [PASS] every frame registered
+    [PASS] handedness = -1 (mirror) on every frame
+    [PASS] tag affine within 0.5 pitch of truth
+    [PASS] tag correctness >= 99% on every frame
+    [PASS] RMS of correct tags < 0.5 px
+    [PASS] >= 1 tag decoded on every frame
+    [PASS] series driver accepts every frame
+    [PASS] 2-tag and 1-tag registration still >= 99% correct
+  PHASE-C GATE (optimistic): PASS
+
+=== HEDGE  tag 27.0 um · PSF 2.5 · pitch 5.74 um · top-hat 13 px · edge band 48 um ===
+seed    λ    tags  sign  affine  dots in    det  tagged  correct  recov  rms px     bias x,y  rms-b   warp  t(s)
+   0  1.0  36/36     -1    1.61   12,825 12,811  12,811   100.0%   100%   0.210[-0.02, 0.05]  0.203   0.19   0.4
+   0  1.5  34/36     -1    2.43   12,825 12,822  12,819   100.0%   100%   0.232[-0.05, 0.06]  0.221   0.16   0.4
+   0  2.0  16/16     -1    3.00   10,096  9,694   9,693   100.0%    96%   0.254[-0.06, 0.07]  0.238   0.16   0.3
+   0  3.0   8/8      -1    3.18    4,453  4,280   4,275   100.0%    96%   0.261[-0.07, 0.08]  0.236   0.15   0.3
+   0  4.0   4/4      -1    2.87    2,515  2,423   2,409   100.0%    96%   0.270 [-0.08, 0.1]  0.238   0.13   0.3
+   0  6.0   4/4      -1    2.92      998    983     972   100.0%    97%   0.278[-0.09, 0.13]  0.230   0.01   0.2
+   1  1.0  36/36     -1    1.60   12,825 12,813  12,813   100.0%   100%   0.213[-0.03, 0.05]  0.206   0.19   0.4
+   1  1.5  34/36     -1    2.35   12,825 12,826  12,823   100.0%   100%   0.230[-0.04, 0.05]  0.219   0.16   0.4
+   1  2.0  16/16     -1    3.01   10,099  9,681   9,681   100.0%    96%   0.257[-0.06, 0.07]  0.240   0.15   0.3
+   1  3.0   8/8      -1    3.01    4,457  4,268   4,264   100.0%    96%   0.260[-0.07, 0.08]  0.235   0.15   0.3
+   1  4.0   4/4      -1    2.87    2,519  2,413   2,400   100.0%    95%   0.267 [-0.08, 0.1]  0.237   0.13   0.2
+   1  6.0   4/4      -1    2.79      997    979     973   100.0%    98%   0.276[-0.08, 0.12]  0.234   0.01   0.2
+  degraded map, λ6, 2 known tag(s): similarity(centres) · affine 18.2 px · correct 100.0% · recovered 97%
+  degraded map, λ6, 1 known tag(s): single tag (scale from dot lattice) · affine 26.7 px · correct 100.0% · recovered 97%
+  series: λ1 OK(baseline, 13205) · λ1.5 OK(direct, 13203) · λ2 OK(direct, 9884) · λ3 OK(direct, 4321) · λ4 OK(direct, 2419) · λ6 OK(direct, 978)
+  refinement (seed 0):  λ1.0: none 0.251px (de-biased 0.246) 0.1s gauss 0.210px (de-biased 0.203) 0.2s fit 0.201px (de-biased 0.195) 2.1s   λ4.0: none 0.313px (de-biased 0.287) 0.1s gauss 0.270px (de-biased 0.238) 0.1s fit 0.271px (de-biased 0.239) 0.5s
+    [PASS] every frame registered
+    [PASS] handedness = -1 (mirror) on every frame
+    [PASS] tag affine within 0.5 pitch of truth
+    [PASS] tag correctness >= 99% on every frame
+    [PASS] RMS of correct tags < 0.5 px
+    [PASS] >= 1 tag decoded on every frame
+    [PASS] series driver accepts every frame
+    [PASS] 2-tag and 1-tag registration still >= 99% correct
+  PHASE-C GATE (hedge): PASS
+
+=== CONSERVATIVE  tag 34.0 um · PSF 3.18 · pitch 6.69 um · top-hat 15 px · edge band 48 um ===
+seed    λ    tags  sign  affine  dots in    det  tagged  correct  recov  rms px     bias x,y  rms-b   warp  t(s)
+   0  1.0  36/36     -1    1.59    8,625  8,457   8,455   100.0%    98%   0.226[-0.03, 0.05]  0.219   0.21   0.3
+   0  1.5  36/36     -1    2.40    8,625  8,560   8,552   100.0%    99%   0.243[-0.05, 0.06]  0.231   0.18   0.3
+   0  2.0  16/16     -1    3.02    6,961  6,641   6,635   100.0%    95%   0.266[-0.06, 0.07]  0.250   0.18   0.3
+   0  3.0   8/8      -1    3.07    3,051  2,919   2,903   100.0%    95%   0.269[-0.07, 0.08]  0.247   0.16   0.2
+   0  4.0   4/4      -1    2.99    1,744  1,677   1,652   100.0%    95%   0.283 [-0.08, 0.1]  0.253   0.13   0.2
+   0  6.0   4/4      -1    2.89      665    664     647   100.0%    97%   0.281[-0.08, 0.12]  0.241   0.01   0.2
+   1  1.0  36/36     -1    1.56    8,625  8,418   8,414   100.0%    98%   0.228[-0.03, 0.05]  0.221   0.21   0.3
+   1  1.5  35/36     -1    2.37    8,625  8,539   8,537   100.0%    99%   0.242[-0.05, 0.05]  0.231   0.19   0.3
+   1  2.0  16/16     -1    3.03    6,963  6,665   6,647   100.0%    95%   0.267[-0.06, 0.06]  0.252   0.18   0.3
+   1  3.0   8/8      -1    3.11    3,048  2,915   2,899   100.0%    95%   0.272[-0.07, 0.09]  0.248   0.16   0.3
+   1  4.0   4/4      -1    3.09    1,742  1,675   1,650   100.0%    95%   0.281 [-0.08, 0.1]  0.249   0.13   0.2
+   1  6.0   4/4      -1    2.94      665    666     649   100.0%    98%   0.279[-0.09, 0.12]  0.234   0.00   0.2
+  degraded map, λ6, 2 known tag(s): similarity(centres) · affine 12.9 px · correct 100.0% · recovered 97%
+  degraded map, λ6, 1 known tag(s): single tag (scale from dot lattice) · affine 19.1 px · correct 100.0% · recovered 97%
+  series: λ1 OK(baseline, 8846) · λ1.5 OK(direct, 8932) · λ2 OK(direct, 6727) · λ3 OK(direct, 2932) · λ4 OK(direct, 1657) · λ6 OK(direct, 655)
+  refinement (seed 0):  λ1.0: none 0.300px (de-biased 0.295) 0.1s gauss 0.226px (de-biased 0.219) 0.2s fit 0.217px (de-biased 0.210) 1.4s   λ4.0: none 0.332px (de-biased 0.308) 0.1s gauss 0.282px (de-biased 0.253) 0.2s fit 0.285px (de-biased 0.255) 0.4s
+    [PASS] every frame registered
+    [PASS] handedness = -1 (mirror) on every frame
+    [PASS] tag affine within 0.5 pitch of truth
+    [PASS] tag correctness >= 99% on every frame
+    [PASS] RMS of correct tags < 0.5 px
+    [PASS] >= 1 tag decoded on every frame
+    [PASS] series driver accepts every frame
+    [PASS] 2-tag and 1-tag registration still >= 99% correct
+  PHASE-C GATE (conservative): PASS
+
+wrote docs/phase_c_verify.png + .json  (0.7 min)
+PHASE-C GATE: PASS

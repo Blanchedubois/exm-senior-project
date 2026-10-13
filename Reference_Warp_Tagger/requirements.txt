@@ -1,0 +1,12 @@
+# Stages 1-2 (implemented)
+numpy
+opencv-contrib-python
+tifffile
+scipy
+PySide6
+pyqtgraph
+scikit-image        # Stage 2: HOG features for the glyph classifier
+# Stages 3-4 (planned)
+pandas
+pyarrow
+trackpy

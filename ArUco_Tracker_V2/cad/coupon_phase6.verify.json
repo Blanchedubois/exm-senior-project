@@ -1,0 +1,424 @@
+{
+ "extent_um": [
+  750.0,
+  750.0
+ ],
+ "exact_err_um": 1.1368683772161603e-13,
+ "per_region": {
+  "MINI_OPT": {
+   "expected": 768,
+   "recovered": 768,
+   "max_err_um": 0.002496600355213881
+  },
+  "MINI_HEDGE": {
+   "expected": 513,
+   "recovered": 513,
+   "max_err_um": 0.08360062042954848
+  },
+  "MINI_SAFE": {
+   "expected": 345,
+   "recovered": 345,
+   "max_err_um": 0.08586047485602138
+  },
+  "PITCH_3.50": {
+   "expected": 400,
+   "recovered": 400,
+   "max_err_um": 0.0
+  },
+  "PITCH_4.00": {
+   "expected": 289,
+   "recovered": 289,
+   "max_err_um": 0.0
+  },
+  "PITCH_4.50": {
+   "expected": 256,
+   "recovered": 256,
+   "max_err_um": 0.0
+  },
+  "PITCH_5.00": {
+   "expected": 196,
+   "recovered": 196,
+   "max_err_um": 0.0
+  },
+  "PITCH_5.74": {
+   "expected": 144,
+   "recovered": 144,
+   "max_err_um": 0.07605081998305738
+  },
+  "PITCH_6.69": {
+   "expected": 121,
+   "recovered": 121,
+   "max_err_um": 0.08586047485588069
+  },
+  "PITCH_7.50": {
+   "expected": 100,
+   "recovered": 100,
+   "max_err_um": 0.0
+  },
+  "PITCH_9.00": {
+   "expected": 64,
+   "recovered": 64,
+   "max_err_um": 0.0
+  },
+  "SIZE_2.50": {
+   "expected": 121,
+   "recovered": 121,
+   "max_err_um": 0.11606546146367015
+  },
+  "SIZE_3.00": {
+   "expected": 100,
+   "recovered": 100,
+   "max_err_um": 0.004041962202212582
+  },
+  "STIFF_34": {
+   "expected": 1976,
+   "recovered": 1976,
+   "max_err_um": 0.08000266545981927
+  },
+  "STIFF_23": {
+   "expected": 2000,
+   "recovered": 2000,
+   "max_err_um": 0.08360062042954848
+  }
+ },
+ "tags_decoded": [
+  1,
+  3,
+  4,
+  5,
+  6,
+  7,
+  10,
+  13,
+  15,
+  16,
+  17,
+  20,
+  21,
+  22,
+  23,
+  25,
+  30,
+  37,
+  40,
+  41,
+  42,
+  43,
+  48,
+  49
+ ],
+ "tags_missing": [],
+ "checks": {
+  "exact geometry (rect centre == record)": true,
+  "zero overlapping rectangles": true,
+  "outer extent == 750 x 750 um": true,
+  "dots recovered MINI_OPT (768)": true,
+  "dots recovered MINI_HEDGE (513)": true,
+  "dots recovered MINI_SAFE (345)": true,
+  "dots recovered PITCH_3.50 (400)": true,
+  "dots recovered PITCH_4.00 (289)": true,
+  "dots recovered PITCH_4.50 (256)": true,
+  "dots recovered PITCH_5.00 (196)": true,
+  "dots recovered PITCH_5.74 (144)": true,
+  "dots recovered PITCH_6.69 (121)": true,
+  "dots recovered PITCH_7.50 (100)": true,
+  "dots recovered PITCH_9.00 (64)": true,
+  "dots recovered SIZE_2.50 (121)": true,
+  "dots recovered SIZE_3.00 (100)": true,
+  "dots recovered STIFF_34 (1976)": true,
+  "dots recovered STIFF_23 (2000)": true,
+  "all 24 tags decode": true
+ },
+ "pass_": true,
+ "regions": {
+  "MINI_OPT": {
+   "kind": "mini",
+   "variant": "optimistic",
+   "tag_um": 23.0,
+   "dot_um": 2.125,
+   "pitch_um": 5.00014077926812,
+   "box": [
+    0.0,
+    575.0,
+    175.0,
+    750.0
+   ],
+   "n_dots": 768,
+   "ids": [
+    3,
+    13,
+    10,
+    17
+   ]
+  },
+  "MINI_HEDGE": {
+   "kind": "mini",
+   "variant": "hedge",
+   "tag_um": 27.0,
+   "dot_um": 2.125,
+   "pitch_um": 5.741927077427926,
+   "box": [
+    287.5,
+    575.0,
+    462.5,
+    750.0
+   ],
+   "n_dots": 513,
+   "ids": [
+    21,
+    23,
+    22,
+    25
+   ]
+  },
+  "MINI_SAFE": {
+   "kind": "mini",
+   "variant": "conservative",
+   "tag_um": 34.0,
+   "dot_um": 2.125,
+   "pitch_um": 6.693155202331708,
+   "box": [
+    575.0,
+    575.0,
+    750.0,
+    750.0
+   ],
+   "n_dots": 345,
+   "ids": [
+    30,
+    40,
+    37,
+    41
+   ]
+  },
+  "PITCH_3.50": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 3.5,
+   "tag_um": 27.0,
+   "aruco_id": 42,
+   "box": [
+    67.0,
+    435.0,
+    137.0,
+    505.0
+   ],
+   "n_dots": 400,
+   "sep_over_imaged": {
+    "OPT": 1.2249655100504047,
+    "HEDGE": 1.066715044863243,
+    "SAFE": 0.9151139955437193
+   }
+  },
+  "PITCH_4.00": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 4.0,
+   "tag_um": 27.0,
+   "aruco_id": 43,
+   "box": [
+    212.0,
+    435.0,
+    282.0,
+    505.0
+   ],
+   "n_dots": 289,
+   "sep_over_imaged": {
+    "OPT": 1.3999605829147481,
+    "HEDGE": 1.2191029084151348,
+    "SAFE": 1.0458445663356792
+   }
+  },
+  "PITCH_4.50": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 4.5,
+   "tag_um": 27.0,
+   "aruco_id": 48,
+   "box": [
+    357.0,
+    435.0,
+    427.0,
+    505.0
+   ],
+   "n_dots": 256,
+   "sep_over_imaged": {
+    "OPT": 1.5749556557790916,
+    "HEDGE": 1.3714907719670268,
+    "SAFE": 1.1765751371276392
+   }
+  },
+  "PITCH_5.00": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 5.0,
+   "tag_um": 27.0,
+   "aruco_id": 49,
+   "box": [
+    502.0,
+    435.0,
+    572.0,
+    505.0
+   ],
+   "n_dots": 196,
+   "sep_over_imaged": {
+    "OPT": 1.749950728643435,
+    "HEDGE": 1.5238786355189187,
+    "SAFE": 1.3073057079195989
+   }
+  },
+  "PITCH_5.74": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 5.741927077427926,
+   "tag_um": 27.0,
+   "aruco_id": 1,
+   "box": [
+    647.0,
+    435.0,
+    717.0,
+    505.0
+   ],
+   "n_dots": 144,
+   "sep_over_imaged": {
+    "OPT": 2.009617894592494,
+    "HEDGE": 1.75,
+    "SAFE": 1.5012908085559258
+   }
+  },
+  "PITCH_6.69": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 6.693155202331708,
+   "tag_um": 27.0,
+   "aruco_id": 4,
+   "box": [
+    67.0,
+    330.0,
+    137.0,
+    400.0
+   ],
+   "n_dots": 121,
+   "sep_over_imaged": {
+    "OPT": 2.342538364648794,
+    "HEDGE": 2.039911243409119,
+    "SAFE": 1.75
+   }
+  },
+  "PITCH_7.50": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 7.5,
+   "tag_um": 27.0,
+   "aruco_id": 5,
+   "box": [
+    212.0,
+    330.0,
+    282.0,
+    400.0
+   ],
+   "n_dots": 100,
+   "sep_over_imaged": {
+    "OPT": 2.624926092965153,
+    "HEDGE": 2.285817953278378,
+    "SAFE": 1.9609585618793985
+   }
+  },
+  "PITCH_9.00": {
+   "kind": "pitch",
+   "dot_um": 2.125,
+   "pitch_um": 9.0,
+   "tag_um": 27.0,
+   "aruco_id": 6,
+   "box": [
+    357.0,
+    330.0,
+    427.0,
+    400.0
+   ],
+   "n_dots": 64,
+   "sep_over_imaged": {
+    "OPT": 3.149911311558183,
+    "HEDGE": 2.7429815439340537,
+    "SAFE": 2.3531502742552783
+   }
+  },
+  "SIZE_2.50": {
+   "kind": "size",
+   "dot_um": 2.5,
+   "pitch_um": 6.187184335382291,
+   "tag_um": 27.0,
+   "aruco_id": 7,
+   "box": [
+    502.0,
+    330.0,
+    572.0,
+    400.0
+   ],
+   "n_dots": 121,
+   "sep_over_imaged": {
+    "OPT": 1.9666049891933228,
+    "HEDGE": 1.75,
+    "SAFE": 1.5295706884545475
+   }
+  },
+  "SIZE_3.00": {
+   "kind": "size",
+   "dot_um": 3.0,
+   "pitch_um": 6.833968466418322,
+   "tag_um": 27.0,
+   "aruco_id": 15,
+   "box": [
+    647.0,
+    330.0,
+    717.0,
+    400.0
+   ],
+   "n_dots": 100,
+   "sep_over_imaged": {
+    "OPT": 1.9215882090724643,
+    "HEDGE": 1.75,
+    "SAFE": 1.5632029194724884
+   }
+  },
+  "STIFF_34": {
+   "kind": "stiffening",
+   "tag_um": 34.0,
+   "aruco_id": 16,
+   "dot_um": 2.125,
+   "pitch_um": 5.741927077427926,
+   "box": [
+    0.0,
+    0.0,
+    260.0,
+    260.0
+   ],
+   "n_dots": 1976,
+   "keepout_um": 21.679427077427924
+  },
+  "STIFF_23": {
+   "kind": "stiffening",
+   "tag_um": 23.0,
+   "aruco_id": 20,
+   "dot_um": 2.125,
+   "pitch_um": 5.741927077427926,
+   "box": [
+    490.0,
+    0.0,
+    750.0,
+    260.0
+   ],
+   "n_dots": 2000,
+   "keepout_um": 16.179427077427924
+  },
+  "DATUM": {
+   "kind": "datum",
+   "x0": 360.0,
+   "y0": 0.0,
+   "arm": 30.0,
+   "w": 2.5
+  }
+ },
+ "footprint_um2": 50513.14868055554,
+ "n_pinch": 10
+}

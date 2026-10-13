@@ -1,0 +1,279 @@
+{
+ "reference": {
+  "islands": 7341,
+  "dots": 6416,
+  "dashes": 600,
+  "glyphs": 325,
+  "footprint_um2": 74061.25,
+  "volume_um3": 136769.58032321624,
+  "scan_m": 2.4687083333333333,
+  "min_gap": {
+   "dash-dash": 5.875,
+   "dash-dot": 3.875,
+   "dash-glyph": 6.875,
+   "dot-dot": 5.875,
+   "dot-glyph": 1.5,
+   "glyph-glyph": 1.5
+  },
+  "min_gap_all": 1.5,
+  "dot_um": 2.125,
+  "dot_aspect": 0.9411764705882353,
+  "resolution_um": 0.125,
+  "smallest_bbox_side_um": 1.125
+ },
+ "assumed_limits": {
+  "min_feature_um": 0.2,
+  "min_gap_um": 0.5,
+  "note": "typical 63x / IP-Dip two-photon figures; NOT measured on this printer"
+ },
+ "settings": {
+  "height": 2.0,
+  "hatch": 0.2,
+  "slice": 0.3
+ },
+ "designs": {
+  "optimistic": {
+   "design": "optimistic",
+   "pitch_um": 5.00014077926812,
+   "dot_um": 2.125,
+   "tag_um": 23.0,
+   "islands": {
+    "aruco": 36,
+    "dash": 480,
+    "dot": 17825
+   },
+   "islands_total": 18341,
+   "footprint_um2": 103887.34340277778,
+   "footprint_by_kind": {
+    "aruco": 15108.827777777786,
+    "dash": 8287.5,
+    "dot": 80491.015625
+   },
+   "fill": 0.18468861049382718,
+   "volume_um3": 207774.68680555557,
+   "scan_m": 3.462911446759259,
+   "scan_vs_ref": 1.402721982180665,
+   "islands_vs_ref": 2.4984334559324344,
+   "dots_per_scan_m": 5147.402777706429,
+   "min_gap": {
+    "aruco-dash": 6.247499999999945,
+    "aruco-dot": 5.135951428050589,
+    "dash-dash": 6.41499999999985,
+    "dash-dot": 5.573169869514345,
+    "dot-dot": 2.8751407792680084
+   },
+   "min_gap_all": 2.8751407792680084,
+   "free_standing_min_um": 2.125,
+   "dot_aspect": 0.9411764705882353,
+   "tag_narrowest_bridge_um": 3.825,
+   "tag_narrowest_internal_gap_um": 2.675,
+   "tag_one_piece_without_fine_detail": true,
+   "tag_finest_detail_um": 0.4393798828125,
+   "overlaps": 0,
+   "mesh_box": {
+    "triangles": 227712,
+    "volume_um3": 207774.68913432737,
+    "degenerate": 0,
+    "edges": 340967,
+    "edges_even": 1.0,
+    "edges_two": 0.9982373660794153,
+    "mb": 11.385684
+   },
+   "mesh_merged": {
+    "triangles": 304096,
+    "volume_um3": 207774.68913432737,
+    "degenerate": 0,
+    "edges": 456144,
+    "edges_even": 1.0,
+    "edges_two": 1.0,
+    "mb": 15.204884
+   },
+   "coincident_faces_in_box_mesh": 601,
+   "test_box": {
+    "files": [
+     "test_box.stl",
+     "test_box_merged.stl"
+    ],
+    "size_um": 168.40000200000003,
+    "islands": 841,
+    "dots": 805,
+    "triangles": 10896,
+    "mb": 0.544884
+   },
+   "checks": {
+    "zero overlapping features": true,
+    "smallest gap >= 0.5 um (assumed limit)": true,
+    "free-standing features no smaller than the reference's dots": true,
+    "dots no slenderer than the reference's (height / width)": true,
+    "every tag is still ONE solid if nothing finer than 1 um prints": true,
+    "narrowest gap inside a tag >= the reference's smallest gap": true,
+    "box mesh: every solid closed, volume == footprint x height": true,
+    "merged mesh: MANIFOLD (every edge shared by exactly two faces)": true,
+    "merged mesh: same volume, no degenerate faces": true
+   },
+   "passed": true
+  },
+  "medium": {
+   "design": "medium",
+   "pitch_um": 6.0,
+   "dot_um": 2.125,
+   "tag_um": 23.0,
+   "islands": {
+    "aruco": 36,
+    "dash": 480,
+    "dot": 11700
+   },
+   "islands_total": 12216,
+   "footprint_um2": 76229.14027777783,
+   "footprint_by_kind": {
+    "aruco": 15108.827777777786,
+    "dash": 8287.5,
+    "dot": 52832.81250000003
+   },
+   "fill": 0.13551847160493835,
+   "volume_um3": 152458.28055555566,
+   "scan_m": 2.540971342592594,
+   "scan_vs_ref": 1.029271586393395,
+   "islands_vs_ref": 1.6640784634246015,
+   "dots_per_scan_m": 4604.5383526688265,
+   "min_gap": {
+    "aruco-dash": 6.247499999999945,
+    "aruco-dot": 9.137499999999932,
+    "dash-dash": 6.41499999999985,
+    "dash-dot": 7.574999999999932,
+    "dot-dot": 3.874999999999986
+   },
+   "min_gap_all": 3.874999999999986,
+   "free_standing_min_um": 2.125,
+   "dot_aspect": 0.9411764705882353,
+   "tag_narrowest_bridge_um": 3.825,
+   "tag_narrowest_internal_gap_um": 2.675,
+   "tag_one_piece_without_fine_detail": true,
+   "tag_finest_detail_um": 0.4393798828125,
+   "overlaps": 0,
+   "mesh_box": {
+    "triangles": 154212,
+    "volume_um3": 152458.3034741573,
+    "degenerate": 0,
+    "edges": 230717,
+    "edges_even": 1.0,
+    "edges_two": 0.9973950770857805,
+    "mb": 7.710684
+   },
+   "mesh_merged": {
+    "triangles": 206096,
+    "volume_um3": 152458.3034741573,
+    "degenerate": 0,
+    "edges": 309144,
+    "edges_even": 1.0,
+    "edges_two": 1.0,
+    "mb": 10.304884
+   },
+   "coincident_faces_in_box_mesh": 601,
+   "test_box": {
+    "files": [
+     "test_box.stl",
+     "test_box_merged.stl"
+    ],
+    "size_um": 168.40000200000003,
+    "islands": 576,
+    "dots": 540,
+    "triangles": 7716,
+    "mb": 0.385884
+   },
+   "checks": {
+    "zero overlapping features": true,
+    "smallest gap >= 0.5 um (assumed limit)": true,
+    "free-standing features no smaller than the reference's dots": true,
+    "dots no slenderer than the reference's (height / width)": true,
+    "every tag is still ONE solid if nothing finer than 1 um prints": true,
+    "narrowest gap inside a tag >= the reference's smallest gap": true,
+    "box mesh: every solid closed, volume == footprint x height": true,
+    "merged mesh: MANIFOLD (every edge shared by exactly two faces)": true,
+    "merged mesh: same volume, no degenerate faces": true
+   },
+   "passed": true
+  },
+  "conservative": {
+   "design": "conservative",
+   "pitch_um": 7.0,
+   "dot_um": 2.125,
+   "tag_um": 23.0,
+   "islands": {
+    "aruco": 36,
+    "dash": 480,
+    "dot": 8000
+   },
+   "islands_total": 8516,
+   "footprint_um2": 59521.327777777784,
+   "footprint_by_kind": {
+    "aruco": 15108.827777777786,
+    "dash": 8287.5,
+    "dot": 36125.0
+   },
+   "fill": 0.10581569382716051,
+   "volume_um3": 119042.65555555557,
+   "scan_m": 1.9840442592592595,
+   "scan_vs_ref": 0.8036770615912882,
+   "islands_vs_ref": 1.1600599373382372,
+   "dots_per_scan_m": 4032.1681145292546,
+   "min_gap": {
+    "aruco-dash": 6.247499999999945,
+    "aruco-dot": 7.664059792303219,
+    "dash-dash": 6.41499999999985,
+    "dash-dot": 11.074999999999932,
+    "dot-dot": 4.874999999999986
+   },
+   "min_gap_all": 4.874999999999986,
+   "free_standing_min_um": 2.125,
+   "dot_aspect": 0.9411764705882353,
+   "tag_narrowest_bridge_um": 3.825,
+   "tag_narrowest_internal_gap_um": 2.675,
+   "tag_one_piece_without_fine_detail": true,
+   "tag_finest_detail_um": 0.4393798828125,
+   "overlaps": 0,
+   "mesh_box": {
+    "triangles": 109812,
+    "volume_um3": 119042.65350696228,
+    "degenerate": 0,
+    "edges": 164117,
+    "edges_even": 1.0,
+    "edges_two": 0.9963379783934632,
+    "mb": 5.490684
+   },
+   "mesh_merged": {
+    "triangles": 146896,
+    "volume_um3": 119042.65350696228,
+    "degenerate": 0,
+    "edges": 220344,
+    "edges_even": 1.0,
+    "edges_two": 1.0,
+    "mb": 7.344884
+   },
+   "coincident_faces_in_box_mesh": 601,
+   "test_box": {
+    "files": [
+     "test_box.stl",
+     "test_box_merged.stl"
+    ],
+    "size_um": 168.40000200000003,
+    "islands": 356,
+    "dots": 320,
+    "triangles": 5076,
+    "mb": 0.253884
+   },
+   "checks": {
+    "zero overlapping features": true,
+    "smallest gap >= 0.5 um (assumed limit)": true,
+    "free-standing features no smaller than the reference's dots": true,
+    "dots no slenderer than the reference's (height / width)": true,
+    "every tag is still ONE solid if nothing finer than 1 um prints": true,
+    "narrowest gap inside a tag >= the reference's smallest gap": true,
+    "box mesh: every solid closed, volume == footprint x height": true,
+    "merged mesh: MANIFOLD (every edge shared by exactly two faces)": true,
+    "merged mesh: same volume, no degenerate faces": true
+   },
+   "passed": true
+  }
+ }
+}

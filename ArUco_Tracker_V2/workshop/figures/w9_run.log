@@ -1,0 +1,16 @@
+W9  rows = print (sized for its design PSF), columns = ACTUAL PSF at acquisition
+cell: verdict · min tags/frame · mean tag decode · WORST-frame dot efficiency · usable dots at 6x (2 seeds)
+
+                               PSF 1.91 um                        PSF 2.5 um                       PSF 3.18 um                        PSF 3.8 um
+OPT           PASS  4t 100%  96%  1,351      PASS  4t 100%  95%  1,350      FAIL  4t 100%  36%  1,347      FAIL  3t  89%  18%  1,338
+HEDGE         PASS  4t 100%  95%    969      PASS  4t 100%  95%    968  MARGINAL  4t 100%  90%    966      FAIL  4t 100%  36%    958
+SAFE          PASS  4t 100%  95%    645      PASS  4t 100%  95%    645      PASS  4t 100%  95%    645      FAIL  4t 100%  16%    120
+
+DECISION (plan section 5): most optimistic print that PASSES at the actual PSF and is
+  at least MARGINAL one column up (~1.2x worse)
+  actual PSF 1.91 um -> print OPT
+  actual PSF 2.50 um -> print HEDGE
+  actual PSF 3.18 um -> print NONE (no candidate passes)
+  actual PSF 3.80 um -> print NONE (no candidate passes)
+
+wrote figures/candidate_grid.png + w9_candidate_montage.json  (1.2 min)

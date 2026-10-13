@@ -1,0 +1,298 @@
+{
+ "variant": "conservative",
+ "design_psf": 3.18,
+ "lams": [
+  1.0,
+  2.0,
+  3.0,
+  4.0,
+  5.0,
+  6.0
+ ],
+ "camera": {
+  "um_per_px": 0.51,
+  "fov_um": 1365.0,
+  "supersample": 2,
+  "render_margin": 1.280398072407384,
+  "render_px_cap": 12000,
+  "invert": true,
+  "lens_k1": -0.05,
+  "lens_k2": -0.01,
+  "vignette_strength": 0.55,
+  "vignette_power": 1.8,
+  "rotation_deg": 2.0,
+  "rotation_step_deg": 3.0,
+  "drift_um": 8.0,
+  "drift_seed": 3,
+  "warp_amp_um": 2.0,
+  "n_warp_lobes": 14,
+  "warp_sigma_um": 90.0,
+  "warp_seed": 7,
+  "seed": 12345,
+  "signal_exp": -1.84,
+  "signal_ref_lam": 1.5,
+  "psf_ratios": [
+   0.63,
+   0.79,
+   0.94,
+   1.07,
+   1.19
+  ],
+  "level_names": [
+   "L0_sharp",
+   "L1_good",
+   "L2_asdesigned",
+   "L3_soft",
+   "L4_poor"
+  ],
+  "noise": [
+   [
+    3.0,
+    400.0,
+    10.0
+   ],
+   [
+    4.0,
+    320.0,
+    12.0
+   ],
+   [
+    6.0,
+    240.0,
+    14.0
+   ],
+   [
+    8.0,
+    180.0,
+    16.0
+   ],
+   [
+    11.0,
+    130.0,
+    20.0
+   ]
+  ]
+ },
+ "islands": {
+  "aruco": 36,
+  "dot": 8125,
+  "dash": 360
+ },
+ "results": [
+  {
+   "level": "L0_sharp",
+   "psf": 2.0,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 36,
+     "n_decoded": 34,
+     "rate": 0.9444444444444444
+    },
+    {
+     "lam": 2.0,
+     "n_in_fov": 16,
+     "n_decoded": 16,
+     "rate": 1.0
+    },
+    {
+     "lam": 3.0,
+     "n_in_fov": 8,
+     "n_decoded": 7,
+     "rate": 0.875
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 4,
+     "rate": 1.0
+    },
+    {
+     "lam": 5.0,
+     "n_in_fov": 4,
+     "n_decoded": 4,
+     "rate": 1.0
+    },
+    {
+     "lam": 6.0,
+     "n_in_fov": 4,
+     "n_decoded": 3,
+     "rate": 0.75
+    }
+   ],
+   "mean_rate": 0.9282407407407408
+  },
+  {
+   "level": "L1_good",
+   "psf": 2.51,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 36,
+     "n_decoded": 26,
+     "rate": 0.7222222222222222
+    },
+    {
+     "lam": 2.0,
+     "n_in_fov": 16,
+     "n_decoded": 16,
+     "rate": 1.0
+    },
+    {
+     "lam": 3.0,
+     "n_in_fov": 8,
+     "n_decoded": 7,
+     "rate": 0.875
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 3,
+     "rate": 0.75
+    },
+    {
+     "lam": 5.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 6.0,
+     "n_in_fov": 4,
+     "n_decoded": 3,
+     "rate": 0.75
+    }
+   ],
+   "mean_rate": 0.6828703703703703
+  },
+  {
+   "level": "L2_asdesigned",
+   "psf": 2.99,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 36,
+     "n_decoded": 16,
+     "rate": 0.4444444444444444
+    },
+    {
+     "lam": 2.0,
+     "n_in_fov": 16,
+     "n_decoded": 9,
+     "rate": 0.5625
+    },
+    {
+     "lam": 3.0,
+     "n_in_fov": 8,
+     "n_decoded": 2,
+     "rate": 0.25
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 1,
+     "rate": 0.25
+    },
+    {
+     "lam": 5.0,
+     "n_in_fov": 4,
+     "n_decoded": 1,
+     "rate": 0.25
+    },
+    {
+     "lam": 6.0,
+     "n_in_fov": 4,
+     "n_decoded": 1,
+     "rate": 0.25
+    }
+   ],
+   "mean_rate": 0.33449074074074076
+  },
+  {
+   "level": "L3_soft",
+   "psf": 3.4,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 36,
+     "n_decoded": 7,
+     "rate": 0.19444444444444445
+    },
+    {
+     "lam": 2.0,
+     "n_in_fov": 16,
+     "n_decoded": 3,
+     "rate": 0.1875
+    },
+    {
+     "lam": 3.0,
+     "n_in_fov": 8,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 5.0,
+     "n_in_fov": 4,
+     "n_decoded": 1,
+     "rate": 0.25
+    },
+    {
+     "lam": 6.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    }
+   ],
+   "mean_rate": 0.10532407407407407
+  },
+  {
+   "level": "L4_poor",
+   "psf": 3.78,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 36,
+     "n_decoded": 2,
+     "rate": 0.05555555555555555
+    },
+    {
+     "lam": 2.0,
+     "n_in_fov": 16,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 3.0,
+     "n_in_fov": 8,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 5.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 6.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    }
+   ],
+   "mean_rate": 0.009259259259259259
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "variant": "conservative",
+ "lams": [
+  1.0,
+  4.0
+ ],
+ "camera": {
+  "um_per_px": 0.51,
+  "fov_um": 700.0,
+  "supersample": 1,
+  "render_margin": 1.15,
+  "render_px_cap": 12000,
+  "invert": true,
+  "lens_k1": -0.05,
+  "lens_k2": -0.01,
+  "vignette_strength": 0.55,
+  "vignette_power": 1.8,
+  "rotation_deg": 2.0,
+  "rotation_step_deg": 3.0,
+  "drift_um": 8.0,
+  "drift_seed": 3,
+  "warp_amp_um": 2.0,
+  "n_warp_lobes": 14,
+  "warp_sigma_um": 90.0,
+  "warp_seed": 7,
+  "seed": 12345,
+  "levels": [
+   {
+    "name": "L2_asmeasured",
+    "psf_fwhm_um": 3.0,
+    "read_noise": 8.0,
+    "full_well": 200.0,
+    "background": 14.0
+   }
+  ]
+ },
+ "islands": {
+  "aruco": 36,
+  "dot": 9900,
+  "dash": 480
+ },
+ "results": [
+  {
+   "level": "L2_asmeasured",
+   "psf": 3.0,
+   "rows": [
+    {
+     "lam": 1.0,
+     "n_in_fov": 16,
+     "n_decoded": 0,
+     "rate": 0.0
+    },
+    {
+     "lam": 4.0,
+     "n_in_fov": 4,
+     "n_decoded": 0,
+     "rate": 0.0
+    }
+   ],
+   "mean_rate": 0.0
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "dict": "DICT_4X4_50",
+ "modules": 6,
+ "tags": [
+  {
+   "region": "MINI_OPT",
+   "aruco_id": 3,
+   "x_um": 11.5,
+   "y_um": 586.5,
+   "size_um": 23.0
+  },
+  {
+   "region": "MINI_OPT",
+   "aruco_id": 13,
+   "x_um": 11.5,
+   "y_um": 738.5,
+   "size_um": 23.0
+  },
+  {
+   "region": "MINI_OPT",
+   "aruco_id": 10,
+   "x_um": 163.5,
+   "y_um": 586.5,
+   "size_um": 23.0
+  },
+  {
+   "region": "MINI_OPT",
+   "aruco_id": 17,
+   "x_um": 163.5,
+   "y_um": 738.5,
+   "size_um": 23.0
+  },
+  {
+   "region": "MINI_HEDGE",
+   "aruco_id": 21,
+   "x_um": 301.0,
+   "y_um": 588.5,
+   "size_um": 27.0
+  },
+  {
+   "region": "MINI_HEDGE",
+   "aruco_id": 23,
+   "x_um": 301.0,
+   "y_um": 736.5,
+   "size_um": 27.0
+  },
+  {
+   "region": "MINI_HEDGE",
+   "aruco_id": 22,
+   "x_um": 449.0,
+   "y_um": 588.5,
+   "size_um": 27.0
+  },
+  {
+   "region": "MINI_HEDGE",
+   "aruco_id": 25,
+   "x_um": 449.0,
+   "y_um": 736.5,
+   "size_um": 27.0
+  },
+  {
+   "region": "MINI_SAFE",
+   "aruco_id": 30,
+   "x_um": 592.0,
+   "y_um": 592.0,
+   "size_um": 34.0
+  },
+  {
+   "region": "MINI_SAFE",
+   "aruco_id": 40,
+   "x_um": 592.0,
+   "y_um": 733.0,
+   "size_um": 34.0
+  },
+  {
+   "region": "MINI_SAFE",
+   "aruco_id": 37,
+   "x_um": 733.0,
+   "y_um": 592.0,
+   "size_um": 34.0
+  },
+  {
+   "region": "MINI_SAFE",
+   "aruco_id": 41,
+   "x_um": 733.0,
+   "y_um": 733.0,
+   "size_um": 34.0
+  },
+  {
+   "region": "PITCH_3.50",
+   "aruco_id": 42,
+   "x_um": 45.5,
+   "y_um": 470.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_4.00",
+   "aruco_id": 43,
+   "x_um": 190.5,
+   "y_um": 470.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_4.50",
+   "aruco_id": 48,
+   "x_um": 335.5,
+   "y_um": 470.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_5.00",
+   "aruco_id": 49,
+   "x_um": 480.5,
+   "y_um": 470.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_5.74",
+   "aruco_id": 1,
+   "x_um": 625.5,
+   "y_um": 470.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_6.69",
+   "aruco_id": 4,
+   "x_um": 45.5,
+   "y_um": 365.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_7.50",
+   "aruco_id": 5,
+   "x_um": 190.5,
+   "y_um": 365.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "PITCH_9.00",
+   "aruco_id": 6,
+   "x_um": 335.5,
+   "y_um": 365.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "SIZE_2.50",
+   "aruco_id": 7,
+   "x_um": 480.5,
+   "y_um": 365.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "SIZE_3.00",
+   "aruco_id": 15,
+   "x_um": 625.5,
+   "y_um": 365.0,
+   "size_um": 27.0
+  },
+  {
+   "region": "STIFF_34",
+   "aruco_id": 16,
+   "x_um": 130.0,
+   "y_um": 130.0,
+   "size_um": 34.0
+  },
+  {
+   "region": "STIFF_23",
+   "aruco_id": 20,
+   "x_um": 620.0,
+   "y_um": 130.0,
+   "size_um": 23.0
+  }
+ ]
+}

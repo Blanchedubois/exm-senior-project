@@ -1,0 +1,29 @@
+{
+ "checks": {
+  "1_optimistic: every file the document names exists (12)": true,
+  "1_optimistic: the STL's md5 is the one printed": true,
+  "1_optimistic: counts agree (spec sheet = features.csv = verify.json)": true,
+  "1_optimistic: folder gate record says PASS": true,
+  "2_medium: every file the document names exists (12)": true,
+  "2_medium: the STL's md5 is the one printed": true,
+  "2_medium: counts agree (spec sheet = features.csv = verify.json)": true,
+  "2_medium: folder gate record says PASS": true,
+  "3_conservative: every file the document names exists (12)": true,
+  "3_conservative: the STL's md5 is the one printed": true,
+  "3_conservative: counts agree (spec sheet = features.csv = verify.json)": true,
+  "3_conservative: folder gate record says PASS": true,
+  "4_spectrum: every file the document names exists (14)": true,
+  "4_spectrum: the STL's md5 is the one printed": true,
+  "4_spectrum: counts agree (spec sheet = features.csv = verify.json)": true,
+  "4_spectrum: folder gate record says PASS": true,
+  "tags, ids and dashes identical in all four spec sheets": true,
+  "README and comparison figure written": true
+ },
+ "passed": true,
+ "md5": {
+  "1_optimistic": "9dc90cb2a7013db00cad54b92e8a5581",
+  "2_medium": "4ccda47b1f6e876015564f039f079abc",
+  "3_conservative": "30e433ff26fd3e0ce0bcdd8275571654",
+  "4_spectrum": "1771065277379be4fd70e0fa361d1433"
+ }
+}

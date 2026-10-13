@@ -1,0 +1,45 @@
+
+=== OPTIMISTIC  tag 23.0 um · PSF 1.91 · pitch 5.00 um · pipeline 2.3 s for 6 frames ===
+    λ  paired  truth    λ rec   λ eff pipe err     gel   app λ  w true  w err   corr  E true   E err  N@25
+  1.5  17,823 17,825   1.4974  1.4977  -0.019%  -0.15%   1.499   0.959  0.047  0.999  0.0057  0.0004    68
+  2.0  13,267 13,828   1.9960  1.9964  -0.019%  -0.18%   1.998   0.939  0.036  0.999  0.0059  0.0003    64
+  3.0   5,874  6,114   2.9970  2.9976  -0.019%  -0.08%   2.997   0.662  0.024  0.999  0.0053  0.0002    64
+  4.0   3,300  3,445   4.0003  4.0010  -0.019%  +0.03%   4.000   0.569  0.018  1.000  0.0048  0.0002    57
+  6.0   1,360  1,399   6.0057  6.0067  -0.018%  +0.11%   6.009   0.430  0.012  1.000  0.0043  0.0001    53
+    [PASS] |λ pipeline error| < 0.5% at every level
+    [PASS] warp RMS error < 0.35 um and corr > 0.9
+    [PASS] strain RMS error at R=25 < 0.006
+    [PASS] >= 90% of in-frame truth dots paired by identity (W9 floor)
+    [PASS] design -> image handedness -1 on every frame
+  PHASE-D GATE (optimistic): PASS
+
+=== HEDGE  tag 27.0 um · PSF 2.5 · pitch 5.74 um · pipeline 1.9 s for 6 frames ===
+    λ  paired  truth    λ rec   λ eff pipe err     gel   app λ  w true  w err   corr  E true   E err  N@25
+  1.5  12,812 12,825   1.4974  1.4977  -0.019%  -0.16%   1.500   0.959  0.051  0.999  0.0057  0.0004    58
+  2.0   9,689 10,091   1.9960  1.9964  -0.019%  -0.18%   1.998   0.941  0.039  0.999  0.0059  0.0004    54
+  3.0   4,260  4,454   2.9970  2.9976  -0.018%  -0.08%   2.998   0.661  0.026  0.999  0.0052  0.0002    58
+  4.0   2,406  2,517   4.0003  4.0010  -0.018%  +0.03%   4.002   0.571  0.019  0.999  0.0047  0.0002    51
+  6.0     968    997   6.0059  6.0070  -0.019%  +0.12%   6.011   0.429  0.013  1.000  0.0042  0.0001    47
+    [PASS] |λ pipeline error| < 0.5% at every level
+    [PASS] warp RMS error < 0.35 um and corr > 0.9
+    [PASS] strain RMS error at R=25 < 0.006
+    [PASS] >= 90% of in-frame truth dots paired by identity (W9 floor)
+    [PASS] design -> image handedness -1 on every frame
+  PHASE-D GATE (hedge): PASS
+
+=== CONSERVATIVE  tag 34.0 um · PSF 3.18 · pitch 6.69 um · pipeline 1.5 s for 6 frames ===
+    λ  paired  truth    λ rec   λ eff pipe err     gel   app λ  w true  w err   corr  E true   E err  N@25
+  1.5   8,361  8,625   1.4974  1.4976  -0.019%  -0.16%   1.500   0.959  0.058  0.998  0.0057  0.0005    43
+  2.0   6,464  6,963   1.9960  1.9964  -0.019%  -0.18%   1.999   0.944  0.043  0.999  0.0059  0.0004    42
+  3.0   2,796  3,046   2.9969  2.9975  -0.019%  -0.08%   2.999   0.667  0.028  0.999  0.0051  0.0002    42
+  4.0   1,580  1,746   4.0003  4.0011  -0.019%  +0.03%   4.002   0.579  0.021  0.999  0.0045  0.0002    39
+  6.0     602    664   6.0068  6.0079  -0.019%  +0.13%   6.014   0.430  0.015  0.999  0.0039  0.0001    37
+    [PASS] |λ pipeline error| < 0.5% at every level
+    [PASS] warp RMS error < 0.35 um and corr > 0.9
+    [PASS] strain RMS error at R=25 < 0.006
+    [PASS] >= 90% of in-frame truth dots paired by identity (W9 floor)
+    [PASS] design -> image handedness -1 on every frame
+  PHASE-D GATE (conservative): PASS
+
+wrote docs/phase_d_end_to_end.png + .json (0.3 min)
+PHASE-D GATE: PASS

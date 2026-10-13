@@ -1,0 +1,52 @@
+{
+ "design": "conservative",
+ "folder": "3_conservative",
+ "passed": true,
+ "checks": {
+  "dot count exact": true,
+  "dot position < 1 px (0.167 um)": true,
+  "pitch within 1 px (0.167 um)": true,
+  "all tags decode": true,
+  "outer extent == 750 um": true,
+  "exact geometry (centres, size, pitch)": true,
+  "every box: count, pitch and clearances exact": true,
+  "zero overlapping features": true,
+  "spec sheet agrees with the rendered STL": true
+ },
+ "spec_checks": {
+  "envelope": true,
+  "dot rows == spec count": true,
+  "every dot found in the render (< 1 px)": true,
+  "rendered dot size matches the sheet (< 0.30 um)": true,
+  "pitch in features.csv is the true nearest-neighbour spacing": true,
+  "all 36 tag ids decode at the listed positions (< 0.5 um)": true
+ },
+ "dot_um": 2.125,
+ "pitch_um": 7.0,
+ "gap_um": 4.875,
+ "tag_um": 23.0,
+ "node_pitch_um": 145.4,
+ "counts": {
+  "aruco": 36,
+  "dash": 480,
+  "dot": 8000
+ },
+ "per_box_row": 20,
+ "psf_max_um": 3.3888604279314896,
+ "footprint_um2": 59521.327777777784,
+ "fill": 0.10581569382716051,
+ "vs_reference_dots": 1.2461059190031152,
+ "n_pinch": 21,
+ "coincident_faces_removed": 1588,
+ "md5_stl": "30e433ff26fd3e0ce0bcdd8275571654",
+ "stl_mb": 5.490684,
+ "exact_pitch_um": 7.0,
+ "render": {
+  "max_pos_err_um": 0.04714045207911054,
+  "tags_decoded": 36,
+  "extent_um": [
+   750.0,
+   750.0
+  ]
+ }
+}

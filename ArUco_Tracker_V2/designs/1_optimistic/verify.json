@@ -1,0 +1,53 @@
+{
+ "design": "optimistic",
+ "folder": "1_optimistic",
+ "passed": true,
+ "checks": {
+  "dot count exact": true,
+  "dot position < 1 px (0.167 um)": true,
+  "pitch within 1 px (0.167 um)": true,
+  "all tags decode": true,
+  "outer extent == 750 um": true,
+  "exact geometry (centres, size, pitch)": true,
+  "every box: count, pitch and clearances exact": true,
+  "zero overlapping features": true,
+  "STL byte-identical to the existing optimistic print": true,
+  "spec sheet agrees with the rendered STL": true
+ },
+ "spec_checks": {
+  "envelope": true,
+  "dot rows == spec count": true,
+  "every dot found in the render (< 1 px)": true,
+  "rendered dot size matches the sheet (< 0.30 um)": true,
+  "pitch in features.csv is the true nearest-neighbour spacing": true,
+  "all 36 tag ids decode at the listed positions (< 0.5 um)": true
+ },
+ "dot_um": 2.125,
+ "pitch_um": 5.00014077926812,
+ "gap_um": 2.8751407792681203,
+ "tag_um": 23.0,
+ "node_pitch_um": 145.4,
+ "counts": {
+  "aruco": 36,
+  "dash": 480,
+  "dot": 17825
+ },
+ "per_box_row": 29,
+ "psf_max_um": 1.9100000000000004,
+ "footprint_um2": 103887.34340277778,
+ "fill": 0.18468861049382718,
+ "vs_reference_dots": 2.776479750778816,
+ "n_pinch": 21,
+ "coincident_faces_removed": 1588,
+ "md5_stl": "9dc90cb2a7013db00cad54b92e8a5581",
+ "stl_mb": 11.385684,
+ "exact_pitch_um": 5.000140779268122,
+ "render": {
+  "max_pos_err_um": 0.04952995562176305,
+  "tags_decoded": 36,
+  "extent_um": [
+   750.0,
+   750.0
+  ]
+ }
+}

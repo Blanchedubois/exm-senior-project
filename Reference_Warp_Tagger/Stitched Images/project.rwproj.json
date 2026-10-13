@@ -1,0 +1,83 @@
+{
+ "version": 1,
+ "manual_initial": false,
+ "images": [
+  {
+   "path": "1.5XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 1.5,
+   "role": "initial",
+   "glyph_manual": {
+    "numbers": [],
+    "letters": []
+   }
+  },
+  {
+   "path": "2.0XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 2.0,
+   "role": "expanded",
+   "glyph_manual": {
+    "numbers": [],
+    "letters": []
+   }
+  },
+  {
+   "path": "2.5XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 2.5,
+   "role": "expanded",
+   "glyph_manual": {
+    "numbers": [],
+    "letters": []
+   }
+  },
+  {
+   "path": "3.0XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 3.0,
+   "role": "expanded",
+   "glyph_manual": {
+    "numbers": [
+     [
+      [
+       0,
+       0
+      ],
+      13
+     ]
+    ],
+    "letters": []
+   }
+  },
+  {
+   "path": "3.5XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 3.5,
+   "role": "expanded",
+   "glyph_manual": {
+    "numbers": [],
+    "letters": []
+   }
+  },
+  {
+   "path": "4.2XMISTstitchedimg-stitched-0.ome.tif",
+   "label": 4.2,
+   "role": "expanded",
+   "glyph_manual": {
+    "numbers": [
+     [
+      [
+       0,
+       -2
+      ],
+      13
+     ],
+     [
+      [
+       0,
+       0
+      ],
+      13
+     ]
+    ],
+    "letters": []
+   }
+  }
+ ]
+}

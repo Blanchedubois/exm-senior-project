@@ -1,0 +1,30 @@
+W5  frame 1765 px, geometry HEDGE (tag 27.0 um), PSFs [1.91, 2.5, 3.18]
+
+[PSF 1.91 um]  imaged dot FWHM 5.39 px (expected 5.60); sparse-frame dots detected with area floor 30: 1196, with 12: 1198
+frame         detector                   ceiling plateau  thr px  thr/FWHM
+dense (λ=1)   global Otsu (production)       89%     92%      10      1.86
+dense (λ=1)   tile Otsu (C-1)                92%     93%       9      1.67
+sparse (λ=4)  global Otsu (production)       90%     92%       9      1.67
+sparse (λ=4)  tile Otsu (C-1)                92%     92%       9      1.67
+
+[PSF 2.5 um]  imaged dot FWHM 6.16 px (expected 6.43); sparse-frame dots detected with area floor 30: 935, with 12: 935
+frame         detector                   ceiling plateau  thr px  thr/FWHM
+dense (λ=1)   global Otsu (production)       96%     88%      11      1.79
+dense (λ=1)   tile Otsu (C-1)                96%     88%      11      1.79
+sparse (λ=4)  global Otsu (production)       98%     87%      11      1.79
+sparse (λ=4)  tile Otsu (C-1)                96%     89%      11      1.79
+
+[PSF 3.18 um]  imaged dot FWHM 7.30 px (expected 7.50); sparse-frame dots detected with area floor 30: 594, with 12: 594
+frame         detector                   ceiling plateau  thr px  thr/FWHM
+dense (λ=1)   global Otsu (production)       83%     91%      12      1.64
+dense (λ=1)   tile Otsu (C-1)                83%     91%      13      1.78
+sparse (λ=4)  global Otsu (production)       87%     91%      12      1.64
+sparse (λ=4)  tile Otsu (C-1)                84%     91%      13      1.78
+
+  PSF  dense/global  sparse/global  dense/tile  sparse/tile
+ 1.91          1.86          1.67          1.67          1.67
+ 2.50          1.79          1.79          1.79          1.79
+ 3.18          1.64          1.64          1.78          1.78
+
+W5 (production detector within 1.6-1.8x FWHM at every PSF): FAIL
+wrote figures/separation_vs_psf.png + w5_dot_separation_vs_psf.json  (0.2 min)

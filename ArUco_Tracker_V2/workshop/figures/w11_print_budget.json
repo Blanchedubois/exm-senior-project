@@ -1,0 +1,84 @@
+{
+ "v1": {
+  "dots": 6420,
+  "footprint": 74140.0,
+  "volume": 148122.0,
+  "triangles": 131532,
+  "file_mb": 6.6,
+  "tiers": {
+   "dot": 28939.0,
+   "dash": 20341.0,
+   "glyph": 24781.0
+  }
+ },
+ "hatch": 0.2,
+ "slice": 0.3,
+ "rows": {
+  "OPT": {
+   "variant": "optimistic",
+   "dots": 17825,
+   "area": {
+    "aruco": 15108.827777777791,
+    "dash": 8287.5,
+    "dot": 80491.015625
+   },
+   "footprint": 103887.3434027778,
+   "fill": 0.1846886104938272,
+   "volume": 207774.6868055556,
+   "scan_m": 3.4629114467592594,
+   "scan_vs_v1": 1.401232039422414,
+   "triangles": 227712,
+   "file_mb": 11.385684,
+   "overlaps": 0,
+   "shared_faces": 1389,
+   "merged_triangles": 226364,
+   "merged_mb": 11.318284,
+   "test_tag_id": 3,
+   "test_tag_shared_faces": 46
+  },
+  "HEDGE": {
+   "variant": "hedge",
+   "dots": 12825,
+   "area": {
+    "aruco": 20801.964375000003,
+    "dash": 6215.625,
+    "dot": 57912.890625
+   },
+   "footprint": 84930.48000000001,
+   "fill": 0.15098752000000001,
+   "volume": 169860.96000000002,
+   "scan_m": 2.831016,
+   "scan_vs_v1": 1.1455419476665767,
+   "triangles": 166500,
+   "file_mb": 8.325084,
+   "overlaps": 0,
+   "shared_faces": 1434,
+   "merged_triangles": 165104,
+   "merged_mb": 8.255284,
+   "test_tag_id": 3,
+   "test_tag_shared_faces": 49
+  },
+  "SAFE": {
+   "variant": "conservative",
+   "dots": 8625,
+   "area": {
+    "aruco": 32986.37972222221,
+    "dash": 6215.625,
+    "dot": 38947.265625
+   },
+   "footprint": 78149.27034722222,
+   "fill": 0.1389320361728395,
+   "volume": 156298.54069444444,
+   "scan_m": 2.6049756782407405,
+   "scan_vs_v1": 1.0540770211386865,
+   "triangles": 116100,
+   "file_mb": 5.805084,
+   "overlaps": 0,
+   "shared_faces": 1434,
+   "merged_triangles": 114704,
+   "merged_mb": 5.735284,
+   "test_tag_id": 3,
+   "test_tag_shared_faces": 49
+  }
+ }
+}

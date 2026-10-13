@@ -1,0 +1,18 @@
+# Only the three tracker folders are versioned; everything else in this
+# iCloud folder (older trackers, zips, archives) stays local.
+/*
+!/.gitignore
+!/ArUco_Reference_Tagger/
+!/ArUco_Tracker_V2/
+!/Reference_Warp_Tagger/
+
+# large image data stays on iCloud, not in git
+*.tif
+*.tiff
+
+# python / editor / OS noise
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store

@@ -1,0 +1,151 @@
+{
+ "psfs": [
+  1.91,
+  2.5,
+  3.18
+ ],
+ "trials": 300,
+ "results": {
+  "dot": {
+   "footprint_um2": 4.41,
+   "anchoring_um2": 20.81,
+   "extent_um": 2.125,
+   "per_psf": {
+    "1.91": {
+     "rms_natural_um": 0.03816907653126874,
+     "rms_centroid_um": 0.05728948961235556,
+     "n_ok": 300,
+     "imaged_um": 2.8572233024389257,
+     "pitch_um": 5.00014077926812,
+     "features": 22498.733040095678,
+     "field_precision": 0.2544676747613368
+    },
+    "2.5": {
+     "rms_natural_um": 0.04799023926276944,
+     "rms_centroid_um": 0.06887011824462305,
+     "n_ok": 300,
+     "imaged_um": 3.281101187101672,
+     "pitch_um": 5.741927077427926,
+     "features": 17061.106009893072,
+     "field_precision": 0.3674086057001875
+    },
+    "3.18": {
+     "rms_natural_um": 0.06315374415543916,
+     "rms_centroid_um": 0.08242135501426924,
+     "n_ok": 300,
+     "imaged_um": 3.824660115618119,
+     "pitch_um": 6.693155202331708,
+     "features": 12556.272592353042,
+     "field_precision": 0.563597081654271
+    }
+   }
+  },
+  "cross-4": {
+   "footprint_um2": 7.0,
+   "anchoring_um2": 38.36568541526795,
+   "extent_um": 4.0,
+   "per_psf": {
+    "1.91": {
+     "rms_natural_um": 0.05481271422304254,
+     "rms_centroid_um": 0.05481271422304254,
+     "n_ok": 300,
+     "imaged_um": 4.432617736733002,
+     "pitch_um": 7.757081039282754,
+     "features": 9348.15424329859,
+     "field_precision": 0.56691555494825
+    },
+    "2.5": {
+     "rms_natural_um": 0.06278424485132983,
+     "rms_centroid_um": 0.06278424485132983,
+     "n_ok": 300,
+     "imaged_um": 4.716990566028302,
+     "pitch_um": 8.254733490549528,
+     "features": 8254.987388213713,
+     "field_precision": 0.6910229448708455
+    },
+    "3.18": {
+     "rms_natural_um": 0.07822603142109473,
+     "rms_centroid_um": 0.07822603142109473,
+     "n_ok": 300,
+     "imaged_um": 5.1100293541231245,
+     "pitch_um": 8.942551369715467,
+     "features": 7033.955874900628,
+     "field_precision": 0.9327204059094877
+    }
+   }
+  },
+  "cross-6": {
+   "footprint_um2": 11.0,
+   "anchoring_um2": 58.36568541526795,
+   "extent_um": 6.0,
+   "per_psf": {
+    "1.91": {
+     "rms_natural_um": 0.053868582660486636,
+     "rms_centroid_um": 0.053868582660486636,
+     "n_ok": 300,
+     "imaged_um": 6.29667372507104,
+     "pitch_um": 11.01917901887432,
+     "features": 4632.591962483829,
+     "field_precision": 0.7914500744385751
+    },
+    "2.5": {
+     "rms_natural_um": 0.06479105761757423,
+     "rms_centroid_um": 0.06479105761757423,
+     "n_ok": 300,
+     "imaged_um": 6.5,
+     "pitch_um": 11.375,
+     "features": 4347.301050597753,
+     "field_precision": 0.9826643738665426
+    },
+    "3.18": {
+     "rms_natural_um": 0.0707425922288311,
+     "rms_centroid_um": 0.0707425922288311,
+     "n_ok": 300,
+     "imaged_um": 6.790611165425392,
+     "pitch_um": 11.883569539494436,
+     "features": 3983.1687222472715,
+     "field_precision": 1.1208993522072175
+    }
+   }
+  },
+  "saddle": {
+   "footprint_um2": 8.82,
+   "anchoring_um2": 41.90284270763397,
+   "extent_um": 4.25,
+   "per_psf": {
+    "1.91": {
+     "rms_natural_um": 0.46003722373096095,
+     "rms_centroid_um": 0.055614363802948215,
+     "n_ok": 267,
+     "imaged_um": 4.659463488428684,
+     "pitch_um": 8.154061104750197,
+     "features": 8460.082604246547,
+     "field_precision": 5.001562177015857
+    },
+    "2.5": {
+     "rms_natural_um": 0.5067076094458565,
+     "rms_centroid_um": 0.06313470115738222,
+     "n_ok": 295,
+     "imaged_um": 4.930770730829005,
+     "pitch_um": 8.62884877895076,
+     "features": 7554.692828288126,
+     "field_precision": 5.829737782735916
+    },
+    "3.18": {
+     "rms_natural_um": 0.5265030202087797,
+     "rms_centroid_um": 0.08198745470632626,
+     "n_ok": 296,
+     "imaged_um": 5.308003391106679,
+     "pitch_um": 9.289005934436688,
+     "features": 6519.046008601808,
+     "field_precision": 6.520919572290926
+    }
+   }
+  }
+ },
+ "verdict": {
+  "1.91": "dot",
+  "2.5": "dot",
+  "3.18": "dot"
+ }
+}

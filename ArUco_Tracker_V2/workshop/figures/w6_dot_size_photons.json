@@ -1,0 +1,562 @@
+{
+ "analytic": {
+  "2.125": {
+   "fixed": {
+    "read": 2.1377660649940102,
+    "shot": 2.1377660649940102
+   },
+   "exposure ~ \u03bb": {
+    "read": 8.551064259976041,
+    "shot": 4.2755321299880205
+   },
+   "exposure ~ \u03bb\u00b2": {
+    "read": 34.204257039904164,
+    "shot": 8.551064259976041
+   }
+  },
+  "2.5": {
+   "fixed": {
+    "read": 2.9588457646975925,
+    "shot": 2.9588457646975925
+   },
+   "exposure ~ \u03bb": {
+    "read": 11.83538305879037,
+    "shot": 5.917691529395185
+   },
+   "exposure ~ \u03bb\u00b2": {
+    "read": 47.34153223516148,
+    "shot": 11.83538305879037
+   }
+  },
+  "3.0": {
+   "fixed": {
+    "read": 4.260737901164533,
+    "shot": 4.260737901164533
+   },
+   "exposure ~ \u03bb": {
+    "read": 17.042951604658132,
+    "shot": 8.521475802329066
+   },
+   "exposure ~ \u03bb\u00b2": {
+    "read": 68.17180641863253,
+    "shot": 17.042951604658132
+   }
+  }
+ },
+ "empirical": {
+  "2.125": {
+   "pitch_um": 5.741927077427926,
+   "rows": [
+    {
+     "lam": 1,
+     "in_view": 12825,
+     "policies": {
+      "fixed": {
+       "brightness": 1.0,
+       "eff_global": 0.9953216374269006,
+       "eff_tile": 0.9939961013645224,
+       "rms_global": 0.462676373349789,
+       "rms_tile": 0.4626618124574693
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 1.0,
+       "eff_global": 0.9953216374269006,
+       "eff_tile": 0.9939961013645224,
+       "rms_global": 0.462676373349789,
+       "rms_tile": 0.4626618124574693
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9953216374269006,
+       "eff_tile": 0.9939961013645224,
+       "rms_global": 0.462676373349789,
+       "rms_tile": 0.4626618124574693
+      }
+     }
+    },
+    {
+     "lam": 2,
+     "in_view": 8586,
+     "policies": {
+      "fixed": {
+       "brightness": 0.5889965143196662,
+       "eff_global": 0.9360587002096437,
+       "eff_tile": 0.9354763568600046,
+       "rms_global": 0.5285371869051619,
+       "rms_tile": 0.5261246653109769
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.7853286857595548,
+       "eff_global": 0.9855578849289541,
+       "eff_tile": 0.9869555089680876,
+       "rms_global": 0.5155612406774426,
+       "rms_tile": 0.5142496601078628
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9976706266014442,
+       "eff_tile": 0.9980200326112276,
+       "rms_global": 0.5080936406447107,
+       "rms_tile": 0.507309044223278
+      }
+     }
+    },
+    {
+     "lam": 3,
+     "in_view": 3997,
+     "policies": {
+      "fixed": {
+       "brightness": 0.27932178451805495,
+       "eff_global": 0.008006004503377533,
+       "eff_tile": 0.005754315736802602,
+       "rms_global": 0.7634831214154151,
+       "rms_tile": 0.7835741344562762
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.5586435690361099,
+       "eff_global": 0.911433575181386,
+       "eff_tile": 0.8443832874655992,
+       "rms_global": 0.5314524435275317,
+       "rms_tile": 0.5267350697895065
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9969977483112334,
+       "eff_tile": 0.9979984988741556,
+       "rms_global": 0.5059641447432027,
+       "rms_tile": 0.5089745265971297
+      }
+     }
+    },
+    {
+     "lam": 4,
+     "in_view": 2136,
+     "policies": {
+      "fixed": {
+       "brightness": 0.16451955745468327,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.4387188198791554,
+       "eff_global": 0.018258426966292134,
+       "eff_tile": 0.017790262172284643,
+       "rms_global": 0.6427689475112346,
+       "rms_tile": 0.6441058258434077
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9971910112359551,
+       "eff_tile": 0.9967228464419475,
+       "rms_global": 0.5089415642435207,
+       "rms_tile": 0.5136012817838849
+      }
+     }
+    },
+    {
+     "lam": 5,
+     "in_view": 1275,
+     "policies": {
+      "fixed": {
+       "brightness": 0.1091196862725139,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.36373228757504633,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9937254901960785,
+       "eff_tile": 0.996078431372549,
+       "rms_global": 0.5054724061041327,
+       "rms_tile": 0.5020647172047066
+      }
+     }
+    },
+    {
+     "lam": 6,
+     "in_view": 880,
+     "policies": {
+      "fixed": {
+       "brightness": 0.07802065930635074,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.31208263722540297,
+       "eff_global": 0.0011363636363636363,
+       "eff_tile": 0.0,
+       "rms_global": 0.5417684938618126,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9954545454545455,
+       "eff_tile": 0.9761363636363637,
+       "rms_global": 0.5036312060308239,
+       "rms_tile": 0.5181206320961974
+      }
+     }
+    }
+   ]
+  },
+  "2.5": {
+   "pitch_um": 6.187184335382291,
+   "rows": [
+    {
+     "lam": 1,
+     "in_view": 10625,
+     "policies": {
+      "fixed": {
+       "brightness": 1.0,
+       "eff_global": 0.9988705882352941,
+       "eff_tile": 0.998964705882353,
+       "rms_global": 0.46622703140355887,
+       "rms_tile": 0.46762517327162556
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 1.0,
+       "eff_global": 0.9988705882352941,
+       "eff_tile": 0.998964705882353,
+       "rms_global": 0.46622703140355887,
+       "rms_tile": 0.46762517327162556
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9988705882352941,
+       "eff_tile": 0.998964705882353,
+       "rms_global": 0.46622703140355887,
+       "rms_tile": 0.46762517327162556
+      }
+     }
+    },
+    {
+     "lam": 2,
+     "in_view": 7128,
+     "policies": {
+      "fixed": {
+       "brightness": 0.5889965143196662,
+       "eff_global": 0.9831649831649831,
+       "eff_tile": 0.9837261503928171,
+       "rms_global": 0.5223980287258859,
+       "rms_tile": 0.5233045494459293
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.7853286857595548,
+       "eff_global": 0.9966329966329966,
+       "eff_tile": 0.9969135802469136,
+       "rms_global": 0.5154591491805461,
+       "rms_tile": 0.5163986751181355
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9990179573512907,
+       "eff_tile": 0.999438832772166,
+       "rms_global": 0.5078374210868949,
+       "rms_tile": 0.5080225498847044
+      }
+     }
+    },
+    {
+     "lam": 3,
+     "in_view": 3335,
+     "policies": {
+      "fixed": {
+       "brightness": 0.27932178451805495,
+       "eff_global": 0.012293853073463269,
+       "eff_tile": 0.012293853073463269,
+       "rms_global": 0.6142759764727095,
+       "rms_tile": 0.6158978484297556
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.5586435690361099,
+       "eff_global": 0.9715142428785607,
+       "eff_tile": 0.9658170914542729,
+       "rms_global": 0.5319219601655933,
+       "rms_tile": 0.5346020312644817
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.999400299850075,
+       "eff_tile": 0.999400299850075,
+       "rms_global": 0.5131122971777262,
+       "rms_tile": 0.514683407750595
+      }
+     }
+    },
+    {
+     "lam": 4,
+     "in_view": 1768,
+     "policies": {
+      "fixed": {
+       "brightness": 0.16451955745468327,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.4387188198791554,
+       "eff_global": 0.028846153846153848,
+       "eff_tile": 0.07635746606334842,
+       "rms_global": 0.6151053687706506,
+       "rms_tile": 0.5322034788133793
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 0.9994343891402715,
+       "rms_global": 0.5168592436253904,
+       "rms_tile": 0.5158249270477959
+      }
+     }
+    },
+    {
+     "lam": 5,
+     "in_view": 1041,
+     "policies": {
+      "fixed": {
+       "brightness": 0.1091196862725139,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.36373228757504633,
+       "eff_global": 0.0038424591738712775,
+       "eff_tile": 0.0038424591738712775,
+       "rms_global": 0.638672206671444,
+       "rms_tile": 0.638672206671444
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 0.9990393852065321,
+       "eff_tile": 1.0,
+       "rms_global": 0.5055083359596136,
+       "rms_tile": 0.5085968515144329
+      }
+     }
+    },
+    {
+     "lam": 6,
+     "in_view": 723,
+     "policies": {
+      "fixed": {
+       "brightness": 0.07802065930635074,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.31208263722540297,
+       "eff_global": 0.008298755186721992,
+       "eff_tile": 0.005532503457814661,
+       "rms_global": 0.9541061851479041,
+       "rms_tile": 0.5774476815396039
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 0.9986168741355463,
+       "rms_global": 0.5159391831448416,
+       "rms_tile": 0.513807134639885
+      }
+     }
+    }
+   ]
+  },
+  "3.0": {
+   "pitch_um": 6.833968466418322,
+   "rows": [
+    {
+     "lam": 1,
+     "in_view": 8625,
+     "policies": {
+      "fixed": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.45857238445717635,
+       "rms_tile": 0.458721871675453
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.45857238445717635,
+       "rms_tile": 0.458721871675453
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.45857238445717635,
+       "rms_tile": 0.458721871675453
+      }
+     }
+    },
+    {
+     "lam": 2,
+     "in_view": 5780,
+     "policies": {
+      "fixed": {
+       "brightness": 0.5889965143196662,
+       "eff_global": 0.9968858131487889,
+       "eff_tile": 0.9960207612456747,
+       "rms_global": 0.5143645516819777,
+       "rms_tile": 0.5154247999876771
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.7853286857595548,
+       "eff_global": 1.0,
+       "eff_tile": 0.9996539792387543,
+       "rms_global": 0.5038208900577782,
+       "rms_tile": 0.5013637327627919
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.5013285814275263,
+       "rms_tile": 0.499730168092083
+      }
+     }
+    },
+    {
+     "lam": 3,
+     "in_view": 2713,
+     "policies": {
+      "fixed": {
+       "brightness": 0.27932178451805495,
+       "eff_global": 0.025801695539992626,
+       "eff_tile": 0.037596756358274974,
+       "rms_global": 0.7291573252218853,
+       "rms_tile": 0.6636327791554133
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.5586435690361099,
+       "eff_global": 0.9955768521931441,
+       "eff_tile": 0.9933652782897162,
+       "rms_global": 0.524676810312152,
+       "rms_tile": 0.5237392215886983
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.5043794682210507,
+       "rms_tile": 0.5031590684457148
+      }
+     }
+    },
+    {
+     "lam": 4,
+     "in_view": 1431,
+     "policies": {
+      "fixed": {
+       "brightness": 0.16451955745468327,
+       "eff_global": 0.0006988120195667365,
+       "eff_tile": 0.0006988120195667365,
+       "rms_global": 0.4713740095317311,
+       "rms_tile": 0.5881086237035711
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.4387188198791554,
+       "eff_global": 0.055904961565338925,
+       "eff_tile": 0.3137665967854647,
+       "rms_global": 0.6798537736470458,
+       "rms_tile": 0.5390232322564587
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.5037394537687826,
+       "rms_tile": 0.5036849421373673
+      }
+     }
+    },
+    {
+     "lam": 5,
+     "in_view": 839,
+     "policies": {
+      "fixed": {
+       "brightness": 0.1091196862725139,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.36373228757504633,
+       "eff_global": 0.011918951132300357,
+       "eff_tile": 0.0166865315852205,
+       "rms_global": 0.6389125752021361,
+       "rms_tile": 0.619065863469322
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.5108647285790693,
+       "rms_tile": 0.5106596195647088
+      }
+     }
+    },
+    {
+     "lam": 6,
+     "in_view": 582,
+     "policies": {
+      "fixed": {
+       "brightness": 0.07802065930635074,
+       "eff_global": 0.0,
+       "eff_tile": 0.0,
+       "rms_global": NaN,
+       "rms_tile": NaN
+      },
+      "exposure ~ \u03bb": {
+       "brightness": 0.31208263722540297,
+       "eff_global": 0.001718213058419244,
+       "eff_tile": 0.001718213058419244,
+       "rms_global": 0.5983106003602247,
+       "rms_tile": 0.5983106003602247
+      },
+      "exposure ~ \u03bb\u00b2": {
+       "brightness": 1.0,
+       "eff_global": 1.0,
+       "eff_tile": 1.0,
+       "rms_global": 0.49448215689989117,
+       "rms_tile": 0.4934000254825299
+      }
+     }
+    }
+   ]
+  }
+ },
+ "lams": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "dots": [
+  2.125,
+  2.5,
+  3.0
+ ]
+}

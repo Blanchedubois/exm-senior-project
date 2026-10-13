@@ -1,0 +1,315 @@
+{
+ "fracs": [
+  0.25,
+  0.5,
+  0.75,
+  1.0,
+  1.25,
+  1.5,
+  2.0,
+  2.5
+ ],
+ "seeds": [
+  0,
+  1
+ ],
+ "results": {
+  "OPT": {
+   "tag_um": 23.0,
+   "module_um": 3.8333333333333335,
+   "psf": 1.91,
+   "rule_quiet_um": 3.8333333333333335,
+   "rows": [
+    {
+     "quiet_mod": 0.25,
+     "quiet_um": 0.9583333333333334,
+     "dots": 17825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.5,
+     "quiet_um": 1.9166666666666667,
+     "dots": 17825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.75,
+     "quiet_um": 2.875,
+     "dots": 17825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.0,
+     "quiet_um": 3.8333333333333335,
+     "dots": 17825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.25,
+     "quiet_um": 4.791666666666667,
+     "dots": 17825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.5,
+     "quiet_um": 5.75,
+     "dots": 17325,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.0,
+     "quiet_um": 7.666666666666667,
+     "dots": 17325,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.5,
+     "quiet_um": 9.583333333333334,
+     "dots": 17325,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    }
+   ],
+   "min_quiet_1ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 0.9583333333333334,
+    "dots": 17825,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "min_quiet_2ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 0.9583333333333334,
+    "dots": 17825,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "two_ch_gain_dots": 0
+  },
+  "HEDGE": {
+   "tag_um": 27.0,
+   "module_um": 4.5,
+   "psf": 2.5,
+   "rule_quiet_um": 4.5,
+   "rows": [
+    {
+     "quiet_mod": 0.25,
+     "quiet_um": 1.125,
+     "dots": 12825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.5,
+     "quiet_um": 2.25,
+     "dots": 12825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.75,
+     "quiet_um": 3.375,
+     "dots": 12825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.0,
+     "quiet_um": 4.5,
+     "dots": 12825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.25,
+     "quiet_um": 5.625,
+     "dots": 12825,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.5,
+     "quiet_um": 6.75,
+     "dots": 12325,
+     "one_ch": 0.9861111111111112,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.0,
+     "quiet_um": 9.0,
+     "dots": 12325,
+     "one_ch": 0.9861111111111112,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.5,
+     "quiet_um": 11.25,
+     "dots": 12325,
+     "one_ch": 0.9861111111111112,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    }
+   ],
+   "min_quiet_1ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 1.125,
+    "dots": 12825,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "min_quiet_2ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 1.125,
+    "dots": 12825,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "two_ch_gain_dots": 0
+  },
+  "SAFE": {
+   "tag_um": 34.0,
+   "module_um": 5.666666666666667,
+   "psf": 3.18,
+   "rule_quiet_um": 5.666666666666667,
+   "rows": [
+    {
+     "quiet_mod": 0.25,
+     "quiet_um": 1.4166666666666667,
+     "dots": 8625,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.5,
+     "quiet_um": 2.8333333333333335,
+     "dots": 8625,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 0.75,
+     "quiet_um": 4.25,
+     "dots": 8625,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.0,
+     "quiet_um": 5.666666666666667,
+     "dots": 8625,
+     "one_ch": 1.0,
+     "one_ch_1p2": 1.0,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.25,
+     "quiet_um": 7.083333333333334,
+     "dots": 8125,
+     "one_ch": 1.0,
+     "one_ch_1p2": 0.9861111111111112,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 1.5,
+     "quiet_um": 8.5,
+     "dots": 8125,
+     "one_ch": 1.0,
+     "one_ch_1p2": 0.9861111111111112,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.0,
+     "quiet_um": 11.333333333333334,
+     "dots": 8125,
+     "one_ch": 1.0,
+     "one_ch_1p2": 0.9861111111111112,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    },
+    {
+     "quiet_mod": 2.5,
+     "quiet_um": 14.166666666666668,
+     "dots": 7425,
+     "one_ch": 1.0,
+     "one_ch_1p2": 0.9861111111111112,
+     "two_ch_tags_dash": 1.0,
+     "two_ch_tags": 1.0
+    }
+   ],
+   "min_quiet_1ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 1.4166666666666667,
+    "dots": 8625,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "min_quiet_2ch": {
+    "quiet_mod": 0.25,
+    "quiet_um": 1.4166666666666667,
+    "dots": 8625,
+    "one_ch": 1.0,
+    "one_ch_1p2": 1.0,
+    "two_ch_tags_dash": 1.0,
+    "two_ch_tags": 1.0
+   },
+   "two_ch_gain_dots": 0
+  }
+ }
+}

@@ -1,0 +1,36 @@
+W1  frame 1765x1765 px at 0.51 um/px, 8 tag sizes x 5 PSFs x 3 dictionaries x 2 seeds
+
+[DICT_4X4_50]  6 modules, 43 strut-free ids (36 needed)
+   PSF 1.50: 18:100% 21:100% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 2.00)
+   PSF 1.91: 18: 99% 21: 99% 24: 99% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 1.57)
+   PSF 2.50: 18: 83% 21: 96% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 21 um  (module/PSF = 1.40)
+   PSF 3.18: 18: 36% 21: 74% 24: 92% 27: 99% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 27 um  (module/PSF = 1.42)
+   PSF 3.50: 18: 19% 21: 58% 24: 81% 27: 94% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 30 um  (module/PSF = 1.43)
+
+[DICT_4X4_100]  6 modules, 87 strut-free ids (36 needed)
+   PSF 1.50: 18:100% 21:100% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 2.00)
+   PSF 1.91: 18: 99% 21: 99% 24: 99% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 1.57)
+   PSF 2.50: 18: 83% 21: 96% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 21 um  (module/PSF = 1.40)
+   PSF 3.18: 18: 36% 21: 74% 24: 92% 27: 99% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 27 um  (module/PSF = 1.42)
+   PSF 3.50: 18: 19% 21: 58% 24: 81% 27: 94% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 30 um  (module/PSF = 1.43)
+
+[DICT_5X5_100]  7 modules, 69 strut-free ids (36 needed)
+   PSF 1.50: 18:100% 21:100% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 1.71)
+   PSF 1.91: 18:100% 21:100% 24:100% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 18 um  (module/PSF = 1.35)
+   PSF 2.50: 18: 82% 21: 96% 24: 97% 27:100% 30:100% 33:100% 36:100% 40:100%   -> first >=95%: 21 um  (module/PSF = 1.20)
+   PSF 3.18: 18: 24% 21: 60% 24:100% 27: 94% 30: 99% 33:100% 36:100% 40:100%   -> first >=95%: 24 um  (module/PSF = 1.08)
+   PSF 3.50: 18: 10% 21: 47% 24: 83% 27: 89% 30: 97% 33:100% 36:100% 40:100%   -> first >=95%: 30 um  (module/PSF = 1.22)
+
+MARGIN CHECK  (geometry built for the design PSF, imaged at design and 1.2x design)
+cand    PSF  margin   tag   @design   @1.2x  min tags @1.2x
+OPT    1.91     0%    21       99%     94%              33   PASS
+OPT    1.91    10%    23      100%    100%              36   PASS
+OPT    1.91    20%    25      100%    100%              36   PASS
+HEDGE  2.50     0%    27      100%    100%              36   PASS
+HEDGE  2.50    10%    30      100%     99%              35   PASS
+HEDGE  2.50    20%    33      100%    100%              36   PASS
+SAFE   3.18     0%    35      100%    100%              36   PASS
+SAFE   3.18    10%    38      100%    100%              36   PASS
+SAFE   3.18    20%    42      100%    100%              36   PASS
+
+wrote figures/tag_size_sweep.png + w1_tag_size_sweep.json   (1.5 min)
