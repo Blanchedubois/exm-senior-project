@@ -54,11 +54,11 @@ Common leading columns on every feature table: `image` (file stem), `label` (λ 
 
 ### 3.1 `features_raw.csv` — positions in the acquired image
 
-`x_raw, y_raw, sxx_raw, syy_raw, sxy_raw, relative_err (bool), signal_adu, bg_adu, sigma_px
-(dots), decode_class (tags)`.
-
-Positions are detected in `corr` and mapped through `inverse_geometric`; the covariance through
-its Jacobian.
+`x_raw_det, y_raw_det, sxx_raw_det, syy_raw_det, sxy_raw_det` (the independent detection on
+the raw frame, NaN where the raw pass found nothing), `x_raw_map, y_raw_map, sxx_raw_map,
+syy_raw_map, sxy_raw_map` (the corrected-frame position mapped into raw through
+`inverse_geometric`, covariance through its Jacobian), `raw_found (bool)`, `det_minus_map_px`,
+`relative_err (bool), signal_adu, bg_adu, sigma_px (dots), decode_class (tags)`.
 
 ### 3.2 `features_corr.csv` — positions in the corrected image
 

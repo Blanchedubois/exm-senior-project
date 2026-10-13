@@ -59,9 +59,12 @@ Phases 1 and 2 are independent and can be built in either order. 3 depends on 1 
 | `init` | px | the `corr` frame of the project's initial image. Other images reach it through a fitted alignment (rigid, or similarity when scale is wanted) |
 | `expected` | px | where a feature should be in `corr` if the gel expanded uniformly: the best-fit similarity of the design onto this image. Deviation from it is the distortion signal |
 
-Points are detected in `corr` and mapped to `raw` through the exact inverse of the geometric
-correction (rotation inverse; lens forward model). Detection is not rerun on the raw frame.
-This is an assumption, flagged in §7.
+Detection runs **twice**: once on the corrected frame (`corr`, the primary result that is
+tagged and paired) and once on the raw frame (`raw`, an independent detection). The two are
+joined by identity through the raw-frame tags, and the exact inverse of the geometric
+correction is also used to map `corr` positions into `raw` so the export can report, per
+feature, both the independently detected raw position and the mapped one. Their difference
+measures what the correction does to the detector. Decided 2026-10-13.
 
 **Feature identity.** Tags are strings exactly as the V2 design files write them:
 `aruco|N{i}_{j}|{id}`, `dash|H{j}|{m}` / `dash|V{i}|{m}`, `dot|B{N}|{di}_{dj}` with
@@ -133,25 +136,23 @@ so any later script can pivot them.
 These are the points where a different answer changes the work. Each phase proceeds on the
 assumption listed until told otherwise.
 
-1. **Raw positions.** Assumed: detect once on the corrected frame and map back to raw through
-   the inverse geometric correction. Alternative: run the detector a second time on the raw
-   frame and report both independently. The second costs double detection time but measures
-   what the correction does to the detector itself.
-2. **"Relative to the initial reference grid spacing image".** Assumed to mean positions
-   expressed in the initial (lowest expansion) image's frame. Both a rigid map (rotation +
-   translation, scale kept, as V1's overlay) and a similarity map (scale removed) are exported.
-   If instead this means relative to the **design** grid, that is the `deviation_from_design`
-   table, which is also exported.
-3. **Metadata fields.** The list in Phase 2 is a proposal. Fields can be added at any time;
-   removing one later breaks old exports, so the list should be settled before Phase 7.
-4. **Photon units for the error model.** The closed-form localisation error needs the photon
-   count per dot, which needs the camera gain (electrons per ADU). Assumed: gain is a metadata
-   field, defaulting to 1.0 with the error reported as "relative" when unset. The empirical
-   repeat-frame estimate does not need it.
-5. **Which designs.** Assumed: all four (Optimistic, Medium, Conservative, Spectrum) load from
-   their folders, and the spectrum's per-box dot sizes are honoured everywhere.
-6. **GUI framework.** Assumed: stay on PySide6 + pyqtgraph and keep the V1 window layout
-   (sidebar + tabs) so the ported panels drop in.
+Resolved 2026-10-13 with the user:
+
+1. **Raw positions.** Run the detector a second time on the raw frame and report both the
+   independent raw detection and the mapped-back corrected position (§4).
+2. **"Relative to the initial reference grid spacing image"** means positions in the initial
+   image's frame. Both the rigid and the scale-removed versions are exported, and the deviation
+   from the design grid is its own table.
+3. **Metadata fields.** The Phase-2 list is accepted, plus a `cells_present` checkbox and a
+   `cells_description` text field (which cells are in the gel).
+4. **Camera gain.** Built as a metadata field; when unset the dot localisation error is
+   reported relative, not absolute, and the repeat-frame calibration still gives absolute
+   errors without it. Not a blocker.
+5. **Which designs.** All four, including the spectrum print's per-box dot sizes.
+6. **GUI framework.** PySide6 + pyqtgraph, V1 window layout.
+
+Still assumed:
+
 7. **Rotation convention.** Assumed: a tag's rotation is the angle of its design +x axis in
    the image, degrees, counter-clockwise positive in the y-down image frame, reported both per
    tag and as the frame's median. Handedness is reported separately as ±1.

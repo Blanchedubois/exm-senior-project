@@ -41,6 +41,7 @@ says whether a value came from the file header, the user, or the pipeline.
 | optics | `objective_name`, `magnification` (e.g. 100), `numerical_aperture`, `immersion`, `um_per_px`, `um_per_px_source` (header / user / calibrated), `binning` | str / float | header then user |
 | illumination | `laser_wavelength_nm`, `laser_power_mw` or `laser_power_pct`, `excitation_filter`, `emission_filter`, `exposure_ms`, `gain_e_per_adu`, `camera_offset_adu` | float / str | header then user |
 | acquisition | `date` (ISO), `time` (ISO), `timezone`, `stitched` (bool), `n_tiles`, `stitch_software`, `z_slices`, `z_step_um` | | header then user |
+| sample | `cells_present` (bool), `cells_description` (which cells, free text) | bool / str | user |
 | free | `notes` | str | user |
 
 `gain_e_per_adu` and `camera_offset_adu` feed the Phase-5 photon-count estimate. Fields the user
@@ -79,6 +80,7 @@ raw` at each point, used by Phase 5 to carry covariances between frames.
 ## 4. GUI additions
 
 - **Metadata dock** (right-hand dock, collapsible): a form over `ImageMeta` grouped as in §2.1.
+  `cells_present` is a checkbox that enables the `cells_description` text box beside it.
   Header-sourced values show a small "from file" badge; editing one changes its source to
   "user". Derived fields are read-only and grey until Phase 3 fills them. "Apply to all images"
   copies the optics and illumination groups to every image in the project (sample and state

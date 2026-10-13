@@ -70,6 +70,20 @@ So λ is derived from the design geometry and the pixel size, without a referenc
 estimate `lam_dots` from the per-box dot pitch vs design pitch is recorded as a cross-check; the
 two should agree within a percent on a clean frame.
 
+## 3b. The second detection pass, on the raw frame
+
+After the corrected-frame detection, `detect()` runs again on the **raw** image (the TIFF as
+loaded, only percentile-stretched to 8 bit, no optics correction) with the same `ArucoParams`
+and design. Its tags are matched to the corrected pass by id; its dots and dashes are matched
+to the corrected pass by mapping the corrected positions into the raw frame with
+`correct.inverse_geometric` and taking the nearest raw detection within `0.45 × pitch`. The
+result is stored as `DetectResult.raw_pass` with, per feature of the corrected pass:
+`x_raw_det, y_raw_det` (the independent raw detection, NaN if unmatched), `x_raw_map, y_raw_map`
+(the mapped position) and `raw_found (bool)`. The summary reports the matched fraction and the
+median `|det − map|`, which is the correction's effect on the detector. The raw pass is cached
+on the entry and is skipped when the Stage-1 geometric parameters are all zero (raw equals
+corr).
+
 ## 4. `DetectResult` and derived metadata
 
 `DetectResult` keeps its V1 shape so Phase 4's `tagframe` works unchanged, with these
