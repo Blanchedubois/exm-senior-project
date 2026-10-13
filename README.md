@@ -48,6 +48,10 @@ The same markers, imaging and analysis are applied to MAGNIFY (expansion varied 
 
 Microscope TIFF frames and simulator outputs are not committed. The six real stitched frames the V1 app was validated on belong in `Reference_Warp_Tagger/Stitched Images/`.
 
+## Project log
+
+Occasional progress updates are posted in [blog/](blog/README.md).
+
 ## Status
 
 The V1 tagger is complete and validated on six real frames at 1.5× to 4.2×. The ArUco detector and series driver exist as a headless library inside the V1 code and are tested against the simulator. The port into `ArUco_Reference_Tagger/` is in progress.
