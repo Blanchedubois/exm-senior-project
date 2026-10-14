@@ -162,8 +162,12 @@ class ImageEntry:
                 for f in lv.__dataclass_fields__:
                     setattr(p.levels, f, getattr(lv, f))
                 self._sidecar_loaded = True
-        if p.corrected_image is None:
+        if not p.corrected_is_current():
+            # (re)compute whenever the Stage-1 parameters differ from the ones that
+            # produced the cached frame -- a stale corrected frame silently carries
+            # the old (e.g. uncorrected) lens geometry into every later stage
             p.corrected_image = C.process(p.raw_image, p.correction, p.levels)
+            p.corrected_key = p.stage1_key()
 
     def unload_images(self):
         """Drop the heavy raw/corrected arrays (results stay); reload on demand."""

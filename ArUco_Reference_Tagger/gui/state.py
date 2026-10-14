@@ -47,11 +47,13 @@ class AppState(QtCore.QObject):
         self.pipeline.source_path = path
         self.pipeline.raw_image = img
         self.pipeline.corrected_image = img
+        self.pipeline.corrected_key = None
         self.pipeline.detection = None          # detection is per-image; invalidate on new frame
         self.imageLoaded.emit()
 
     def set_corrected(self, img):
         self.pipeline.corrected_image = img
+        self.pipeline.corrected_key = self.pipeline.stage1_key()
         self.correctionChanged.emit()
 
     def set_detection(self, det):

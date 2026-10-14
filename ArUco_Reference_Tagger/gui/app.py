@@ -11,7 +11,8 @@ grown one port phase at a time (docs/00_PORT_OVERVIEW.md):
            auto-deskew from the tags; derived metadata
   Phase 4  tab 3 (Filter, per-box gates) · tab 4 (Tag, acceptance) · the
            sidebar's Run stages 2–4 / Run all pending (series gates)
-  later    Pair, Overlay, Field tabs and Export bundle
+  Phase 6  tabs 5–8: Pair, Overlay, Field, Series (any two accepted images)
+  later    Export bundle
 
 One AppState, one active image at a time. Per-image Stage-1 params live in the
 `.rwsession.json` sidecar, per-image metadata in `.rwmeta.json`; both autosave on
@@ -31,6 +32,10 @@ from .meta_panel import MetaPanel
 from .detect_panel import DetectPanel
 from .filter_panel import FilterPanel
 from .tag_panel import TagPanel
+from .pair_panel import PairPanel
+from .overlay_panel import OverlayPanel
+from .field_panel import FieldPanel
+from .series_panel import SeriesPanel, SeriesStrip
 
 IMG_FILTER = "Images (*.tif *.tiff *.ome.tif *.png *.jpg);;All files (*)"
 IMG_EXTS = io.IMG_EXTS
@@ -96,6 +101,16 @@ class MainWindow(QtWidgets.QMainWindow):
         self.tagger.runAllRequested.connect(self.run_all_pending)
         self.tabs.addTab(_stage_page(self.canvas3, self.filter), "3 · Filter")
         self.tabs.addTab(_stage_page(self.canvas4, self.tagger), "4 · Tag")
+        # tabs 5–8 — cross-image views (any two accepted images)
+        design_fn = lambda: self.detect.design
+        self.canvas5 = ImageCanvas(); self.pair = PairPanel(self.state, self.canvas5, self.log, lambda: self.project)
+        self.canvas6 = ImageCanvas(); self.overlay = OverlayPanel(self.state, self.canvas6, self.log, lambda: self.project, design_fn)
+        self.canvas7 = ImageCanvas(); self.field = FieldPanel(self.state, self.canvas7, self.log, lambda: self.project, design_fn)
+        self.strip = SeriesStrip(); self.series = SeriesPanel(self.state, self.strip, self.log, lambda: self.project, design_fn)
+        self.tabs.addTab(_stage_page(self.canvas5, self.pair), "5 · Pair")
+        self.tabs.addTab(_stage_page(self.canvas6, self.overlay), "6 · Overlay")
+        self.tabs.addTab(_stage_page(self.canvas7, self.field), "7 · Field")
+        self.tabs.addTab(_stage_page(self.strip, self.series), "8 · Series")
         self.tabs.currentChanged.connect(self._on_tab)
         self.panel.b_deskew.clicked.connect(self.detect.run_deskew)
 
@@ -125,7 +140,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.readout = QtWidgets.QLabel("—")
         self.statusBar().addPermanentWidget(self.readout)
-        for c in (self.canvas, self.canvas2, self.canvas3, self.canvas4):
+        for c in (self.canvas, self.canvas2, self.canvas3, self.canvas4, self.canvas5, self.canvas6, self.canvas7):
             c.cursorMoved.connect(self._on_cursor)
         for sig in (self.state.featuresChanged, self.state.taggingChanged):
             sig.connect(self.sidebar.refresh_status)
@@ -159,6 +174,14 @@ class MainWindow(QtWidgets.QMainWindow):
             self.filter.refresh_base_image()
         elif idx == 3:
             self.tagger.refresh_base_image()
+        elif idx == 4:
+            self.pair.refresh()
+        elif idx == 5:
+            self.overlay.refresh()
+        elif idx == 6:
+            self.field.refresh()
+        elif idx == 7:
+            self.series.refresh()
 
     def _on_detection(self):
         det = self.state.pipeline.detection

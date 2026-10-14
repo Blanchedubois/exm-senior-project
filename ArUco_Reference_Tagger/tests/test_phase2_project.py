@@ -157,3 +157,21 @@ def test_tags_on_corrected_frame_match_truth():
         assert len(errs) >= min(4, len(tt)) and max(errs) < 0.8, frame["label"]
         assert abs(lam / frame["label"] - 1) < 0.005, (frame["label"], lam)
         assert info["sign"] == -1.0
+
+
+def test_stale_corrected_frame_is_recomputed():
+    """Changing Stage-1 parameters after the corrected frame was made must not let
+    a later stage run on the stale frame (found in Phase 6: a lens left
+    uncorrected biased every expansion ratio by 1.8 %)."""
+    d0, truth = _dummy("optimistic", "opt_clean")
+    if d0 is None:
+        return
+    with tempfile.TemporaryDirectory() as d:
+        src = os.path.join(d0, truth["frames"][0]["files"][0] + ".ome.tif")
+        e = P.ImageEntry(path=_link(src, d), label=1.0)
+        e.ensure_loaded()
+        before = e.pipeline.corrected_image.copy()
+        e.pipeline.correction.k1 = truth["camera"]["lens_k1"]
+        assert not e.pipeline.corrected_is_current()
+        e.ensure_loaded()
+        assert e.pipeline.corrected_is_current() and not np.allclose(before, e.pipeline.corrected_image)

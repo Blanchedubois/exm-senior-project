@@ -93,11 +93,20 @@ class PipelineState:
     levels: LevelsParams = field(default_factory=LevelsParams)                # per-image
     meta: ImageMeta = field(default_factory=ImageMeta)                        # acquisition metadata
     corrected_image: Optional[np.ndarray] = None      # float32, after apply()+levels() -> feeds Stage 2
+    corrected_key: Optional[str] = None               # stage1_key() of the params that produced corrected_image
     # forward slots (unused in Stage 1, present so later stages don't reshape state):
     detection: object = None       # Stage 2: DetectResult (ArUco decode + dots + dashes)
     grid: object = None            # Stage 2: design-driven grid
     features: object = None        # Stage 3: FilterResult (kept dots/dashes)
     tagging: object = None         # Stage 4: TagResult (reference-warp tags)
+
+    def stage1_key(self) -> str:
+        """Fingerprint of the Stage-1 parameters (correction + levels)."""
+        import json
+        return json.dumps([self.correction.to_dict(), self.levels.to_dict()], sort_keys=True)
+
+    def corrected_is_current(self) -> bool:
+        return self.corrected_image is not None and self.corrected_key == self.stage1_key()
 
     def working_image(self) -> Optional[np.ndarray]:
         """Best available image: corrected if Stage 1 ran, else raw."""
