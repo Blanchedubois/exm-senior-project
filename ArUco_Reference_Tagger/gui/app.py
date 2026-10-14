@@ -1,0 +1,301 @@
+"""
+gui.app
+=======
+ArUco Reference Tagger window. Ported from Reference_Warp_Tagger/gui/app.py and
+grown one port phase at a time (docs/00_PORT_OVERVIEW.md):
+
+  Phase 2  project sidebar · tab 1 (Correct optics) · metadata dock · log dock ·
+           toolbar (Add images / Save + Open project / Save + Load session /
+           Copy to all)
+  later    Detect, Filter, Tag, Pair, Overlay, Field tabs and Export bundle
+
+One AppState, one active image at a time. Per-image Stage-1 params live in the
+`.rwsession.json` sidecar, per-image metadata in `.rwmeta.json`; both autosave on
+selection change and project save.
+"""
+from __future__ import annotations
+from PySide6 import QtWidgets, QtCore, QtGui   # import Qt before OpenCV (avoids plugin hijack)
+import os
+
+from rwtag import io
+from rwtag import project as PJ
+from .state import AppState
+from .canvas import ImageCanvas
+from .correct_panel import CorrectPanel
+from .project_panel import ProjectSidebar
+from .meta_panel import MetaPanel
+
+IMG_FILTER = "Images (*.tif *.tiff *.ome.tif *.png *.jpg);;All files (*)"
+IMG_EXTS = io.IMG_EXTS
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_DUMMY = os.path.normpath(os.path.join(_HERE, "..", "..", "ArUco_Tracker_V2", "dummy"))
+
+
+def _stage_page(canvas, panel):
+    """A stage tab: [ large canvas | scrollable control panel ]."""
+    scroll = QtWidgets.QScrollArea(); scroll.setWidgetResizable(True)
+    scroll.setWidget(panel)
+    scroll.setMinimumWidth(360); scroll.setMaximumWidth(480)
+    scroll.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+    split = QtWidgets.QSplitter()
+    split.addWidget(canvas); split.addWidget(scroll)
+    split.setStretchFactor(0, 1); split.setStretchFactor(1, 0)
+    split.setSizes([960, 380])
+    return split
+
+
+class MainWindow(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("ArUco Reference Tagger")
+        self.resize(1480, 900)
+        self._open_dir = _DUMMY if os.path.isdir(_DUMMY) else os.path.expanduser("~")
+
+        # log dock first: panels log during init
+        self.logbox = QtWidgets.QPlainTextEdit(readOnly=True, maximumBlockCount=1000)
+        dock = QtWidgets.QDockWidget("Log", self)
+        dock.setObjectName("log"); dock.setWidget(self.logbox)
+        self.addDockWidget(QtCore.Qt.BottomDockWidgetArea, dock)
+
+        tb = self.addToolBar("main"); tb.setObjectName("toolbar")
+        tb.addAction("Add images…", self.add_images)
+        tb.addAction("Save project", self.save_project)
+        tb.addAction("Open project…", self.open_project)
+        tb.addSeparator()
+        tb.addAction("Save session…", self.save_session)
+        tb.addAction("Load session…", self.load_session)
+        tb.addAction("Copy to all…", self.copy_to_all)
+
+        self.state = AppState()
+        self.project = PJ.Project()
+        self.current_entry = None
+
+        # tab 1 — Stage 1
+        self.canvas = ImageCanvas()
+        self.panel = CorrectPanel(self.state, self.canvas, self.log)
+        self.tabs = QtWidgets.QTabWidget()
+        self.tabs.addTab(_stage_page(self.canvas, self.panel), "1 · Correct optics")
+
+        # sidebar
+        self.sidebar = ProjectSidebar(self.project)
+        self.sidebar.setMinimumWidth(200); self.sidebar.setMaximumWidth(280)
+        self.sidebar.entrySelected.connect(self.select_entry)
+        self.sidebar.projectEdited.connect(self._on_project_edited)
+
+        # metadata dock (right)
+        self.meta = MetaPanel()
+        self.meta_dock = QtWidgets.QDockWidget("Metadata", self)
+        self.meta_dock.setObjectName("metadata"); self.meta_dock.setWidget(self.meta)
+        self.meta_dock.setMinimumWidth(330)
+        self.addDockWidget(QtCore.Qt.RightDockWidgetArea, self.meta_dock)
+        self.meta.metaEdited.connect(self._on_meta_edited)
+        self.meta.applyToAll.connect(self._apply_meta_to_all)
+
+        outer = QtWidgets.QSplitter()
+        outer.addWidget(self.sidebar); outer.addWidget(self.tabs)
+        outer.setStretchFactor(0, 0); outer.setStretchFactor(1, 1)
+        outer.setSizes([220, 1100])
+        self.setCentralWidget(outer)
+        self.resizeDocks([dock], [130], QtCore.Qt.Vertical)
+
+        self.readout = QtWidgets.QLabel("—")
+        self.statusBar().addPermanentWidget(self.readout)
+        self.canvas.cursorMoved.connect(self._on_cursor)
+        self.state.correctionChanged.connect(self.sidebar.refresh_status)
+
+        self._install_shortcuts()
+        self.log("Ready. Add images to build the project (expansion labels parse from '1.5X…' "
+                 "names; metadata auto-fills from the TIFF header where present).")
+
+    # ---------------------------------------------------------------- infra
+    def log(self, msg):
+        self.logbox.appendPlainText(str(msg))
+
+    def _install_shortcuts(self):
+        for key, fn in (("B", lambda: self.panel.chk_before.toggle()),
+                        ("G", lambda: self.panel.chk_grid.toggle()),
+                        ("R", self.panel._reset)):
+            sc = QtGui.QShortcut(QtGui.QKeySequence(key), self)
+            sc.activated.connect(fn)
+
+    def _on_cursor(self, x, y, val):
+        self.readout.setText("—" if val != val else f"(x={x:.0f}, y={y:.0f})  value={val:.0f}")
+
+    def _on_project_edited(self):
+        self.sidebar.refresh_status()
+        self.meta.refresh()
+
+    def _on_meta_edited(self, name):
+        if self.current_entry is not None and name == "expansion_expected" \
+                and self.current_entry.meta.expansion_expected:
+            self.current_entry.label = float(self.current_entry.meta.expansion_expected)
+            self.project.refresh_roles()
+            self.sidebar.refresh()
+        self.sidebar.refresh_status()
+        self.state.metaChanged.emit()
+
+    def _apply_meta_to_all(self):
+        if self.current_entry is None:
+            return
+        n = self.project.apply_meta_groups_to_all(self.current_entry)
+        self.sidebar.refresh_status()
+        self.log(f"metadata: optics + camera of {self.current_entry.name} copied to {n} other image(s)")
+
+    # ---------------------------------------------------------------- project
+    def add_images(self, *_):
+        paths, _ = QtWidgets.QFileDialog.getOpenFileNames(
+            self, "Add images to project", self._open_dir, IMG_FILTER)
+        self.add_paths(paths)
+
+    def add_paths(self, paths, ask_label=True):
+        """Add image files to the project (also the headless/test entry point)."""
+        added = None
+        for p in paths:
+            if any(os.path.abspath(p) == e.path for e in self.project.images):
+                continue
+            lab = io.parse_label(p)
+            if lab is None:
+                if not ask_label:
+                    lab = 1.0
+                else:
+                    lab, ok = QtWidgets.QInputDialog.getDouble(
+                        self, "Expected expansion", f"Expected × for {os.path.basename(p)}:",
+                        1.0, 0.1, 100.0, 2)
+                    if not ok:
+                        continue
+            added = self.project.add(p, lab)
+            self._open_dir = os.path.dirname(p)
+            n = len([s for s in added.meta.sources.values() if s == "header"])
+            self.log(f"added {added.name}: {lab:g}×, {n} metadata value(s) from the file header")
+        if added is None:
+            return None
+        if not self.project.folder:
+            self.project.folder = os.path.dirname(added.path)
+        self.sidebar.refresh()
+        self.log(f"project: {len(self.project.images)} image(s); initial = {self.project.initial().label:g}×")
+        if self.current_entry is None:
+            self.sidebar.select(self.project.initial())
+            if self.current_entry is None:                 # offscreen/no-signal fallback
+                self.select_entry(self.project.initial())
+            self.meta_dock.raise_()
+        return added
+
+    def _store_current(self):
+        prev = self.current_entry
+        if prev is not None and prev.pipeline.raw_image is not None:
+            self.panel.read_correction(); self.panel.read_levels()
+            prev.save_sidecar(self.panel.shared_flags())
+            prev.save_meta()
+
+    def select_entry(self, entry):
+        if entry is None or entry is self.current_entry:
+            return
+        prev = self.current_entry
+        self._store_current()
+        if prev is not None:
+            prev.unload_images()                           # bound memory
+        QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        try:
+            try:
+                entry.ensure_loaded()
+            except Exception as e:                         # pragma: no cover
+                QtWidgets.QApplication.restoreOverrideCursor()
+                QtWidgets.QMessageBox.critical(self, "Load failed", str(e)); return
+            self.current_entry = entry
+            self.state.activate(entry.pipeline)
+            self.panel.sync_from_state()
+            self.panel._on_image_loaded()
+            self.meta.set_entry(entry)
+        finally:
+            QtWidgets.QApplication.restoreOverrideCursor()
+        self.sidebar.refresh_status()
+        img = entry.pipeline.raw_image
+        self.log(f"selected {entry.name}  {img.shape[1]}x{img.shape[0]}  "
+                 f"[{img.min():.0f}, {img.max():.0f}]  ·  {entry.label:g}× {entry.role}")
+
+    def save_project(self, *_):
+        if not self.project.images:
+            self.log("Project is empty."); return None
+        self._store_current()
+        path = self.project.save()
+        self.log(f"project saved -> {path}")
+        return path
+
+    def open_project(self, *_):
+        path, _ = QtWidgets.QFileDialog.getOpenFileName(
+            self, "Open project", self._open_dir, "Project (*.rwproj.json);;All files (*)")
+        if path:
+            self.open_project_path(path)
+
+    def open_project_path(self, path):
+        self._store_current()
+        self.project = PJ.Project.load(path)
+        self.current_entry = None
+        self.sidebar.project = self.project
+        self.sidebar.refresh(keep_selection=False)
+        self._open_dir = self.project.folder
+        self.log(f"project opened: {os.path.basename(path)} · {len(self.project.images)} image(s)")
+        if self.project.images:
+            self.sidebar.select(self.project.initial())
+            if self.current_entry is None:
+                self.select_entry(self.project.initial())
+
+    # ---------------------------------------------------------------- sessions
+    def save_session(self, *_):
+        if self.state.pipeline.source_path is None:
+            self.log("Open an image first."); return
+        default = io.sidecar_path(self.state.pipeline.source_path)
+        path, _ = QtWidgets.QFileDialog.getSaveFileName(self, "Save session", default, "JSON (*.json)")
+        if not path:
+            return
+        io.save_session(path, self.state.pipeline.source_path,
+                        self.panel.read_correction(), self.panel.read_levels(), self.panel.shared_flags())
+        self.log(f"saved session -> {os.path.basename(path)}")
+
+    def load_session(self, *_):
+        path, _ = QtWidgets.QFileDialog.getOpenFileName(self, "Load session", self._open_dir,
+                                                        "JSON (*.json);;All files (*)")
+        if not path:
+            return
+        _src, corr, lv, flags = io.load_session(path)
+        for f in corr.__dataclass_fields__:
+            setattr(self.state.correction, f, getattr(corr, f))
+        for f in lv.__dataclass_fields__:
+            setattr(self.state.levels, f, getattr(lv, f))
+        self.panel.set_shared_flags(flags)
+        self.panel.sync_from_state()
+        if self.state.pipeline.raw_image is not None:
+            self.panel._recompute_full()
+        self.log(f"loaded session <- {os.path.basename(path)}")
+
+    def copy_to_all(self, *_):
+        """Write the current Stage-1 correction as the sidecar of every project image
+        (V1 wrote every image in the folder; the project is the better scope)."""
+        if self.current_entry is None:
+            self.log("Open an image first."); return
+        others = [e for e in self.project.images]
+        msg = (f"Write the current correction as the Stage-1 session of all {len(others)} "
+               "project image(s)?\n\nExisting sessions will be overwritten.")
+        if QtWidgets.QMessageBox.question(self, "Copy to all", msg) != QtWidgets.QMessageBox.Yes:
+            self.log("Copy to all: cancelled."); return
+        corr, lv, flags = self.panel.read_correction(), self.panel.read_levels(), self.panel.shared_flags()
+        for e in others:
+            io.save_session(io.sidecar_path(e.path), e.path, corr, lv, flags)
+            if e is not self.current_entry:
+                e.unload_images(); e._sidecar_loaded = False
+                for f in corr.__dataclass_fields__:
+                    setattr(e.pipeline.correction, f, getattr(corr, f))
+                for f in lv.__dataclass_fields__:
+                    setattr(e.pipeline.levels, f, getattr(lv, f))
+        self.log(f"copied the correction to {len(others)} project image(s)")
+
+
+def main():
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    w = MainWindow(); w.show()
+    sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    main()

@@ -5,6 +5,7 @@
  "camera": {
   "um_per_px": 0.51,
   "fov_px": 2676,
+  "lens": true,
   "lens_k1": -0.05,
   "lens_k2": -0.01,
   "vignette_strength": 0.55,
@@ -16,7 +17,8 @@
    "background": 14.0
   },
   "bit_depth_scale": 4,
-  "exposure_policy": "compensated"
+  "exposure_policy": "compensated",
+  "true_gain_e_per_adu": 0.23529411764705882
  },
  "warp": {
   "amp_um": 0.0,

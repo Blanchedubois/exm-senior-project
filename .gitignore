@@ -25,3 +25,7 @@ venv/
 ArUco_Tracker_V2/dummy/**/truth_*.csv
 ArUco_Tracker_V2/dummy/**/reference_tags.json
 ArUco_Tracker_V2/dummy/**/_cli/
+# sidecars and projects made while trying the app on the dummy frames
+ArUco_Tracker_V2/dummy/**/*.rwmeta.json
+ArUco_Tracker_V2/dummy/**/*.rwsession.json
+ArUco_Tracker_V2/dummy/**/*.rwproj.json

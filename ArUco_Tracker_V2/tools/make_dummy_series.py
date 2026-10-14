@@ -143,14 +143,14 @@ def ome_xml(shape, um_per_px, meta):
             f'<Instrument ID="Instrument:0"><Objective ID="Objective:0" NominalMagnification="{meta["magnification"]}" '
             f'LensNA="{meta["numerical_aperture"]}" Immersion="{meta["immersion"]}"/>'
             f'<Laser ID="LightSource:0" Wavelength="{meta["laser_wavelength_nm"]}" Power="{meta["laser_power_mw"]}"/>'
-            f'<Detector ID="Detector:0" Gain="{meta["gain_e_per_adu"]}"/></Instrument>'
+            f'<Detector ID="Detector:0" Gain="{meta["detector_gain_setting"]}"/></Instrument>'
             f'<Image ID="Image:0" Name="{meta["name"]}" AcquisitionDate="{meta["date"]}T{meta["time"]}">'
             '<ObjectiveSettings ID="Objective:0"/>'
             f'<Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint16" SizeX="{W}" SizeY="{H}" SizeC="1" SizeZ="1" SizeT="1" '
             f'PhysicalSizeX="{um_per_px}" PhysicalSizeXUnit="&#181;m" PhysicalSizeY="{um_per_px}" PhysicalSizeYUnit="&#181;m">'
             f'<Channel ID="Channel:0:0" SamplesPerPixel="1" ExcitationWavelength="{meta["laser_wavelength_nm"]}" '
-            f'EmissionWavelength="{meta["emission_nm"]}"><LightSourceSettings ID="LightSource:0"/>'
-            f'<DetectorSettings ID="Detector:0" Gain="{meta["gain_e_per_adu"]}"/></Channel><TiffData/>'
+            f'EmissionWavelength="{meta["emission_wavelength_nm"]}"><LightSourceSettings ID="LightSource:0"/>'
+            f'<DetectorSettings ID="Detector:0" Gain="{meta["detector_gain_setting"]}"/></Channel><TiffData/>'
             f'<Plane TheZ="0" TheT="0" TheC="0" ExposureTime="{meta["exposure_ms"]}" ExposureTimeUnit="ms"/>'
             '</Pixels></Image></OME>')
 
@@ -202,8 +202,8 @@ def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_pe
             name = f"{lam:g}X_{design}_s{seed}"
             when = t0 + dt.timedelta(minutes=10 * k + seed)
             meta = dict(name=name, magnification=20, numerical_aperture=0.75, immersion="Air",
-                        laser_wavelength_nm=488, laser_power_mw=10.0, emission_nm=520,
-                        exposure_ms=round(exp_ms, 1), gain_e_per_adu=2.0,
+                        laser_wavelength_nm=488, laser_power_mw=10.0, emission_wavelength_nm=520,
+                        exposure_ms=round(exp_ms, 1), detector_gain_setting=2.0,
                         date=when.strftime("%Y-%m-%d"), time=when.strftime("%H:%M:%S"),
                         um_per_px=um_per_px)
             tifffile.imwrite(os.path.join(out, name + ".ome.tif"), img16,
@@ -227,7 +227,10 @@ def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_pe
     truth = dict(design=design, design_folder=DESIGN_FOLDERS[design], run=run,
                  camera=dict(um_per_px=um_per_px, fov_px=sim.fov_px, lens=bool(lens), lens_k1=sim.lens_k1, lens_k2=sim.lens_k2,
                              vignette_strength=sim.vignette_strength, vignette_power=sim.vignette_power,
-                             psf_fwhm_um=psf, noise=nz, bit_depth_scale=4, exposure_policy=exposure),
+                             psf_fwhm_um=psf, noise=nz, bit_depth_scale=4, exposure_policy=exposure,
+                             # electrons per 16-bit ADU: full_well e- span 255 8-bit counts, x4 to 16 bit.
+                             # NOT written to the header (cameras rarely record it); Phase 5 calibrates against it.
+                             true_gain_e_per_adu=nz["full_well"] / 255.0 / 4.0),
                  warp=dict(amp_um=float(warp_amp), n_lobes=sim.n_warp_lobes, sigma_um=sim.warp_sigma_um,
                            seed=sim.warp_seed, lobes=[[c.tolist(), a.tolist()] for c, a in lobes]),
                  design_summary=dict(tag_um=cfg.tag_um, box_pitch_um=cfg.box_pitch, origin_um=cfg.origin,

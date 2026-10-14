@@ -17,7 +17,8 @@
    "background": 14.0
   },
   "bit_depth_scale": 4,
-  "exposure_policy": "compensated"
+  "exposure_policy": "compensated",
+  "true_gain_e_per_adu": 0.23529411764705882
  },
  "warp": {
   "amp_um": 2.0,

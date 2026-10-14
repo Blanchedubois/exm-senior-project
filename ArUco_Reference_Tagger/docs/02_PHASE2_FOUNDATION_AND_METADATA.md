@@ -119,3 +119,52 @@ Every export row carries the image's metadata record (Phase 7 joins on image nam
 `gain_e_per_adu` field is what makes the Phase-5 photon-count error absolute rather than
 relative. `inverse_geometric` is what makes the `features_raw.csv` table possible without a
 second detection pass.
+
+## 8. As built (2026-10-14)
+
+**Files.** Ported unchanged or nearly so: `rwtag/types.py` (+ `meta` slot), `rwtag/correct.py`
+(+ point geometry), `gui/{state,canvas,widgets,correct_panel,project_panel}.py`, both launchers
+(own venv folder `HydrogelMarkerGUI/aruco_reference_tagger`). New: `rwtag/meta.py`,
+`rwtag/project.py` (rewritten from V1 without `glyph_manual` and `run_stages`), `rwtag/io.py`
+(sessions + OME reader added to the Phase-1 loader), `gui/meta_panel.py`, `gui/app.py`
+(rewritten, tab 1 only), `run.py`. Tests: `test_phase2_correct.py` (the 8 V1 cases verbatim + 4),
+`test_phase2_io_meta.py` (the 5 V1 cases + 6), `test_phase2_project.py` (2 V1 cases + 4),
+`test_phase2_gui.py` (offscreen). 42 tests pass with Phase 1's.
+
+**Point geometry.** `forward_geometric` (raw → corr), `inverse_geometric` (corr → raw), their
+Jacobians, and `propagate_cov`. The inverse solves the lens polynomial by Newton, so the round
+trip is exact to about 10⁻¹² px rather than the 10⁻³ planned. One addition the tests forced:
+points beyond the lens model's monotonic range map to **NaN** (`lens_range`). With strong barrel
+distortion the corners of the corrected frame have no raw source at all — the image correction
+fills them by clamping — so no position there is real. A spot moved by `correct.apply` lands
+within 0.15 px of where `forward_geometric` predicts.
+
+**The dummy camera and Stage 1 use the same lens model.** Truth raw positions pushed through
+`forward_geometric` with the dummy's own k1, k2 land within 0.05 px of the truth's undistorted
+positions. Decoding tags on the Stage-1 corrected frame (lens + vignette + a 10° deskew) puts
+every tag within 0.5 px of its predicted position and recovers **λ to 0.03 % at every expansion
+from 1 to 6×**, against Phase 1's 1.8–5.7 % lens bias on raw frames.
+
+**Metadata.** `ImageMeta` holds 43 fields in 8 groups (the §2.1 list plus `cells_present` /
+`cells_description`, `camera_model`, `emission_wavelength_nm`, `detector_gain_setting`,
+`file_creator`). Every value records its source: header, filename, user or pipeline. A user
+edit is never overwritten by re-reading the header. One deliberate split: the OME `Gain`
+attribute is the camera's gain *setting*, not electrons per ADU, so it fills
+`detector_gain_setting`; `gain_e_per_adu` (needed by the error model) is only ever entered by
+hand or calibrated. The dummy generator now records the true value
+(`truth.json → camera.true_gain_e_per_adu`, 0.235 e⁻/ADU) for the Phase-5 tests without writing
+it into the header.
+
+On the real V1 frames the OME header holds only the pixel size (0.51 µm/px) and the writer
+(Bio-Formats), so on real data the form will mostly be filled by hand, once, then copied with
+"Apply optics & camera to all".
+
+**Metadata storage.** `<image>.rwmeta.json` beside each TIFF, and embedded in
+`project.rwproj.json` (version 2). On load the sidecar wins (most recently edited), else the
+embedded copy, else a fresh auto-fill.
+
+**GUI.** Tab 1 is the V1 Stage-1 editor unchanged. The metadata dock (right) is generated from
+`meta.FIELDS`; each row shows a source badge; "Cells present" enables "Which cells"; derived rows
+are read-only; a banner warns while the camera gain is unset. "Copy to all" now writes the
+Stage-1 session to every **project** image rather than every image in the folder. The sidebar's
+"Run stages 2–4" buttons are disabled until Phase 4.
