@@ -1,0 +1,16 @@
+{
+ "1X_spectrum_s0": {
+  "name": "1X_spectrum_s0",
+  "magnification": 20,
+  "numerical_aperture": 0.75,
+  "immersion": "Air",
+  "laser_wavelength_nm": 488,
+  "laser_power_mw": 10.0,
+  "emission_wavelength_nm": 520,
+  "exposure_ms": 200.0,
+  "detector_gain_setting": 2.0,
+  "date": "2026-10-13",
+  "time": "10:00:00",
+  "um_per_px": 0.51
+ }
+}

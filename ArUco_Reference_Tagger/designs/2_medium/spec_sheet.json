@@ -1,0 +1,595 @@
+{
+ "name": "medium",
+ "revision": "spacing-workshop S2",
+ "units": "um",
+ "generator": "tools/aruco_grid.py + tools/spec_sheet.py",
+ "frame": {
+  "origin": "bottom-left corner of the print",
+  "x": "right",
+  "y": "UP",
+  "design_to_image": "reflection (det = -1)"
+ },
+ "envelope": {
+  "x": 750.0,
+  "y": 750.0,
+  "z": 2.0
+ },
+ "grid": {
+  "boxes": [
+   5,
+   5
+  ],
+  "nodes": [
+   6,
+   6
+  ],
+  "node_origin": 11.5,
+  "node_pitch": 145.4,
+  "box_numbering": "N = col*5 + row + 1, column-major; col and row count from the bottom-left box"
+ },
+ "tags": {
+  "dictionary": "DICT_4X4_50",
+  "modules": 6,
+  "size": 23.0,
+  "module": 3.8333333333333335,
+  "count": 36,
+  "rigid": true,
+  "rounding": {
+   "neck_width": 0.2,
+   "neck_length_modules": 0.72,
+   "fillet_radius": 0.3
+  },
+  "tag_format": "aruco|N{i}_{j}|{id}",
+  "ids": [
+   {
+    "node": [
+     0,
+     0
+    ],
+    "id": 3,
+    "x": 11.5,
+    "y": 11.5
+   },
+   {
+    "node": [
+     0,
+     1
+    ],
+    "id": 23,
+    "x": 11.5,
+    "y": 156.9
+   },
+   {
+    "node": [
+     0,
+     2
+    ],
+    "id": 42,
+    "x": 11.5,
+    "y": 302.3
+   },
+   {
+    "node": [
+     0,
+     3
+    ],
+    "id": 5,
+    "x": 11.5,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     0,
+     4
+    ],
+    "id": 24,
+    "x": 11.5,
+    "y": 593.1
+   },
+   {
+    "node": [
+     0,
+     5
+    ],
+    "id": 36,
+    "x": 11.5,
+    "y": 738.5
+   },
+   {
+    "node": [
+     1,
+     0
+    ],
+    "id": 10,
+    "x": 156.9,
+    "y": 11.5
+   },
+   {
+    "node": [
+     1,
+     1
+    ],
+    "id": 25,
+    "x": 156.9,
+    "y": 156.9
+   },
+   {
+    "node": [
+     1,
+     2
+    ],
+    "id": 43,
+    "x": 156.9,
+    "y": 302.3
+   },
+   {
+    "node": [
+     1,
+     3
+    ],
+    "id": 6,
+    "x": 156.9,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     1,
+     4
+    ],
+    "id": 29,
+    "x": 156.9,
+    "y": 593.1
+   },
+   {
+    "node": [
+     1,
+     5
+    ],
+    "id": 38,
+    "x": 156.9,
+    "y": 738.5
+   },
+   {
+    "node": [
+     2,
+     0
+    ],
+    "id": 13,
+    "x": 302.3,
+    "y": 11.5
+   },
+   {
+    "node": [
+     2,
+     1
+    ],
+    "id": 30,
+    "x": 302.3,
+    "y": 156.9
+   },
+   {
+    "node": [
+     2,
+     2
+    ],
+    "id": 48,
+    "x": 302.3,
+    "y": 302.3
+   },
+   {
+    "node": [
+     2,
+     3
+    ],
+    "id": 7,
+    "x": 302.3,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     2,
+     4
+    ],
+    "id": 32,
+    "x": 302.3,
+    "y": 593.1
+   },
+   {
+    "node": [
+     2,
+     5
+    ],
+    "id": 44,
+    "x": 302.3,
+    "y": 738.5
+   },
+   {
+    "node": [
+     3,
+     0
+    ],
+    "id": 17,
+    "x": 447.70000000000005,
+    "y": 11.5
+   },
+   {
+    "node": [
+     3,
+     1
+    ],
+    "id": 37,
+    "x": 447.70000000000005,
+    "y": 156.9
+   },
+   {
+    "node": [
+     3,
+     2
+    ],
+    "id": 49,
+    "x": 447.70000000000005,
+    "y": 302.3
+   },
+   {
+    "node": [
+     3,
+     3
+    ],
+    "id": 15,
+    "x": 447.70000000000005,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     3,
+     4
+    ],
+    "id": 33,
+    "x": 447.70000000000005,
+    "y": 593.1
+   },
+   {
+    "node": [
+     3,
+     5
+    ],
+    "id": 45,
+    "x": 447.70000000000005,
+    "y": 738.5
+   },
+   {
+    "node": [
+     4,
+     0
+    ],
+    "id": 21,
+    "x": 593.1,
+    "y": 11.5
+   },
+   {
+    "node": [
+     4,
+     1
+    ],
+    "id": 40,
+    "x": 593.1,
+    "y": 156.9
+   },
+   {
+    "node": [
+     4,
+     2
+    ],
+    "id": 1,
+    "x": 593.1,
+    "y": 302.3
+   },
+   {
+    "node": [
+     4,
+     3
+    ],
+    "id": 16,
+    "x": 593.1,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     4,
+     4
+    ],
+    "id": 34,
+    "x": 593.1,
+    "y": 593.1
+   },
+   {
+    "node": [
+     4,
+     5
+    ],
+    "id": 2,
+    "x": 593.1,
+    "y": 738.5
+   },
+   {
+    "node": [
+     5,
+     0
+    ],
+    "id": 22,
+    "x": 738.5,
+    "y": 11.5
+   },
+   {
+    "node": [
+     5,
+     1
+    ],
+    "id": 41,
+    "x": 738.5,
+    "y": 156.9
+   },
+   {
+    "node": [
+     5,
+     2
+    ],
+    "id": 4,
+    "x": 738.5,
+    "y": 302.3
+   },
+   {
+    "node": [
+     5,
+     3
+    ],
+    "id": 20,
+    "x": 738.5,
+    "y": 447.70000000000005
+   },
+   {
+    "node": [
+     5,
+     4
+    ],
+    "id": 35,
+    "x": 738.5,
+    "y": 593.1
+   },
+   {
+    "node": [
+     5,
+     5
+    ],
+    "id": 11,
+    "x": 738.5,
+    "y": 738.5
+   }
+  ]
+ },
+ "dashes": {
+  "length": 8.125,
+  "width": 2.125,
+  "per_box_edge": 10,
+  "count": 480,
+  "on": "grid lines x = node_origin + i*node_pitch and y = node_origin + j*node_pitch",
+  "tag_format": "dash|H{j}|{m} (horizontal line j) / dash|V{i}|{m} (vertical line i)"
+ },
+ "optics_assumed": {
+  "um_per_px": 0.51,
+  "psf_fwhm_design": 2.6906276295348497,
+  "psf_fwhm_max_measured": 3.1,
+  "separation_rule": 1.75
+ },
+ "scaling_with_expansion": {
+  "dot_pitch_px": "x lambda",
+  "node_pitch_px": "x lambda",
+  "dot_fwhm_px": "constant (rigid islands)",
+  "tag_side_px": "constant (rigid islands)",
+  "signal": "x lambda^-1.84 -> exposure must rise as lambda^2"
+ },
+ "detector_settings": {
+  "class": "rwtag.aruco.ArucoParams",
+  "clahe": false,
+  "error_correction_rate": 1.0,
+  "dot_area_px2": [
+   12,
+   220
+  ],
+  "noise_k": 5.0,
+  "refine": "gauss",
+  "edge_band_um": "abs(k1) * FOV_um / 2 * 1.4",
+  "match_gate_pitch_fraction": 0.45,
+  "tophat_px": 15
+ },
+ "registration": {
+  "handedness_expected": -1
+ },
+ "files": {
+  "stl": "medium.stl",
+  "stl_merged": "medium_merged.stl",
+  "features": "features.csv",
+  "tag_map": "reference_tags.json",
+  "ids": "ids.json",
+  "gate": "verify.json",
+  "render": "render.png",
+  "recognition": "recognition.png",
+  "printability": "printability.json",
+  "test_box": "test_box.stl",
+  "test_box_merged": "test_box_merged.stl",
+  "design_spec": "DESIGN_SPEC.md"
+ },
+ "gate": {
+  "passed": true,
+  "checked": "2026-09-29",
+  "record": "verify.json"
+ },
+ "_notes": {
+  "frame": "Design frame: origin at the bottom-left corner of the print, x right, y UP. Images are y-DOWN, so design -> image is a REFLECTION: any fit between the two must allow det = -1 (or flip y first) and should assert the sign it finds.",
+  "polarity": "Printed material = the tag's BLACK modules. In fluorescence the print is BRIGHT on dark, so invert the image before cv2.aruco. No CLAHE.",
+  "corner_order": "cv2.aruco corner order TL,TR,BR,BL corresponds to design (x-s,y+s),(x+s,y+s),(x+s,y-s),(x-s,y-s) with s = tag size / 2.",
+  "rigid": "Every printed feature is a rigid island: it keeps its PRINTED size at every expansion; only the spacing between features grows.",
+  "registration": "Affine through decoded tag CENTRES (>= 3 tags), similarity (2 tags), or one tag's corners for rotation + dot-lattice pitch for scale (1 tag). Never fit across tags through their corners: they do not follow the expansion.",
+  "exposure": "Signal falls as lambda^-1.84: exposure must rise as lambda^2 (never below the reference exposure).",
+  "px": "Every *_px value assumes optics_assumed.um_per_px and no expansion unless stated."
+ },
+ "recognition_measured": {
+  "source": "tools/s3_recognition.py (synthetic frames, production pipeline, 2 seeds, lambda 1-6)",
+  "psf_max_measured": 3.1,
+  "psf_max_marginal": 3.4,
+  "psf_max_predicted": 2.6906276295348497,
+  "tag_psf_limit_measured": 3.4,
+  "criterion": "every frame registers, worst-frame dots recognised >= 90%, tags correct >= 99%",
+  "by_psf": [
+   {
+    "psf": 1.5,
+    "verdict": "PASS",
+    "recognised_worst": 0.9559471365638766,
+    "recognised_mean": 0.9763592540228193,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 1.7,
+    "verdict": "PASS",
+    "recognised_worst": 0.9559471365638766,
+    "recognised_mean": 0.9762928461687167,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 1.9,
+    "verdict": "PASS",
+    "recognised_worst": 0.9559471365638766,
+    "recognised_mean": 0.976007845006122,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 2.1,
+    "verdict": "PASS",
+    "recognised_worst": 0.9559471365638766,
+    "recognised_mean": 0.9758620168024331,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 2.3,
+    "verdict": "PASS",
+    "recognised_worst": 0.9550660792951542,
+    "recognised_mean": 0.9755997062690053,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 2.5,
+    "verdict": "PASS",
+    "recognised_worst": 0.9546255506607929,
+    "recognised_mean": 0.9748266453955207,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 2.7,
+    "verdict": "PASS",
+    "recognised_worst": 0.9533039647577093,
+    "recognised_mean": 0.9741718320024596,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 2.9,
+    "verdict": "PASS",
+    "recognised_worst": 0.9511013215859031,
+    "recognised_mean": 0.9715508075702086,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 3.1,
+    "verdict": "PASS",
+    "recognised_worst": 0.9497354497354498,
+    "recognised_mean": 0.9647586371444502,
+    "tag_decode_mean": 0.9907407407407408,
+    "tags_min": 4
+   },
+   {
+    "psf": 3.4,
+    "verdict": "MARGINAL",
+    "recognised_worst": 0.8067521367521368,
+    "recognised_mean": 0.9227175854302071,
+    "tag_decode_mean": 0.9884259259259259,
+    "tags_min": 4
+   },
+   {
+    "psf": 3.7,
+    "verdict": "FAIL",
+    "recognised_worst": 0.2723931623931624,
+    "recognised_mean": 0.7740104091427087,
+    "tag_decode_mean": 0.9033564814814815,
+    "tags_min": 3
+   },
+   {
+    "psf": 4.0,
+    "verdict": "FAIL",
+    "recognised_worst": 0.011282051282051283,
+    "recognised_mean": 0.5760759942218926,
+    "tag_decode_mean": 0.8304398148148149,
+    "tags_min": 3
+   }
+  ]
+ },
+ "dots": {
+  "shape": "square",
+  "side": 2.125,
+  "height": 2.0,
+  "pitch": 6.0,
+  "pitch_nominal": 6.0,
+  "gap": 3.875,
+  "lattice": "square, axis-aligned, centred in each box",
+  "per_box_row": 24,
+  "phase_in_box": 3.700000000000003,
+  "clearance_from_tag": 3.875,
+  "clearance_from_dash": 3.875,
+  "count": 11700,
+  "per_box": {
+   "1": 468,
+   "2": 468,
+   "3": 468,
+   "4": 468,
+   "5": 468,
+   "6": 468,
+   "7": 468,
+   "8": 468,
+   "9": 468,
+   "10": 468,
+   "11": 468,
+   "12": 468,
+   "13": 468,
+   "14": 468,
+   "15": 468,
+   "16": 468,
+   "17": 468,
+   "18": 468,
+   "19": 468,
+   "20": 468,
+   "21": 468,
+   "22": 468,
+   "23": 468,
+   "24": 468,
+   "25": 468
+  },
+  "psf_fwhm_max_predicted": 2.6906276295348497,
+  "tag_format": "dot|B{N}|{di}_{dj}  (di, dj = lattice index inside box N)"
+ },
+ "expected_in_image": {
+  "at_expansion_1": {
+   "dot_pitch_px": 11.76470588235294,
+   "dot_fwhm_px": 6.722689075630251,
+   "dot_side_px": 4.166666666666667,
+   "tag_side_px": 45.09803921568627,
+   "tag_module_px": 7.516339869281046,
+   "node_pitch_px": 285.0980392156863
+  }
+ }
+}

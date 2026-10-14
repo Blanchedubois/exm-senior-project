@@ -358,3 +358,17 @@ def inverse_jacobian(points_corr, p: CorrectionParams, shape):
 def propagate_cov(cov, J):
     """Transform (N,2,2) covariances by (N,2,2) Jacobians: J C J^T."""
     return np.einsum("nij,njk,nlk->nil", J, np.asarray(cov, float), J)
+
+
+def raw_source_valid(points_corr, p: CorrectionParams, shape, margin_px=0.0):
+    """True where a corrected-frame point has a real raw-frame source: its raw
+    position exists (inside the lens model's range) and lies at least
+    `margin_px` inside the raw frame. Points failing this sit in the band the
+    correction fills by clamping -- smeared, not data. This is the exact form of
+    the V2 workshop's 'un-distortion edge band'."""
+    h, w = shape[:2]
+    q = inverse_geometric(points_corr, p, shape)
+    ok = np.isfinite(q).all(1)
+    m = float(margin_px)
+    ok[ok] = ((q[ok, 0] >= m) & (q[ok, 0] <= w - 1 - m) & (q[ok, 1] >= m) & (q[ok, 1] <= h - 1 - m))
+    return ok

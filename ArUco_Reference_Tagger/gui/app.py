@@ -7,7 +7,9 @@ grown one port phase at a time (docs/00_PORT_OVERVIEW.md):
   Phase 2  project sidebar · tab 1 (Correct optics) · metadata dock · log dock ·
            toolbar (Add images / Save + Open project / Save + Load session /
            Copy to all)
-  later    Detect, Filter, Tag, Pair, Overlay, Field tabs and Export bundle
+  Phase 3  tab 2 (Detect): ArUco decode, design-driven per-box dots, raw pass;
+           auto-deskew from the tags; derived metadata
+  later    Filter, Tag, Pair, Overlay, Field tabs and Export bundle
 
 One AppState, one active image at a time. Per-image Stage-1 params live in the
 `.rwsession.json` sidecar, per-image metadata in `.rwmeta.json`; both autosave on
@@ -24,6 +26,7 @@ from .canvas import ImageCanvas
 from .correct_panel import CorrectPanel
 from .project_panel import ProjectSidebar
 from .meta_panel import MetaPanel
+from .detect_panel import DetectPanel
 
 IMG_FILTER = "Images (*.tif *.tiff *.ome.tif *.png *.jpg);;All files (*)"
 IMG_EXTS = io.IMG_EXTS
@@ -73,8 +76,16 @@ class MainWindow(QtWidgets.QMainWindow):
         # tab 1 — Stage 1
         self.canvas = ImageCanvas()
         self.panel = CorrectPanel(self.state, self.canvas, self.log)
+        # tab 2 — Stage 2 (own canvas so overlays do not bleed into the editor)
+        self.canvas2 = ImageCanvas()
+        self.detect = DetectPanel(self.state, self.canvas2, self.log, lambda: self.project,
+                                  lambda: self.current_entry)
+        self.detect.deskewApplied.connect(self._on_deskew)
         self.tabs = QtWidgets.QTabWidget()
         self.tabs.addTab(_stage_page(self.canvas, self.panel), "1 · Correct optics")
+        self.tabs.addTab(_stage_page(self.canvas2, self.detect), "2 · Detect")
+        self.tabs.currentChanged.connect(self._on_tab)
+        self.panel.b_deskew.clicked.connect(self.detect.run_deskew)
 
         # sidebar
         self.sidebar = ProjectSidebar(self.project)
@@ -100,8 +111,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.readout = QtWidgets.QLabel("—")
         self.statusBar().addPermanentWidget(self.readout)
-        self.canvas.cursorMoved.connect(self._on_cursor)
+        for c in (self.canvas, self.canvas2):
+            c.cursorMoved.connect(self._on_cursor)
         self.state.correctionChanged.connect(self.sidebar.refresh_status)
+        self.state.detectionChanged.connect(self._on_detection)
+        self.state.metaChanged.connect(self.meta.refresh)
 
         self._install_shortcuts()
         self.log("Ready. Add images to build the project (expansion labels parse from '1.5X…' "
@@ -120,6 +134,27 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def _on_cursor(self, x, y, val):
         self.readout.setText("—" if val != val else f"(x={x:.0f}, y={y:.0f})  value={val:.0f}")
+
+    def _on_tab(self, idx):
+        if idx == 1:
+            self.detect.refresh_base_image()
+
+    def _on_detection(self):
+        det = self.state.pipeline.detection
+        ok = det is not None and det.model is not None and det.model.get("registered", False)
+        self.panel.b_deskew.setEnabled(bool(ok))
+        self.sidebar.refresh_status()
+        self.meta.refresh()
+
+    def _on_deskew(self, deg):
+        """Stage 2's auto-deskew wrote a rotation: sync the Stage-1 slider and
+        re-render synchronously so the corrected frame is fresh before re-detect."""
+        self.panel.s_rot.set_value(deg)
+        self.panel.read_correction()
+        self.panel._recompute_full()
+        if self.current_entry is not None:
+            self.current_entry.save_sidecar(self.panel.shared_flags())
+        self.log(f"Stage 1 rotation set to {deg:+.2f}° from the ArUco tags.")
 
     def _on_project_edited(self):
         self.sidebar.refresh_status()
@@ -171,6 +206,8 @@ class MainWindow(QtWidgets.QMainWindow):
             return None
         if not self.project.folder:
             self.project.folder = os.path.dirname(added.path)
+        if not self.project.design_folder and self.detect.design is not None:
+            self.project.design_folder = self.detect.design.folder
         self.sidebar.refresh()
         self.log(f"project: {len(self.project.images)} image(s); initial = {self.project.initial().label:g}×")
         if self.current_entry is None:
@@ -206,6 +243,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.panel.sync_from_state()
             self.panel._on_image_loaded()
             self.meta.set_entry(entry)
+            self.detect.load_from_state()
+            self._on_detection()
+            self._on_tab(self.tabs.currentIndex())
         finally:
             QtWidgets.QApplication.restoreOverrideCursor()
         self.sidebar.refresh_status()
@@ -233,6 +273,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.current_entry = None
         self.sidebar.project = self.project
         self.sidebar.refresh(keep_selection=False)
+        if self.project.design_folder and os.path.exists(self.project.design_folder):
+            self.detect.set_design_folder(self.project.design_folder)
         self._open_dir = self.project.folder
         self.log(f"project opened: {os.path.basename(path)} · {len(self.project.images)} image(s)")
         if self.project.images:

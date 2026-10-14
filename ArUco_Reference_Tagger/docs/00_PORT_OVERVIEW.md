@@ -153,9 +153,9 @@ Resolved 2026-10-13 with the user:
 
 Still assumed:
 
-7. **Rotation convention.** Assumed: a tag's rotation is the angle of its design +x axis in
-   the image, degrees, counter-clockwise positive in the y-down image frame, reported both per
-   tag and as the frame's median. Handedness is reported separately as ±1.
+7. **Rotation convention (settled in Phase 3).** Rotations are degrees, counter-clockwise on
+   screen positive, the same sign as the Stage-1 rotation slider; per tag and as the frame
+   median. Handedness is reported separately as ±1 (−1 expected for the y-up design).
 
 ## 8. Verification standard for every phase
 

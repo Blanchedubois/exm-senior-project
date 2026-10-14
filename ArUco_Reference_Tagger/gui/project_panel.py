@@ -49,7 +49,7 @@ class ProjectSidebar(QtWidgets.QWidget):
         for b in (self.b_run, self.b_run_all):                # the ArUco runner lands in port Phase 4
             b.setEnabled(False)
             b.setToolTip("Batch processing arrives with the Filter and Tag stages (port Phase 4).")
-        self.hint = QtWidgets.QLabel("● = initial · ✓✓✓✓ = stages 1–4 done")
+        self.hint = QtWidgets.QLabel("● = initial · ✓✓✓✓ = corrected · detected · filtered · tagged")
         self.hint.setStyleSheet("color:#999;"); self.hint.setWordWrap(True)
         lay.addWidget(self.hint)
 

@@ -23,15 +23,44 @@ class ArucoParams:
     um_per_px: float = 0.510
     psf_fwhm_um: float = 2.5          # the microscope's PSF; sizes the dot top-hat (Phase 3)
     error_correction_rate: float = 1.0
-    edge_band_um: float = 48.0        # un-distortion band at the frame edge (R16: |k1|·FOV/2·1.4)
+    edge_band_um: float = 0.0         # extra fixed band at the frame edge; Stage 2 tests the exact
+                                      # raw source instead (correct.raw_source_valid). find_aruco.py
+                                      # on raw frames uses 48 (R16: |k1|·FOV/2·1.4)
     corner_refine: str = "contour"   # "contour" (best on the dummy frames) | "subpix" | "apriltag" | "none"
     corner_win_px: int = 0            # subpix only; 0 -> derived from the module size
     cell_px: int = 12                 # warped-patch resolution per module for the bit read
     invert: bool = True               # bright-on-dark fluorescence -> invert for ArUco
     detector_params: dict = field(default_factory=dict)   # extra cv2 DetectorParameters
+    # ---- dots and dashes (port Phase 3) ----
+    tophat: int = 0                   # 0 -> derived per dot size: >= 2 x imaged FWHM, odd, >= 11
+    noise_k: float = 5.0              # threshold floor: median + k * robust sigma (0 -> plain Otsu)
+    refine: str = "gauss"             # "gauss" (Gaussian-mask centroid) | "fit" (LSQ) | "none"
+    refine_iters: int = 4
+    mask_tags: bool = True            # drop dot detections inside decoded tags (module blobs)
+    dash_min_aspect: float = 2.0
+    raw_pass: bool = True             # also detect on the raw frame (independent raw positions)
+    edge_margin_fwhm: float = 1.0     # a dot is "edge" if its raw source lies within this many FWHM of the raw border
 
     def imaged_fwhm_px(self, dot_side_um):
         return math.hypot(dot_side_um, self.psf_fwhm_um) / self.um_per_px
+
+    def tophat_px(self, dot_side_um):
+        if self.tophat:
+            return int(self.tophat) | 1
+        return max(11, int(math.ceil(2.0 * self.imaged_fwhm_px(dot_side_um))) | 1)
+
+    def dot_area_px(self, dot_side_um):
+        """Accepted blob area band for a dot of this printed size (px^2): from a
+        third of the printed footprint to four times the larger of footprint and
+        imaged spot (blobs grow with blur; tags and dashes are rejected by the
+        roundness gates and the tag mask)."""
+        side = dot_side_um / self.um_per_px
+        big = max(side, self.imaged_fwhm_px(dot_side_um))
+        return (max(6.0, 0.33 * side * side), 4.0 * big * big)
+
+    def to_dict(self):
+        from dataclasses import asdict
+        return asdict(self)
 
     @property
     def edge_band_px(self):
@@ -43,7 +72,9 @@ class TagObservation:
     aruco_id: int
     centre_px: np.ndarray            # (2,)
     corners_px: np.ndarray           # (4,2) TL, TR, BR, BL (canonical order)
-    rot_deg: float                   # tag rotation from all four edges: atan2(dy, dx) of the TL->TR direction, image px, degrees
+    rot_deg: float                   # tag rotation, degrees, COUNTER-CLOCKWISE ON SCREEN positive
+                                     # (= -atan2(dy, dx) of the TL->TR edge in y-down px; same sign as the
+                                     # Stage-1 rotation slider / cv2.getRotationMatrix2D), from all four edges
     corner_sign: float               # sign of cross(TR-TL, BL-TL) in the image frame (+1 normally)
     side_px: float                   # mean edge length (rigid tag -> print scale)
     n_bits_corrected: int = 0        # Hamming distance read bits -> matched id
@@ -147,11 +178,12 @@ def _confidence(dic, bits, aruco_id):
 
 
 def _rotation_deg(c):
-    """Rotation of a (near-)square from all four edges: each edge direction is
-    turned back to the TL->TR orientation and the four are averaged."""
+    """Rotation of a (near-)square from all four edges, counter-clockwise on screen
+    positive: each edge direction is turned back to the TL->TR orientation, the
+    four are averaged, and the y-down pixel angle is negated."""
     e = [c[1] - c[0], c[2] - c[1], c[3] - c[2], c[0] - c[3]]
     ang = [np.arctan2(v[1], v[0]) - k * np.pi / 2 for k, v in enumerate(e)]
-    return float(np.degrees(np.arctan2(np.mean(np.sin(ang)), np.mean(np.cos(ang)))))
+    return -float(np.degrees(np.arctan2(np.mean(np.sin(ang)), np.mean(np.cos(ang)))))
 
 
 # ------------------------------------------------------------------ decode

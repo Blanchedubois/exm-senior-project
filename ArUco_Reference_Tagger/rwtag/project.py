@@ -23,6 +23,26 @@ from . import io, correct as C, meta as M
 from .types import PipelineState
 
 PROJECT_VERSION = 2
+
+
+def run_detect(entry, design, params=None):
+    """Stage 2 for one image, headless: Stage-1 corrected frame + raw frame ->
+    DetectResult stored on the entry; derived expansion / rotation / handedness
+    written into its metadata. Returns the DetectResult."""
+    from .aruco import detect as AD
+    from . import designs as DS
+    entry.ensure_loaded()
+    p = AD.params_for_meta(entry.meta, params)
+    pl = entry.pipeline
+    det = AD.detect(pl.corrected_image, design, p, raw_img=pl.raw_image, correction=pl.correction)
+    pl.detection = det
+    pl.features = None
+    pl.tagging = None
+    AD.apply_to_meta(det, entry.meta)
+    if design.folder:
+        entry.meta.apply_auto({"print_design": DS.meta_name(design.folder)}, "pipeline")
+    entry.save_meta()
+    return det
 PROJECT_NAME = "project.rwproj.json"
 
 

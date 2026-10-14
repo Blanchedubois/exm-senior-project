@@ -46,7 +46,7 @@ FIELDS = [
 
     ("Derived (pipeline)", "expansion_derived", "float", "Derived expansion", "×", True, None),
     ("Derived (pipeline)", "expansion_derived_sigma", "float", "± sigma", "×", True, None),
-    ("Derived (pipeline)", "rotation_derived_deg", "float", "Derived rotation", "deg", True, None),
+    ("Derived (pipeline)", "rotation_derived_deg", "float", "Derived rotation (ccw)", "deg", True, None),
     ("Derived (pipeline)", "handedness", "float", "Handedness", "", True, None),
 
     ("Optics", "objective_name", "str", "Objective / lens", "", False, None),

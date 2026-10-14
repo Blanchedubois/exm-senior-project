@@ -102,3 +102,58 @@ class PipelineState:
     def working_image(self) -> Optional[np.ndarray]:
         """Best available image: corrected if Stage 1 ran, else raw."""
         return self.corrected_image if self.corrected_image is not None else self.raw_image
+
+
+# ================================================================ Stage 2-3 results
+@dataclass
+class DetectResult:
+    """Stage-2 output for one frame (port Phase 3). Positions are in the Stage-1
+    CORRECTED frame (px) unless a field says raw. The first block keeps the V1
+    shape that the ported tagging code reads; the second is new for the ArUco
+    print (tags, per-box dots, photometry, the raw second pass)."""
+    u8: np.ndarray                          # 8-bit corrected frame the detection ran on (display)
+    dots: np.ndarray                        # (N,2) refined dot centres
+    basis: dict                             # frame-level lattice (the box with most dots)
+    dashes_all: np.ndarray                  # (M,2) every detected dash centre
+    dashes_on_grid: np.ndarray              # (m,2) dash centres on a box-boundary line
+    glyphs: np.ndarray = None               # V1 compatibility: always empty
+    grid: Optional[dict] = None             # node lattice from the tag affine (u, v, box_pitch, phase)
+    fit: Optional[dict] = None              # {O, U, V, box_um}: coarse_map == the tag affine
+    reads: list = field(default_factory=list)
+    model: Optional[dict] = None            # registered, kind "aruco", reg, affine, sign, aruco_xy, summary
+    glyph_h: float = 0.0
+    n_dashes_dropped: int = 0
+    stage: str = "solved"
+    # ---- ArUco port ----
+    tags: dict = field(default_factory=dict)            # {id: TagObservation} (corrected frame)
+    frame_pose: object = None                           # FramePose (corrected frame)
+    dot_box: np.ndarray = None                          # (N,) box number per dot
+    dot_flag: np.ndarray = None                         # (N,) "" | "edge" (no valid raw source nearby)
+    dot_signal: np.ndarray = None                       # (N,) integrated signal above background, raw ADU
+    dot_bg: np.ndarray = None                           # (N,) background per pixel, raw ADU
+    dot_sigma_px: np.ndarray = None                     # (N,) measured spot sigma (corrected frame px)
+    basis_by_box: dict = field(default_factory=dict)    # {N: refined lattice basis}
+    per_box: dict = field(default_factory=dict)         # {N: {design, detected, dot_um, pitch_um, pitch_px}}
+    lam_tags: float = float("nan")                      # expansion from the tag centres
+    lam_tags_sigma: float = float("nan")                # jackknife over tags (>= 4)
+    lam_dots: float = float("nan")                      # expansion from the per-box dot pitch (cross-check)
+    rot_raw_deg: float = float("nan")                   # gel rotation in the RAW frame (as acquired)
+    design_name: str = ""
+    design_sha: dict = field(default_factory=dict)
+    params: dict = field(default_factory=dict)          # ArucoParams used
+    raw_pass: dict = None                               # second detection on the raw frame, see aruco.detect
+
+
+@dataclass
+class FilterResult:
+    """Stage-3 output: the quality-filtered dots & dashes."""
+    dot_recs: list
+    dash_recs: list
+    dot_counts: dict
+    dash_counts: dict
+    kept_dots: np.ndarray
+    kept_dashes: np.ndarray
+    dot_params: dict = field(default_factory=dict)
+    dash_params: dict = field(default_factory=dict)
+    kept_dot_index: np.ndarray = None       # indices into DetectResult.dots of the kept dots
+    kept_dash_index: np.ndarray = None

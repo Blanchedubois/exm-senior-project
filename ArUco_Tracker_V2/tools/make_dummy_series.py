@@ -59,7 +59,8 @@ PRESETS = {
     "opt_clean":      dict(design="optimistic", lams="1,1.5,2,3,4,6", rot="0", warp=0.0, seeds=1),
     "opt_warp":       dict(design="optimistic", lams="1,1.5,2,3,4,6", rot="2,-3,5,1,-4,3", warp=2.0, seeds=1),
     "opt_noise":      dict(design="optimistic", lams="1,2,4", rot="2", warp=0.0, seeds=10),
-    "spectrum_clean": dict(design="spectrum", lams="1,1.5", rot="0", warp=0.0, seeds=1),
+    "spectrum_clean": dict(design="spectrum", lams="1,1.5", rot="0", warp=0.0, seeds=1, psf=2.0),
+    "spectrum_blur":  dict(design="spectrum", lams="1", rot="0", warp=0.0, seeds=1, psf=3.4),
     "cons_dim":       dict(design="conservative", lams="1,3,6", rot="1", warp=2.0, seeds=1),
     "opt_nolens":     dict(design="optimistic", lams="1,1.5,2,3,4,6", rot="2,-3,5,1,-4,3", warp=0.0, seeds=1, lens=False),
 }
@@ -126,7 +127,7 @@ def frame_truth(islands, recs, cfg, sim, lam, theta, drift, lobes, warped):
             x_und=float(px_und[k, 0]), y_und=float(px_und[k, 1]),
             x_raw=float(px_raw[k, 0]), y_raw=float(px_raw[k, 1]),
             corners_und=c_und.round(4).tolist(), corners_raw=c_raw.round(4).tolist(),
-            rot_deg=float(np.degrees(np.arctan2(e[1], e[0]))),
+            rot_deg=-float(np.degrees(np.arctan2(e[1], e[0]))),     # ccw on screen positive (= applied rotation)
             in_frame=bool(in_frame[k] and (c_und.min() > band_px) and (c_und.max() < W - 1 - band_px)))
     rows = []
     for k, (isl, r) in enumerate(zip(islands, recs)):
@@ -277,7 +278,7 @@ def main(argv=None):
         lams = [float(x) for x in str(p["lams"]).split(",")]
         rots = [float(x) for x in str(p["rot"]).split(",")]
         out = make_run(p["design"], lams, rots, p["warp"], int(p["seeds"]), run, a.out,
-                       psf=a.psf, um_per_px=a.um_per_px, exposure=a.exposure, lens=p.get("lens", True))
+                       psf=p.get("psf", a.psf), um_per_px=a.um_per_px, exposure=a.exposure, lens=p.get("lens", True))
         print(f"wrote {out}")
     _index(a.out)
 

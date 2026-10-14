@@ -159,3 +159,68 @@ This phase produces the per-feature raw observations with the extra per-dot fiel
 background, box) that the error model needs, and the derived λ and rotation that go into each
 image's metadata record. The per-box design handling is what lets one tool serve all four
 prints without code changes.
+
+## 9. As built (2026-10-14)
+
+**Files.** New: `rwtag/aruco/detect.py` (the detector), `rwtag/lattice.py` (ported subset of V1's
+`glyph/lattice.py`: blob detection with the noise-floored threshold, basis estimate and refine,
+dashes on grid; every V1 constant and the glyph-slot code dropped), `rwtag/designs.py` (registry),
+`designs/` (copies of the four design folders, byte-identical to `ArUco_Tracker_V2/designs/`),
+`gui/detect_panel.py`. Changed: `rwtag/types.py` (+ `DetectResult`, `FilterResult`),
+`rwtag/aruco/tags.py` (dot/dash settings on `ArucoParams`; rotation sign), `rwtag/correct.py`
+(+ `raw_source_valid`), `rwtag/project.py` (+ `run_detect`), `gui/app.py` (tab 2, auto-deskew).
+Tests: `test_phase3_detect.py` (10), `test_phase3_gui.py`, helper `tests/_dummy.py`. 53 pass in all.
+
+**Dots per printed size, not per box mask.** Instead of masking the frame box by box, the
+detector runs once per distinct dot size (one for designs 1–3, five for the spectrum print) with
+the top-hat and area band of that size, then gives each blob to the box its design position falls
+in (inverse tag affine) and keeps it only if that box prints that size. No mask edges, no
+double-counting, five passes instead of 25.
+
+**Edge flags are exact.** The fixed un-distortion band of the plan is replaced by a test of each
+feature's real raw source (`correct.raw_source_valid`): a dot is flagged `edge` when its raw
+position is outside the lens model's range or within one spot width of the raw border; a tag when
+any corner is within one module of it. The `edge_band_um` setting remains as an optional extra
+margin, default 0.
+
+**Rotation convention changed to counter-clockwise on screen.** Phase 1 reported
+`atan2(dy, dx)` in y-down pixels, which reads −2° for a frame rotated +2° counter-clockwise. All
+rotations are now counter-clockwise-on-screen positive, the same sign as the Stage-1 rotation
+slider and `cv2.getRotationMatrix2D`: an applied +2.0° reads +2.00°. The dummy truth uses the
+same convention. Raw rotation = corrected rotation − Stage-1 `rotate_deg`; auto-deskew sets
+`rotate_deg = −(raw rotation)`.
+
+**Photometry for the error model.** Measured on the RAW frame at each dot's raw position: the
+background is the 10th percentile of the patch (a ring median sat on the neighbouring dots at
+λ = 1, where the pitch is about four spot widths, and read the width 30 % low), the signal is the
+background-subtracted sum inside 2.5 σ divided by the Gaussian fraction inside it, and the width is
+the second moment corrected for that truncation. Measured spot σ is 2.2 px against 2.0 px for the
+printed 2.125 µm square convolved with the PSF; the rest is interpolation blur from the Stage-1
+remap, which the Phase-5 calibration absorbs.
+
+**The spectrum dummy is now rendered at PSF 2.0 µm** (`spectrum_clean`, every box resolvable) and
+a new preset `spectrum_blur` at 3.4 µm checks that the per-box table discriminates.
+
+**Measured, every frame through a real Stage-1 correction (lens + vignette + 6° deskew)**
+
+| run | quantity | value |
+|---|---|---|
+| opt_warp, λ 1–6 | truth dots found within 0.5 px | 99.35–99.94 % |
+| | assigned to the right box | 100 % |
+| | position RMS vs truth | 0.21–0.24 px |
+| | detections matching no truth dot | ≤ 0.02 % |
+| | λ from tags / from dot pitch | within 0.2 % / 0.1 % (warp included) |
+| cons_dim, λ 1, 3, 6 | dots found / λ | 98.5–99.0 % / within 0.2 % |
+| spectrum_clean, λ 1 | each of 25 boxes found / its own λ | ≥ 98 % / within 0.5 % |
+| spectrum_blur, PSF 3.4 | known-bad box 1 / widest box 21 | 2 % / 100 %; rank correlation with the design rule 0.85; top row names 7.0 µm (Conservative) |
+| raw second pass, opt_warp | dots re-found / raw det vs mapped | 99.9 % / median 0.02 px |
+| tag rotation, 311 tags | error vs truth | mean 0.00°, sd 0.15° per tag |
+
+**Rotation precision sets the gate.** Per-tag rotation is unbiased with a 0.15° spread, so a frame
+with only four tags in view can miss by 0.25° by chance; the frame-rotation test gate is
+0.6°/√(tags), i.e. 0.30° with four tags and 0.10° with 36.
+
+**Known limit: the raw pass is weaker in vignetted corners.** The raw frame is not flat-fielded,
+so at high blur the dimmest corner dots fall below the threshold: on `spectrum_blur` the raw pass
+re-finds 67 % of the dots against 99.9 % on the sharp runs. Unmatched dots keep their mapped raw
+position and are exported with `raw_found = false`, never dropped.

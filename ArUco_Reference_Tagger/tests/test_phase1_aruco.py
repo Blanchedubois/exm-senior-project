@@ -115,9 +115,9 @@ def test_frame_pose_without_design():
     tags, _ = decode_tags(255 - rot, ArucoParams(um_per_px=1.0, edge_band_um=2.0), tag_um=100.0)
     pose = frame_pose(tags)
     assert pose.n_tags == 4
-    # getRotationMatrix2D(+12) turns content counter-clockwise on screen, which is
-    # a NEGATIVE atan2 angle in y-down pixel coordinates
-    assert abs(pose.frame_rot_deg + 12.0) < 0.5, pose.frame_rot_deg
+    # getRotationMatrix2D(+12) turns content counter-clockwise on screen; rotations
+    # are reported counter-clockwise-on-screen positive, so this reads +12
+    assert abs(pose.frame_rot_deg - 12.0) < 0.5, pose.frame_rot_deg
     assert pose.rot_spread_deg < 0.3
 
 
