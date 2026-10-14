@@ -129,6 +129,7 @@ class DetectResult:
     frame_pose: object = None                           # FramePose (corrected frame)
     dot_box: np.ndarray = None                          # (N,) box number per dot
     dot_flag: np.ndarray = None                         # (N,) "" | "edge" (no valid raw source nearby)
+    dash_flag: np.ndarray = None                        # (M,) same, for dashes_all
     dot_signal: np.ndarray = None                       # (N,) integrated signal above background, raw ADU
     dot_bg: np.ndarray = None                           # (N,) background per pixel, raw ADU
     dot_sigma_px: np.ndarray = None                     # (N,) measured spot sigma (corrected frame px)

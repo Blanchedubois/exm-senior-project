@@ -62,12 +62,21 @@ class ImageEntry:
         return self.pipeline.meta
 
     def stage_status(self):
-        """(s1, s2, s3, s4) booleans — how far this image has been processed."""
+        """(s1, s2, s3, s4) booleans — corrected · detected · filtered · tagged AND
+        accepted (a rejected frame's results are kept for inspection, not counted)."""
         p = self.pipeline
         s2 = p.detection is not None and getattr(p.detection, "model", None) is not None \
             and p.detection.model.get("registered", False)
-        return (p.raw_image is not None or os.path.exists(io.sidecar_path(self.path)),
-                s2, p.features is not None, p.tagging is not None)
+        s4 = p.tagging is not None and getattr(p.tagging, "accepted", True)
+        s1 = (p.raw_image is not None or p.detection is not None
+              or os.path.exists(io.sidecar_path(self.path)))
+        return (s1, s2, p.features is not None, s4)
+
+    def status_text(self):
+        tr = self.pipeline.tagging
+        if tr is None:
+            return ""
+        return "accepted" if tr.accepted else f"REJECTED: {tr.reason}"
 
     # ------------------------------------------------------------ metadata
     def ensure_meta(self, embedded: dict | None = None):
@@ -212,3 +221,50 @@ class Project:
             proj.images.append(e)
         proj.refresh_roles()
         return proj
+
+
+# ---------------------------------------------------------------- batch runner
+def run_stages(entry, design, params=None, dot_params=None, dash_params=None, keep_images=None):
+    """Stages 2-4 for one image with ITS Stage-1 tuning (sidecar), headless:
+    detect -> filter -> tag. No acceptance test here (see run_stages_validated).
+    Returns (ok, message)."""
+    from .dotfilter import filter_frame
+    from .refwarp import tagframe as TF
+    loaded = entry.pipeline.raw_image is not None
+    det = run_detect(entry, design, params)
+    p = entry.pipeline
+    try:
+        if not det.model.get("registered"):
+            return False, "Stage 2 could not register: " + det.model.get("reason", "")
+        p.features = filter_frame(det, dot_params, dash_params, design)
+        tr = TF.tag_frame(det, p.features, design)
+        if tr is None:
+            p.tagging = None
+            return False, "Stage 4 warp fit failed (too few dots?)"
+        tr.label = entry.label
+        p.tagging = tr
+        return True, (f"{len(tr.tags)} tags · λ {det.lam_tags:.4f} · resid {tr.warp['per_det_median']:.2f} px · "
+                      f"matched {tr.warp['matched_frac']:.0%}")
+    finally:
+        if not loaded and not keep_images:
+            entry.unload_images()
+
+
+def run_stages_validated(entry, accepted, design, params=None, dot_params=None, dash_params=None,
+                         max_resid=None, min_share=None, keep_images=None):
+    """run_stages + the series gates (rwtag.series.validate) against the already
+    accepted entries. A rejected frame keeps its results, marked not accepted."""
+    from . import series as SR
+    ok, msg = run_stages(entry, design, params, dot_params, dash_params, keep_images)
+    tr = entry.pipeline.tagging
+    if not ok:
+        if tr is not None:
+            tr.accepted, tr.reason = False, msg
+        return False, msg
+    acc = [a.pipeline.tagging for a in accepted if a is not entry and a.pipeline.tagging is not None]
+    ok, reason, _share = SR.validate(tr, entry.pipeline.detection, entry.label, acc,
+                                     max_resid or SR.MAX_RESID, min_share or SR.MIN_SHARE)
+    tr.accepted, tr.reason = ok, ("" if ok else reason)
+    tr.source = "baseline" if ok and not [a for a in acc if a.accepted] else "direct"
+    tr.confidence = reason + " · " + tr.confidence
+    return ok, (msg + f" · {reason}" if ok else f"REJECTED: {reason}")

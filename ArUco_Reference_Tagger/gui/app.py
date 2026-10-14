@@ -9,7 +9,9 @@ grown one port phase at a time (docs/00_PORT_OVERVIEW.md):
            Copy to all)
   Phase 3  tab 2 (Detect): ArUco decode, design-driven per-box dots, raw pass;
            auto-deskew from the tags; derived metadata
-  later    Filter, Tag, Pair, Overlay, Field tabs and Export bundle
+  Phase 4  tab 3 (Filter, per-box gates) · tab 4 (Tag, acceptance) · the
+           sidebar's Run stages 2–4 / Run all pending (series gates)
+  later    Pair, Overlay, Field tabs and Export bundle
 
 One AppState, one active image at a time. Per-image Stage-1 params live in the
 `.rwsession.json` sidecar, per-image metadata in `.rwmeta.json`; both autosave on
@@ -27,6 +29,8 @@ from .correct_panel import CorrectPanel
 from .project_panel import ProjectSidebar
 from .meta_panel import MetaPanel
 from .detect_panel import DetectPanel
+from .filter_panel import FilterPanel
+from .tag_panel import TagPanel
 
 IMG_FILTER = "Images (*.tif *.tiff *.ome.tif *.png *.jpg);;All files (*)"
 IMG_EXTS = io.IMG_EXTS
@@ -84,6 +88,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.tabs = QtWidgets.QTabWidget()
         self.tabs.addTab(_stage_page(self.canvas, self.panel), "1 · Correct optics")
         self.tabs.addTab(_stage_page(self.canvas2, self.detect), "2 · Detect")
+        # tabs 3, 4 — Stages 3-4
+        self.canvas3 = ImageCanvas()
+        self.filter = FilterPanel(self.state, self.canvas3, self.log, lambda: self.detect.design)
+        self.canvas4 = ImageCanvas()
+        self.tagger = TagPanel(self.state, self.canvas4, self.log, lambda: self.detect.design, lambda: self.project)
+        self.tagger.runAllRequested.connect(self.run_all_pending)
+        self.tabs.addTab(_stage_page(self.canvas3, self.filter), "3 · Filter")
+        self.tabs.addTab(_stage_page(self.canvas4, self.tagger), "4 · Tag")
         self.tabs.currentChanged.connect(self._on_tab)
         self.panel.b_deskew.clicked.connect(self.detect.run_deskew)
 
@@ -92,6 +104,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.sidebar.setMinimumWidth(200); self.sidebar.setMaximumWidth(280)
         self.sidebar.entrySelected.connect(self.select_entry)
         self.sidebar.projectEdited.connect(self._on_project_edited)
+        self.sidebar.runOne.connect(self.run_stages_for)
+        self.sidebar.runAll.connect(self.run_all_pending)
 
         # metadata dock (right)
         self.meta = MetaPanel()
@@ -111,8 +125,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.readout = QtWidgets.QLabel("—")
         self.statusBar().addPermanentWidget(self.readout)
-        for c in (self.canvas, self.canvas2):
+        for c in (self.canvas, self.canvas2, self.canvas3, self.canvas4):
             c.cursorMoved.connect(self._on_cursor)
+        for sig in (self.state.featuresChanged, self.state.taggingChanged):
+            sig.connect(self.sidebar.refresh_status)
         self.state.correctionChanged.connect(self.sidebar.refresh_status)
         self.state.detectionChanged.connect(self._on_detection)
         self.state.metaChanged.connect(self.meta.refresh)
@@ -138,6 +154,10 @@ class MainWindow(QtWidgets.QMainWindow):
     def _on_tab(self, idx):
         if idx == 1:
             self.detect.refresh_base_image()
+        elif idx == 2:
+            self.filter.refresh_base_image()
+        elif idx == 3:
+            self.tagger.refresh_base_image()
 
     def _on_detection(self):
         det = self.state.pipeline.detection
@@ -244,6 +264,8 @@ class MainWindow(QtWidgets.QMainWindow):
             self.panel._on_image_loaded()
             self.meta.set_entry(entry)
             self.detect.load_from_state()
+            self.filter.load_from_state()
+            self.tagger.load_from_state()
             self._on_detection()
             self._on_tab(self.tabs.currentIndex())
         finally:
@@ -281,6 +303,47 @@ class MainWindow(QtWidgets.QMainWindow):
             self.sidebar.select(self.project.initial())
             if self.current_entry is None:
                 self.select_entry(self.project.initial())
+
+    # ---------------------------------------------------------------- batch
+    def run_stages_for(self, entry):
+        """Stages 2-4 for one image with ITS Stage-1 tuning and the current Detect /
+        Filter settings, validated against the images already accepted."""
+        if entry is None or self.detect.design is None:
+            return None
+        if entry is self.current_entry:
+            self._store_current()
+        accepted = [e for e in sorted(self.project.images, key=lambda e: e.label)
+                    if e is not entry and e.pipeline.tagging is not None and e.pipeline.tagging.accepted]
+        self.log(f"running stages 2–4 for {entry.name} …"); QtWidgets.QApplication.processEvents()
+        QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        try:
+            ok, msg = PJ.run_stages_validated(entry, accepted, self.detect.design, self.detect.params(),
+                                              self.filter.dot_params(), self.filter.dash_params(),
+                                              keep_images=(entry is self.current_entry))
+        finally:
+            QtWidgets.QApplication.restoreOverrideCursor()
+        self.log(f"  {entry.label:g}× — {'OK · ' + msg if ok else msg}")
+        if entry is self.current_entry:
+            self.state.activate(entry.pipeline)
+            self.detect.load_from_state(); self.filter.load_from_state(); self.tagger.load_from_state()
+            self._on_detection()
+            self._on_tab(self.tabs.currentIndex())
+        self.tagger.fill_series()
+        self.sidebar.refresh_status()
+        return ok
+
+    def run_all_pending(self):
+        """Every image without an accepted tagging, in ascending expansion, so the
+        lowest accepted frame becomes the baseline."""
+        pend = [e for e in sorted(self.project.images, key=lambda e: e.label)
+                if e.pipeline.tagging is None or not e.pipeline.tagging.accepted]
+        if not pend:
+            self.log("Run all: nothing pending."); return
+        for e in pend:
+            self.run_stages_for(e)
+            QtWidgets.QApplication.processEvents()
+        n = sum(1 for e in self.project.images if e.pipeline.tagging is not None and e.pipeline.tagging.accepted)
+        self.log(f"Run all: {n}/{len(self.project.images)} image(s) accepted.")
 
     # ---------------------------------------------------------------- sessions
     def save_session(self, *_):

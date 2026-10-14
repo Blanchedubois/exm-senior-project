@@ -17,7 +17,9 @@ def _row_text(e):
     mark = "●" if e.role == "initial" else "○"
     role = "initial" if e.role == "initial" else "expanded"
     optics = e.meta.optics_short()
-    return (f"{mark} {e.label:g}× {role}" + (f"  ·  {optics}" if optics else "")
+    tr = e.pipeline.tagging
+    flag = "  ✗ rejected" if tr is not None and not tr.accepted else ""
+    return (f"{mark} {e.label:g}× {role}" + (f"  ·  {optics}" if optics else "") + flag
             + f"\n    {_status_glyphs(e)}  {e.name[:26]}")
 
 
@@ -46,9 +48,10 @@ class ProjectSidebar(QtWidgets.QWidget):
         self.b_remove = QtWidgets.QPushButton("Remove")
         for b in (self.b_initial, self.b_label, self.b_run, self.b_run_all, self.b_remove):
             lay.addWidget(b)
-        for b in (self.b_run, self.b_run_all):                # the ArUco runner lands in port Phase 4
-            b.setEnabled(False)
-            b.setToolTip("Batch processing arrives with the Filter and Tag stages (port Phase 4).")
+        self.b_run.setToolTip("Detect, filter and tag the selected image with its own Stage-1 tuning "
+                              "and the current Detect / Filter settings, then check it against the "
+                              "images already accepted.")
+        self.b_run_all.setToolTip("The same for every image not yet accepted, lowest expansion first.")
         self.hint = QtWidgets.QLabel("● = initial · ✓✓✓✓ = corrected · detected · filtered · tagged")
         self.hint.setStyleSheet("color:#999;"); self.hint.setWordWrap(True)
         lay.addWidget(self.hint)

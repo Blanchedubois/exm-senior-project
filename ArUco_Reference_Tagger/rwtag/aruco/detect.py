@@ -146,18 +146,38 @@ def spot_photometry(img, pts, sigma_px):
 
 
 # ------------------------------------------------------------------ dashes, mask
+DASH_LEN_UM, DASH_W_UM = 8.125, 2.125        # V2 boundary dashes (V1 dimensions)
+
+
 def detect_dashes(u8, params: ArucoParams, dot_side_um, mask=None):
-    """Boundary dashes (8.125 x 2.125 um): elongated mid-size blobs. Area-only rules
-    cannot separate V2's dashes from its dots (both small), so require an aspect."""
-    th = cv2.morphologyEx(u8, cv2.MORPH_TOPHAT, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (41, 41)))
-    _, b = cv2.threshold(th, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    """Boundary dashes (8.125 x 2.125 um): elongated mid-size blobs.
+
+    Area-only rules cannot separate V2's dashes from its dots (both small), so an
+    aspect is required -- but blur rounds a dash's ends, so the gate is set from
+    the IMAGED aspect sqrt(L^2 + PSF^2) / sqrt(W^2 + PSF^2) (2.2 at PSF 3.4 against
+    3.4 printed), not a fixed 2. The threshold carries the same sparse-frame noise
+    floor as the dots (lattice.detect_blobs): plain Otsu on a high-expansion frame
+    holding a handful of dashes drops into the noise. The ARUCO tags' modules are
+    masked out; dots are rejected by area (a dash covers ~4 dot areas)."""
+    tophat = max(41, int(math.ceil(1.5 * math.hypot(DASH_LEN_UM, params.psf_fwhm_um) / params.um_per_px)) | 1)
+    th = cv2.morphologyEx(u8, cv2.MORPH_TOPHAT, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (tophat, tophat)))
+    otsu, _ = cv2.threshold(th, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    thr = float(otsu)
+    if params.noise_k > 0:
+        med = float(np.median(th)); mad = float(np.median(np.abs(th.astype(np.int16) - med))) * 1.4826
+        thr = max(thr, med + params.noise_k * mad)
+    b = (th > thr).astype(np.uint8) * 255
     if mask is not None:
         b[np.asarray(mask) == 0] = 0
     n, _lab, st, cen = cv2.connectedComponentsWithStats(b, 8)
-    a0 = 2.0 * (dot_side_um / params.um_per_px) ** 2
+    imaged_aspect = math.hypot(DASH_LEN_UM, params.psf_fwhm_um) / math.hypot(DASH_W_UM, params.psf_fwhm_um)
+    min_aspect = min(params.dash_min_aspect, max(1.35, 1.0 + 0.6 * (imaged_aspect - 1.0)))
+    side = dot_side_um / params.um_per_px
+    a0 = 2.0 * side * side
+    a1 = 6.0 * math.hypot(DASH_LEN_UM, params.psf_fwhm_um) * math.hypot(DASH_W_UM, params.psf_fwhm_um) / params.um_per_px ** 2
     a = st[1:, cv2.CC_STAT_AREA]; w = st[1:, cv2.CC_STAT_WIDTH]; h = st[1:, cv2.CC_STAT_HEIGHT]
-    ok = ((a >= a0) & (a <= 1400) & (np.maximum(w, h) / np.maximum(np.minimum(w, h), 1) >= params.dash_min_aspect)
-          & (a / np.maximum(w * h, 1) >= 0.5))
+    ok = ((a >= a0) & (a <= a1) & (np.maximum(w, h) / np.maximum(np.minimum(w, h), 1) >= min_aspect)
+          & (a / np.maximum(w * h, 1) >= 0.45))
     return cen[1:][ok].astype(float).reshape(-1, 2)
 
 
@@ -282,7 +302,7 @@ def detect(corr_img, design: Design, params: ArucoParams = None, raw_img=None, c
     params_d = params.to_dict()
 
     if A is None:
-        dots, _a = lt.detect_blobs(u8, tophat=params.tophat_px(design.dot_side_um),
+        dots, _a = lt.detect_blobs(u8, tophat=params.tophat_px(min(b.dot_um for b in design.boxes)),
                                    area=params.dot_area_px(design.dot_side_um), noise_k=params.noise_k, mask=allowed)
         model = {"kind": "aruco", "registered": False, "reg": IDENTITY_REG, "tags": tags, "aruco_xy": aruco_xy,
                  "decode": tinfo, "affine_info": ainfo,
@@ -353,6 +373,11 @@ def detect(corr_img, design: Design, params: ArucoParams = None, raw_img=None, c
         valid = ((dots[:, 0] >= mg) & (dots[:, 0] <= W - 1 - mg) & (dots[:, 1] >= mg) & (dots[:, 1] <= H - 1 - mg)) \
             if len(dots) else np.zeros(0, bool)
     dot_flag = np.where(valid, "", "edge").astype(object)
+    if len(dashes) and correction is not None and not geo_id:
+        dvalid = C.raw_source_valid(dashes, correction, shape, params.edge_margin_fwhm * float(np.median(fwhm)) if len(fwhm) else 3.0)
+    else:
+        dvalid = np.ones(len(dashes), bool)
+    dash_flag = np.where(dvalid, "", "edge").astype(object)
 
     # ---- 6. photometry on the raw frame -----------------------------------------
     if raw_img is not None:
@@ -394,7 +419,7 @@ def detect(corr_img, design: Design, params: ArucoParams = None, raw_img=None, c
         u8=u8, dots=dots, basis=basis, dashes_all=dashes, dashes_on_grid=np.asarray(on_grid, float).reshape(-1, 2),
         glyphs=np.zeros((0, 2)), grid=grid, fit=fit, reads=[], model=model, glyph_h=0.0,
         n_dashes_dropped=int(ndrop), stage="solved", tags=tags, frame_pose=pose, dot_box=dot_box,
-        dot_flag=dot_flag, dot_signal=sig_raw, dot_bg=bg_raw, dot_sigma_px=width,
+        dot_flag=dot_flag, dash_flag=dash_flag, dot_signal=sig_raw, dot_bg=bg_raw, dot_sigma_px=width,
         basis_by_box=basis_by_box, per_box=per_box, lam_tags=lam, lam_tags_sigma=lam_sig, lam_dots=lam_dots,
         rot_raw_deg=rot_raw, design_name=design.name, design_sha=dict(design.file_sha256), params=params_d,
         raw_pass=raw_pass)

@@ -117,3 +117,58 @@ After this phase every feature in every accepted image has a design identity, a 
 `corr`, and a residual to the TPS warp. The similarity recorded in §3.6 is what the
 `deviation_from_design` export is measured against. The pairing in Phase 6 is a pure join on
 these identities.
+
+## 9. As built (2026-10-14)
+
+**Files.** New or ported: `rwtag/dotfilter.py`, `rwtag/series.py`, `rwtag/refwarp/{__init__,warp,
+tagmatch,tagframe,types,io_csv}.py`, `rwtag/refwarp/strain.py` (V1, unchanged), `gui/filter_panel.py`,
+`gui/tag_panel.py`. Changed: `rwtag/project.py` (+ `run_stages`, `run_stages_validated`, acceptance-aware
+status), `rwtag/aruco/detect.py` (dash detector, dash edge flags), `gui/app.py` (tabs 3–4, batch
+actions), `gui/project_panel.py` (batch buttons live, rejected flag). Tests: `test_phase4_tag.py` (13),
+`test_phase4_gui.py`. 66 pass in all.
+
+**Each tag knows where it came from.** `TagResult.src[tag]` is `("dot", i)`, `("dash", j)` or
+`("aruco", id)`, indexing the DetectResult arrays, so the export can join every tagged feature to its
+photometry, raw-pass position and (Phase 5) covariance. `TagResult.unmatched` lists the detections that
+got no tag, for the dropped-features table.
+
+**The uniform-expansion model is recorded per frame.** `TagResult.similarity` is the least-squares
+design → image similarity through every tagged feature, reflection allowed (`s, R, t, sign,
+angle_deg, rms`). On `opt_clean` its scale gives λ to 0.2 % and its angle the applied rotation to 0.1°.
+It defines the "expected" positions the Phase-7 deviation table is measured against.
+
+**Residuals are cross-validated.** A thin-plate spline through every matched dot interpolates them:
+whenever a frame has fewer than 500 dots (every high-expansion frame) the in-sample residual is 0.00 px
+and can neither reject a frame nor describe local warping. Each dot's residual is now its departure from
+a spline fitted to the other half of the dots (two spatial folds); tags get their real distance to the
+warped design centre instead of 0. The acceptance gate uses the cross-validated median. Measured:
+0.12–0.22 px on every dummy frame, about the localisation noise.
+
+**Dashes needed two fixes.** On the blurry conservative run the V1 dash detector found 166 of 480 dashes
+at λ 1 and 1 at λ 3: it lacked the sparse-frame noise floor, and its fixed 2:1 aspect gate fails once
+blur rounds the dash ends. The aspect gate is now set from the imaged aspect, and the floor added:
+411 / 480 and 65 / 96. On the blurred spectrum print merged pairs of large dots then passed as dashes,
+so the dash match gate is now 40 % of the design's smallest dot-to-dash clearance (a blob that close to
+a dash position can only be a dash): zero wrong dash identities on every run.
+
+**Acceptance.** Gates exactly as §4 with two adjustments: the residual gate uses the cross-validated
+residual, and the share gate accepts ≥ 40 shared tags OR ≥ 2 shared ArUco ids. A frame failing a gate
+keeps its results, marked `accepted = False` with the reason; the sidebar shows it as rejected and its
+fourth tick stays empty. A mirrored frame is rejected (on the dummy it decodes no tag at all); a frame
+with its tags painted out is rejected as unregistered.
+
+**Measured, every frame through a real Stage-1 correction**
+
+| run | dots correct / wrong | dashes wrong | ArUco | cv residual |
+|---|---|---|---|---|
+| opt_clean, λ 1–6 | 100.00 % / 0 | 0 | all in view | 0.12–0.20 px |
+| opt_warp, λ 1–6 | 100.00 % / 0 | 0 | all in view | 0.15–0.20 px |
+| spectrum_clean, every box | ≥ 98 % per box / 0 | 0 | 36 / 36 | 0.12 px |
+| cons_dim, λ 1, 3, 6 | 99.9 % / 0 | 0 | all in view | 0.19–0.22 px |
+
+"Correct" counts truth dots whose raw source lies at least 18 px inside the frame and that received
+their own tag within 1 px; "wrong" counts any tag placed more than 1 px from its true position.
+
+**Not ported, by design.** V1's strain table and trend plot (analysis is downstream), the folder-scan
+series driver (the project is the series), the coreg rescue and manual anchors (ids register every
+frame), and the glyph tag categories.
