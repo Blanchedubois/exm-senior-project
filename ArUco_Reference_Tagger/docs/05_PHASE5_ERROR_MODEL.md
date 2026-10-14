@@ -141,3 +141,75 @@ side_sigma_px, decode_class}}`. `TagResult.cov = {tag: (sxx, syy, sxy)}` in `cor
 The downstream distortion analysis needs to separate gel deformation from measurement noise.
 This phase supplies the noise half, per feature, in every frame the positions are reported in,
 and keeps the alignment's own uncertainty separate so it can be included or not.
+
+## 9. As built (2026-10-14)
+
+**Files.** New: `rwtag/errors.py` (formulas, propagation, calibration, alignment bootstrap,
+Mahalanobis), `tests/test_phase5_errors.py` (10), `tests/test_phase5_gui.py`. Changed:
+`rwtag/aruco/detect.py` (image-noise estimate; photometry bias correction; `detect()` applies the
+error model), `rwtag/types.py` (covariance fields), `rwtag/refwarp/{tagframe,types}.py`
+(`TagResult.cov`), `rwtag/project.py` (`Project.noise`, `noise_model_for`,
+`calibrate_noise_from_files`), `rwtag/series.py`, `gui/detect_panel.py` (error-model group and
+calibration action), `gui/tag_panel.py` (σ colouring, ± readout), `gui/app.py`. 77 tests pass.
+
+**Dots: the least-squares formula, not Thompson's.** Simulated against our Gaussian-mask centroid
+at four signal and background levels, Mortensen et al.'s least-squares variance
+`sa²/N · (16/9 + 8π sa² b²/N)` predicts the scatter to within 15 % (Thompson's to within 90 %).
+The background term uses the frame's measured pixel noise (`background_noise`: MAD of neighbour
+differences over background regions chosen on a smoothed copy — choosing by the pixels' own value
+halved the estimate). The photometry's 10th-percentile background is corrected by +1.28 σ (it had
+doubled a faint spot's signal).
+
+**Tags: Förstner corners, calibrated.** Corner covariance from the raw-frame gradient structure
+tensor; centre and rotation by propagation through the decoder's own four-edge formula. Contour
+refinement fits whole edges, so this corner model is optimistic by a fixed factor that repeat
+frames measure: κ = 2.35 for centres, 3.3 for rotation.
+
+**The model, its calibration and its defaults**
+
+| quantity | source | value |
+|---|---|---|
+| dot σ (with true gain) / measured scatter over 10 repeat frames | opt_noise | κ_dot 0.86–0.92; held-out frames reproduce it to 1.00 |
+| dot κ without the gain | opt_noise | 1.22–1.26 (repeat-frame calibration recovers absolute errors anyway) |
+| tag centre / rotation κ | opt_noise | 2.35 / 3.3 (shipped defaults) |
+| dot floor | truth | 0.03 px (only the densest λ 1 frame needs it) |
+| tag centre / rotation floor | truth | 0.073 px / 0.10° (shipped defaults) |
+| dots inside their 95 % ellipse | opt_warp, λ 1–6 | 96–98 % |
+| tag centres / rotations inside 95 % | opt_warp, 100 tags | 90 % / 94 % |
+| dots beyond the 99 % bound, undistorted series | opt_clean | 0.4 % vs design, 0.6 % vs initial |
+| same, warped series | opt_warp | 99.9 % / 98.9 % |
+| rotation inside its bootstrap 95 % interval | synthetic | 57 / 60 |
+
+Shipped defaults are in `errors.DEFAULTS`, each with its source in every result and export. The
+dot κ stays 1 by default because it depends on whether the gain is known; the calibration action
+sets it from real repeat images.
+
+**Every feature carries an error.** Dots whose photometry window leaves the frame get 4× the frame's
+median variance, flagged `border_estimate`. Dashes are anisotropic: the dash's own length sets the
+along-axis term.
+
+**Two corrections to the dummy generator, and what they changed.**
+
+1. *The renderer rounded every feature to whole render pixels*, a quarter camera pixel at worst,
+   **independently in every frame**. That 0.14 px/axis jitter was three times the detector's own
+   noise and made the truth look 0.15–0.2 px wrong. A new anti-aliased rasteriser
+   (`render_scene_aa`, area coverage per pixel; `simulate_v2.py` untouched) puts features exactly
+   where geometry and warp place them. Against it the detector's true accuracy is **0.050 px/axis
+   (0.07 px radial)**, matching the model's 0.057 px, where Phases 1–4 reported 0.2 px. The truth
+   also records the lens centre the renderer actually used, 0.25 px off the frame centre because
+   crop and canvas sizes round independently, and the tests' Stage 1 uses it.
+2. *A fixed print error option* (`print_err`, preset `opt_print`, 50 nm per feature, the same in
+   every frame). With it, 70 % of dots deviate significantly from the design and the detector's
+   deviations match the true ones (correlation 0.97). Against the initial frame only 0.8 % do.
+   **Deviation from the design includes the print's placement error; comparison with the initial
+   image cancels it.** The export reports both.
+
+**Spectrum verdict.** Scored against exact positions, at PSF 3.4 µm the detector resolves the top
+row down to 6.5 µm, slightly tighter than the 1.75× design rule's 7.0 µm, consistent with W5's
+measured 1.64× at 3.18 µm. The test now checks discrimination (failing corner, passing wide boxes,
+rank agreement 0.88, recovery rising with spacing) rather than one exact verdict.
+
+**GUI.** Detect tab: an error-model group showing the gain, κ values, floors and their sources,
+with "Calibrate from repeat images…" (any ≥ 3 exposures of one static state, through the
+selected image's Stage-1 settings) and "Reset". Tag tab: colour by position σ; the hover readout
+gives `x ± σx, y ± σy` and, for tags, `rot ± σ`. The calibration is stored in the project file.

@@ -53,7 +53,8 @@ class TagPanel(QtWidgets.QWidget):
         self.chk_exp = QtWidgets.QCheckBox("Uniform-expansion grid (similarity, magenta)"); self.chk_exp.setChecked(False)
         self.chk_nums = QtWidgets.QCheckBox("Box numbers"); self.chk_nums.setChecked(True)
         self.chk_resid = QtWidgets.QCheckBox("Colour by residual (green 0 → red ≥ ½ pitch)")
-        for w in (self.chk_grid, self.chk_exp, self.chk_nums, self.chk_resid):
+        self.chk_sigma = QtWidgets.QCheckBox("Colour by position σ (green small → red large, frame range)")
+        for w in (self.chk_grid, self.chk_exp, self.chk_nums, self.chk_resid, self.chk_sigma):
             vl.addWidget(w)
         self.readout = QtWidgets.QLabel("hover a point to read its tag")
         self.readout.setStyleSheet("color:#8cf; font-weight:bold;"); self.readout.setWordWrap(True)
@@ -74,8 +75,10 @@ class TagPanel(QtWidgets.QWidget):
         self.b_series.clicked.connect(self.runAllRequested)
         self.kindcombo.currentIndexChanged.connect(self._redraw)
         self.boxcombo.currentIndexChanged.connect(self._redraw)
-        for c in (self.chk_grid, self.chk_exp, self.chk_nums, self.chk_resid):
+        for c in (self.chk_grid, self.chk_exp, self.chk_nums, self.chk_resid, self.chk_sigma):
             c.toggled.connect(self._redraw)
+        self.chk_resid.toggled.connect(lambda on: on and self.chk_sigma.setChecked(False))
+        self.chk_sigma.toggled.connect(lambda on: on and self.chk_resid.setChecked(False))
         self.canvas.tagHovered.connect(lambda t: self.readout.setText(t or "hover a point to read its tag"))
         self.state.imageLoaded.connect(self._invalidate)
         self.state.detectionChanged.connect(self._invalidate)
@@ -198,7 +201,12 @@ class TagPanel(QtWidgets.QWidget):
         self.canvas.clear_overlays()
         kind_f, box_f = self.kindcombo.currentText(), self.boxcombo.currentText()
         by_resid = self.chk_resid.isChecked() and tr.residuals
+        by_sigma = self.chk_sigma.isChecked() and tr.cov
         rmax = 0.5 * float(det.basis["pitch"])
+        sig = {t: float(np.sqrt(max(c[0], c[1]))) for t, c in (tr.cov or {}).items()}
+        if by_sigma and sig:
+            s_lo, s_hi = np.percentile(list(sig.values()), [5, 95]); s_hi = max(s_hi, s_lo + 1e-6)
+        rot_s = {i: v["rot_sigma_deg"] for i, v in (det.tag_cov or {}).items() if v}
         entries = []
         for tag, (x, y) in tr.tags.items():
             k = tag.split("|")[0]
@@ -210,9 +218,19 @@ class TagPanel(QtWidgets.QWidget):
             if by_resid:
                 t = min(r / max(rmax, 1e-6), 1.0)
                 color = (int(60 + 195 * t), int(230 - 170 * t), 60, 220)
+            elif by_sigma and tag in sig:
+                t = float(np.clip((sig[tag] - s_lo) / (s_hi - s_lo), 0, 1))
+                color = (int(60 + 195 * t), int(230 - 170 * t), 60, 220)
             else:
                 color = KIND_COLOR.get(k, (200, 200, 200)) + (KIND_ALPHA.get(k, 200),)
-            entries.append((f"{tag}   ({x:.1f}, {y:.1f}) px · residual {r:.2f} px", x, y, color, KIND_SIZE.get(k, 6)))
+            c = tr.cov.get(tag) if tr.cov else None
+            pos = (f"x {x:.2f} ± {np.sqrt(c[0]):.3f}, y {y:.2f} ± {np.sqrt(c[1]):.3f} px" if c else f"({x:.1f}, {y:.1f}) px")
+            extra = ""
+            if k == "aruco":
+                i = int(tag.split("|")[2])
+                if i in det.tags:
+                    extra = f" · rot {det.tags[i].rot_deg:+.2f} ± {rot_s.get(i, float('nan')):.2f}°"
+            entries.append((f"{tag}   {pos}{extra} · residual {r:.2f} px", x, y, color, KIND_SIZE.get(k, 6)))
         self.canvas.draw_hover_points(entries)
         if self.chk_grid.isChecked():
             self.canvas.add_polylines(TF.warped_grid_segments(tr.warp, design), color=(0, 220, 255), width=1.4)

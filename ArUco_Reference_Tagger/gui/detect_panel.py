@@ -75,6 +75,17 @@ class DetectPanel(QtWidgets.QWidget):
         sf.addRow(self.chk_mask); sf.addRow(self.chk_raw)
         root.addWidget(sg)
 
+        # ---- error model (port Phase 5)
+        eg = QtWidgets.QGroupBox("Error model"); el = QtWidgets.QVBoxLayout(eg)
+        self.lbl_noise = QtWidgets.QLabel("—"); self.lbl_noise.setWordWrap(True)
+        self.b_calib = QtWidgets.QPushButton("Calibrate from repeat images…")
+        self.b_calib.setToolTip("Pick several exposures of the SAME static sample (no expansion change between them). "
+                                "Each is corrected with this image's Stage-1 settings, detected and tagged; the scatter "
+                                "of every feature across them sets the error scale κ for dots, tag centres and rotations.")
+        self.b_noise_reset = QtWidgets.QPushButton("Reset error model to defaults")
+        el.addWidget(self.lbl_noise); el.addWidget(self.b_calib); el.addWidget(self.b_noise_reset)
+        root.addWidget(eg)
+
         self.b_detect = QtWidgets.QPushButton("Detect")
         self.b_deskew = QtWidgets.QPushButton("Auto-deskew (write rotation to Stage 1)")
         self.b_deskew.setEnabled(False)
@@ -104,6 +115,8 @@ class DetectPanel(QtWidgets.QWidget):
         self.cmb_design.activated.connect(self._on_design_pick)
         self.s_umpx.editingFinished.connect(self._umpx_to_meta)
         self.b_detect.clicked.connect(self.run_detect)
+        self.b_calib.clicked.connect(self._calibrate_dialog)
+        self.b_noise_reset.clicked.connect(self.reset_noise)
         self.b_deskew.clicked.connect(self.run_deskew)
         self.state.imageLoaded.connect(self._clear)
         self.set_design_folder(DS.default_folder())
@@ -169,6 +182,61 @@ class DetectPanel(QtWidgets.QWidget):
         finally:
             self._loading = False
 
+    # ---------------------------------------------------------------- error model
+    def noise_calib(self):
+        proj = self.project_fn()
+        return dict(proj.noise) if proj is not None else {}
+
+    def show_noise(self):
+        from rwtag.errors import NoiseModel
+        c = NoiseModel.from_dict(self.noise_calib())
+        e = self.entry_fn()
+        gain = e.meta.gain_e_per_adu if (e is not None and e.meta.gain_known) else None
+        self.lbl_noise.setText(
+            f"<small>camera gain: <b>{f'{gain:g} e⁻/ADU' if gain else 'not set — errors relative'}</b><br>"
+            f"κ dots {c.kappa_dot:.2f} · tag centres {c.kappa_tag:.2f} · rotation {c.kappa_rot:.2f}<br>"
+            f"<span style='color:#999'>{c.kappa_source}</span><br>"
+            f"floors: dots {c.floor_px:.3f} px · tags {c.tag_floor_px:.3f} px · rotation {c.rot_floor_deg:.2f}°<br>"
+            f"<span style='color:#999'>{c.floor_source}</span></small>")
+
+    def reset_noise(self):
+        proj = self.project_fn()
+        if proj is not None:
+            proj.noise = {}
+        self.show_noise()
+        self.log("Error model reset to the shipped defaults (re-run Detect to apply).")
+
+    def calibrate_from_files(self, paths):
+        """Headless entry point of the calibration action."""
+        e = self.entry_fn()
+        if e is None or self.design is None:
+            raise ValueError("select an image (its Stage-1 settings are used) and a design first")
+        cal = PJ.calibrate_noise_from_files(paths, e.pipeline.correction, e.pipeline.levels, self.design,
+                                            self.params(), gain=(e.meta.gain_e_per_adu if e.meta.gain_known else None))
+        proj = self.project_fn()
+        for k in ("kappa_dot", "kappa_tag", "kappa_rot", "kappa_source"):
+            if k in cal:
+                proj.noise[k] = cal[k]
+        proj.noise["calibration_report"] = {k: v for k, v in cal.items() if k not in ("kappa_source",)}
+        self.show_noise()
+        self.log(f"Error model calibrated from {cal['n_frames']} repeat frames: κ dots {cal.get('kappa_dot', float('nan')):.2f}, "
+                 f"tags {cal.get('kappa_tag', float('nan')):.2f}, rotation {cal.get('kappa_rot', float('nan')):.2f} "
+                 f"({cal['n_dots']} dots, {cal['n_tags']} tags). Re-run Detect to apply.")
+        return cal
+
+    def _calibrate_dialog(self):
+        paths, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "Repeat exposures of one static state", "",
+                                                          "Images (*.tif *.tiff *.ome.tif *.png);;All files (*)")
+        if not paths:
+            return
+        QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        try:
+            self.calibrate_from_files(paths)
+        except Exception as ex:
+            QtWidgets.QApplication.restoreOverrideCursor()
+            QtWidgets.QMessageBox.warning(self, "Calibration failed", str(ex)); return
+        QtWidgets.QApplication.restoreOverrideCursor()
+
     # ---------------------------------------------------------------- state
     def _clear(self, *_):
         self.summary.setText("New image — correct it in Stage 1, then Detect.")
@@ -177,6 +245,7 @@ class DetectPanel(QtWidgets.QWidget):
 
     def load_from_state(self):
         self.sync_from_meta()
+        self.show_noise()
         det = self.state.pipeline.detection
         if det is None:
             self._clear(); return
@@ -204,7 +273,7 @@ class DetectPanel(QtWidgets.QWidget):
         self.log(f"Detect: {e.name} with {self.design.name} …"); QtWidgets.QApplication.processEvents()
         QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
         try:
-            det = PJ.run_detect(e, self.design, self.params())
+            det = PJ.run_detect(e, self.design, self.params(), self.noise_calib())
         finally:
             QtWidgets.QApplication.restoreOverrideCursor()
         self.state.set_detection(det)
@@ -247,6 +316,13 @@ class DetectPanel(QtWidgets.QWidget):
         if rp:
             txt += (f"<br>raw pass: {rp['dot_match_frac']:.1%} of dots re-found · median "
                     f"|raw det − mapped| {rp['median_det_minus_map_px']:.3f} px · {len(rp['tags_det'])} tags")
+        if det.dot_cov_corr is not None and len(det.dots):
+            from rwtag.errors import sigma_major
+            sd = np.nanmedian(sigma_major(det.dot_cov_corr))
+            rs = [v["rot_sigma_deg"] for v in det.tag_cov.values() if v]
+            txt += (f"<br>errors: dots σ {sd:.3f} px (median) · tag rotation σ "
+                    f"{(np.median(rs) if rs else float('nan')):.2f}°"
+                    + (" · <span style='color:#ffbe00'>relative (no camera gain)</span>" if det.noise.get("relative") else ""))
         self.summary.setText(txt)
         rows = [(N, r) for N, r in sorted(det.per_box.items()) if r["detected"] or r["design"]]
         self.table.setRowCount(len(rows))

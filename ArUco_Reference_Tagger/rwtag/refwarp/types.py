@@ -28,3 +28,4 @@ class TagResult:
     accepted: bool = True
     reason: str = ""                                   # why not accepted
     design_sha: dict = field(default_factory=dict)
+    cov: dict = field(default_factory=dict)            # {tag: (sxx, syy, sxy)} corrected-frame px^2 (port Phase 5)

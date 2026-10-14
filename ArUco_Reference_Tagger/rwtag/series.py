@@ -77,7 +77,7 @@ class SeriesFrame:
 
 
 def process_frames(frames, design, params=None, dot_params=None, dash_params=None,
-                   max_resid=MAX_RESID, min_share=MIN_SHARE, tps=True, progress=None):
+                   max_resid=MAX_RESID, min_share=MIN_SHARE, tps=True, progress=None, noise_model=None):
     """Headless series on in-memory frames: `frames` = [(label, corr_img, raw_img
     or None, CorrectionParams or None)]. Returns [SeriesFrame] ascending by label."""
     from .aruco import detect as AD
@@ -85,7 +85,7 @@ def process_frames(frames, design, params=None, dot_params=None, dash_params=Non
     accepted = []
     for k, (label, corr, raw, corrp) in enumerate(sorted(frames, key=lambda f: f[0])):
         f = SeriesFrame(label=float(label))
-        f.det = AD.detect(corr, design, params, raw_img=raw, correction=corrp)
+        f.det = AD.detect(corr, design, params, raw_img=raw, correction=corrp, noise_model=noise_model)
         if f.det.model.get("registered"):
             f.filt = filter_frame(f.det, dot_params, dash_params, design)
             f.tagging = TF.tag_frame(f.det, f.filt, design, tps=tps)

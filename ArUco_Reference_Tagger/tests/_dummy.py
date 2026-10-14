@@ -34,8 +34,9 @@ def frame(truth, lam):
 def stage1(truth, rotate=0.0):
     """Stage-1 params that exactly undo the dummy camera's lens and vignette."""
     cam = truth["camera"]
+    c = cam.get("lens_centre_frac", 0.5)          # the render's true lens centre (truth.json)
     return CorrectionParams(k1=cam["lens_k1"], k2=cam["lens_k2"], vig_strength=cam["vignette_strength"],
-                            vig_power=cam["vignette_power"], rotate_deg=rotate)
+                            vig_power=cam["vignette_power"], rotate_deg=rotate, dist_cx=c, dist_cy=c)
 
 
 def load(d, fr, seed=0):

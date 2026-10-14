@@ -107,7 +107,18 @@ def tag_frame(det, filt, design, tps=True) -> TagResult | None:
     unmatched = {"dot": [int(ki[i]) for i in range(len(ki)) if i not in res["dot"] and i not in res["box_mismatch"]],
                  "dash": [int(hi[j]) for j in range(len(hi)) if j not in res["dash"]],
                  "box_mismatch": [int(ki[i]) for i in res["box_mismatch"]]}
-    return TagResult(tags=tags, warp=model, residuals=residuals, source="direct",
+    cov = {}
+    for tag, (kind, j) in src.items():
+        c = None
+        if kind == "dot" and det.dot_cov_corr is not None:
+            c = det.dot_cov_corr[j]
+        elif kind == "dash" and det.dash_cov_corr is not None:
+            c = det.dash_cov_corr[j]
+        elif kind == "aruco" and det.tag_cov.get(j):
+            c = det.tag_cov[j]["centre_corr"]
+        if c is not None and np.isfinite(c).all():
+            cov[tag] = (float(c[0, 0]), float(c[1, 1]), float(c[0, 1]))
+    return TagResult(tags=tags, warp=model, residuals=residuals, source="direct", cov=cov,
                      confidence=(f"cross-validated resid {per['dot']['res_median']:.2f} px · matched {model['matched_frac']:.0%}"),
                      per_category=per, src=src, per_box=per_box, similarity=sim, unmatched=unmatched,
                      design_sha=dict(det.design_sha))

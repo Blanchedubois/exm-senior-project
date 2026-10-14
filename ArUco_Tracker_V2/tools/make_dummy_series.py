@@ -63,6 +63,7 @@ PRESETS = {
     "spectrum_blur":  dict(design="spectrum", lams="1", rot="0", warp=0.0, seeds=1, psf=3.4),
     "cons_dim":       dict(design="conservative", lams="1,3,6", rot="1", warp=2.0, seeds=1),
     "opt_nolens":     dict(design="optimistic", lams="1,1.5,2,3,4,6", rot="2,-3,5,1,-4,3", warp=0.0, seeds=1, lens=False),
+    "opt_print":      dict(design="optimistic", lams="1,2", rot="2,-3", warp=0.0, seeds=1, print_err=0.05),
 }
 
 
@@ -92,36 +93,113 @@ def _canvas_to_px(P_um, sim):
     return (P_um - lo) / sim.um_per_px - 0.5
 
 
+def _render_geometry(sim):
+    """The render scale render_scene() uses: (ss, ppu, n, o, m, cam)."""
+    fov, rfov = sim.fov_um, sim.fov_um * sim.render_margin
+    ss = sim.supersample
+    while ss > 1 and rfov * sim.px_per_um * ss > sim.render_px_cap:
+        ss -= 1
+    ppu = sim.px_per_um * ss
+    n = int(round(rfov * ppu))
+    o = int(round((rfov - fov) / 2.0 * ppu)); m = int(round(fov * ppu))
+    return ss, ppu, n, o, m, sim.fov_px
+
+
+def _drawn_box_render(x0, y0, x1, y1, ppu, n):
+    """A rectangle (canvas um, y up) in continuous render coordinates (pixel i
+    spans [i, i+1)), x right, y DOWN -- exact, because render_scene_aa() draws
+    with fractional pixel coverage instead of rounding to whole pixels."""
+    return x0 * ppu, n - y1 * ppu, x1 * ppu, n - y0 * ppu
+
+
+def _coverage_1d(a, b, lo, hi):
+    """Per-pixel coverage of [a, b) by pixels lo..hi-1."""
+    i = np.arange(lo, hi)
+    return np.clip(np.minimum(b, i + 1) - np.maximum(a, i), 0.0, 1.0)
+
+
+def render_scene_aa(rects, cfg, theta_deg):
+    """simulate_v2.render_scene with ANTI-ALIASED rasterisation: each rectangle
+    adds its exact area coverage to the pixels it overlaps, so a feature sits
+    where the geometry puts it. simulate_v2 rounds every rectangle to whole
+    render pixels (half a camera pixel at 2x supersampling), which moves each
+    feature by up to a quarter camera pixel, independently in every frame -- a
+    0.14 px/axis jitter, three times the detector's own noise, that no real
+    print has. Same canvas, rotation, lens, crop and resize as the original.
+    Returns float32 0..255, bright-on-dark."""
+    fov, rfov = cfg.fov_um, cfg.fov_um * cfg.render_margin
+    ss, ppu, n, o, m, cam = _render_geometry(cfg)
+    img = np.zeros((n, n), np.float32)
+    for (x0, y0, x1, y1) in rects:
+        X0, Y0, X1, Y1 = _drawn_box_render(x0, y0, x1, y1, ppu, n)
+        c0, c1 = max(int(np.floor(X0)), 0), min(int(np.ceil(X1)), n)
+        r0, r1 = max(int(np.floor(Y0)), 0), min(int(np.ceil(Y1)), n)
+        if c1 <= c0 or r1 <= r0:
+            continue
+        img[r0:r1, c0:c1] += 255.0 * np.outer(_coverage_1d(Y0, Y1, r0, r1), _coverage_1d(X0, X1, c0, c1)).astype(np.float32)
+    np.minimum(img, 255.0, out=img)                    # touching module rects inside a tag
+    if theta_deg:
+        M = cv2.getRotationMatrix2D((n / 2.0, n / 2.0), theta_deg, 1.0)
+        img = cv2.warpAffine(img, M, (n, n), flags=cv2.INTER_LINEAR, borderValue=0)
+    img = V._radial(img, cfg.lens_k1, cfg.lens_k2, fov * ppu / 2.0)
+    img = img[o:o + m, o:o + m]
+    if ss > 1 or img.shape[0] != cam:
+        img = cv2.resize(img, (cam, cam), interpolation=cv2.INTER_AREA)
+    return img if cfg.invert else 255.0 - img
+
+
+def _render_to_cam(P, sim, theta, lens):
+    """Render pixel-CENTRE coordinates (unrotated canvas) -> camera px, through
+    exactly the steps of render_scene(): rotate about (n/2, n/2), forward lens
+    about the canvas centre, crop, INTER_AREA resize."""
+    ss, ppu, n, o, m, cam = _render_geometry(sim)
+    P = np.asarray(P, float).reshape(-1, 2)
+    if theta:
+        M = cv2.getRotationMatrix2D((n / 2.0, n / 2.0), theta, 1.0)
+        P = P @ M[:, :2].T + M[:, 2]
+    if lens and (sim.lens_k1 or sim.lens_k2):
+        P = V.lens_forward(P, sim, sim.fov_um * ppu / 2.0, centre=((n - 1) / 2.0, (n - 1) / 2.0))
+    P = P - o
+    if ss > 1 or m != cam:
+        P = (P + 0.5) * cam / m - 0.5
+    return P
+
+
 def frame_truth(islands, recs, cfg, sim, lam, theta, drift, lobes, warped):
     """Every feature's centre (and tags' corners) in the undistorted frame px and
-    in the raw (lens-distorted) frame px. Design y-up -> image y-down here."""
+    in the raw (lens-distorted) frame px. Each island's box -- exact, because
+    render_scene_aa() rasterises with fractional coverage -- is pushed through
+    the same rotation, lens, crop and resize as the image."""
     rfov = sim.fov_um * sim.render_margin
     P0 = np.array([cfg.field_um / 2.0, cfg.field_um / 2.0])
     centre = np.array([rfov / 2.0, rfov / 2.0]) + np.asarray(drift, float)
-    M = cv2.getRotationMatrix2D((rfov / 2, rfov / 2), theta, 1.0)
     C = np.array([[i["cx"], i["cy"]] for i in islands], float)
     w = V.warp_disp(C, lobes, sim.warp_sigma_um) * lam if warped else 0.0
     Cd = centre + lam * (C - P0) + w
-    T = np.column_stack([Cd[:, 0], rfov - Cd[:, 1]])
-    R = T @ M[:, :2].T + M[:, 2]
-    px_und = _canvas_to_px(R, sim)
+    ss, ppu, n, _o, _m, _cam = _render_geometry(sim)
+    boxes = []                                       # drawn outer box per island, render edge coords
+    for k, isl in enumerate(islands):
+        rel = np.asarray(isl["rel"], float)
+        x0, y0 = Cd[k, 0] + rel[:, 0].min(), Cd[k, 1] + rel[:, 1].min()
+        x1, y1 = Cd[k, 0] + rel[:, 2].max(), Cd[k, 1] + rel[:, 3].max()
+        boxes.append(_drawn_box_render(x0, y0, x1, y1, ppu, n))
+    boxes = np.asarray(boxes, float)
+    ctr = np.column_stack([(boxes[:, 0] + boxes[:, 2]) / 2.0, (boxes[:, 1] + boxes[:, 3]) / 2.0]) - 0.5
+    px_und = _render_to_cam(ctr, sim, theta, lens=False)
+    px_raw = _render_to_cam(ctr, sim, theta, lens=True)
     W = sim.fov_px
-    cpx = ((W - 1) / 2.0, (W - 1) / 2.0)
-    px_raw = V.lens_forward(px_und, sim, W / 2.0, centre=cpx)
     band_px = abs(sim.lens_k1) * sim.fov_um / 2.0 * 1.4 / sim.um_per_px
     in_frame = ((px_und[:, 0] > band_px) & (px_und[:, 0] < W - 1 - band_px) &
                 (px_und[:, 1] > band_px) & (px_und[:, 1] < W - 1 - band_px))
     # tags: rigid corners (printed size) around the moved centre
     tags = {}
-    s = cfg.tag_um / 2.0
     for k, isl in enumerate(islands):
         if isl["kind"] != "aruco":
             continue
-        cx, cy = Cd[k]
-        dc = np.array([[cx - s, cy + s], [cx + s, cy + s], [cx + s, cy - s], [cx - s, cy - s]])
-        Tc = np.column_stack([dc[:, 0], rfov - dc[:, 1]]) @ M[:, :2].T + M[:, 2]
-        c_und = _canvas_to_px(Tc, sim)
-        c_raw = V.lens_forward(c_und, sim, W / 2.0, centre=cpx)
+        ax, ay, bx, by = boxes[k]                     # drawn box, render edge coords, y down
+        dc = np.array([[ax, ay], [bx, ay], [bx, by], [ax, by]], float) - 0.5      # TL, TR, BR, BL on screen
+        c_und = _render_to_cam(dc, sim, theta, lens=False)
+        c_raw = _render_to_cam(dc, sim, theta, lens=True)
         e = c_und[1] - c_und[0]
         tags[int(isl["aruco_id"])] = dict(
             x_und=float(px_und[k, 0]), y_und=float(px_und[k, 1]),
@@ -158,9 +236,16 @@ def ome_xml(shape, um_per_px, meta):
 
 # ------------------------------------------------------------------ main
 def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_per_px=0.51,
-             exposure="compensated", noise=None, quiet=False, lens=True):
+             exposure="compensated", noise=None, quiet=False, lens=True, print_err=0.0):
     cfg, recs, info, ref = build_design(design)
     islands = info["islands"]
+    if print_err:
+        # PRINT error: every printed feature sits off its design position by a FIXED
+        # random offset (um, the same in every frame, scaled by lambda with the gel),
+        # as a real Nanoscribe print does. The design file is left ideal; truth has it.
+        prng = np.random.default_rng(424242)
+        off = prng.normal(0.0, float(print_err), (len(islands), 2))
+        islands = [dict(isl, cx=isl["cx"] + dx, cy=isl["cy"] + dy) for isl, (dx, dy) in zip(islands, off)]
     assert len(islands) == len(recs), "islands and records must align one-to-one"
     sim = V.SimConfig()
     sim.um_per_px = um_per_px
@@ -193,7 +278,7 @@ def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_pe
         s_ = sim if warped else _nowarp(sim)
         # place() warps with whatever lobes it is given, so an unwarped frame gets NO lobes
         rects, _tc, _tid = V.place(islands, lam, s_, lobes if warped else [], cfg.field_um, drift)
-        base = V.render_scene(rects, s_, theta)
+        base = render_scene_aa(rects, s_, theta)
         tags, rows, band_px = frame_truth(islands, recs, cfg, s_, lam, theta, drift, lobes, warped)
         exp_ms = t_ref_ms * max(1.0, (lam / 1.5) ** 2) if exposure == "compensated" else t_ref_ms
         names = []
@@ -225,8 +310,14 @@ def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_pe
         if not quiet:
             print(f"  {design}/{run}: lambda {lam:g}  rot {theta:+.1f}  warp {'on' if warped else 'off'}  "
                   f"{n_in}/36 tags in frame  x{seeds} seed(s)")
+    # the lens is applied about the RENDER canvas centre; crop and canvas sizes round
+    # independently, so in camera px it sits up to a quarter pixel off (W-1)/2
+    ss, ppu, n_r, o_r, m_r, cam = _render_geometry(sim)
+    lens_c = ((n_r - 1) / 2.0 - o_r + 0.5) * cam / m_r - 0.5
     truth = dict(design=design, design_folder=DESIGN_FOLDERS[design], run=run,
                  camera=dict(um_per_px=um_per_px, fov_px=sim.fov_px, lens=bool(lens), lens_k1=sim.lens_k1, lens_k2=sim.lens_k2,
+                             lens_centre_px=float(lens_c), lens_centre_frac=float(lens_c / (cam - 1)),
+                             lens_fnorm_px=float(sim.fov_um * ppu / 2.0 * cam / m_r),
                              vignette_strength=sim.vignette_strength, vignette_power=sim.vignette_power,
                              psf_fwhm_um=psf, noise=nz, bit_depth_scale=4, exposure_policy=exposure,
                              # electrons per 16-bit ADU: full_well e- span 255 8-bit counts, x4 to 16 bit.
@@ -236,6 +327,7 @@ def make_run(design, lams, rots, warp_amp, seeds, run, out_root, psf=None, um_pe
                            seed=sim.warp_seed, lobes=[[c.tolist(), a.tolist()] for c, a in lobes]),
                  design_summary=dict(tag_um=cfg.tag_um, box_pitch_um=cfg.box_pitch, origin_um=cfg.origin,
                                      n_records=len(recs)),
+                 print_error_um=float(print_err),
                  frames=frames, px_convention="OpenCV pixel centres; y down; raw = as in the TIFF, und = after exact lens un-distortion")
     with open(os.path.join(out, "truth.json"), "w") as f:
         json.dump(truth, f, indent=1)
@@ -278,7 +370,8 @@ def main(argv=None):
         lams = [float(x) for x in str(p["lams"]).split(",")]
         rots = [float(x) for x in str(p["rot"]).split(",")]
         out = make_run(p["design"], lams, rots, p["warp"], int(p["seeds"]), run, a.out,
-                       psf=p.get("psf", a.psf), um_per_px=a.um_per_px, exposure=a.exposure, lens=p.get("lens", True))
+                       psf=p.get("psf", a.psf), um_per_px=a.um_per_px, exposure=a.exposure, lens=p.get("lens", True),
+                       print_err=p.get("print_err", 0.0))
         print(f"wrote {out}")
     _index(a.out)
 

@@ -25,7 +25,42 @@ from .types import PipelineState
 PROJECT_VERSION = 2
 
 
-def run_detect(entry, design, params=None):
+def noise_model_for(entry, calib=None):
+    """The NoiseModel for one image: its camera gain from the metadata, kappa and
+    floor from the project's calibration (`Project.noise`)."""
+    from .errors import NoiseModel
+    c = dict(calib or {})
+    c["gain_e_per_adu"] = entry.meta.gain_e_per_adu if entry.meta.gain_known else None
+    return NoiseModel.from_dict(c)
+
+
+def calibrate_noise_from_files(paths, correction, levels, design, params=None, gain=None, dot_params=None):
+    """Repeat exposures of ONE static state -> kappa_dot / kappa_tag / kappa_rot.
+    Each file goes through the given Stage-1 correction, detect (kappa 1, no
+    floors), filter and tag; features are matched by tag. Returns the
+    calibration dict (see errors.calibrate_from_repeats) with its source."""
+    from . import correct as Cc, errors as ER
+    from .aruco import detect as AD
+    from .dotfilter import filter_frame
+    from .refwarp import tagframe as TF
+    res = []
+    for p in paths:
+        raw = io.load_tiff(p)
+        corr = Cc.process(raw, correction, levels)
+        det = AD.detect(corr, design, params, raw_img=raw, correction=correction, noise_model=ER.raw_model(gain))
+        if not det.model.get("registered"):
+            continue
+        tr = TF.tag_frame(det, filter_frame(det, dot_params, None, design), design)
+        if tr is not None:
+            res.append((det, tr))
+    if len(res) < 3:
+        raise ValueError(f"need >= 3 registered repeat frames, got {len(res)}")
+    cal = ER.calibrate_from_repeats(res)
+    cal["kappa_source"] = f"repeat images: {len(res)} frames" + ("" if gain else " (relative, no gain)")
+    return cal
+
+
+def run_detect(entry, design, params=None, calib=None):
     """Stage 2 for one image, headless: Stage-1 corrected frame + raw frame ->
     DetectResult stored on the entry; derived expansion / rotation / handedness
     written into its metadata. Returns the DetectResult."""
@@ -34,7 +69,8 @@ def run_detect(entry, design, params=None):
     entry.ensure_loaded()
     p = AD.params_for_meta(entry.meta, params)
     pl = entry.pipeline
-    det = AD.detect(pl.corrected_image, design, p, raw_img=pl.raw_image, correction=pl.correction)
+    det = AD.detect(pl.corrected_image, design, p, raw_img=pl.raw_image, correction=pl.correction,
+                    noise_model=noise_model_for(entry, calib))
     pl.detection = det
     pl.features = None
     pl.tagging = None
@@ -145,6 +181,7 @@ class Project:
     images: list = field(default_factory=list)     # list[ImageEntry]
     manual_initial: bool = False                   # user explicitly chose the Initial
     design_folder: str = ""                        # the print's design folder (Phase 3)
+    noise: dict = field(default_factory=dict)      # error-model calibration: kappa_*, floor_px, sources (Phase 5)
 
     # ------------------------------------------------------------ roles
     def initial(self):
@@ -197,6 +234,7 @@ class Project:
         base = os.path.dirname(os.path.abspath(path))
         d = {"version": PROJECT_VERSION, "manual_initial": self.manual_initial,
              "design_folder": (os.path.relpath(self.design_folder, base) if self.design_folder else ""),
+             "noise": dict(self.noise),
              "images": [{"path": os.path.relpath(e.path, base), "label": e.label, "role": e.role,
                          "meta": e.meta.to_dict()} for e in self.images]}
         with open(path, "w") as f:
@@ -212,7 +250,8 @@ class Project:
         base = os.path.dirname(os.path.abspath(path))
         df = d.get("design_folder", "")
         proj = cls(folder=base, manual_initial=bool(d.get("manual_initial", False)),
-                   design_folder=(os.path.normpath(os.path.join(base, df)) if df else ""))
+                   design_folder=(os.path.normpath(os.path.join(base, df)) if df else ""),
+                   noise=dict(d.get("noise", {})))
         for im in d.get("images", []):
             p = im["path"]
             full = p if os.path.isabs(p) else os.path.normpath(os.path.join(base, p))
@@ -224,14 +263,14 @@ class Project:
 
 
 # ---------------------------------------------------------------- batch runner
-def run_stages(entry, design, params=None, dot_params=None, dash_params=None, keep_images=None):
+def run_stages(entry, design, params=None, dot_params=None, dash_params=None, keep_images=None, calib=None):
     """Stages 2-4 for one image with ITS Stage-1 tuning (sidecar), headless:
     detect -> filter -> tag. No acceptance test here (see run_stages_validated).
     Returns (ok, message)."""
     from .dotfilter import filter_frame
     from .refwarp import tagframe as TF
     loaded = entry.pipeline.raw_image is not None
-    det = run_detect(entry, design, params)
+    det = run_detect(entry, design, params, calib)
     p = entry.pipeline
     try:
         if not det.model.get("registered"):
@@ -251,11 +290,11 @@ def run_stages(entry, design, params=None, dot_params=None, dash_params=None, ke
 
 
 def run_stages_validated(entry, accepted, design, params=None, dot_params=None, dash_params=None,
-                         max_resid=None, min_share=None, keep_images=None):
+                         max_resid=None, min_share=None, keep_images=None, calib=None):
     """run_stages + the series gates (rwtag.series.validate) against the already
     accepted entries. A rejected frame keeps its results, marked not accepted."""
     from . import series as SR
-    ok, msg = run_stages(entry, design, params, dot_params, dash_params, keep_images)
+    ok, msg = run_stages(entry, design, params, dot_params, dash_params, keep_images, calib)
     tr = entry.pipeline.tagging
     if not ok:
         if tr is not None:

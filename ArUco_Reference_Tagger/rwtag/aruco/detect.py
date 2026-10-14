@@ -106,7 +106,25 @@ _DISC_FRAC = 1.0 - math.exp(-_DISC_K ** 2 / 2)  # fraction of a 2-D Gaussian ins
 _TRUNC_M2 = 1.0 - (_DISC_K ** 2 * math.exp(-_DISC_K ** 2 / 2)) / (2.0 * _DISC_FRAC)
 
 
-def spot_photometry(img, pts, sigma_px):
+def background_noise(img, low_pct=40.0):
+    """Robust per-pixel noise sigma of the dark background (image units): the MAD
+    of horizontal neighbour differences, / sqrt(2), over background REGIONS --
+    chosen on a 7x7 box-filtered copy below its low_pct percentile. Choosing by
+    the pixels' own values would keep only the low half of the noise and halve
+    the estimate."""
+    a = np.asarray(img, np.float64)
+    sm = cv2.blur(a.astype(np.float32), (7, 7))
+    sm = cv2.dilate(sm, np.ones((5, 5), np.uint8))          # keep away from feature flanks
+    thr = np.percentile(sm, low_pct)
+    d = a[:, 1:] - a[:, :-1]
+    m = (sm[:, 1:] < thr) & (sm[:, :-1] < thr)
+    if m.sum() < 1000:
+        m = np.ones_like(d, bool)
+    v = d[m]
+    return float(1.4826 * np.median(np.abs(v - np.median(v))) / math.sqrt(2.0))
+
+
+def spot_photometry(img, pts, sigma_px, noise_sigma=None):
     """Per point: (signal, background, sigma_meas), in the image's own units.
 
     Background = the 10th percentile of a (3.5 sigma)-radius patch. In a dense
@@ -116,7 +134,10 @@ def spot_photometry(img, pts, sigma_px):
     divided by the Gaussian fraction inside it (0.956), i.e. the spot's total.
     sigma_meas = second-moment width inside the disc, corrected for the
     truncation. NaN where a point is NaN or too close to the border. `sigma_px`
-    (scalar or per point) sets the window sizes."""
+    (scalar or per point) sets the window sizes. `noise_sigma` (image units) removes
+    the 10th-percentile's own bias: for Gaussian pixel noise it sits 1.2816 sigma
+    below the true background, which over a ~100-pixel disc doubles a faint
+    spot's signal (simulated: 1531 read for 800 true photons)."""
     pts = np.asarray(pts, float).reshape(-1, 2)
     n = len(pts)
     sig = np.broadcast_to(np.asarray(sigma_px, float), (n,)).copy()
@@ -134,6 +155,8 @@ def spot_photometry(img, pts, sigma_px):
         r2 = (dx[None] - ox[:, None, None]) ** 2 + (dy[None] - oy[:, None, None]) ** 2
         disc = r2 <= (_DISC_K * sv) ** 2
         bg = np.percentile(P.reshape(len(P), -1), 10, axis=1)
+        if noise_sigma:
+            bg = bg + 1.2816 * float(noise_sigma)
         Q = P - bg[:, None, None]
         s = (Q * disc).sum(axis=(1, 2)) / _DISC_FRAC
         w = np.clip(Q, 0, None) * disc
@@ -274,9 +297,17 @@ def _match_nearest(src, dst, gate):
 
 # ------------------------------------------------------------------ detect
 def detect(corr_img, design: Design, params: ArucoParams = None, raw_img=None, correction=None,
-           dict_name=None) -> DetectResult:
+           dict_name=None, noise_model=None) -> DetectResult:
     """Full Stage 2 on a Stage-1 corrected frame. `raw_img` + `correction` enable
-    the exact edge test, raw-frame photometry and the raw second pass."""
+    the exact edge test, raw-frame photometry and the raw second pass.
+    `noise_model` (rwtag.errors.NoiseModel) sets the gain, kappa and floor of the
+    per-feature covariances (default: relative errors, kappa 1, floor 0)."""
+    det = _detect(corr_img, design, params, raw_img, correction, dict_name)
+    from rwtag import errors as ER
+    return ER.apply(det, raw_img, correction, noise_model or ER.NoiseModel(), design)
+
+
+def _detect(corr_img, design, params=None, raw_img=None, correction=None, dict_name=None):
     params = params or ArucoParams()
     dict_name = dict_name or design.dict_name
     corr = np.asarray(corr_img, np.float32)
@@ -382,16 +413,18 @@ def detect(corr_img, design: Design, params: ArucoParams = None, raw_img=None, c
     # ---- 6. photometry on the raw frame -----------------------------------------
     if raw_img is not None:
         raw = np.asarray(raw_img, np.float32)
+        noise_raw = background_noise(raw)
         dots_raw_map = C.inverse_geometric(dots, correction, shape) if not geo_id else dots.copy()
-        sig_raw, bg_raw, _w = spot_photometry(raw, dots_raw_map, dot_sig)
-        _s, _b, width = spot_photometry(corr, dots, dot_sig)
+        sig_raw, bg_raw, width = spot_photometry(raw, dots_raw_map, dot_sig, noise_raw)
         photometry_on = "raw"
     else:
         raw = None
         dots_raw_map = None
-        sig_raw, bg_raw, width = spot_photometry(corr, dots, dot_sig)
+        noise_raw = background_noise(corr)
+        sig_raw, bg_raw, width = spot_photometry(corr, dots, dot_sig, noise_raw)
         photometry_on = "corrected"
     params_d["photometry_on"] = photometry_on
+    params_d["noise_sigma"] = noise_raw
 
     # ---- 7. the raw second pass ---------------------------------------------------
     raw_pass = None

@@ -143,6 +143,14 @@ class DetectResult:
     design_sha: dict = field(default_factory=dict)
     params: dict = field(default_factory=dict)          # ArucoParams used
     raw_pass: dict = None                               # second detection on the raw frame, see aruco.detect
+    # ---- error model (port Phase 5, rwtag.errors) ----
+    dot_cov_raw: np.ndarray = None                      # (N,2,2) raw-frame px^2
+    dot_cov_corr: np.ndarray = None                     # (N,2,2) corrected-frame px^2
+    dot_cov_flag: np.ndarray = None                     # (N,) "" | "border_estimate"
+    dash_cov_raw: np.ndarray = None                     # (M,2,2) for dashes_all
+    dash_cov_corr: np.ndarray = None
+    tag_cov: dict = field(default_factory=dict)         # {id: {centre_corr, centre_raw, corners_*, rot_sigma_deg, side_sigma_px}}
+    noise: dict = field(default_factory=dict)           # the NoiseModel used + measured pixel noise
 
 
 @dataclass

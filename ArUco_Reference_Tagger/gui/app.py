@@ -132,6 +132,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.state.correctionChanged.connect(self.sidebar.refresh_status)
         self.state.detectionChanged.connect(self._on_detection)
         self.state.metaChanged.connect(self.meta.refresh)
+        self.state.metaChanged.connect(self.detect.show_noise)
 
         self._install_shortcuts()
         self.log("Ready. Add images to build the project (expansion labels parse from '1.5X…' "
@@ -319,7 +320,7 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             ok, msg = PJ.run_stages_validated(entry, accepted, self.detect.design, self.detect.params(),
                                               self.filter.dot_params(), self.filter.dash_params(),
-                                              keep_images=(entry is self.current_entry))
+                                              keep_images=(entry is self.current_entry), calib=self.project.noise)
         finally:
             QtWidgets.QApplication.restoreOverrideCursor()
         self.log(f"  {entry.label:g}× — {'OK · ' + msg if ok else msg}")

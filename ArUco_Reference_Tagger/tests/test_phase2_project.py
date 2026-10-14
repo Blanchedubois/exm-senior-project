@@ -100,8 +100,9 @@ def test_apply_meta_groups_to_all():
 # ------------------------------------------------------------ Stage 1 on the dummy frames
 def _stage1_params(truth, rotate=0.0):
     cam = truth["camera"]
+    c = cam.get("lens_centre_frac", 0.5)          # the render's true lens centre
     return CorrectionParams(k1=cam["lens_k1"], k2=cam["lens_k2"], vig_strength=cam["vignette_strength"],
-                            vig_power=cam["vignette_power"], rotate_deg=rotate)
+                            vig_power=cam["vignette_power"], rotate_deg=rotate, dist_cx=c, dist_cy=c)
 
 
 def _truth_tags(frame):
