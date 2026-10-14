@@ -129,13 +129,14 @@ def rigid_align(pairs: Pairs, box_n, c0, c1, n_boot=200, seed=0) -> dict:
     R = kabsch_rotation(d.P1 - c1, d.P0 - c0)
     ang = math.degrees(math.atan2(R[1, 0], R[0, 0]))
     rng = np.random.default_rng(seed)
-    boots = []
+    boots, fits = [], []
     for _ in range(n_boot):
         k = rng.integers(0, len(d.P0), len(d.P0))
         Rb = kabsch_rotation(d.P1[k] - c1, d.P0[k] - c0)
         boots.append(math.degrees(math.atan2(Rb[1, 0], Rb[0, 0])))
+        fits.append((1.0, Rb, c0 - Rb @ c1))
     return {"ok": True, "kind": "rigid", "R": R, "s": 1.0, "t": c0 - R @ c1, "box": int(box_n), "c0": c0, "c1": c1,
-            "angle_deg": -ang, "angle_sigma_deg": float(np.std(boots)), "n_pairs": int(len(d.P0))}
+            "angle_deg": -ang, "angle_sigma_deg": float(np.std(boots)), "n_pairs": int(len(d.P0)), "fits": fits}
 
 
 def similarity_align(pairs: Pairs, n_boot=200, seed=0) -> dict:
@@ -147,7 +148,7 @@ def similarity_align(pairs: Pairs, n_boot=200, seed=0) -> dict:
     if len(d.tags) < 3:
         return {"ok": False, "reason": f"only {len(d.tags)} paired dots"}
     b = bootstrap_alignment(d.P1, d.P0, kind="similarity", n_boot=n_boot, seed=seed)
-    return {"ok": True, "kind": "similarity", "R": b["R"], "s": b["s"], "t": b["t"],
+    return {"ok": True, "kind": "similarity", "R": b["R"], "s": b["s"], "t": b["t"], "fits": b["fits"],
             "angle_deg": -float(b["params"][0]), "angle_sigma_deg": float(math.sqrt(b["cov"][0, 0])),
             "s_sigma": float(math.sqrt(b["cov"][3, 3])), "cov": b["cov"], "cov_names": b["names"],
             "n_pairs": int(len(d.P0)), "expansion": 1.0 / b["s"]}
@@ -160,6 +161,36 @@ def apply_align(points, align):
 
 
 apply_rigid = apply_align
+
+
+def align_point_cov(points, align):
+    """(n,2,2) covariance of each mapped point due to the ALIGNMENT's own
+    uncertainty: the spread of the point under the bootstrap fits."""
+    P = np.asarray(points, float).reshape(-1, 2)
+    fits = align.get("fits") or []
+    if len(fits) < 3 or not len(P):
+        return np.zeros((len(P), 2, 2))
+    Q = np.stack([s * P @ np.asarray(R).T + np.asarray(t) for s, R, t in fits])     # (b, n, 2)
+    d = Q - Q.mean(0)
+    return np.einsum("bni,bnj->nij", d, d) / (len(fits) - 1)
+
+
+def affine_align(pairs: Pairs, n_boot=200, seed=0) -> dict:
+    """Compared -> reference general affine over the paired dots, with bootstrap
+    covariance of its six parameters (a11 a12 a21 a22 tx ty)."""
+    d = pairs.select(("dot",))
+    if len(d.tags) < 3:
+        return {"ok": False}
+    X = np.column_stack([d.P1, np.ones(len(d.P1))])
+    sol, *_ = np.linalg.lstsq(X, d.P0, rcond=None)
+    rng = np.random.default_rng(seed); boots = []
+    for _ in range(n_boot):
+        k = rng.integers(0, len(X), len(X))
+        b, *_ = np.linalg.lstsq(X[k], d.P0[k], rcond=None)
+        boots.append(np.r_[b[:2].T.ravel(), b[2]])
+    A = np.column_stack([sol[:2].T, sol[2]])
+    return {"ok": True, "kind": "affine", "A": A, "cov": np.cov(np.asarray(boots).T),
+            "cov_names": ["a11", "a12", "a21", "a22", "tx", "ty"], "n_pairs": int(len(d.P0))}
 
 
 def overlay_composite(img0_u8, img1_u8, align, cyan_gain=1.0, red_gain=1.0):

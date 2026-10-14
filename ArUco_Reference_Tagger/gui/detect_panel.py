@@ -159,6 +159,14 @@ class DetectPanel(QtWidgets.QWidget):
                            edge_band_um=self.s_band.value(), mask_tags=self.chk_mask.isChecked(),
                            raw_pass=self.chk_raw.isChecked())
 
+    def set_params(self, p: ArucoParams):
+        """Restore the widgets from stored settings (project open)."""
+        self.s_psf.setValue(p.psf_fwhm_um); self.s_noise.setValue(p.noise_k); self.s_band.setValue(p.edge_band_um)
+        i = self.cmb_refine.findText(p.refine)
+        if i >= 0:
+            self.cmb_refine.setCurrentIndex(i)
+        self.chk_mask.setChecked(p.mask_tags); self.chk_raw.setChecked(p.raw_pass)
+
     def _umpx_to_meta(self):
         e = self.entry_fn()
         if e is None or self._loading:

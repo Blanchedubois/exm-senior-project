@@ -391,10 +391,11 @@ def bootstrap_alignment(P_move, P_target, kind="rigid", n_boot=200, seed=0, abou
         return np.array([th, tc[0], tc[1]] + ([s] if kind == "similarity" else [])), (s, R, t)
 
     p0, (s, R, t) = fit(A, B)
-    boots = []
+    boots, fits = [], []
     for _ in range(n_boot):
         k = rng.integers(0, len(A), len(A))
-        boots.append(fit(A[k], B[k])[0])
+        pb, fb = fit(A[k], B[k])
+        boots.append(pb); fits.append(fb)
     cov = np.cov(np.asarray(boots).T)
-    return {"params": p0, "cov": cov, "s": s, "R": R, "t": t, "kind": kind,
+    return {"params": p0, "cov": cov, "s": s, "R": R, "t": t, "kind": kind, "fits": fits,
             "names": ["theta_deg", "x_about", "y_about"] + (["s"] if kind == "similarity" else [])}

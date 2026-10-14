@@ -432,7 +432,7 @@ def _detect(corr_img, design, params=None, raw_img=None, correction=None, dict_n
     rot_raw = float(pose.frame_rot_deg) - (float(correction.rotate_deg) if correction is not None else 0.0)
     if raw is not None and params.raw_pass:
         raw_pass = _raw_pass(raw, design, params, dict_name, A, tags, dots, dot_box, dot_sig,
-                             dots_raw_map, on_grid, correction, shape, geo_id, module_px)
+                             dots_raw_map, dashes, correction, shape, geo_id, module_px)   # ALL dashes: indices match dashes_all
         if np.isfinite(raw_pass["rot_deg"]):
             rot_raw = raw_pass["rot_deg"]
 

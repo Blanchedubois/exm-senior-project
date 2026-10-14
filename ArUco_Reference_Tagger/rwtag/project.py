@@ -186,6 +186,29 @@ class Project:
     manual_initial: bool = False                   # user explicitly chose the Initial
     design_folder: str = ""                        # the print's design folder (Phase 3)
     noise: dict = field(default_factory=dict)      # error-model calibration: kappa_*, floor_px, sources (Phase 5)
+    settings: dict = field(default_factory=dict)   # Stage 2-3 settings last run: {aruco, dot_filter, dash_filter} (Phase 7)
+
+    # ------------------------------------------------------------ settings
+    def store_settings(self, params=None, dot_params=None, dash_params=None):
+        from dataclasses import asdict
+        if params is not None:
+            self.settings["aruco"] = params.to_dict()
+        if dot_params is not None:
+            self.settings["dot_filter"] = asdict(dot_params)
+        if dash_params is not None:
+            self.settings["dash_filter"] = asdict(dash_params)
+
+    def stage_params(self):
+        """(ArucoParams, DotFilterParams, DashFilterParams) from the stored settings
+        (defaults where absent) -- what the headless runner and export use."""
+        from .aruco import ArucoParams
+        from .dotfilter import DotFilterParams, DashFilterParams
+
+        def make(cls, d):
+            return cls(**{k: v for k, v in (d or {}).items() if k in cls.__dataclass_fields__})
+        s = self.settings or {}
+        return make(ArucoParams, s.get("aruco")), make(DotFilterParams, s.get("dot_filter")), \
+            make(DashFilterParams, s.get("dash_filter"))
 
     # ------------------------------------------------------------ roles
     def initial(self):
@@ -238,7 +261,7 @@ class Project:
         base = os.path.dirname(os.path.abspath(path))
         d = {"version": PROJECT_VERSION, "manual_initial": self.manual_initial,
              "design_folder": (os.path.relpath(self.design_folder, base) if self.design_folder else ""),
-             "noise": dict(self.noise),
+             "noise": dict(self.noise), "settings": dict(self.settings),
              "images": [{"path": os.path.relpath(e.path, base), "label": e.label, "role": e.role,
                          "meta": e.meta.to_dict()} for e in self.images]}
         with open(path, "w") as f:
@@ -255,7 +278,7 @@ class Project:
         df = d.get("design_folder", "")
         proj = cls(folder=base, manual_initial=bool(d.get("manual_initial", False)),
                    design_folder=(os.path.normpath(os.path.join(base, df)) if df else ""),
-                   noise=dict(d.get("noise", {})))
+                   noise=dict(d.get("noise", {})), settings=dict(d.get("settings", {})))
         for im in d.get("images", []):
             p = im["path"]
             full = p if os.path.isabs(p) else os.path.normpath(os.path.join(base, p))
@@ -311,3 +334,23 @@ def run_stages_validated(entry, accepted, design, params=None, dot_params=None, 
     tr.source = "baseline" if ok and not [a for a in acc if a.accepted] else "direct"
     tr.confidence = reason + " · " + tr.confidence
     return ok, (msg + f" · {reason}" if ok else f"REJECTED: {reason}")
+
+
+def run_all(project, design, params=None, dot_params=None, dash_params=None, only_pending=False, log=None):
+    """Stages 2-4 + series gates for every image in ascending expansion (the
+    lowest accepted frame becomes the baseline), headless. Settings default to
+    the project's stored ones. Returns {image name: (ok, message)}."""
+    sp = project.stage_params()
+    params = params or sp[0]; dot_params = dot_params or sp[1]; dash_params = dash_params or sp[2]
+    out = {}
+    for e in sorted(project.images, key=lambda e: e.label):
+        tr = e.pipeline.tagging
+        if only_pending and tr is not None and tr.accepted:
+            continue
+        accepted = [a for a in sorted(project.images, key=lambda a: a.label)
+                    if a is not e and a.pipeline.tagging is not None and a.pipeline.tagging.accepted]
+        out[e.name] = run_stages_validated(e, accepted, design, params, dot_params, dash_params, calib=project.noise)
+        if log:
+            log(f"{e.label:g}x {e.name}: {out[e.name][1]}")
+    project.store_settings(params, dot_params, dash_params)
+    return out

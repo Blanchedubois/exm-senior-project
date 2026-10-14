@@ -192,3 +192,46 @@ bundle path and the manifest hash.
 ## 8. How this serves the end goal
 
 This is the end goal. Everything upstream exists to fill these tables.
+
+## 9. As built (2026-10-14)
+
+**Files.** New: `rwtag/export.py`, `rwtag/export_schema.py`, `rwtag/export_reader.py`,
+`scripts/export_project.py`, `gui/export_dialog.py`, `tests/test_phase7_export.py` (7),
+`tests/test_phase7_gui.py`. Changed: `rwtag/project.py` (`Project.settings`, `store_settings`,
+`stage_params`, headless `run_all`), `rwtag/pairing.py` (every alignment keeps its bootstrap fits;
+`align_point_cov`, `affine_align`), `rwtag/errors.py` (`bootstrap_alignment` returns its fits),
+`rwtag/aruco/detect.py` (the raw pass indexes all dashes, so raw-frame dash positions line up with
+`dashes_all`), `gui/app.py` ("Export bundle…" toolbar action, settings stored on every run and
+restored on project open), `gui/detect_panel.py` and `gui/filter_panel.py` (`set_params`). 97 tests pass.
+
+**Differences from the plan.**
+
+- One schema entry per table family: `pairs_<ref>_<cmp>.csv` and `local_deformation_<ref>_<cmp>.csv`
+  share the `pairs.csv` / `local_deformation.csv` schemas. Names use the expansion label (`1x_2x`),
+  falling back to the image stem when two images share a label. Alignment files follow the same names.
+- Pair-table position columns are `x_0, y_0, sxx_0 …` (reference) and `x_1 …` (compared), plus
+  `sxx_u_sim …`, the covariance of the similarity displacement (both features + alignment).
+- `features_corr.csv` has no `kept` column: every row is kept; dropped detections are in
+  `dropped_features.csv` (reasons: the filter's, `unmatched`, `box_mismatch`, and for tags
+  `duplicate | ambiguous | edge_band | not_in_design`).
+- The alignment covariance per point (`sxx_align …`) is the spread of the point under the 200
+  bootstrap fits of the alignment, so it grows away from the paired region.
+- `deviation_from_design.csv` uses only the feature's own covariance: the similarity fit over
+  thousands of features adds a negligible error.
+- Rejected images are listed in `rejected.json` with their stage (`detect | tag | series | not run`)
+  and metadata. Export refuses a project whose initial image is not accepted.
+- Tables are written with `%.10g` floats and nullable integer / boolean types; the reader restores
+  them. A Parquet copy is written when `pyarrow` imports.
+
+**Measured on the dummy series**
+
+| check | result |
+|---|---|
+| raw_map through the stored Stage-1 params vs corr | max error 1e-12 px |
+| raw pass re-found / median raw_det − raw_map | 99.9 % / 0.021 px |
+| warped λ 2, deviation from design vs truth (0.93 µm RMS) | recovered to 0.018 µm, correlation 1.000 |
+| warped λ 4 (0.54 µm RMS) | recovered to 0.009 µm, correlation 1.000 |
+| clean run, deviations inside their 95 % ellipse | 95.6 % (significant at 99 %: 1.2 %) |
+| local linear expansion median, 2× and 4× | 1.998, 4.001 |
+| GUI export vs `scripts/export_project.py` on the saved project | 11 tables, identical sha256 |
+| three images, 35 220 feature rows, build time | about 2.5 s |

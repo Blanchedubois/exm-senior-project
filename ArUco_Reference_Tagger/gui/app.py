@@ -77,6 +77,8 @@ class MainWindow(QtWidgets.QMainWindow):
         tb.addAction("Save session…", self.save_session)
         tb.addAction("Load session…", self.load_session)
         tb.addAction("Copy to all…", self.copy_to_all)
+        tb.addSeparator()
+        tb.addAction("Export bundle…", self.export_bundle_dialog)
 
         self.state = AppState()
         self.project = PJ.Project()
@@ -321,6 +323,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.sidebar.refresh(keep_selection=False)
         if self.project.design_folder and os.path.exists(self.project.design_folder):
             self.detect.set_design_folder(self.project.design_folder)
+        if self.project.settings:
+            ap, dp, hp = self.project.stage_params()
+            self.detect.set_params(ap); self.filter.set_params(dp, hp)
         self._open_dir = self.project.folder
         self.log(f"project opened: {os.path.basename(path)} · {len(self.project.images)} image(s)")
         if self.project.images:
@@ -344,6 +349,7 @@ class MainWindow(QtWidgets.QMainWindow):
             ok, msg = PJ.run_stages_validated(entry, accepted, self.detect.design, self.detect.params(),
                                               self.filter.dot_params(), self.filter.dash_params(),
                                               keep_images=(entry is self.current_entry), calib=self.project.noise)
+            self.project.store_settings(self.detect.params(), self.filter.dot_params(), self.filter.dash_params())
         finally:
             QtWidgets.QApplication.restoreOverrideCursor()
         self.log(f"  {entry.label:g}× — {'OK · ' + msg if ok else msg}")
@@ -368,6 +374,45 @@ class MainWindow(QtWidgets.QMainWindow):
             QtWidgets.QApplication.processEvents()
         n = sum(1 for e in self.project.images if e.pipeline.tagging is not None and e.pipeline.tagging.accepted)
         self.log(f"Run all: {n}/{len(self.project.images)} image(s) accepted.")
+
+    # ---------------------------------------------------------------- export (Phase 7)
+    def export_bundle(self, parent, options=None, name=None):
+        """Headless half of the Export action: build + write the bundle of the
+        current project. Returns (folder, bundle) or (None, None)."""
+        from rwtag import export as EX
+        if self.detect.design is None or not self.project.images:
+            self.log("Export: load images and a design first."); return None, None
+        self._store_current()
+        QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        try:
+            folder, b = EX.export_project(self.project, self.detect.design, parent, options, name)
+        except ValueError as ex:
+            self.log(f"Export failed: {ex}"); return None, None
+        finally:
+            QtWidgets.QApplication.restoreOverrideCursor()
+        import hashlib
+        with open(os.path.join(folder, "manifest.json"), "rb") as f:
+            mh = hashlib.sha256(f.read()).hexdigest()[:12]
+        n = EX.row_counts(b)
+        self.log(f"Export -> {folder}  ·  manifest sha256 {mh}…  ·  {len(n)} tables, "
+                 f"{n.get('features_corr.csv', 0)} feature rows, {len(b.rejected)} image(s) rejected")
+        return folder, b
+
+    def export_bundle_dialog(self, *_):
+        from rwtag import export as EX
+        from .export_dialog import ExportDialog
+        if self.detect.design is None or not self.project.images:
+            self.log("Export: load images and a design first."); return None
+        self._store_current()
+        try:
+            preview = EX.build_bundle(self.project, self.detect.design, EX.ExportOptions(n_boot=20))
+        except ValueError as ex:
+            self.log(f"Export: {ex}"); return None
+        dlg = ExportDialog(self, self.project, preview, self.project.folder or self._open_dir)
+        if dlg.exec() != QtWidgets.QDialog.Accepted:
+            return None
+        folder, _b = self.export_bundle(dlg.folder(), dlg.options())
+        return folder
 
     # ---------------------------------------------------------------- sessions
     def save_session(self, *_):
