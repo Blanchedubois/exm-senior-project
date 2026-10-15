@@ -112,12 +112,12 @@ class FilterPanel(QtWidgets.QWidget):
 
     def set_params(self, dp, hp):
         """Restore the widgets from stored settings (project open)."""
-        self.c_edge.setChecked(dp.edge_enable); self.c_tag.setChecked(dp.tag_enable); self.s_tag.setValue(dp.tag_margin_frac)
-        self.c_sep.setChecked(dp.min_sep_enable); self.s_sep.setValue(dp.min_sep_frac)
-        self.c_dev.setChecked(dp.dev_enable); self.s_dev.setValue(dp.max_dev_frac)
-        self.c_hedge.setChecked(hp.edge_enable); self.c_off.setChecked(hp.offgrid_enable); self.s_off.setValue(hp.max_offgrid_frac)
-        self.c_hsep.setChecked(hp.minsep_enable); self.s_hsep.setValue(hp.min_sep_frac)
-        self.c_cor.setChecked(hp.corner_enable); self.s_cor.setValue(hp.corner_radius_frac)
+        self.c_edge.setChecked(dp.edge_enable); self.c_tag.setChecked(dp.tag_enable); self.s_tag.set_value(dp.tag_margin_frac)
+        self.c_sep.setChecked(dp.min_sep_enable); self.s_sep.set_value(dp.min_sep_frac)
+        self.c_dev.setChecked(dp.dev_enable); self.s_dev.set_value(dp.max_dev_frac)
+        self.c_hedge.setChecked(hp.edge_enable); self.c_off.setChecked(hp.offgrid_enable); self.s_off.set_value(hp.max_offgrid_frac)
+        self.c_hsep.setChecked(hp.minsep_enable); self.s_hsep.set_value(hp.min_sep_frac)
+        self.c_cor.setChecked(hp.corner_enable); self.s_cor.set_value(hp.corner_radius_frac)
 
     def dash_params(self):
         d = self.design_fn()

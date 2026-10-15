@@ -468,6 +468,9 @@ def main():
     import sys
     app = QtWidgets.QApplication(sys.argv)
     w = MainWindow(); w.show()
+    proj = [a for a in sys.argv[1:] if a.endswith(".rwproj.json") and os.path.exists(a)]
+    if proj:                                   # python run.py path/to/project.rwproj.json
+        w.open_project_path(os.path.abspath(proj[0]))
     sys.exit(app.exec())
 
 

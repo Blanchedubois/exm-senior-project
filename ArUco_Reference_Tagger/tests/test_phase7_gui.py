@@ -62,8 +62,14 @@ def test_gui_export_equals_headless():
         folder, b = w.export_bundle(tmp, EX.ExportOptions(n_boot=50), name="gui")
         assert folder and "Export ->" in w.logbox.toPlainText()
         RD.read_bundle(folder).check()
+        dp = w.filter.dot_params()
         proj_path = w.save_project()
         w.close()
+        # reopening the saved project restores the Detect / Filter settings (regression: crashed)
+        w2 = MainWindow(); w2.open_project_path(proj_path); app.processEvents()
+        assert abs(w2.detect.s_psf.value() - truth["camera"]["psf_fwhm_um"]) < 1e-9
+        assert w2.filter.dot_params() == dp
+        w2.close()
         # the same project, headless
         res = subprocess.run([sys.executable, os.path.join(DM.ROOT, "scripts", "export_project.py"), proj_path,
                               "--name", "script", "--boot", "50"], capture_output=True, text=True, timeout=600)
