@@ -4,11 +4,11 @@
 
 The ArUco Reference Tagger is now a working desktop app (Python, PySide6). It takes a series of fluorescence images of one gel at increasing expansion and finds every ArUco tag, dot and dash in each one. It then gives every feature its design identity and an error bar, compares the images with each other, and exports the result as a set of tables for the distortion analysis.
 
-No real images of the V2 print exist yet, so every part of the app was tested on fake images instead. Each fake image comes with the exact position of every feature in it. That makes it possible to check the app against the right answer, not just against what looks plausible. This post describes how the fake images are made and what the tests found.
+No real images of the V2 print exist yet, so every part of the app was tested on fake images instead. Each fake image comes with the exact position of every feature in it. That makes it possible to check the app against the right answer, not just against what looks plausible. This post describes how the fake images are made and what the tests found. Everything shown here is a check that the app works, not the project's analysis: that comes later, as described below.
 
 ![The Field tab on the fake warped series](images/2026-10-15-field-tab.webp)
 
-*The Field tab on the fake warped series. Each orange dot is one printed dot, and its line is how far that dot moved between two images once the expansion and rotation are taken out, coloured by size in pixels. The swirls are the distortion that was deliberately added to the fake images. The square markers are the ArUco tags.*
+*The Field tab on the fake warped series. Each orange dot is one printed dot, and its line is how far that dot moved between two images once the expansion and rotation are taken out, coloured by size in pixels. The swirls are the distortion that was deliberately added to the fake images. The square markers are the ArUco tags. This is a visual check that pairing and alignment work, not an analysis result.*
 
 ## What the app does
 
@@ -74,6 +74,21 @@ There are 97 automatic tests, run on these fake series. The main results:
 ![Plots made from the exported tables](images/2026-10-15-export-preview.png)
 
 *Plotted only from the exported tables of the warped series. Left and middle: each dot's deviation from the design grid at 2× and 4×, in design micrometres. Right: the median local expansion against the first image, which sits on the line for uniform expansion.*
+
+## This is a working check, not the analysis
+
+None of the figures in this post are research results. The images are fake, and the plots are rough views that exist to confirm the machinery works. They show that tags are read, dots are found and named, the same dot is matched across images, and the distortion that was put in comes back out. The point is to see that the pieces fit together before any real data goes through them.
+
+The Pair, Overlay, Field and Series tabs are built for the same purpose. They let me look at the data before exporting it, to catch a mismatched pairing, a misplaced grid or a bad image by eye. They are deliberately simple. They show one quantity at a time, for two images at a time, with no statistics across gels or between expansion methods.
+
+The real analysis is separate and not written yet. It will read the exported tables and do the work the project is about:
+
+- measure local anisotropy and how it varies across the gel;
+- measure how distortion is correlated over distance;
+- compare gels expanded by MAGNIFY (osmotic) with gels expanded by TExM (tensile);
+- treat the noise properly, for example the small positive bias anisotropy has even when there is no distortion.
+
+The app's job ends at the export. It turns images into named, positioned features with honest error bars, and it does that the same way every time.
 
 ## What fake images cannot show
 

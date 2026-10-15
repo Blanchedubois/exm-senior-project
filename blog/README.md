@@ -4,6 +4,7 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-10-15 | [How pairing works, and why everything depends on it](2026-10-15-how-pairing-works.md) |
 | 2026-10-15 | [The ArUco tagger app is built, and tested on fake images with a known answer](2026-10-15-gui-built-and-tested-on-dummy-images.md) |
 | 2026-10-13 | [How each dot gets an error bar, and why the camera gain matters](2026-10-13-error-model-and-camera-gain.md) |
 | 2026-10-13 | [The Nanoscribe marker workshop: sizing the ArUco print for the real microscope](2026-10-13-nanoscribe-marker-workshop.md) |
