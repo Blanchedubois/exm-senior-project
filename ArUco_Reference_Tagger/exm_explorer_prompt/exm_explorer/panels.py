@@ -371,6 +371,11 @@ class MetricsPanel(QtWidgets.QWidget):
         scroll.setWidget(self.text)
         scroll.setWidgetResizable(True)
         lay.addWidget(scroll, 3)
+        self.faithful = QtWidgets.QLabel()
+        self.faithful.setTextFormat(Qt.TextFormat.RichText)
+        self.faithful.setWordWrap(True)
+        self.faithful.setTextInteractionFlags(Qt.TextInteractionFlag.TextSelectableByMouse)
+        lay.addWidget(self.faithful)
         self.plot = pg.PlotWidget(title="ACF peak height, post / pre, vs lag")
         self.plot.setLabel("bottom", "lag (dot-lattice spacings)")
         self.plot.setLabel("left", "post / pre")
@@ -429,3 +434,24 @@ ratio <b>{c["ratio"]:.3f}</b> (ambiguity margin {100 * (c["ratio"] - 1):.1f} %)<
 <b>Compute</b>: {1e3 * m["total_s"]:.0f} ms ({tier})<br><span style='color:{MUTED}'>{timing} ms</span>
 """
         self.text.setText(html)
+
+    def set_faithful(self, res, stale=False, seconds=None):
+        """Summary of the last faithful-pipeline run."""
+        if res is None:
+            self.faithful.setText("")
+            return
+        tg, ac, tr = res["aruco_tags"]["global_"], res["acf_global"], res["truth_global"]
+        lines = [f"<b>Faithful pipeline</b> (exact render, {res['aruco_tags']['n_tags']} tags decoded by OpenCV"
+                 + (f", {seconds:.1f} s" if seconds else "") + ")"
+                 + (f" <span style='color:{ORANGE}'>· the scenario has changed since</span>" if stale else ""),
+                 f"scale: ACF {ac['scale']:.4f} · tags {tg['scale']:.4f} · truth {tr['scale']:.4f}; "
+                 f"rotation: tags {tg['rotation_deg']:+.3f}° · truth {tr['rotation_deg']:+.3f}°"]
+        for key, st in res.items():
+            if key.startswith("ccf_after_"):
+                reg = key[len("ccf_after_"):-len("_correction")]
+                lines.append(f"CCF after {reg}: peak {st['ccf_peak']:.3f} / next {st['next_best_peak']:.3f}; "
+                             f"lattice-aware rms {st['unwrapped_rms_err_px']:.2f} px, "
+                             f"{100 * st['unwrapped_frac_off_by_a_cell']:.1f} % off a cell "
+                             f"(dot windows {st.get('dots_only_unwrapped_rms_err_px', float('nan')):.3f} px); "
+                             f"local expansion r {st['local_scale_corr']:.3f}")
+        self.faithful.setText("<br>".join(lines))

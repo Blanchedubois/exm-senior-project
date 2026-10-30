@@ -103,15 +103,14 @@ def simulate(scen, grid=None, fld=None):
     fld = fld or fieldmod.solve(scen.sites, scen.solver)
     pos = island_positions(grid, scen, fld)
     im = scen.imaging
-    pre_clean = render_clean(grid, pos.pre_px, pos.pre, im.psf_fwhm_um)
-    post_clean = render_clean(grid, pos.post_px, pos.post, im.psf_fwhm_um)
     gain = im.lam ** im.post_gain_exp
-    if im.noise:
-        rng = draws(im.seed, grid.n).noise_rng()
-        pre = expose(pre_clean, im.peak_e, im.bg_e, im.read_e, rng)
-        del pre_clean
-        post = expose(post_clean, im.peak_e * gain, im.bg_e * gain, im.read_e, rng)
-    else:
-        pre = expose_clean(pre_clean, im.peak_e, im.bg_e)
-        post = expose_clean(post_clean, im.peak_e * gain, im.bg_e * gain)
+    rng = draws(im.seed, grid.n).noise_rng() if im.noise else None
+    # render and expose one image at a time to keep the peak memory down
+    clean = render_clean(grid, pos.pre_px, pos.pre, im.psf_fwhm_um)
+    pre = expose(clean, im.peak_e, im.bg_e, im.read_e, rng) if rng else expose_clean(clean, im.peak_e, im.bg_e)
+    del clean
+    clean = render_clean(grid, pos.post_px, pos.post, im.psf_fwhm_um)
+    post = expose(clean, im.peak_e * gain, im.bg_e * gain, im.read_e, rng) if rng else \
+        expose_clean(clean, im.peak_e * gain, im.bg_e * gain)
+    del clean
     return SimResult(scenario=scen, field=fld, positions=pos, pre=pre, post=post)

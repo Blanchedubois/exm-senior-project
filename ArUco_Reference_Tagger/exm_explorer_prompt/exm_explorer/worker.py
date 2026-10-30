@@ -67,3 +67,44 @@ class LatestWorker(QThread):
                 continue
             if result is not None and not is_stale():
                 self.done.emit(gen, result)
+
+
+class Cancelled(Exception):
+    pass
+
+
+class FaithfulWorker(QThread):
+    """One faithful-pipeline run (exact render, OpenCV tags, resample, CCF)
+    with progress and cancel. Not latest-wins: the user starts it on purpose."""
+    progress = Signal(str, float)
+    done = Signal(object)               # (scenario json, results, extras)
+    failed = Signal(str)
+    cancelled = Signal()
+
+    def __init__(self, scen, registrations, parent=None):
+        super().__init__(parent)
+        self.scen = scen
+        self.registrations = registrations
+        self._cancel = False
+
+    def cancel(self):
+        self._cancel = True
+
+    def run(self):
+        import json
+
+        from . import pipeline
+
+        def cb(stage, frac):
+            if self._cancel:
+                raise Cancelled
+            self.progress.emit(stage, frac)
+        try:
+            res, ex = pipeline.run_faithful(self.scen, registrations=self.registrations, progress=cb)
+        except Cancelled:
+            self.cancelled.emit()
+            return
+        except Exception:
+            self.failed.emit(traceback.format_exc())
+            return
+        self.done.emit((json.dumps(self.scen.to_dict(), sort_keys=True), res, ex))

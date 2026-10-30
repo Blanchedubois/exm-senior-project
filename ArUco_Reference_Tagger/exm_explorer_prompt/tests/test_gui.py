@@ -138,3 +138,38 @@ def test_measured_overlay_and_extrema(win):
             w.tabs.setCurrentIndex([w.tabs.tabText(i) for i in range(w.tabs.count())].index(name))
             app.processEvents()
             w.grab().save(shot.replace(".png", f"_{name.lower()}.png"))
+
+
+# ------------------------------------------------------------------ milestone 5
+def test_faithful_run_and_export(win, tmp_path):
+    app, w = win
+    w.run_faithful()
+    _wait(app, lambda: w.last_faithful is not None, timeout=120)
+    key, res, ex, secs = w.last_faithful
+    assert res["aruco_tags"]["n_tags"] == 36
+    assert "Faithful pipeline" in w.metrics_panel.faithful.text()
+    w._write_bundle(str(tmp_path), "png")
+    for f in ("scenario.json", "pre.png", "post.png", "features_truth.csv", "metrics.json", "window.png"):
+        assert (tmp_path / f).is_file(), f
+    # changing the scenario marks the faithful result as stale
+    w.e_cx.setValue(w.e_cx.value() + 5)
+    app.processEvents()
+    assert "changed since" in w.metrics_panel.faithful.text()
+
+
+def test_cancel_faithful(win):
+    app, w = win
+    w.run_faithful()
+    w.cancel_faithful()
+    _wait(app, lambda: not w.faithful_worker.isRunning(), timeout=60)
+    app.processEvents()
+    assert w.a_faithful.isEnabled()
+
+
+def test_presets_load(win):
+    app, w = win
+    w.load_preset("exm_sim batch run")
+    assert len(w.rois) == 3 and w.scen.solver.model == "kinematic"
+    assert w.s_model.currentText().startswith("kinematic")
+    w.load_preset("example")
+    assert len(w.rois) == 2

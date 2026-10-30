@@ -27,9 +27,15 @@ def acf(img, L):
     h, w = f.shape
     shape = (h + L, w + L)
     F = sfft.rfft2(f, s=shape, workers=-1)
-    ac = sfft.irfft2(F * np.conj(F), s=shape, workers=-1)
+    del f
+    np.multiply(F, np.conj(F), out=F)              # power spectrum, in place
+    full = sfft.irfft2(F, s=shape, workers=-1)
     del F
-    ac = np.roll(ac, (L, L), axis=(0, 1))[:2 * L + 1, :2 * L + 1]
+    # lags -L..L sit in the four corners of the periodic result
+    ri = np.r_[shape[0] - L:shape[0], 0:L + 1]
+    ci = np.r_[shape[1] - L:shape[1], 0:L + 1]
+    ac = full[np.ix_(ri, ci)]
+    del full
     d = np.arange(-L, L + 1)
     ov = np.outer(h - np.abs(d), w - np.abs(d)).astype(np.float64)
     ac = ac / np.maximum(ov, 1)
@@ -75,8 +81,28 @@ def subpixel_max(a, cx, cy, rad):
 
 def lattice_basis(a, L, K=8):
     """Dot-lattice basis (columns, px) from an ACF, refined on all peaks out to
-    K lattice steps. Returns basis, peak table (i, j, x, y, height), pitch guess."""
-    p = first_peak(radial_profile(a, L))
+    K lattice steps. Returns basis, peak table (i, j, x, y, height), pitch guess.
+
+    The pitch guess is exm_analysis's first radial peak. When that fails (at
+    high expansion the dots are tiny next to their spacing and a noise bump
+    comes first) the strongest peak of the smoothed radial profile is used."""
+    prof = radial_profile(a, L)
+    try:
+        return _lattice_basis(a, L, first_peak(prof), K)
+    except (ValueError, IndexError, np.linalg.LinAlgError):
+        # sharp lattice peaks average out around a ring, so look in 2D: the
+        # strongest local maximum beyond the central lobe is a nearest neighbour
+        r0 = int(np.argmax(prof < 0.1 * prof[1])) or 3
+        Y, X = np.mgrid[-L:L + 1, -L:L + 1]
+        r = np.hypot(X, Y)
+        pk = (a == ndimage.maximum_filter(a, size=5)) & (r > 2 * r0) & (r < L / 2)
+        if not pk.any():
+            raise
+        k = np.argmax(np.where(pk, a, -np.inf))
+        return _lattice_basis(a, L, int(round(r.ravel()[k])), K)
+
+
+def _lattice_basis(a, L, p, K):
     Y, X = np.mgrid[-L:L + 1, -L:L + 1]
     r = np.hypot(X, Y)
     size = max(3, int(p / 3) | 1)
@@ -85,6 +111,8 @@ def lattice_basis(a, L, K=8):
     a1 = cand[np.argmax(cand[:, 2]), :2]
     ang = np.arctan2(cand[:, 1], cand[:, 0]) - np.arctan2(a1[1], a1[0])
     perp = np.abs(np.cos(ang)) < 0.35
+    if not perp.any():
+        raise ValueError("no second lattice vector")
     a2 = cand[perp][np.argmax(cand[perp][:, 2]), :2]
     B = np.c_[a1, a2].astype(float)
     if np.linalg.det(B) < 0:

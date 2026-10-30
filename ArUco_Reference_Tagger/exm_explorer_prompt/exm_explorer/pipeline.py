@@ -151,11 +151,20 @@ def truth_dict(grid, pos):
     return dict(pre_px=pos.pre_px, post_px=pos.post_px, dots=dots, rigid_px=pos.pre_px[~dots])
 
 
-def run_faithful(scen, grid=None, registrations=("tags",), simres=None):
+def run_faithful(scen, grid=None, registrations=("tags",), simres=None, progress=None):
     """The batch pipeline on exact renders. Returns (results, extras) where
-    results has the same keys as reference/results.json."""
+    results has the same keys as reference/results.json.
+
+    progress(stage, fraction) is called between stages; it may raise to
+    cancel the run."""
+    def step(name, frac):
+        if progress is not None:
+            progress(name, frac)
+
     grid = grid or load_grid()
+    step("rendering pre and post images", 0.0)
     s = simres or sim.simulate(scen, grid)
+    step("ACF of the post image", 0.35)
     a = scen.analysis
     pre = s.pre.astype(np.float32)
     post = s.post.astype(np.float32)
@@ -174,6 +183,7 @@ def run_faithful(scen, grid=None, registrations=("tags",), simres=None):
     res["acf_global"] = describe(F_acf)
     order, ratio = an.height_ratio(ps.heights, an.peak_heights(A_post, a.L_post, Bpost))
 
+    step("decoding ArUco tags", 0.55)
     At, bt, ntag = detected_tag_affine(s.pre, s.post)
     res["aruco_tags"] = dict(n_tags=ntag, global_=describe(At))
 
@@ -182,13 +192,15 @@ def run_faithful(scen, grid=None, registrations=("tags",), simres=None):
     regs = {"tags": (At, bt), "acf": acf_affine(F_acf, pre.shape, post.shape),
             "truth": s.positions.true_affine()}
     runs = {}
-    for r in registrations:
+    for k, r in enumerate(registrations):
+        step(f"resampling and CCF ({r})", 0.65 + 0.33 * k / len(registrations))
         A, b = regs[r]
         P = an.ccf_pipeline(pre, lambda A_, b_: cor(A_, b_, pre.shape), A, b, ps.Bpre, truth,
                             win=a.win, step=a.step, S=a.search, Lg=a.L_global,
                             pre_cache=ps.ccf_cache)
         res[f"ccf_after_{r}_correction"] = P["stats"]
         runs[r] = P
+    step("done", 1.0)
     extras = dict(sim=s, pre_state=ps, acf_post=A_post, Bpost=Bpost, height_order=order,
                   height_ratio=ratio, runs=runs, registrations=regs)
     return res, extras

@@ -25,8 +25,10 @@ from PySide6.QtCore import Qt
 
 from . import live
 from .panels import AcfPanel, CcfPanel, MetricsPanel, PostPanel
-from .scenario import LAMBDA_PRESETS, Scenario, Site, legacy_scenario
-from .worker import LatestWorker
+from .scenario import LAMBDA_PRESETS, PRESETS, Scenario, Site, example_scenario, legacy_scenario
+from . import export
+from .grid import load_grid
+from .worker import FaithfulWorker, LatestWorker
 
 pg.setConfigOptions(imageAxisOrder="row-major", antialias=True,
                     background="#141414", foreground="#c9c9c4")
@@ -161,6 +163,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.pre_worker.failed.connect(self.on_failed)
         self.pre_worker.start()
 
+        self.faithful_worker = None
+        self.last_faithful = None        # (scenario json, results, extras, seconds)
+        self._export_after = None
         self.ana_worker = LatestWorker(self._run_analysis, "analysis")
         self.ana_worker.done.connect(self.on_analysis)
         self.ana_worker.failed.connect(self.on_failed)
@@ -188,11 +193,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     @staticmethod
     def default_scenario():
-        return Scenario(sites=[
-            Site(cx=230, cy=530, a=40, b=40, eps1=-0.12, eps2=-0.12, lock_isotropic=True,
-                 name="lagging patch", color=SITE_COLORS[0]),
-            Site(cx=520, cy=260, a=60, b=30, phi_deg=30, eps1=0.05, eps2=-0.05,
-                 name="anisotropic site", color=SITE_COLORS[1])], name="example")
+        return example_scenario()
 
     # ------------------------------------------------------------ view
     def _build_view(self):
@@ -437,6 +438,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.a_auto.setChecked(True)
         self.a_full = QtWidgets.QPushButton("Recompute full")
         self.a_full.clicked.connect(lambda: self.submit_analysis("full"))
+        self.a_faithful = QtWidgets.QPushButton("Run faithful pipeline")
+        self.a_faithful.setToolTip("Render the real post image, decode tags with OpenCV, fit the affine "
+                                   "from tag centres, resample, then the CCF (the batch-run path)")
+        self.a_faithful.clicked.connect(self.run_faithful)
+        self.a_cancel = QtWidgets.QPushButton("Cancel")
+        self.a_cancel.clicked.connect(self.cancel_faithful)
+        self.a_cancel.setEnabled(False)
+        self.a_progress = QtWidgets.QProgressBar()
+        self.a_progress.setRange(0, 100)
+        self.a_progress.setTextVisible(True)
+        self.a_progress.setFormat("")
         self.a_status = QtWidgets.QLabel("–")
         self.a_status.setStyleSheet("color: #8a8a84")
         q.addRow("registration", self.a_reg)
@@ -447,6 +459,8 @@ class MainWindow(QtWidgets.QMainWindow):
         q.addRow("mark |d| maxima ≥", self.a_ccfmin)
         q.addRow(self.a_auto)
         q.addRow(self.a_full, self.a_status)
+        q.addRow(self.a_faithful, self.a_cancel)
+        q.addRow(self.a_progress)
         v.addWidget(group("Analysis (ACF / CCF)", q))
         self.a_reg.currentTextChanged.connect(self.on_analysis_settings)
         self.a_tagnoise.valueChanged.connect(self.on_analysis_settings)
@@ -513,6 +527,11 @@ class MainWindow(QtWidgets.QMainWindow):
                               (None, None, None),
                               ("Load the exm_sim batch-run scenario", self.load_legacy, None),
                               (None, None, None),
+                              ("Export bundle (16-bit PNG)…", lambda: self.export_bundle("png"), None),
+                              ("Export bundle (16-bit TIFF)…", lambda: self.export_bundle("tiff"), None),
+                              ("Save window snapshot (PNG)…", self.save_snapshot, None),
+                              ("Save live metrics (JSON)…", self.save_live_metrics, None),
+                              (None, None, None),
                               ("Quit", self.close, QtGui.QKeySequence.StandardKey.Quit)):
             if text is None:
                 m.addSeparator()
@@ -521,6 +540,10 @@ class MainWindow(QtWidgets.QMainWindow):
             a.triggered.connect(fn)
             if key is not None:
                 a.setShortcut(key)
+        pm = self.menuBar().addMenu("&Presets")
+        for name in PRESETS:
+            a = pm.addAction(name)
+            a.triggered.connect(lambda _=False, n=name: self.load_preset(n))
         v = self.menuBar().addMenu("&View")
         a = v.addAction("Reset zoom")
         a.triggered.connect(lambda: self.vb.setRange(xRange=(-30, 780), yRange=(-30, 780), padding=0))
@@ -841,6 +864,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def request_analysis(self, *_, full=False):
         """Fast tier now (debounced), and the full tier once things settle."""
+        if self.last_faithful is not None:
+            k, res, ex, secs = self.last_faithful
+            self.metrics_panel.set_faithful(res, stale=k != self._scenario_key(), seconds=secs)
         if full:
             self.full_timer.start(50)
             return
@@ -1113,6 +1139,106 @@ class MainWindow(QtWidgets.QMainWindow):
     def new_scenario(self):
         self.load_scenario(Scenario(name="untitled"))
 
+    def load_preset(self, name):
+        sc = PRESETS[name]()
+        for k, s in enumerate(sc.sites):
+            if s.color == Site().color:
+                s.color = SITE_COLORS[k % len(SITE_COLORS)]
+        self.load_scenario(sc)
+
+    # ------------------------------------------------------------ faithful pipeline and export
+    def _scenario_key(self):
+        import json
+        return json.dumps(self.scen.to_dict(), sort_keys=True)
+
+    def run_faithful(self, *_):
+        if self.faithful_worker is not None and self.faithful_worker.isRunning():
+            return
+        regs = ("tags",) if self.scen.analysis.registration == "tags" else ("tags", self.scen.analysis.registration)
+        w = FaithfulWorker(copy.deepcopy(self.scen), regs, self)
+        w.progress.connect(self.on_faithful_progress)
+        w.done.connect(self.on_faithful_done)
+        w.failed.connect(self.on_faithful_failed)
+        w.cancelled.connect(self.on_faithful_cancelled)
+        self.faithful_worker = w
+        self._faithful_t0 = QtCore.QElapsedTimer()
+        self._faithful_t0.start()
+        self.a_faithful.setEnabled(False)
+        self.a_cancel.setEnabled(True)
+        self.a_progress.setValue(0)
+        self.a_progress.setFormat("starting…")
+        w.start()
+
+    def cancel_faithful(self):
+        if self.faithful_worker is not None:
+            self.faithful_worker.cancel()
+            self.a_progress.setFormat("cancelling at the next stage…")
+
+    def _faithful_finished(self):
+        self.a_faithful.setEnabled(True)
+        self.a_cancel.setEnabled(False)
+
+    def on_faithful_progress(self, stage, frac):
+        self.a_progress.setValue(int(100 * frac))
+        self.a_progress.setFormat(stage)
+
+    def on_faithful_cancelled(self):
+        self._faithful_finished()
+        self._export_after = None
+        self.a_progress.setValue(0)
+        self.a_progress.setFormat("cancelled")
+
+    def on_faithful_failed(self, text):
+        self._faithful_finished()
+        self._export_after = None
+        print(text, file=sys.stderr)
+        self.a_progress.setFormat("failed: " + text.strip().splitlines()[-1][:60])
+
+    def on_faithful_done(self, payload):
+        key, res, ex = payload
+        secs = self._faithful_t0.elapsed() / 1000
+        self.last_faithful = (key, res, ex, secs)
+        self._faithful_finished()
+        self.a_progress.setValue(100)
+        self.a_progress.setFormat(f"faithful run done ({secs:.1f} s)")
+        self.metrics_panel.set_faithful(res, stale=key != self._scenario_key(), seconds=secs)
+        if self._export_after is not None:
+            folder, fmt = self._export_after
+            self._export_after = None
+            self._write_bundle(folder, fmt)
+
+    def export_bundle(self, fmt):
+        folder = QtWidgets.QFileDialog.getExistingDirectory(self, "Export bundle into folder")
+        if not folder:
+            return
+        if self.last_faithful is None or self.last_faithful[0] != self._scenario_key():
+            # the images and truth come from the faithful run of this exact scenario
+            self._export_after = (folder, fmt)
+            self.run_faithful()
+        else:
+            self._write_bundle(folder, fmt)
+
+    def _write_bundle(self, folder, fmt):
+        key, res, ex, secs = self.last_faithful
+        live_m = self.last_ana["metrics"] if self.last_ana is not None else None
+        paths = export.export_bundle(folder, self.scen, res, ex["sim"], load_grid(), fmt,
+                                     extra_metrics={"live": live_m} if live_m else None)
+        self.grab().save(os.path.join(folder, "window.png"))
+        self.statusBar().showMessage(f"Exported {len(paths) + 1} files to {folder}", 8000)
+
+    def save_snapshot(self):
+        path, _ = QtWidgets.QFileDialog.getSaveFileName(self, "Save window snapshot", "window.png", "PNG (*.png)")
+        if path:
+            self.grab().save(path)
+
+    def save_live_metrics(self):
+        if self.last_ana is None:
+            return
+        path, _ = QtWidgets.QFileDialog.getSaveFileName(self, "Save live metrics", "metrics_live.json",
+                                                        "JSON (*.json)")
+        if path:
+            export.write_json(path, self.last_ana["metrics"])
+
     def load_legacy(self):
         sc = legacy_scenario()
         for k, s in enumerate(sc.sites):
@@ -1135,6 +1261,9 @@ class MainWindow(QtWidgets.QMainWindow):
             self.statusBar().showMessage(f"Saved {path}", 4000)
 
     def closeEvent(self, ev):
+        if self.faithful_worker is not None and self.faithful_worker.isRunning():
+            self.faithful_worker.cancel()
+            self.faithful_worker.wait(30000)
         self.ana_worker.stop()
         self.field_worker.stop()
         self.pre_worker.stop()

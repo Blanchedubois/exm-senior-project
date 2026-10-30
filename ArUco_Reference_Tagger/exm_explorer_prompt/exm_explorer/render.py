@@ -49,6 +49,7 @@ def render_exact(size_px, cx, cy, hx, hy, theta_deg, sigma, chunk=3000, region=N
         sel = np.nonzero((hx == half[0]) & (hy == half[1]) &
                          (cx > x0 - r - 1) & (cx < x0 + w + r) &
                          (cy > y0 - r - 1) & (cy < y0 + h + r))[0]
+        sel = sel[np.argsort(cy[sel], kind="stable")]     # chunks cover a few rows only
         d = np.arange(-r, r + 1)
         DX, DY = np.meshgrid(d, d)
         for k in range(0, len(sel), chunk):
@@ -63,15 +64,32 @@ def render_exact(size_px, cx, cy, hx, hy, theta_deg, sigma, chunk=3000, region=N
             ix = ix - x0
             iy = iy - y0
             ok = (ix >= 0) & (ix < w) & (iy >= 0) & (iy < h)
-            acc += np.bincount(iy[ok] * w + ix[ok], val[ok], minlength=acc.size)
+            flat = iy[ok] * w + ix[ok]
+            if flat.size == 0:
+                continue
+            # accumulate over the touched span only: at lambda = 10 the image
+            # has 256 M pixels and a full-size bincount per chunk would not fit
+            lo, hi = int(flat.min()), int(flat.max()) + 1
+            acc[lo:hi] += np.bincount(flat - lo, val[ok], minlength=hi - lo)
     return acc.reshape(h, w)
 
 
-def expose(clean, peak, bg, read_e, rng):
-    """Shot noise + read noise, 16-bit (exm_sim.expose)."""
-    e = rng.poisson(clean * peak + bg).astype(np.float64)
-    e += rng.normal(0, read_e, e.shape)
-    return np.clip(np.round(e), 0, 65535).astype(np.uint16)
+def expose(clean, peak, bg, read_e, rng, rows=1024):
+    """Shot noise + read noise, 16-bit (exm_sim.expose).
+
+    Works in blocks of rows so a 16 000 px image does not need several 2 GB
+    temporaries. All Poisson draws come before all read-noise draws, in C
+    order, exactly as the one-shot version: the random stream and the result
+    are unchanged."""
+    h = clean.shape[0]
+    e = np.empty(clean.shape, np.float32)          # counts < 2^24 are exact
+    for r in range(0, h, rows):
+        e[r:r + rows] = rng.poisson(clean[r:r + rows] * peak + bg)
+    out = np.empty(clean.shape, np.uint16)
+    for r in range(0, h, rows):
+        blk = e[r:r + rows].astype(np.float64) + rng.normal(0, read_e, e[r:r + rows].shape)
+        out[r:r + rows] = np.clip(np.round(blk), 0, 65535)
+    return out
 
 
 def expose_clean(clean, peak, bg):

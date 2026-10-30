@@ -55,7 +55,8 @@ plt.rcParams.update({"font.size": 10, "axes.edgecolor": C["grey"], "axes.labelco
                      "xtick.color": C["grey"], "ytick.color": C["grey"], "axes.spines.top": False,
                      "axes.spines.right": False, "figure.dpi": 110})
 
-BOX_CENTRES = 11.5 + 145.4 * (np.arange(5) + 0.5)       # away from tags and dashes
+from exm_explorer.scenario import BOX_CENTRES_UM as BOX_CENTRES                   # noqa: E402
+from exm_explorer.scenario import aniso_sites, local_sites, smooth_sites           # noqa: E402,F401
 
 
 # ===================================================================== scenarios
@@ -63,32 +64,6 @@ def scen(sites, seed=1, name=""):
     s = Scenario(sites=sites, name=name)
     s.imaging.seed = seed
     return s
-
-
-def smooth_sites():
-    spec = [(200, 200, 170, -0.04), (560, 180, 140, 0.03), (380, 420, 200, -0.03),
-            (180, 600, 150, 0.04), (600, 600, 160, -0.05)]
-    return [Site(cx=x, cy=y, a=r, b=r, eps1=e, eps2=e, lock_isotropic=True, softness=0.5,
-                 name=f"broad {k}") for k, (x, y, r, e) in enumerate(spec)]
-
-
-def local_sites(n=30, seed=11):
-    rng = np.random.default_rng(seed)
-    return [Site(cx=float(x), cy=float(y), a=float(r), b=float(r), eps1=-0.12, eps2=-0.12,
-                 lock_isotropic=True, softness=0.15, name=f"small {k}")
-            for k, (x, y, r) in enumerate(zip(rng.uniform(40, 710, n), rng.uniform(40, 710, n),
-                                              rng.uniform(12, 22, n)))]
-
-
-def aniso_sites(aligned, seed=12):
-    rng = np.random.default_rng(seed)
-    out = []
-    for i, x in enumerate(BOX_CENTRES):
-        for j, y in enumerate(BOX_CENTRES):
-            ang = 30.0 if aligned else float(rng.uniform(0, 180))
-            out.append(Site(cx=x, cy=y, a=45, b=45, eps1=0.06, eps2=-0.06, eps_angle_deg=ang,
-                            softness=0.3, name=f"aniso {i}{j}"))
-    return out
 
 
 # ===================================================================== one run

@@ -162,3 +162,58 @@ def legacy_scenario():
                   profile="gaussian", name=f"patch {k + 1}")
              for k, (x, y, s, d) in enumerate(LEGACY_PATCHES)]
     return Scenario(sites=sites, solver=Solver(model="kinematic"), name="exm_sim batch run")
+
+
+# ===================================================================== presets
+BOX_CENTRES_UM = 11.5 + 145.4 * (np.arange(5) + 0.5)     # box centres, away from tags and dashes
+
+
+def example_scenario():
+    return Scenario(sites=[
+        Site(cx=230, cy=530, a=40, b=40, eps1=-0.12, eps2=-0.12, lock_isotropic=True,
+             name="lagging patch", color="#d95926"),
+        Site(cx=520, cy=260, a=60, b=30, phi_deg=30, eps1=0.05, eps2=-0.05,
+             name="anisotropic site", color="#3987e5")], name="example")
+
+
+def smooth_sites():
+    spec = [(200, 200, 170, -0.04), (560, 180, 140, 0.03), (380, 420, 200, -0.03),
+            (180, 600, 150, 0.04), (600, 600, 160, -0.05)]
+    return [Site(cx=x, cy=y, a=r, b=r, eps1=e, eps2=e, lock_isotropic=True, softness=0.5,
+                 name=f"broad {k}") for k, (x, y, r, e) in enumerate(spec)]
+
+
+def local_sites(n=30, seed=11):
+    rng = np.random.default_rng(seed)
+    return [Site(cx=float(x), cy=float(y), a=float(r), b=float(r), eps1=-0.12, eps2=-0.12,
+                 lock_isotropic=True, softness=0.15, name=f"small {k}")
+            for k, (x, y, r) in enumerate(zip(rng.uniform(40, 710, n), rng.uniform(40, 710, n),
+                                              rng.uniform(12, 22, n)))]
+
+
+def aniso_sites(aligned, seed=12):
+    rng = np.random.default_rng(seed)
+    out = []
+    for i, x in enumerate(BOX_CENTRES_UM):
+        for j, y in enumerate(BOX_CENTRES_UM):
+            ang = 30.0 if aligned else float(rng.uniform(0, 180))
+            out.append(Site(cx=x, cy=y, a=45, b=45, eps1=0.06, eps2=-0.06, eps_angle_deg=ang,
+                            softness=0.3, name=f"aniso {i}{j}"))
+    return out
+
+
+def _workshop(sites, name):
+    s = Scenario(sites=sites, name=name)
+    s.imaging.seed = 1
+    return s
+
+
+PRESETS = {
+    "example": example_scenario,
+    "exm_sim batch run": legacy_scenario,
+    "control (no sites)": lambda: Scenario(name="control"),
+    "workshop: smooth": lambda: _workshop(smooth_sites(), "workshop smooth"),
+    "workshop: local": lambda: _workshop(local_sites(), "workshop local"),
+    "workshop: aligned": lambda: _workshop(aniso_sites(True), "workshop aligned"),
+    "workshop: random": lambda: _workshop(aniso_sites(False), "workshop random"),
+}
