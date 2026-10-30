@@ -176,7 +176,7 @@ def reference_residual(xs, ux, uy, spacing, field=(0.0, 750.0), eval_step=6.0):
 
 # ===================================================================== extrema
 def local_extrema(f, x=None, y=None, min_separation=3, min_deviation=0.0, reference=None,
-                  max_points=50):
+                  max_points=50, allow_holes=False, local_radius=None):
     """Local maxima and minima of a 2D map (NaN = no data).
 
     f              (ny, nx) map, rows along y
@@ -186,6 +186,13 @@ def local_extrema(f, x=None, y=None, min_separation=3, min_deviation=0.0, refere
     min_deviation  keep only extrema at least this far from `reference`
                    (default the median of f): set it from a control's noise
                    floor so noise bumps are not reported
+    allow_holes    accept extrema next to missing data (measured maps have
+                   holes where windows are left out); the sub-grid refinement
+                   is then skipped along an axis with a missing neighbour
+    local_radius   if set (grid steps), the deviation is measured from the mean
+                   of the finite values within this radius instead of from
+                   `reference` (a simple prominence): a slope cut off by a
+                   hole then no longer counts as an extremum
     Returns a list of dicts kind ('max' | 'min'), x, y (parabolic sub-grid
     refinement), value, deviation (value - reference), sorted by |deviation|."""
     f = np.asarray(f, float)
@@ -198,31 +205,50 @@ def local_extrema(f, x=None, y=None, min_separation=3, min_deviation=0.0, refere
     ref = float(np.nanmedian(f)) if reference is None else float(reference)
     size = 2 * int(min_separation) + 1
     from scipy import ndimage
+    local = None
+    if local_radius:
+        k = 2 * int(local_radius) + 1
+        num = ndimage.uniform_filter(np.where(fin, f, 0.0), size=k, mode="constant")
+        den = ndimage.uniform_filter(fin.astype(float), size=k, mode="constant")
+        local = num / np.maximum(den, 1e-12)
     out = []
     for kind, g in (("max", f), ("min", -f)):
         h = np.where(fin, g, -np.inf)
         peak = (h == ndimage.maximum_filter(h, size=size, mode="nearest")) & fin
-        # a flat plateau gives many equal maxima: keep one per connected patch
-        lab, nlab = ndimage.label(peak)
-        if nlab == 0:
+        # resolved extrema only: not on the edge of the map or next to missing data
+        peak[0, :] = peak[-1, :] = peak[:, 0] = peak[:, -1] = False
+        if not allow_holes:
+            peak &= ndimage.minimum_filter(fin.astype(np.uint8), size=3, mode="constant") > 0
+        j, i = np.nonzero(peak)
+        if len(j) == 0:
             continue
-        idx = ndimage.maximum_position(h, lab, range(1, nlab + 1))
-        for (j, i) in idx:
-            dev = f[j, i] - ref
-            if (kind == "max" and dev < min_deviation) or (kind == "min" and -dev < min_deviation):
-                continue
-            # an extreme on the edge of the data is not a resolved extremum
-            if j == 0 or i == 0 or j == ny - 1 or i == nx - 1:
-                continue
-            if not (fin[j - 1:j + 2, i - 1:i + 2].all()):
-                continue
-            ox = _parabolic(g[j, i - 1], g[j, i], g[j, i + 1])
-            oy = _parabolic(g[j - 1, i], g[j, i], g[j + 1, i])
-            out.append(dict(kind=kind, x=float(np.interp(i + ox, np.arange(nx), x)),
-                            y=float(np.interp(j + oy, np.arange(ny), y)), value=float(f[j, i]),
-                            deviation=float(dev), row=int(j), col=int(i)))
+        dev = f[j, i] - (ref if local is None else local[j, i])
+        keep = dev >= min_deviation if kind == "max" else -dev >= min_deviation
+        j, i, dev = j[keep], i[keep], dev[keep]
+        if len(j) == 0:
+            continue
+        # a flat plateau gives several equal maxima: keep one per connected patch
+        lab, nlab = ndimage.label(peak)
+        _, first = np.unique(lab[j, i], return_index=True)
+        j, i, dev = j[first], i[first], dev[first]
+        order = np.argsort(-np.abs(dev))[:max_points]
+        j, i, dev = j[order], i[order], dev[order]
+        with np.errstate(invalid="ignore"):
+            ox = np.nan_to_num(_parabolic_v(g[j, i - 1], g[j, i], g[j, i + 1]))
+            oy = np.nan_to_num(_parabolic_v(g[j - 1, i], g[j, i], g[j + 1, i]))
+        xs = np.interp(i + ox, np.arange(nx), x)
+        ys = np.interp(j + oy, np.arange(ny), y)
+        out += [dict(kind=kind, x=float(a), y=float(b), value=float(f[jj, ii]), deviation=float(d),
+                     row=int(jj), col=int(ii)) for a, b, jj, ii, d in zip(xs, ys, j, i, dev)]
     out.sort(key=lambda d: -abs(d["deviation"]))
     return out[:max_points]
+
+
+def _parabolic_v(m1, c0, p1):
+    d = m1 - 2 * c0 + p1
+    with np.errstate(divide="ignore", invalid="ignore"):
+        o = np.where(d < 0, 0.5 * (m1 - p1) / np.where(d == 0, 1, d), 0.0)
+    return np.clip(o, -0.5, 0.5)
 
 
 def _parabolic(m1, c0, p1):

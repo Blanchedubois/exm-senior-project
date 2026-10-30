@@ -126,6 +126,24 @@ def faithful_sigma_post_px(psf_fwhm_um, um_px, lam_A):
     return np.sqrt(psf_sigma_px(psf_fwhm_um, um_px) ** 2 + round(0.45 * lam_A, 2) ** 2 + 1 / 6)
 
 
+_KERNEL_CACHE = {}
+
+
+def _kernel(ny, nx, Ainv, theta_deg, hx, hy, sigma):
+    """Kernel spectra are cached: they change only with the registration, and
+    by far less than the rendering accuracy for changes below 1e-5."""
+    key = (ny, nx, tuple(np.round(Ainv.ravel(), 5)), round(theta_deg, 4), round(hx, 4),
+           round(hy, 4), round(sigma, 4))
+    K = _KERNEL_CACHE.get(key)
+    if K is None:
+        fx, fy, _ = _freqs(ny, nx)
+        K = rect_kernel_spectrum(fx, fy, Ainv, theta_deg, hx, hy, sigma).astype(np.complex64)
+        if len(_KERNEL_CACHE) > 32:
+            _KERNEL_CACHE.clear()
+        _KERNEL_CACHE[key] = K
+    return K
+
+
 def render_corrected_fast(rect_xy_pre, rect_kind, kind_half_post, A, theta_post_deg, sigma_post,
                           shape):
     """Clean corrected post in the pre frame (same units as render_exact).
@@ -143,8 +161,8 @@ def render_corrected_fast(rect_xy_pre, rect_kind, kind_half_post, A, theta_post_
         if not m.any():
             continue
         sp = splat_bilinear(rect_xy_pre[m, 0], rect_xy_pre[m, 1], (ny, nx))
-        K = rect_kernel_spectrum(fx, fy, Ainv, theta_post_deg, hx, hy, sigma_post)
-        F = sfft.rfft2(sp, workers=-1) * K
+        F = sfft.rfft2(sp.astype(np.float32), workers=-1) * _kernel(ny, nx, Ainv, theta_post_deg, hx, hy,
+                                                                     sigma_post)
         acc = F if acc is None else acc + F
     if acc is None:
         return np.zeros(shape)

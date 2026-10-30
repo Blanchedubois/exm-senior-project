@@ -111,7 +111,9 @@ def render_post_region(grid, scen, pos, region, max_px=POST_VIEW_MAX_PX):
     cx, cy, hx, hy = rects(grid, pos.post_px, pos.post.theta_deg, im.um_px)
     # pixel (i, j) of the decimated grid sits at post px (x0 + f i, y0 + f j)
     img = render_exact(0, (cx - x0) / f, (cy - y0) / f, hx / f, hy / f, pos.post.theta_deg,
-                       psf_sigma_px(im.psf_fwhm_um, im.um_px) / f, region=(0, 0, wd, hd))
+                       # a decimated pixel averages f x f native ones: add that blur
+                       np.sqrt(psf_sigma_px(im.psf_fwhm_um, im.um_px) ** 2 + (f * f - 1) / 12) / f,
+                       region=(0, 0, wd, hd))
     gain = im.lam ** im.post_gain_exp
     img = img * im.peak_e * gain + im.bg_e * gain
     if im.noise:
@@ -154,43 +156,47 @@ def analysis_job(scen, tier="fast", post_region=None, focus_site=None, extrema=N
     ps = pipeline.pre_state(scen, grid)
     mark("solve + map")
 
-    # ---- post region and its ACF (lattice -> global transform from the ACF)
+    # ---- post region and its ACF (lattice -> global transform from the ACF).
+    # Independent of the CCF below, so it runs on a second thread meanwhile.
     n_post = pos.post.size_px
     if post_region is None:
         s = min(n_post, 1600)
         post_region = ((n_post - s) / 2, (n_post - s) / 2, s, s)
-    if tier == "full":
-        cap = 4096                       # whole image up to lambda ~5, central crop above
-        s = min(n_post, cap)
-        full_region = ((n_post - s) / 2, (n_post - s) / 2, s, s)
-        post_full, f_full, _ = render_post_region(grid, scen, pos, full_region, max_px=cap)
-        L_acf = int(min(a.L_post * im.lam / 4.0, post_full.shape[0] / 3))
-        acf_src, f_acf = post_full, f_full
-        mark("post render (full)")
-    post_img, f_view, reg = render_post_region(grid, scen, pos, post_region)
-    mark("post render (view)")
-    if tier != "full":
-        acf_src, f_acf = post_img, f_view
-        L_acf = int(min(acf_src.shape[0], acf_src.shape[1]) / 3)
-    A_post = an.acf(acf_src, L_acf)
-    acf_ok = True
-    try:
-        Bpost, _, _ = an.lattice_basis(A_post, L_acf)
-        Bpost = Bpost * f_acf                                      # back to native post px
-        Bpost, F_acf = an.match_bases(ps.Bpre, Bpost)
-        H_post = an.peak_heights(A_post, L_acf, Bpost / f_acf)
-        order, ratio = an.height_ratio(ps.heights, H_post)
-    except Exception:                    # too few lattice peaks in a tiny view
-        acf_ok = False
-        Bpost = F_acf = None
-        order = ratio = np.zeros(0)
-    mark("post ACF + lattice")
 
-    # ---- registration
+    def post_part():
+        out = {}
+        if tier == "full":
+            cap = 4096                   # whole image up to lambda ~5, central crop above
+            s = min(n_post, cap)
+            region = ((n_post - s) / 2, (n_post - s) / 2, s, s)
+            src, f_acf, _ = render_post_region(grid, scen, pos, region, max_px=cap)
+            L_acf = int(min(a.L_post * im.lam / 4.0, src.shape[0] / 3))
+        out["view"] = render_post_region(grid, scen, pos, post_region)
+        if tier != "full":
+            src, f_acf = out["view"][0], out["view"][1]
+            L_acf = int(min(src.shape) / 3)
+        A_post = an.acf(src, L_acf)
+        out.update(A_post=A_post, L_acf=L_acf, f_acf=f_acf, ok=True)
+        try:
+            Bp, _, _ = an.lattice_basis(A_post, L_acf)
+            Bp, F = an.match_bases(ps.Bpre, Bp * f_acf)          # native post px
+            H = an.peak_heights(A_post, L_acf, Bp / f_acf)
+            out.update(Bpost=Bp, F_acf=F, heights=an.height_ratio(ps.heights, H))
+        except Exception:                # too few lattice peaks in a tiny view
+            out.update(ok=False, Bpost=None, F_acf=None, heights=(np.zeros(0), np.zeros(0)))
+        return out
+
+    from concurrent.futures import ThreadPoolExecutor
+    pool = ThreadPoolExecutor(1)
+    fut = pool.submit(post_part)
+
+    # ---- registration (ACF registration needs the post ACF first)
     regs = {"tags": pipeline.simulated_tag_affine(grid, pos, a.tag_noise_px, im.seed),
             "truth": pos.true_affine()}
-    if acf_ok:
-        regs["acf"] = pipeline.acf_affine(F_acf, ps.pre.shape, (n_post, n_post))
+    if a.registration == "acf":
+        po = fut.result()
+        if po["ok"]:
+            regs["acf"] = pipeline.acf_affine(po["F_acf"], ps.pre.shape, (n_post, n_post))
     reg_name = a.registration if a.registration in regs else "tags"
     A, b = regs[reg_name]
 
@@ -202,10 +208,21 @@ def analysis_job(scen, tier="fast", post_region=None, focus_site=None, extrema=N
         cs_x, cs_y = an.window_centres(ps.pre.shape, a.win, a.step)
         which = windows_near(cs_x, cs_y, c_px, rad)
     shape = ps.pre.shape
+    # the fast tier trusts the registration's translation (tags: well under a
+    # pixel); the full tier refines it with the global CCF as the batch run does
     P = an.ccf_pipeline(ps.pre, lambda A_, b_: pipeline.corrected_fast(grid, scen, pos, A_, b_, shape),
                         A, b, ps.Bpre, pipeline.truth_dict(grid, pos), win=a.win, step=a.step,
-                        S=a.search, Lg=a.L_global, pre_cache=ps.ccf_cache, which=which)
-    mark("CCF")
+                        S=a.search, Lg=a.L_global, pre_cache=ps.ccf_cache, which=which,
+                        refine_shift=(tier == "full" or reg_name == "acf"))
+    po = fut.result()
+    pool.shutdown()
+    post_img, f_view, reg = po["view"]
+    A_post, L_acf, f_acf, Bpost, F_acf = po["A_post"], po["L_acf"], po["f_acf"], po["Bpost"], po["F_acf"]
+    acf_ok = po["ok"]
+    order, ratio = po["heights"]
+    if acf_ok and "acf" not in regs:
+        regs["acf"] = pipeline.acf_affine(F_acf, ps.pre.shape, (n_post, n_post))
+    mark("CCF + post view")
 
     # ---- ACF(corrected post) - ACF(pre) in the pre frame, peak shifts and widening
     pitch = float(np.sqrt(abs(np.linalg.det(ps.Bpre))))
@@ -230,13 +247,15 @@ def analysis_job(scen, tier="fast", post_region=None, focus_site=None, extrema=N
     ext = {}
     sep = (extrema or {}).get("min_separation_windows", 2)
     if extrema is not None:
-        ext["ccf_magnitude"] = _extrema(mag, P["cs_x"], P["cs_y"], min_separation=sep,
-                                        min_deviation=extrema.get("ccf_min_px", 0.5), reference=0.0)
+        # dot windows only: tag / dash windows carry a shape bias, not structure
+        ext["ccf_magnitude"] = _extrema(np.where(dots, mag, np.nan), P["cs_x"], P["cs_y"], min_separation=sep,
+                                        min_deviation=extrema.get("ccf_min_px", 0.5), reference=0.0, allow_holes=True,
+                                        local_radius=3 * sep)
         ext["measured_anisotropy"] = _extrema(aniso, P["cs_x"], P["cs_y"], min_separation=sep,
-                                              min_deviation=extrema.get("aniso_min", 0.01), reference=1.0)
+                                              min_deviation=extrema.get("aniso_min", 0.01), reference=1.0, allow_holes=True)
         ext["measured_expansion"] = _extrema(scale, P["cs_x"], P["cs_y"], min_separation=sep,
                                              min_deviation=extrema.get("expansion_min", 0.02),
-                                             reference=float(np.nanmedian(scale)))
+                                             reference=float(np.nanmedian(scale)), allow_holes=True)
         Lg = a.L_global
         g_ext = _extrema(P["G"], np.arange(-Lg, Lg + 1), np.arange(-Lg, Lg + 1), min_separation=3,
                          reference=0.0, max_points=8)
@@ -253,6 +272,7 @@ def analysis_job(scen, tier="fast", post_region=None, focus_site=None, extrema=N
                  ratio=st["ambiguity_ratio"], shift=st["global_shift_applied_px"]),
         windows=st,
         tier=tier,
+        post_size=int(n_post),
         restricted=which is not None,
         timings=T, total_s=sum(T.values()))
     return dict(

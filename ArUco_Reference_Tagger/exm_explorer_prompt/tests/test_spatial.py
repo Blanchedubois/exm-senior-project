@@ -62,3 +62,16 @@ def test_local_extrema_finds_bumps_and_ignores_noise():
     assert abs(ex[0]["deviation"] + 0.3) < 0.02
     # with no threshold the noise produces many extrema
     assert len(spatial.local_extrema(f, x, x, min_separation=2)) > 10
+
+
+def test_local_extrema_ignores_slopes_cut_by_holes():
+    x = np.arange(0, 200.0, 4.0)
+    X, Y = np.meshgrid(x, x)
+    f = 0.05 * X                                                   # a plain slope, no extremum
+    f += 6 * np.exp(-((X - 100) ** 2 + (Y - 60) ** 2) / 300)      # and one real peak
+    f[:, 30] = np.nan                                              # a hole line across the slope
+    kw = dict(min_separation=1, min_deviation=1.0, reference=0.0, allow_holes=True)
+    plain = [e for e in spatial.local_extrema(f, x, x, **kw) if e["kind"] == "max"]
+    prom = [e for e in spatial.local_extrema(f, x, x, local_radius=6, **kw) if e["kind"] == "max"]
+    assert any(abs(e["x"] - 116) < 1 for e in plain)                # the cut-off slope passes
+    assert len(prom) == 1 and np.hypot(prom[0]["x"] - 100, prom[0]["y"] - 60) < 4

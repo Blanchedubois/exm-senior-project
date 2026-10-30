@@ -29,7 +29,8 @@ def win():
     w = MainWindow()
     w.resize(1500, 920)
     w.show()
-    _wait(app, lambda: w.last_pre is not None and w.last_field is not None)
+    _wait(app, lambda: w.last_pre is not None and w.last_field is not None
+          and w.last_ana is not None and w.last_ana["tier"] == "full", timeout=60)
     yield app, w
     w.close()
 
@@ -87,3 +88,53 @@ def test_add_and_remove(win):
     assert len(w.rois) == n + 1 and w.current.site.cx == 600
     w.remove_current()
     assert len(w.rois) == n and len(w.scen.sites) == n
+
+
+# ------------------------------------------------------------------ milestone 4
+def test_panels_filled_by_full_tier(win):
+    app, w = win
+    w.submit_analysis("full")
+    before = w.last_ana
+    _wait(app, lambda: w.last_ana is not before and w.last_ana["tier"] == "full", timeout=60)
+    r = w.last_ana
+    m = r["metrics"]
+    assert abs(m["tags"]["scale"] / 4.0 - 1) < 0.01 and m["acf"] is not None
+    assert m["ccf"]["ratio"] > 1.0
+    assert r["extrema"]["global_ccf_peaks"][0]["value"] == pytest.approx(m["ccf"]["peak"], rel=1e-3)
+    assert w.acf_panel.res is r and w.ccf_panel.res is r
+    assert "Global transform" in w.metrics_panel.text.text()
+    assert w.post_panel.n == m["post_size"]
+
+
+def test_fast_tier_while_dragging_is_restricted(win):
+    app, w = win
+    roi = w.rois[0]
+    w.select(roi)
+    before = w.last_ana
+    roi.setPos(roi.pos() + (10, 10), finish=False)     # mid-drag: no 'finished' yet
+    _wait(app, lambda: w.last_ana is not before and w.last_ana["tier"] == "fast")
+    r = w.last_ana
+    assert r["tier"] == "fast" and r["which"] is not None
+    assert r["which"].sum() < r["which"].size / 3
+    roi.sigRegionChangeFinished.emit(roi)          # mouse released
+    _wait(app, lambda: w.last_ana["tier"] == "full", timeout=60)
+
+
+def test_measured_overlay_and_extrema(win):
+    app, w = win
+    w.o_heat.setCurrentText("measured local expansion (CCF)")
+    _wait(app, lambda: w.last_ana["tier"] == "full")
+    app.processEvents()
+    assert w.heat_meas.isVisible() and not w.heat.isVisible()
+    ex = w._shown_extrema
+    assert any(e["kind"] == "min" for e in ex)
+    # the lagging patch is the deepest minimum, in design um near the site
+    s = w.rois[0].site
+    low = min((e for e in ex if e["kind"] == "min"), key=lambda e: e["value"])
+    assert np.hypot(low["x"] - s.cx, low["y"] - s.cy) < 60
+    shot = os.environ.get("EXM_SCREENSHOT")
+    if shot:
+        for k, name in enumerate(("ACF", "CCF", "Metrics", "Post")):
+            w.tabs.setCurrentIndex([w.tabs.tabText(i) for i in range(w.tabs.count())].index(name))
+            app.processEvents()
+            w.grab().save(shot.replace(".png", f"_{name.lower()}.png"))

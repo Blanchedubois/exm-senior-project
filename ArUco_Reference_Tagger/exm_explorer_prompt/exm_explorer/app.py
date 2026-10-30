@@ -1,10 +1,14 @@
 """ExM Distortion Explorer: main window.
 
-Milestone 3: sample view with draggable / resizable / rotatable sites, the
-site editor, global and solver controls, live truth overlays (displacement
-arrows, local expansion, anisotropy, rotation), node grid and tag ids, and
-maxima / minima markers. The post view, ACF, CCF and metrics panels are
-placeholders filled in milestone 4.
+Sample view with draggable / resizable / rotatable sites, the site editor,
+global, solver and analysis controls, live truth and measured overlays,
+node grid and tag ids, and maxima / minima markers; right-hand panels for the
+truth summary, the post view, ACF, CCF and metrics.
+
+Two compute threads, both latest-request-wins: the truth field (cheap, every
+change) and the analysis (fast tier while dragging: windowed CCF around the
+selected site; full tier on release or 'Recompute full': every window, the
+whole post ACF up to a 4096 px crop).
 
 The sample view works in DESIGN um with y up (pyqtgraph's default), so sites
 need no conversion; the pre image is placed with its px -> design affine.
@@ -20,6 +24,7 @@ from PySide6 import QtCore, QtGui, QtWidgets
 from PySide6.QtCore import Qt
 
 from . import live
+from .panels import AcfPanel, CcfPanel, MetricsPanel, PostPanel
 from .scenario import LAMBDA_PRESETS, Scenario, Site, legacy_scenario
 from .worker import LatestWorker
 
@@ -31,17 +36,23 @@ SITE_COLORS = ["#d95926", "#3987e5", "#199e70", "#c98500", "#d55181", "#9085e9",
 
 # diverging map (blue below the reference, neutral grey at it, orange above)
 # and a one-hue sequential map; both readable on the dark background
-DIVERGING = pg.ColorMap([0.0, 0.5, 1.0], ["#3987e5", "#3a3a37", "#d95926"])
-SEQUENTIAL = pg.ColorMap([0.0, 1.0], ["#1d2a3c", "#9cc8ff"])
+# the neutral end is transparent so the image shows where nothing happens
+DIVERGING = pg.ColorMap([0.0, 0.5, 1.0], [(57, 135, 229, 255), (58, 58, 55, 0), (217, 89, 38, 255)])
+SEQUENTIAL = pg.ColorMap([0.0, 1.0], [(29, 42, 60, 0), (156, 200, 255, 255)])
 
 HEATMAPS = {
     "none": None,
     "true local expansion": dict(key="expansion", cmap="div", ref="lam", unit="", fmt="{:.4f}"),
     "true local anisotropy": dict(key="anisotropy", cmap="seq", ref=1.0, unit="", fmt="{:.4f}"),
     "true local rotation": dict(key="rotation", cmap="div", ref=0.0, unit="°", fmt="{:+.3f}"),
-    "measured local expansion (CCF)": "milestone 4",
+    "measured local expansion (CCF)": dict(key="meas_scale", cmap="div", ref="median", unit="", fmt="{:.4f}",
+                                           measured=True),
+    "measured local anisotropy (CCF)": dict(key="meas_aniso", cmap="seq", ref=1.0, unit="", fmt="{:.4f}",
+                                            measured=True),
 }
-EXTREMA_DEFAULT_DEV = {"expansion": 0.01, "anisotropy": 0.005, "rotation": 0.05}
+EXTREMA_DEFAULT_DEV = {"expansion": 0.01, "anisotropy": 0.005, "rotation": 0.05,
+                       "meas_scale": 0.02, "meas_aniso": 0.01}
+MEASURED_EXTREMA_KEY = {"meas_scale": "measured_expansion", "meas_aniso": "measured_anisotropy"}
 
 
 # ===================================================================== site ROI
@@ -139,6 +150,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self._syncing = False
         self.last_field = None
         self.last_pre = None
+        self._shown_extrema = []
 
         self.field_worker = LatestWorker(self._run_field, "field")
         self.field_worker.done.connect(self.on_field)
@@ -149,10 +161,23 @@ class MainWindow(QtWidgets.QMainWindow):
         self.pre_worker.failed.connect(self.on_failed)
         self.pre_worker.start()
 
+        self.ana_worker = LatestWorker(self._run_analysis, "analysis")
+        self.ana_worker.done.connect(self.on_analysis)
+        self.ana_worker.failed.connect(self.on_failed)
+        self.ana_worker.start()
+        self.last_ana = None
+        self.meas = None                 # merged measured maps (full + fast patches)
+        self._dragging = False
+        self._want_full = False          # a full run was asked for and not delivered yet
+
         self.field_timer = QtCore.QTimer(self, singleShot=True, interval=30)
         self.field_timer.timeout.connect(self.submit_field)
         self.pre_timer = QtCore.QTimer(self, singleShot=True, interval=150)
         self.pre_timer.timeout.connect(self.submit_pre)
+        self.fast_timer = QtCore.QTimer(self, singleShot=True, interval=30)
+        self.fast_timer.timeout.connect(lambda: self.submit_analysis("fast"))
+        self.full_timer = QtCore.QTimer(self, singleShot=True, interval=600)
+        self.full_timer.timeout.connect(lambda: self.submit_analysis("full"))
 
         self._build_view()
         self._build_side_panels()
@@ -189,6 +214,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.heat.setZValue(-10)
         self.heat.setOpacity(0.75)
         pi.addItem(self.heat)
+        self.heat_meas = pg.ImageItem()
+        self.heat_meas.setZValue(-10)
+        self.heat_meas.setOpacity(0.75)
+        pi.addItem(self.heat_meas)
         self.cbar = pg.ColorBarItem(values=(0, 1), colorMap=DIVERGING, interactive=False, width=14)
         self.cbar.setImageItem(self.heat, insert_in=pi)
         self.cbar.hide()
@@ -232,20 +261,22 @@ class MainWindow(QtWidgets.QMainWindow):
         self.extrema_table.cellClicked.connect(self.on_extremum_clicked)
         lay.addWidget(self.extrema_table, 1)
         self.tabs.addTab(truth, "Truth")
-        for name, what in (("Post", "the post image of the visible region"),
-                           ("ACF", "ACF(pre), ACF(post) and their difference"),
-                           ("CCF", "global and windowed CCF, with maxima / minima"),
-                           ("Metrics", "global transform, ambiguity margin, errors vs truth")):
-            lab = QtWidgets.QLabel(f"{name}: {what}.\nComing in milestone 4.")
-            lab.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            lab.setStyleSheet("color: #8a8a84")
-            self.tabs.addTab(lab, name)
+        self.post_panel = PostPanel()
+        self.acf_panel = AcfPanel()
+        self.ccf_panel = CcfPanel()
+        self.metrics_panel = MetricsPanel()
+        self.tabs.addTab(self.post_panel, "Post")
+        self.tabs.addTab(self.acf_panel, "ACF")
+        self.tabs.addTab(self.ccf_panel, "CCF")
+        self.tabs.addTab(self.metrics_panel, "Metrics")
+        self.post_panel.regionRequested.connect(lambda *_: self.request_analysis())
+        self.ccf_panel.extremumClicked.connect(self.centre_on_pre_px)
         split = QtWidgets.QSplitter(Qt.Orientation.Horizontal)
         split.addWidget(self.plot)
         split.addWidget(self.tabs)
         split.setStretchFactor(0, 3)
         split.setStretchFactor(1, 1)
-        split.setSizes([1000, 380])
+        split.setSizes([860, 640])
         self.setCentralWidget(split)
 
     # ------------------------------------------------------------ controls dock
@@ -387,12 +418,47 @@ class MainWindow(QtWidgets.QMainWindow):
         self.s_mode.currentTextChanged.connect(self.on_solver)
         self.s_mean.currentTextChanged.connect(self.on_solver)
 
+        # --- analysis
+        q = QtWidgets.QFormLayout()
+        self.a_reg = combo(["tag centres", "ACF", "truth"])
+        self.a_tagnoise = spin(0, 5, 0.05, 2, 0.3, suffix=" px")
+        self.a_tagnoise.setToolTip("Live mode simulates tag detection: true centres plus this noise")
+        self.a_win = combo(["32", "48", "64", "96", "128"], "64")
+        self.a_step = QtWidgets.QSpinBox()
+        self.a_step.setRange(8, 128)
+        self.a_step.setSingleStep(4)
+        self.a_step.setSuffix(" px")
+        self.a_search = QtWidgets.QSpinBox()
+        self.a_search.setRange(4, 40)
+        self.a_search.setSuffix(" px")
+        self.a_ccfmin = spin(0, 50, 0.5, 1, 1.0, suffix=" px")
+        self.a_ccfmin.setToolTip("Mark |displacement| maxima at least this large")
+        self.a_auto = QtWidgets.QCheckBox("full tier on release / after edits")
+        self.a_auto.setChecked(True)
+        self.a_full = QtWidgets.QPushButton("Recompute full")
+        self.a_full.clicked.connect(lambda: self.submit_analysis("full"))
+        self.a_status = QtWidgets.QLabel("–")
+        self.a_status.setStyleSheet("color: #8a8a84")
+        q.addRow("registration", self.a_reg)
+        q.addRow("tag detection noise", self.a_tagnoise)
+        q.addRow("CCF window", self.a_win)
+        q.addRow("CCF step", self.a_step)
+        q.addRow("search radius", self.a_search)
+        q.addRow("mark |d| maxima ≥", self.a_ccfmin)
+        q.addRow(self.a_auto)
+        q.addRow(self.a_full, self.a_status)
+        v.addWidget(group("Analysis (ACF / CCF)", q))
+        self.a_reg.currentTextChanged.connect(self.on_analysis_settings)
+        self.a_tagnoise.valueChanged.connect(self.on_analysis_settings)
+        self.a_win.currentTextChanged.connect(self.on_analysis_settings)
+        self.a_step.valueChanged.connect(self.on_analysis_settings)
+        self.a_search.valueChanged.connect(self.on_analysis_settings)
+        self.a_ccfmin.valueChanged.connect(self.on_analysis_settings)
+
         # --- overlays and extrema
         o = QtWidgets.QFormLayout()
         self.o_bg = combo(["pre image", "design render", "none"])
         self.o_heat = combo(list(HEATMAPS), "true local expansion")
-        model = self.o_heat.model()
-        model.item(list(HEATMAPS).index("measured local expansion (CCF)")).setEnabled(False)
         self.o_opacity = QtWidgets.QSlider(Qt.Orientation.Horizontal)
         self.o_opacity.setRange(0, 100)
         self.o_opacity.setValue(75)
@@ -479,6 +545,12 @@ class MainWindow(QtWidgets.QMainWindow):
             self.s_nu.setValue(so.nu)
             self.s_mode.setCurrentText(so.mode.replace("_", " "))
             self.s_mean.setCurrentText("zero mean strain" if so.mean_strain == "zero" else "traction-free")
+            an_ = scen.analysis
+            self.a_reg.setCurrentText({"tags": "tag centres", "acf": "ACF", "truth": "truth"}[an_.registration])
+            self.a_tagnoise.setValue(an_.tag_noise_px)
+            self.a_win.setCurrentText(str(an_.win))
+            self.a_step.setValue(an_.step)
+            self.a_search.setValue(an_.search)
         finally:
             self._syncing = False
         for r in self.rois:
@@ -493,6 +565,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.update_solver_widgets()
         self.submit_pre()
         self.request_field()
+        self.meas = None
+        self.request_analysis(full=True)
 
     def _add_roi(self, site):
         r = SiteROI(site)
@@ -500,6 +574,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.plot.addItem(r)
         self.plot.addItem(r.label)
         r.sigRegionChanged.connect(self.on_roi_changed)
+        r.sigRegionChangeFinished.connect(self.on_roi_released)
         r.sigClicked.connect(lambda roi, ev: self.select(roi))
         self.rois.append(r)
         return r
@@ -595,6 +670,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def site_changed(self):
         """A site's properties changed from the editor: redraw its ROI, refresh
         the derived editor fields, recompute."""
+        self._dragging = False
         self._syncing = True
         try:
             self.current.set_from_site()
@@ -608,6 +684,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def on_roi_changed(self, roi):
         if self._syncing:
             return
+        self._dragging = True
         roi.write_to_site()
         if roi is not self.current:
             self.select(roi)
@@ -722,6 +799,7 @@ class MainWindow(QtWidgets.QMainWindow):
         im = self.scen.imaging
         im.theta_post_deg = self.c_theta.value()
         im.gel_jitter_um = self.c_gel.value()
+        self.request_analysis()
 
     def on_imaging_pre(self, *_):
         if self._syncing:
@@ -733,6 +811,8 @@ class MainWindow(QtWidgets.QMainWindow):
         im.noise = self.c_noise.isChecked()
         im.seed = int(self.c_seed.value())
         self.pre_timer.start()
+        self.meas = None
+        self.request_analysis()
 
     def on_solver(self, *_):
         if self._syncing:
@@ -751,11 +831,104 @@ class MainWindow(QtWidgets.QMainWindow):
             self.o_dev.blockSignals(True)
             self.o_dev.setValue(EXTREMA_DEFAULT_DEV[spec["key"]])
             self.o_dev.blockSignals(False)
+        self.draw_field()
         self.request_field()
 
     # ------------------------------------------------------------ compute
     def request_field(self, *_):
         self.field_timer.start()
+        self.request_analysis()
+
+    def request_analysis(self, *_, full=False):
+        """Fast tier now (debounced), and the full tier once things settle."""
+        if full:
+            self.full_timer.start(50)
+            return
+        self.fast_timer.start()
+        if self.a_auto.isChecked() and not self._dragging:
+            self.full_timer.start()
+        else:
+            self.full_timer.stop()
+
+    def on_roi_released(self, roi):
+        self._dragging = False
+        if self.a_auto.isChecked():
+            self.full_timer.start(50)
+
+    def submit_analysis(self, tier):
+        if tier == "full":
+            self.full_timer.stop()
+            self._want_full = True
+        focus = copy.deepcopy(self.current.site) if self.current is not None else None
+        n = self.post_panel.n
+        region = self.post_panel.visible_region() if n else None
+        self.a_status.setText(f"computing ({tier})…")
+        self.ana_worker.submit(dict(scen=copy.deepcopy(self.scen), tier=tier, focus=focus, region=region,
+                                    extrema=dict(ccf_min_px=self.a_ccfmin.value(),
+                                                 aniso_min=EXTREMA_DEFAULT_DEV["meas_aniso"]
+                                                 if self.o_heat.currentText() != "measured local anisotropy (CCF)"
+                                                 else self.o_dev.value(),
+                                                 expansion_min=EXTREMA_DEFAULT_DEV["meas_scale"]
+                                                 if self.o_heat.currentText() != "measured local expansion (CCF)"
+                                                 else self.o_dev.value())))
+
+    @staticmethod
+    def _run_analysis(p, is_stale):
+        try:
+            return live.analysis_job(p["scen"], p["tier"], post_region=p["region"], focus_site=p["focus"],
+                                     extrema=p["extrema"], is_stale=is_stale)
+        except live.Stale:
+            return None
+
+    def on_analysis_settings(self, *_):
+        if self._syncing:
+            return
+        a = self.scen.analysis
+        a.registration = {"tag centres": "tags", "ACF": "acf", "truth": "truth"}[self.a_reg.currentText()]
+        a.tag_noise_px = self.a_tagnoise.value()
+        a.win = int(self.a_win.currentText())
+        a.step = int(self.a_step.value())
+        a.search = int(self.a_search.value())
+        self.meas = None
+        self.request_analysis()
+
+    def on_analysis(self, gen, r):
+        self.last_ana = r
+        if r["tier"] == "full":
+            self._want_full = False
+        elif self._want_full and not self._dragging and not self.full_timer.isActive():
+            self.full_timer.start(50)     # a newer fast request superseded it: ask again
+        self.merge_measured(r)
+        self.post_panel.set_size(r["metrics"].get("post_size") or self.post_panel.n)
+        self.acf_panel.update(r)
+        self.ccf_panel.update(r)
+        self.post_panel.update(r)
+        self.metrics_panel.update(r)
+        m = r["metrics"]
+        self.a_status.setText(f"{r['tier']}: {1e3 * m['total_s']:.0f} ms")
+        self.draw_field()
+
+    def merge_measured(self, r):
+        """Keep the last full-tier maps and patch in the windows a fast-tier
+        run recomputed, so the overlay never goes blank while dragging."""
+        new = dict(meas_scale=r["meas_scale"], meas_aniso=r["meas_aniso"], cs_x=r["cs_x"], cs_y=r["cs_y"])
+        w = r["which"]
+        old = self.meas
+        if w is None or old is None or old["meas_scale"].shape != new["meas_scale"].shape:
+            self.meas = new
+        else:
+            for k in ("meas_scale", "meas_aniso"):
+                old[k] = np.where(w, new[k], old[k])
+        self.meas["extrema"] = r["extrema"]
+
+    def centre_on_pre_px(self, x, y):
+        if self.last_pre is None:
+            return
+        Ad, D0 = self.last_pre["px_to_design"]
+        d = Ad @ [x, y] + D0
+        r = self.vb.viewRect()
+        self.vb.setRange(xRange=(d[0] - r.width() / 2, d[0] + r.width() / 2),
+                         yRange=(d[1] - r.height() / 2, d[1] + r.height() / 2), padding=0)
 
     def submit_field(self):
         spec = HEATMAPS.get(self.o_heat.currentText())
@@ -833,28 +1006,34 @@ class MainWindow(QtWidgets.QMainWindow):
         lam = self.scen.imaging.lam
         name = self.o_heat.currentText()
         spec = HEATMAPS.get(name)
-        if isinstance(spec, dict):
+        self.heat.hide()
+        self.heat_meas.hide()
+        self.cbar.hide()
+        ex = []
+        if isinstance(spec, dict) and spec.get("measured"):
+            M = self.meas
+            if M is not None and self.last_pre is not None:
+                img = M[spec["key"]]
+                ref = float(np.nanmedian(img)) if spec["ref"] == "median" else spec["ref"]
+                self._show_heat(self.heat_meas, img, spec, ref, name)
+                cs_x, cs_y = M["cs_x"], M["cs_y"]
+                st = float(cs_x[1] - cs_x[0])
+                Ad, D0 = self.last_pre["px_to_design"]
+                # window (col, row) -> pre px -> design um
+                L = Ad * st
+                o = D0 + Ad @ [cs_x[0] - st / 2, cs_y[0] - st / 2]
+                self.heat_meas.setTransform(QtGui.QTransform(L[0, 0], L[1, 0], L[0, 1], L[1, 1], o[0], o[1]))
+                for e in M["extrema"].get(MEASURED_EXTREMA_KEY[spec["key"]], []):
+                    d = Ad @ [e["x"], e["y"]] + D0
+                    ex.append(dict(e, x=float(d[0]), y=float(d[1])))
+        elif isinstance(spec, dict):
             img = F["maps"][spec["key"]]
             ref = lam if spec["ref"] == "lam" else spec["ref"]
-            if spec["cmap"] == "div":
-                span = max(np.nanmax(np.abs(img - ref)), 1e-3 * max(abs(ref), 1))
-                lo, hi = ref - span, ref + span
-                cmap = DIVERGING
-            else:
-                lo, hi = ref, max(np.nanmax(img), ref + 1e-3)
-                cmap = SEQUENTIAL
+            self._show_heat(self.heat, img, spec, ref, name)
             x = F["x"]
             st = F["step"]
-            self.heat.setImage(img, autoLevels=False)
             self.heat.setRect(QtCore.QRectF(x[0] - st / 2, x[0] - st / 2, len(x) * st, len(x) * st))
-            self.cbar.setColorMap(cmap)
-            self.cbar.setLevels((lo, hi))
-            self.cbar.setLabel("right", name)
-            self.heat.show()
-            self.cbar.show()
-        else:
-            self.heat.hide()
-            self.cbar.hide()
+            ex = F["extrema"]
 
         if self.o_arrows.isChecked():
             P, U = F["arrow_xy"], F["arrow_u"] * self.o_scale.value()
@@ -873,13 +1052,30 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             self.arrows.hide()
 
-        ex = F["extrema"] if self.o_ext.isChecked() else []
+        ex = ex if self.o_ext.isChecked() else []
         spots = [dict(pos=(e["x"], e["y"]), symbol="t1" if e["kind"] == "max" else "t",
                       brush=pg.mkBrush("#d95926" if e["kind"] == "max" else "#3987e5"),
                       pen=pg.mkPen("#f0efec", width=1.5)) for e in ex]
         self.extrema_pts.setData(spots)
+        self._shown_extrema = ex
         self.fill_extrema_table(ex, spec)
         self.fill_truth_text(F, lam)
+
+    def _show_heat(self, item, img, spec, ref, name):
+        if spec["cmap"] == "div":
+            span = max(float(np.nanmax(np.abs(img - ref))) if np.isfinite(img).any() else 0.0,
+                       1e-3 * max(abs(ref), 1))
+            lo, hi, cmap = ref - span, ref + span, DIVERGING
+        else:
+            top = float(np.nanmax(img)) if np.isfinite(img).any() else ref
+            lo, hi, cmap = ref, max(top, ref + 1e-3), SEQUENTIAL
+        item.setImage(np.where(np.isfinite(img), img, np.nan).astype(np.float32), autoLevels=False)
+        self.cbar.setImageItem(item)
+        self.cbar.setColorMap(cmap)
+        self.cbar.setLevels((lo, hi))
+        self.cbar.setLabel("right", name)
+        item.show()
+        self.cbar.show()
 
     def fill_extrema_table(self, ex, spec):
         fmt = spec["fmt"] if isinstance(spec, dict) else "{:.4f}"
@@ -892,10 +1088,9 @@ class MainWindow(QtWidgets.QMainWindow):
                 t.setItem(k, c, QtWidgets.QTableWidgetItem(v))
 
     def on_extremum_clicked(self, row, col):
-        F = self.last_field
-        if F is None or row >= len(F["extrema"]):
+        if row >= len(self._shown_extrema):
             return
-        e = F["extrema"][row]
+        e = self._shown_extrema[row]
         r = self.vb.viewRect()
         self.vb.setRange(xRange=(e["x"] - r.width() / 2, e["x"] + r.width() / 2),
                          yRange=(e["y"] - r.height() / 2, e["y"] + r.height() / 2), padding=0)
@@ -940,6 +1135,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.statusBar().showMessage(f"Saved {path}", 4000)
 
     def closeEvent(self, ev):
+        self.ana_worker.stop()
         self.field_worker.stop()
         self.pre_worker.stop()
         super().closeEvent(ev)
