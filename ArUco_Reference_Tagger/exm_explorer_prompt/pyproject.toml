@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exm-explorer"
+version = "0.1.0"
+description = "Interactive explorer for local anisotropic expansion on the ExM fiducial grid (ACF / CCF)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "PySide6>=6.6",
+    "pyqtgraph>=0.13.7",
+    "opencv-contrib-python-headless>=4.8",
+    "pillow>=10",
+    "tifffile",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+exm-explorer = "exm_explorer.__main__:main"
+exm-explorer-cli = "exm_explorer.cli:main"
+
+[tool.setuptools]
+packages = ["exm_explorer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: renders full-size images (several seconds)",
+    "benchmark: timing report, skipped unless EXM_BENCH=1",
+]

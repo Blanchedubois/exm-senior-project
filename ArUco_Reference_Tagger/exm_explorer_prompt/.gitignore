@@ -1,0 +1,7 @@
+# local virtual environment (.nosync keeps iCloud from syncing it)
+.venv.nosync/
+.pytest_cache/
+*.egg-info/
+# outputs of runs
+sim_out/
+out/

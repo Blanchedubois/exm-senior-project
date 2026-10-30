@@ -1,0 +1,97 @@
+{
+ "truth_global": {
+  "scale": 3.973471726583656,
+  "s_max": 3.9743840160810846,
+  "s_min": 3.9725596464953137,
+  "anisotropy": 1.0004592428429313,
+  "stretch_dir_deg": 48.663309357144094,
+  "rotation_deg": 3.3989271848213813
+ },
+ "acf_pre_basis_px": [
+  [
+   0.10279783027361389,
+   9.809807702564523
+  ],
+  [
+   -9.810112348114702,
+   0.10268473133305911
+  ]
+ ],
+ "acf_post_basis_px": [
+  [
+   2.774370525755682,
+   39.21980394245186
+  ],
+  [
+   -39.19842354494528,
+   2.706117387359808
+  ]
+ ],
+ "acf_pitch_pre_um": 5.003353991310357,
+ "acf_pitch_post_um": 20.04541527290154,
+ "acf_global": {
+  "scale": 4.0063955713938455,
+  "s_max": 4.010035710973628,
+  "s_min": 4.002758736177694,
+  "anisotropy": 1.0018179898603838,
+  "stretch_dir_deg": 142.81701827412527,
+  "rotation_deg": 3.3977365105105233
+ },
+ "aruco_tags": {
+  "n_tags": 36,
+  "global_": {
+   "scale": 3.978774128488407,
+   "s_max": 3.9802239334755707,
+   "s_min": 3.9773248515957764,
+   "anisotropy": 1.0007289024628279,
+   "stretch_dir_deg": 54.578239812017294,
+   "rotation_deg": 3.3916858396656124
+  }
+ },
+ "ccf_after_acf_correction": {
+  "global_shift_applied_px": [
+   5.5809904396399475,
+   13.360135754409214
+  ],
+  "ccf_peak": 0.14904141581129443,
+  "next_best_peak": 0.1441032053403083,
+  "next_best_at_px": [
+   10,
+   0
+  ],
+  "window_px": 64,
+  "step_px": 24,
+  "windows": 3637,
+  "true_residual_max_px": 26.923200905451203,
+  "naive_rms_err_px": 18.15217435680011,
+  "naive_frac_off_by_a_cell": 0.9318119329117405,
+  "unwrapped_rms_err_px": 23.345381283109706,
+  "unwrapped_frac_off_by_a_cell": 1.0,
+  "local_scale_corr": 0.5240768643431922,
+  "local_scale_rms_err": 0.10280344142946929,
+  "true_bulk_scale_median": 4.004147264573459
+ },
+ "ccf_after_tag_correction": {
+  "global_shift_applied_px": [
+   -0.006901452699196398,
+   -0.09991337914067344
+  ],
+  "ccf_peak": 0.19953416922756265,
+  "next_best_peak": 0.17487541422002778,
+  "next_best_at_px": [
+   -10,
+   0
+  ],
+  "window_px": 64,
+  "step_px": 24,
+  "windows": 3637,
+  "true_residual_max_px": 9.385947966724897,
+  "naive_rms_err_px": 4.023771895650023,
+  "naive_frac_off_by_a_cell": 0.1141050316194666,
+  "unwrapped_rms_err_px": 0.9149626264968219,
+  "unwrapped_frac_off_by_a_cell": 0.008248556502612043,
+  "local_scale_corr": 0.9545573724809564,
+  "local_scale_rms_err": 0.02123452039749619,
+  "true_bulk_scale_median": 4.004147264573459
+ }
+}
