@@ -412,6 +412,21 @@ def window_truth(pre_px, post_px, dots, cs_x, cs_y, mask, A, b, win, step):
     return tw, ts
 
 
+def windows_containing(points_px, cs_x, cs_y, win):
+    """(ny, nx) mask of windows whose square holds any of points_px."""
+    m = np.zeros((len(cs_y), len(cs_x)), bool)
+    if len(points_px) == 0:
+        return m
+    half = win / 2
+    ix0 = np.searchsorted(cs_x, points_px[:, 0] - half, side="right")
+    ix1 = np.searchsorted(cs_x, points_px[:, 0] + half, side="left")
+    iy0 = np.searchsorted(cs_y, points_px[:, 1] - half, side="right")
+    iy1 = np.searchsorted(cs_y, points_px[:, 1] + half, side="left")
+    for a0, a1, b0, b1 in zip(iy0, iy1, ix0, ix1):
+        m[a0:a1, b0:b1] = True
+    return m
+
+
 # ===================================================================== pipeline
 def ccf_pipeline(pre, make_cor, A, b, Bpre, truth=None, win=64, step=24, S=12, Lg=300,
                  pre_cache=None, which=None, refine_shift=True):
@@ -419,7 +434,9 @@ def ccf_pipeline(pre, make_cor, A, b, Bpre, truth=None, win=64, step=24, S=12, L
     (exm_analysis.main.pipeline).
 
     make_cor(A, b) -> corrected post in the pre frame.
-    truth: optional dict(pre_px, post_px, dots) for error statistics.
+    truth: optional dict(pre_px, post_px, dots[, rigid_px]) for error
+           statistics; rigid_px (pre px of tags and dashes) adds the
+           dots-only window statistics.
     pre_cache: optional dict with 'Fa' (global_ccf_prep) and 'contrast'.
     which: optional (ny, nx) bool mask restricting the windowed CCF."""
     pre_cache = pre_cache if pre_cache is not None else {}
@@ -492,7 +509,21 @@ def ccf_pipeline(pre, make_cor, A, b, Bpre, truth=None, win=64, step=24, S=12, L
             local_scale_rms_err=float(np.sqrt(np.mean((meas_scale[sok] - true_scale[sok]) ** 2)))
             if sok.any() else np.nan,
             true_bulk_scale_median=float(np.nanmedian(true_scale[ok])) if nonempty else np.nan)
-        out.update(true_win=true_win, true_scale=true_scale, ok=ok, sok=sok,
+        # windows holding only dots: tags and dashes are much larger than the
+        # PSF and shrink 1/lambda against the lattice, so pre and post windows
+        # with them look different and the CCF is biased there
+        dots_only = ok.copy()
+        if truth.get("rigid_px") is not None:
+            dots_only &= ~windows_containing(truth["rigid_px"], cs_x, cs_y, win)
+        e_u = np.hypot(*(unw - true_win)[dots_only].T)
+        e_n = np.hypot(*(naive - true_win)[dots_only].T)
+        if dots_only.any():
+            stats.update(dots_only_windows=int(dots_only.sum()),
+                         dots_only_unwrapped_rms_err_px=float(np.sqrt(np.mean(e_u ** 2))),
+                         dots_only_unwrapped_frac_off_by_a_cell=float(np.mean(e_u > 0.5 * pitch_pre)),
+                         dots_only_naive_rms_err_px=float(np.sqrt(np.mean(e_n ** 2))),
+                         dots_only_naive_frac_off_by_a_cell=float(np.mean(e_n > 0.5 * pitch_pre)))
+        out.update(true_win=true_win, true_scale=true_scale, ok=ok, sok=sok, dots_only=dots_only,
                    err_naive=err_naive, err_unw=err_unw)
     return out
 
