@@ -60,19 +60,45 @@ def correlation_length(f, mask, step, maxlag=None, level=np.exp(-1)):
     return float(x0 + (level - y0) * (x1 - x0) / (y1 - y0)), lags, prof
 
 
+def correlation_area(f, mask, step, maxlag=None):
+    """Integral scale: area under the 2D ACF out to its first zero crossing
+    (2 pi int rho(r) r dr). One independent sample per correlation area."""
+    maxlag = maxlag or min(f.shape) // 2
+    lags, prof = radial_mean(masked_acf(f, mask, maxlag), step)
+    z = np.nonzero(prof <= 0)[0]
+    k = z[0] if len(z) else len(prof)
+    r, p = lags[:k], prof[:k]
+    return float(2 * np.pi * np.trapezoid(p * r, r)) if k > 1 else step * step
+
+
+def direction_samples(theta_deg, mask, step, area, maxlag=None):
+    """Independent samples of an axial direction field: area divided by the
+    correlation area of the doubled-angle unit vectors (cos 2t, sin 2t).
+    Counting windows instead overstates it whenever neighbouring windows
+    share a direction (e.g. inside one site)."""
+    t = np.deg2rad(np.where(mask, theta_deg, 0.0)) * 2
+    ca = correlation_area(np.where(mask, np.cos(t), np.nan), mask, step, maxlag)
+    sa = correlation_area(np.where(mask, np.sin(t), np.nan), mask, step, maxlag)
+    return area / max(0.5 * (ca + sa), step * step)
+
+
 # ===================================================================== directions
-def axial_stats(theta_deg, area=None, xi=None):
+def axial_stats(theta_deg, area=None, xi=None, n_eff=None):
     """Doubled-angle statistics for axial data (directions mod 180).
 
     R      mean resultant length of 2 theta: 0 = random, 1 = all aligned
     mean   mean direction (deg, 0..180)
     n_eff  independent samples: area / xi^2 when given (neighbouring windows
-           of a correlated field are not independent), else len(theta)
+           of a correlated field are not independent), else len(theta);
+           pass xi=None, area=n_eff directly via axial_stats(..., n_eff=)
     p      Rayleigh test p-value for 'no preferred direction' with n_eff"""
     t = np.deg2rad(np.asarray(theta_deg, float)) * 2
     C, S = np.cos(t).mean(), np.sin(t).mean()
     R = float(np.hypot(C, S))
-    n = len(t) if (area is None or xi is None) else max(area / xi ** 2, 1.0)
+    if n_eff is not None:
+        n = max(float(n_eff), 1.0)
+    else:
+        n = len(t) if (area is None or xi is None) else max(area / xi ** 2, 1.0)
     n = min(n, len(t))
     z = n * R * R
     p = float(np.exp(np.sqrt(1 + 4 * n + 4 * (n * n - z * n)) - (1 + 2 * n)))   # Zar's approximation

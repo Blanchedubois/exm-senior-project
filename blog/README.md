@@ -4,6 +4,7 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-10-30 | [Test workshop: can we detect spatial structure in a distortion? (simulated images only)](2026-10-30-test-workshop-spatial-structure.md) |
 | 2026-10-15 | [How pairing works, and why everything depends on it](2026-10-15-how-pairing-works.md) |
 | 2026-10-15 | [The ArUco tagger app is built, and tested on fake images with a known answer](2026-10-15-gui-built-and-tested-on-dummy-images.md) |
 | 2026-10-13 | [How each dot gets an error bar, and why the camera gain matters](2026-10-13-error-model-and-camera-gain.md) |
