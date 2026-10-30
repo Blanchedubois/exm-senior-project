@@ -146,3 +146,59 @@ def reference_residual(xs, ux, uy, spacing, field=(0.0, 750.0), eval_step=6.0):
     fit = RBFInterpolator(Q, UQ, kernel="thin_plate_spline", degree=1)(P)
     left = U - fit
     return float(np.sqrt((left ** 2).sum(1).mean())), float(np.sqrt((U ** 2).sum(1).mean()))
+
+
+# ===================================================================== extrema
+def local_extrema(f, x=None, y=None, min_separation=3, min_deviation=0.0, reference=None,
+                  max_points=50):
+    """Local maxima and minima of a 2D map (NaN = no data).
+
+    f              (ny, nx) map, rows along y
+    x, y           1D coordinates of the columns / rows (default: indices)
+    min_separation neighbourhood radius in grid steps; a point must be the
+                   extreme value within it (non-maximum suppression)
+    min_deviation  keep only extrema at least this far from `reference`
+                   (default the median of f): set it from a control's noise
+                   floor so noise bumps are not reported
+    Returns a list of dicts kind ('max' | 'min'), x, y (parabolic sub-grid
+    refinement), value, deviation (value - reference), sorted by |deviation|."""
+    f = np.asarray(f, float)
+    ny, nx = f.shape
+    x = np.arange(nx, dtype=float) if x is None else np.asarray(x, float)
+    y = np.arange(ny, dtype=float) if y is None else np.asarray(y, float)
+    fin = np.isfinite(f)
+    if not fin.any():
+        return []
+    ref = float(np.nanmedian(f)) if reference is None else float(reference)
+    size = 2 * int(min_separation) + 1
+    from scipy import ndimage
+    out = []
+    for kind, g in (("max", f), ("min", -f)):
+        h = np.where(fin, g, -np.inf)
+        peak = (h == ndimage.maximum_filter(h, size=size, mode="nearest")) & fin
+        # a flat plateau gives many equal maxima: keep one per connected patch
+        lab, nlab = ndimage.label(peak)
+        if nlab == 0:
+            continue
+        idx = ndimage.maximum_position(h, lab, range(1, nlab + 1))
+        for (j, i) in idx:
+            dev = f[j, i] - ref
+            if (kind == "max" and dev < min_deviation) or (kind == "min" and -dev < min_deviation):
+                continue
+            # an extreme on the edge of the data is not a resolved extremum
+            if j == 0 or i == 0 or j == ny - 1 or i == nx - 1:
+                continue
+            if not (fin[j - 1:j + 2, i - 1:i + 2].all()):
+                continue
+            ox = _parabolic(g[j, i - 1], g[j, i], g[j, i + 1])
+            oy = _parabolic(g[j - 1, i], g[j, i], g[j + 1, i])
+            out.append(dict(kind=kind, x=float(np.interp(i + ox, np.arange(nx), x)),
+                            y=float(np.interp(j + oy, np.arange(ny), y)), value=float(f[j, i]),
+                            deviation=float(dev), row=int(j), col=int(i)))
+    out.sort(key=lambda d: -abs(d["deviation"]))
+    return out[:max_points]
+
+
+def _parabolic(m1, c0, p1):
+    d = m1 - 2 * c0 + p1
+    return 0.0 if d >= 0 else float(np.clip(0.5 * (m1 - p1) / d, -0.5, 0.5))

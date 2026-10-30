@@ -46,3 +46,19 @@ def test_remove_similarity():
     R = 4.0 * np.array([[np.cos(t), -np.sin(t)], [np.sin(t), np.cos(t)]])
     res, s = spatial.remove_similarity(src, src @ R.T + [3, -5])
     assert abs(s - 4.0) < 1e-9 and np.abs(res).max() < 1e-9
+
+
+def test_local_extrema_finds_bumps_and_ignores_noise():
+    x = np.arange(0, 200.0, 2.0)
+    X, Y = np.meshgrid(x, x)
+    f = 4.0 + 0.2 * np.exp(-((X - 60) ** 2 + (Y - 140) ** 2) / 200) \
+        - 0.3 * np.exp(-((X - 150.3) ** 2 + (Y - 50.7) ** 2) / 300)
+    f += np.random.default_rng(4).normal(0, 0.002, f.shape)
+    f[:5, :5] = np.nan
+    ex = spatial.local_extrema(f, x, x, min_separation=5, min_deviation=0.05)
+    assert [e["kind"] for e in ex] == ["min", "max"]
+    assert abs(ex[0]["x"] - 150.3) < 1.0 and abs(ex[0]["y"] - 50.7) < 1.0
+    assert abs(ex[1]["x"] - 60) < 1.0 and abs(ex[1]["y"] - 140) < 1.0
+    assert abs(ex[0]["deviation"] + 0.3) < 0.02
+    # with no threshold the noise produces many extrema
+    assert len(spatial.local_extrema(f, x, x, min_separation=2)) > 10
