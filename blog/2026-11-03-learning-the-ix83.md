@@ -8,6 +8,8 @@ Micro-Manager saves each acquisition as a stack of 16-bit frames with a metadata
 
 This is a learning log, not an analysis. The images were taken to learn the microscope and to test the viewer. None of the numbers below are results about the sample.
 
+*Click any image to open it at full camera resolution (every one of the 1412 × 1412 pixels).*
+
 ![The three expansion factors side by side](images/2026-11-03-ix83-expansion-comparison.webp)
 
 *The same objective and camera in every row; only the expansion factor changes. The 1× row is the mean of 100 frames; the 3.0× and 4.2× rows are a single frame each (frame 0), because expanded gels keep moving while a stack is recorded (see below). Every scale bar is 100 µm of the original, pre-expansion sample, so the bar grows from about 90 px at 1× to about 380 px at 4.2×. The field of view always covers 1553 µm of gel, which is about 518 µm of original sample at 3.0× and about 370 µm at 4.2×. Contrast is set separately for each image, so brightness can't be compared between rows. Colours: 633 nm red, 561 nm green, 488 nm blue.*
