@@ -4,6 +4,7 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-11-09 | [Testing the Magnify kit with bead gels: the "11×" gels expanded about 1.2–2.4×](2026-11-09-magnify-kit-bead-gels.md) |
 | 2026-11-03 | [Learning the IX83: first three-colour images at 1×, 3.0× and 4.2× expansion](2026-11-03-learning-the-ix83.md) |
 | 2026-10-30 | [Test workshop: can we detect spatial structure in a distortion? (simulated images only)](2026-10-30-test-workshop-spatial-structure.md) |
 | 2026-10-30 | [Research proposal (full PDF)](2026-10-30-research-proposal-pdf.md) |
