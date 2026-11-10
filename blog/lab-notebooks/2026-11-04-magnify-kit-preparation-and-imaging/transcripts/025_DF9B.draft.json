@@ -1,0 +1,96 @@
+{
+  "clipId" : "DF9B1541-1E97-4990-960D-50A10C1D56C9",
+  "createdAt" : "2026-11-04T17:04:50-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8929230769230769,
+      "end" : 10.02,
+      "start" : 0,
+      "text" : "For the bead sample, the horizontal is 2.60379 and the vertical is 2.55124.",
+      "words" : [
+        {
+          "confidence" : 0.906,
+          "end" : 1.08,
+          "start" : 0,
+          "text" : "For"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 1.32,
+          "start" : 1.08,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.872,
+          "end" : 1.62,
+          "start" : 1.32,
+          "text" : "bead"
+        },
+        {
+          "confidence" : 0.863,
+          "end" : 2.22,
+          "start" : 1.62,
+          "text" : "sample,"
+        },
+        {
+          "confidence" : 0.745,
+          "end" : 2.64,
+          "start" : 2.22,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 3.42,
+          "start" : 2.64,
+          "text" : "horizontal"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 4.5,
+          "start" : 3.42,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.954,
+          "end" : 6.72,
+          "start" : 4.5,
+          "text" : "2.60379"
+        },
+        {
+          "confidence" : 0.635,
+          "end" : 7.38,
+          "start" : 6.72,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 7.56,
+          "start" : 7.38,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 7.92,
+          "start" : 7.56,
+          "text" : "vertical"
+        },
+        {
+          "confidence" : 0.89,
+          "end" : 8.04,
+          "start" : 7.92,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 9.78,
+          "start" : 8.04,
+          "text" : "2.55124."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "For the bead sample, the horizontal is 2.60379 and the vertical is 2.55124."
+}

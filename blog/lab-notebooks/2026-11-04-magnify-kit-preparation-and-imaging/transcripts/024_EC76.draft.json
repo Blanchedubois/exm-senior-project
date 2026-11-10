@@ -1,0 +1,66 @@
+{
+  "clipId" : "EC764410-DEBD-4EF8-AEAB-2B7A1113E87D",
+  "createdAt" : "2026-11-04T17:03:30-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8515,
+      "end" : 7.866,
+      "start" : 0.12,
+      "text" : "For the beat sample, the horizontal is 2.60379.",
+      "words" : [
+        {
+          "confidence" : 0.661,
+          "end" : 1.38,
+          "start" : 0.12,
+          "text" : "For"
+        },
+        {
+          "confidence" : 0.786,
+          "end" : 1.56,
+          "start" : 1.38,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.774,
+          "end" : 1.74,
+          "start" : 1.56,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 2.22,
+          "start" : 1.74,
+          "text" : "sample,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 2.34,
+          "start" : 2.22,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.928,
+          "end" : 3.06,
+          "start" : 2.34,
+          "text" : "horizontal"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 4.26,
+          "start" : 3.06,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.824,
+          "end" : 6.42,
+          "start" : 4.26,
+          "text" : "2.60379."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "For the beat sample, the horizontal is 2.60379."
+}

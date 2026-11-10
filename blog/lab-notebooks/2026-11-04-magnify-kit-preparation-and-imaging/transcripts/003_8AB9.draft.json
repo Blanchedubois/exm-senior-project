@@ -1,0 +1,25 @@
+{
+  "clipId" : "8AB9079C-20AD-4739-B721-2323B60CFC92",
+  "createdAt" : "2026-11-04T14:48:21-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 11.88,
+      "start" : 0.42,
+      "text" : "The gels are then removed from the falcon tubes, and then placed in a single falcon tube, 15 milliliter falcon tube, with 5 milliliters of one x bar for solution."
+    },
+    {
+      "end" : 22.26,
+      "start" : 11.88,
+      "text" : "This one X buffer W solution was made by producing 45 milliliters of water with 5 milliliters of buffer W solution."
+    },
+    {
+      "end" : 29.04,
+      "start" : 22.26,
+      "text" : "This is then placed in an orbital shaker for 15 minutes, and then we'll be shaken five times at 70 RPM."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "The gels are then removed from the falcon tubes, and then placed in a single falcon tube, 15 milliliter falcon tube, with 5 milliliters of one x bar for solution. This one X buffer W solution was made by producing 45 milliliters of water with 5 milliliters of buffer W solution. This is then placed in an orbital shaker for 15 minutes, and then we'll be shaken five times at 70 RPM."
+}

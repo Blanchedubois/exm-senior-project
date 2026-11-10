@@ -1,0 +1,234 @@
+{
+  "clipId" : "96E6BA53-7C94-4E9A-9AAE-DC1AECEFEF88",
+  "createdAt" : "2026-11-04T17:36:58-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.603527777777778,
+      "end" : 20.34,
+      "start" : 0.12,
+      "text" : "Collecting the non-homogenized beat samples of approximately 11 X, a bit more dense and the homogenized, um, but not as dense as, uh, the non homogenized, uh, uh, uh, uh, uh, uh, uh, uh, one X.",
+      "words" : [
+        {
+          "confidence" : 0.582,
+          "end" : 1.74,
+          "start" : 0.12,
+          "text" : "Collecting"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 2.34,
+          "start" : 1.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.932,
+          "end" : 3.66,
+          "start" : 2.34,
+          "text" : "non-homogenized"
+        },
+        {
+          "confidence" : 0.578,
+          "end" : 3.96,
+          "start" : 3.66,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.44,
+          "start" : 3.96,
+          "text" : "samples"
+        },
+        {
+          "confidence" : 0.505,
+          "end" : 4.92,
+          "start" : 4.44,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 5.64,
+          "start" : 4.92,
+          "text" : "approximately"
+        },
+        {
+          "confidence" : 0.753,
+          "end" : 5.82,
+          "start" : 5.64,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.512,
+          "end" : 6.36,
+          "start" : 5.82,
+          "text" : "X,"
+        },
+        {
+          "confidence" : 0.902,
+          "end" : 6.6,
+          "start" : 6.36,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.78,
+          "start" : 6.6,
+          "text" : "bit"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.9,
+          "start" : 6.78,
+          "text" : "more"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 7.2,
+          "start" : 6.9,
+          "text" : "dense"
+        },
+        {
+          "confidence" : 0.339,
+          "end" : 7.8,
+          "start" : 7.2,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.917,
+          "end" : 7.86,
+          "start" : 7.8,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 8.76,
+          "start" : 7.86,
+          "text" : "homogenized,"
+        },
+        {
+          "confidence" : 0.209,
+          "end" : 9.6,
+          "start" : 8.76,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 10.02,
+          "start" : 9.6,
+          "text" : "but"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.44,
+          "start" : 10.02,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.68,
+          "start" : 10.44,
+          "text" : "as"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.1,
+          "start" : 10.68,
+          "text" : "dense"
+        },
+        {
+          "confidence" : 0.518,
+          "end" : 11.82,
+          "start" : 11.1,
+          "text" : "as,"
+        },
+        {
+          "confidence" : 0.071,
+          "end" : 12.6,
+          "start" : 11.82,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 12.72,
+          "start" : 12.6,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 12.9,
+          "start" : 12.72,
+          "text" : "non"
+        },
+        {
+          "confidence" : 0.81,
+          "end" : 13.92,
+          "start" : 12.9,
+          "text" : "homogenized,"
+        },
+        {
+          "confidence" : 0.03,
+          "end" : 15.54,
+          "start" : 13.92,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.05,
+          "end" : 15.96,
+          "start" : 15.54,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.043,
+          "end" : 16.26,
+          "start" : 15.96,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.062,
+          "end" : 17.7,
+          "start" : 16.26,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.079,
+          "end" : 18.12,
+          "start" : 17.7,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.067,
+          "end" : 18.9,
+          "start" : 18.12,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.024,
+          "end" : 19.56,
+          "start" : 18.9,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.077,
+          "end" : 19.74,
+          "start" : 19.56,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.348,
+          "end" : 19.8,
+          "start" : 19.74,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.544,
+          "end" : 20.28,
+          "start" : 19.8,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Collecting the non-homogenized beat samples of approximately 11 X, a bit more dense and the homogenized, um, but not as dense as, uh, the non homogenized, uh, uh, uh, uh, uh, uh, uh, uh, one X."
+}

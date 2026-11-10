@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 34,
+      "entryDate" : "2026-11-04",
+      "id" : "B0CFF2A7-A6C0-4F94-9DB3-44765EFC344C",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 7,
+        "voice" : 34
+      },
+      "title" : "4 Nov 2026: Magnify Kit Preparation and Imaging",
+      "totalAudioSeconds" : 714.2229375
+    }
+  ],
+  "exportedAt" : "2026-11-09T21:00:10-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 26.5.2",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

@@ -1,0 +1,272 @@
+{
+  "clipId" : "57962767-A12F-4503-9E52-F2738D365241",
+  "createdAt" : "2026-11-04T17:41:50-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.6213,
+      "end" : 16.68,
+      "start" : 0.18,
+      "text" : "I have also, uh, taken one of the homogenized, uh, uh, uh, uh, hydrogels and put it in water, since uh, it's peach sensitive, uh, to see, uh, what happens.",
+      "words" : [
+        {
+          "confidence" : 0.998,
+          "end" : 1.44,
+          "start" : 0.18,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 1.62,
+          "start" : 1.44,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.503,
+          "end" : 2.22,
+          "start" : 1.62,
+          "text" : "also,"
+        },
+        {
+          "confidence" : 0.197,
+          "end" : 2.7,
+          "start" : 2.22,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 3.24,
+          "start" : 2.7,
+          "text" : "taken"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.78,
+          "start" : 3.24,
+          "text" : "one"
+        },
+        {
+          "confidence" : 1,
+          "end" : 3.96,
+          "start" : 3.78,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.08,
+          "start" : 3.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.796,
+          "end" : 5.58,
+          "start" : 4.08,
+          "text" : "homogenized,"
+        },
+        {
+          "confidence" : 0.234,
+          "end" : 6.3,
+          "start" : 5.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.207,
+          "end" : 7.98,
+          "start" : 6.3,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.053,
+          "end" : 8.58,
+          "start" : 7.98,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.149,
+          "end" : 9,
+          "start" : 8.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.863,
+          "end" : 10.32,
+          "start" : 9,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 10.56,
+          "start" : 10.32,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.74,
+          "start" : 10.56,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 10.86,
+          "start" : 10.74,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.98,
+          "start" : 10.86,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.567,
+          "end" : 11.58,
+          "start" : 10.98,
+          "text" : "water,"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 12.06,
+          "start" : 11.58,
+          "text" : "since"
+        },
+        {
+          "confidence" : 0.111,
+          "end" : 12.6,
+          "start" : 12.06,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.627,
+          "end" : 12.84,
+          "start" : 12.6,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.258,
+          "end" : 13.08,
+          "start" : 12.84,
+          "text" : "peach"
+        },
+        {
+          "confidence" : 0.679,
+          "end" : 13.74,
+          "start" : 13.08,
+          "text" : "sensitive,"
+        },
+        {
+          "confidence" : 0.151,
+          "end" : 14.1,
+          "start" : 13.74,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.339,
+          "end" : 14.46,
+          "start" : 14.1,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.16,
+          "end" : 15.48,
+          "start" : 14.46,
+          "text" : "see,"
+        },
+        {
+          "confidence" : 0.201,
+          "end" : 16.02,
+          "start" : 15.48,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.891,
+          "end" : 16.14,
+          "start" : 16.02,
+          "text" : "what"
+        },
+        {
+          "confidence" : 0.837,
+          "end" : 16.62,
+          "start" : 16.14,
+          "text" : "happens."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9689090909090908,
+      "end" : 20.76,
+      "start" : 16.68,
+      "text" : "I'm waiting for 15 minutes and then observing any signs change.",
+      "words" : [
+        {
+          "confidence" : 0.998,
+          "end" : 17.04,
+          "start" : 16.68,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 1,
+          "end" : 17.16,
+          "start" : 17.04,
+          "text" : "waiting"
+        },
+        {
+          "confidence" : 1,
+          "end" : 17.4,
+          "start" : 17.16,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 17.64,
+          "start" : 17.4,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.94,
+          "start" : 17.64,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 18.36,
+          "start" : 17.94,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.48,
+          "start" : 18.36,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.96,
+          "start" : 18.48,
+          "text" : "observing"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 19.44,
+          "start" : 18.96,
+          "text" : "any"
+        },
+        {
+          "confidence" : 0.729,
+          "end" : 19.92,
+          "start" : 19.44,
+          "text" : "signs"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 20.64,
+          "start" : 19.92,
+          "text" : "change."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I have also, uh, taken one of the homogenized, uh, uh, uh, uh, hydrogels and put it in water, since uh, it's peach sensitive, uh, to see, uh, what happens. I'm waiting for 15 minutes and then observing any signs change."
+}

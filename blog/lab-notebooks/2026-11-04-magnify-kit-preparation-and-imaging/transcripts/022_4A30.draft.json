@@ -1,0 +1,15 @@
+{
+  "clipId" : "4A3006B2-49CA-41EE-ADC6-F451E0CBAAB6",
+  "createdAt" : "2026-11-04T16:37:54-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 28.2,
+      "start" : 0,
+      "text" : "I noticed that for the 11 X, uh, hydrogels where I've submerged it, uh, in one X, uh, PVS solution for 15 minute batches 3 times, uh, and flipping it occasionally every 5 minutes, um, the gels have not expanded significantly, or at all, compared to the gels that have not been submerged in PBS solution."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I noticed that for the 11 X, uh, hydrogels where I've submerged it, uh, in one X, uh, PVS solution for 15 minute batches 3 times, uh, and flipping it occasionally every 5 minutes, um, the gels have not expanded significantly, or at all, compared to the gels that have not been submerged in PBS solution."
+}

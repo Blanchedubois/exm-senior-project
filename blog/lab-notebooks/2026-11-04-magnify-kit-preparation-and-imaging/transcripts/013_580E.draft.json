@@ -1,0 +1,15 @@
+{
+  "clipId" : "580E53E3-7F56-46EC-81B5-804A7BB27781",
+  "createdAt" : "2026-11-04T16:01:44-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 23.52,
+      "start" : 0,
+      "text" : "As I wait for Vignesh to come down, I turn the camera on and waited 30 seconds until the orange LED at the back stops blinking, then I turn on the Olympus IX 83 with the 1st module turned on, then the 2nd module after the 1st is turned on, and then the uh, the controller uh, after the 1st and the 2nd are turned on in sequence, and then the computer, which I am signing in right now."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "As I wait for Vignesh to come down, I turn the camera on and waited 30 seconds until the orange LED at the back stops blinking, then I turn on the Olympus IX 83 with the 1st module turned on, then the 2nd module after the 1st is turned on, and then the uh, the controller uh, after the 1st and the 2nd are turned on in sequence, and then the computer, which I am signing in right now."
+}

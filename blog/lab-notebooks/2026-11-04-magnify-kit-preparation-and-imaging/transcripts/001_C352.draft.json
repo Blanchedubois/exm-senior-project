@@ -1,0 +1,20 @@
+{
+  "clipId" : "C352AD26-4BB9-4088-86EF-2FBA163B78E3",
+  "createdAt" : "2026-11-04T14:45:56-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 5.04,
+      "start" : 0.84,
+      "text" : "I took the hydrogels out of the 6 well plate."
+    },
+    {
+      "end" : 11.64,
+      "start" : 5.04,
+      "text" : "I took 2 of the hydro gels and checked their integrity by removing the silicone wings."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I took the hydrogels out of the 6 well plate. I took 2 of the hydro gels and checked their integrity by removing the silicone wings."
+}

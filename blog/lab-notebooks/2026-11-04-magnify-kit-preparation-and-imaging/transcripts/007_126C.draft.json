@@ -1,0 +1,15 @@
+{
+  "clipId" : "126C296F-1D7C-4696-9D33-D1343D788EEE",
+  "createdAt" : "2026-11-04T15:09:57-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 16.14,
+      "start" : 0,
+      "text" : "Just finished washing, uh, the hydrogels for the 5th and last time in the one X Buffer W solution, uh, preparing everything to bring downstairs to the optics lab to start imaging, uh, and expansion."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Just finished washing, uh, the hydrogels for the 5th and last time in the one X Buffer W solution, uh, preparing everything to bring downstairs to the optics lab to start imaging, uh, and expansion."
+}

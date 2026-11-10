@@ -1,0 +1,20 @@
+{
+  "clipId" : "C59198CF-C3C6-4BCB-8FC7-3BC8B8D6A40D",
+  "createdAt" : "2026-11-04T15:50:18-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 11.64,
+      "start" : 0,
+      "text" : "As you can see, the image above, the 2 gels which have gone to the homogenization step are significantly larger, up to 2 to 3 times larger than the gels that have not been homogenized."
+    },
+    {
+      "end" : 21.78,
+      "start" : 11.64,
+      "text" : "So we might get different expansion sizes that may differ from 4 x or 11 x with the homogenized hydrogels versus the non-homogenized hydrogels."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "As you can see, the image above, the 2 gels which have gone to the homogenization step are significantly larger, up to 2 to 3 times larger than the gels that have not been homogenized. So we might get different expansion sizes that may differ from 4 x or 11 x with the homogenized hydrogels versus the non-homogenized hydrogels."
+}

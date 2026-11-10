@@ -1,0 +1,162 @@
+{
+  "clipId" : "51A6DBA4-5201-41D8-B769-36373126376D",
+  "createdAt" : "2026-11-04T17:41:27-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7585833333333333,
+      "end" : 11.293,
+      "start" : 0.06,
+      "text" : "I have finished imaging, uh, the non homogenized and homogenized samples at both, uh, the approximately 11x and approximately 1x, uh, cleaning up currently.",
+      "words" : [
+        {
+          "confidence" : 0.998,
+          "end" : 1.32,
+          "start" : 0.06,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 1.44,
+          "start" : 1.32,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.68,
+          "start" : 1.44,
+          "text" : "finished"
+        },
+        {
+          "confidence" : 0.753,
+          "end" : 2.52,
+          "start" : 1.68,
+          "text" : "imaging,"
+        },
+        {
+          "confidence" : 0.098,
+          "end" : 2.82,
+          "start" : 2.52,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 2.94,
+          "start" : 2.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 3.06,
+          "start" : 2.94,
+          "text" : "non"
+        },
+        {
+          "confidence" : 0.791,
+          "end" : 3.78,
+          "start" : 3.06,
+          "text" : "homogenized"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 3.96,
+          "start" : 3.78,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 4.56,
+          "start" : 3.96,
+          "text" : "homogenized"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 5.52,
+          "start" : 4.56,
+          "text" : "samples"
+        },
+        {
+          "confidence" : 0.849,
+          "end" : 5.82,
+          "start" : 5.52,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.478,
+          "end" : 6.24,
+          "start" : 5.82,
+          "text" : "both,"
+        },
+        {
+          "confidence" : 0.069,
+          "end" : 6.42,
+          "start" : 6.24,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.456,
+          "end" : 6.54,
+          "start" : 6.42,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 7.08,
+          "start" : 6.54,
+          "text" : "approximately"
+        },
+        {
+          "confidence" : 0.508,
+          "end" : 7.74,
+          "start" : 7.08,
+          "text" : "11x"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 7.92,
+          "start" : 7.74,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.46,
+          "start" : 7.92,
+          "text" : "approximately"
+        },
+        {
+          "confidence" : 0.515,
+          "end" : 9.12,
+          "start" : 8.46,
+          "text" : "1x,"
+        },
+        {
+          "confidence" : 0.102,
+          "end" : 9.66,
+          "start" : 9.12,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 9.9,
+          "start" : 9.66,
+          "text" : "cleaning"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.2,
+          "start" : 9.9,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.83,
+          "end" : 11.293,
+          "start" : 10.2,
+          "text" : "currently."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I have finished imaging, uh, the non homogenized and homogenized samples at both, uh, the approximately 11x and approximately 1x, uh, cleaning up currently."
+}

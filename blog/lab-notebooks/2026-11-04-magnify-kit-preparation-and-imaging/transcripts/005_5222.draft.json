@@ -1,0 +1,25 @@
+{
+  "clipId" : "5222F1F1-C096-4CDF-9FB3-DB462AF0132A",
+  "createdAt" : "2026-11-04T15:06:44-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 7.8,
+      "start" : 0,
+      "text" : "Just finished the fifth wash, uh, in five millimeters of one X bar for W."
+    },
+    {
+      "end" : 12.18,
+      "start" : 7.8,
+      "text" : "I'm gonna keep it in the solution, uh, and inside the Falcon tube."
+    },
+    {
+      "end" : 21.36,
+      "start" : 12.18,
+      "text" : "And I'm gonna prepare bringing everything downstairs to the optics lab to start the actual swelling and expansion using PBS solution."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Just finished the fifth wash, uh, in five millimeters of one X bar for W. I'm gonna keep it in the solution, uh, and inside the Falcon tube. And I'm gonna prepare bringing everything downstairs to the optics lab to start the actual swelling and expansion using PBS solution."
+}

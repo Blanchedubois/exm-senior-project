@@ -1,0 +1,15 @@
+{
+  "clipId" : "087739B1-11A4-49F1-B57A-9FE33869F0BC",
+  "createdAt" : "2026-11-04T16:28:21-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 11.04,
+      "start" : 0,
+      "text" : "Imagine the laser power of the 561 to be 33.6 millowatts with the ND filter being at zero."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Imagine the laser power of the 561 to be 33.6 millowatts with the ND filter being at zero."
+}

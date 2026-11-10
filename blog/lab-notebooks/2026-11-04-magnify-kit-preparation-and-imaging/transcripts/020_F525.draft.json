@@ -1,0 +1,35 @@
+{
+  "clipId" : "F525AA6B-958E-477C-8A33-59CE0AB94495",
+  "createdAt" : "2026-11-04T16:32:56-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 4.92,
+      "start" : 0,
+      "text" : "25%. on both the blue and the red blazer."
+    },
+    {
+      "end" : 7.02,
+      "start" : 4.92,
+      "text" : "And then it's ND1 for the game."
+    },
+    {
+      "end" : 16.02,
+      "start" : 7.02,
+      "text" : "So just use those settings, keep the power consistent across all your measurements so that you'd be able to recreate things later on when you have issues."
+    },
+    {
+      "end" : 23.46,
+      "start" : 16.02,
+      "text" : "Um, So, I mean, yeah, just keep it our indie one with the rest of the experiments and see what happens."
+    },
+    {
+      "end" : 25.62,
+      "start" : 23.46,
+      "text" : "Okay, cool, good."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "25%. on both the blue and the red blazer. And then it's ND1 for the game. So just use those settings, keep the power consistent across all your measurements so that you'd be able to recreate things later on when you have issues. Um, So, I mean, yeah, just keep it our indie one with the rest of the experiments and see what happens. Okay, cool, good."
+}

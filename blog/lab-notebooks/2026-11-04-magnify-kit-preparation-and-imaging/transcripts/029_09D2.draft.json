@@ -1,0 +1,204 @@
+{
+  "clipId" : "09D21122-F116-4750-BA5B-0B38EE282A91",
+  "createdAt" : "2026-11-04T17:25:47-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8282903225806452,
+      "end" : 17.52,
+      "start" : 0.24,
+      "text" : "Collecting the non-homogenized beat sample at one X, um, and doing 3 different locations, uh, at 20 seconds, milliseconds exposure time, 50 counts, time interval of 0, and a 20 X.",
+      "words" : [
+        {
+          "confidence" : 0.86,
+          "end" : 1.92,
+          "start" : 0.24,
+          "text" : "Collecting"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 2.34,
+          "start" : 1.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.885,
+          "end" : 3.9,
+          "start" : 2.34,
+          "text" : "non-homogenized"
+        },
+        {
+          "confidence" : 0.778,
+          "end" : 4.08,
+          "start" : 3.9,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.44,
+          "start" : 4.08,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.68,
+          "start" : 4.44,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.918,
+          "end" : 4.92,
+          "start" : 4.68,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.352,
+          "end" : 5.58,
+          "start" : 4.92,
+          "text" : "X,"
+        },
+        {
+          "confidence" : 0.325,
+          "end" : 6.66,
+          "start" : 5.58,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.837,
+          "end" : 7.44,
+          "start" : 6.66,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 7.86,
+          "start" : 7.44,
+          "text" : "doing"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 8.04,
+          "start" : 7.86,
+          "text" : "3"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.22,
+          "start" : 8.04,
+          "text" : "different"
+        },
+        {
+          "confidence" : 0.682,
+          "end" : 9.06,
+          "start" : 8.22,
+          "text" : "locations,"
+        },
+        {
+          "confidence" : 0.102,
+          "end" : 10.14,
+          "start" : 9.06,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.818,
+          "end" : 10.32,
+          "start" : 10.14,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 10.68,
+          "start" : 10.32,
+          "text" : "20"
+        },
+        {
+          "confidence" : 0.545,
+          "end" : 11.64,
+          "start" : 10.68,
+          "text" : "seconds,"
+        },
+        {
+          "confidence" : 0.908,
+          "end" : 12.24,
+          "start" : 11.64,
+          "text" : "milliseconds"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.66,
+          "start" : 12.24,
+          "text" : "exposure"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 13.02,
+          "start" : 12.66,
+          "text" : "time,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.68,
+          "start" : 13.02,
+          "text" : "50"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 14.4,
+          "start" : 13.68,
+          "text" : "counts,"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 15.18,
+          "start" : 14.4,
+          "text" : "time"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 15.66,
+          "start" : 15.18,
+          "text" : "interval"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 15.84,
+          "start" : 15.66,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.482,
+          "end" : 16.26,
+          "start" : 15.84,
+          "text" : "0,"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 16.56,
+          "start" : 16.26,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 16.74,
+          "start" : 16.56,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 16.98,
+          "start" : 16.74,
+          "text" : "20"
+        },
+        {
+          "confidence" : 0.665,
+          "end" : 17.46,
+          "start" : 16.98,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Collecting the non-homogenized beat sample at one X, um, and doing 3 different locations, uh, at 20 seconds, milliseconds exposure time, 50 counts, time interval of 0, and a 20 X."
+}

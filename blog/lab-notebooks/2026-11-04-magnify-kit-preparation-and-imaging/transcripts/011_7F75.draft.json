@@ -1,0 +1,35 @@
+{
+  "clipId" : "7F75242B-5A33-4C3F-B5CD-F65A649D31C8",
+  "createdAt" : "2026-11-04T15:52:15-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 15.66,
+      "start" : 0,
+      "text" : "Right now, I have taken uh, 2 of the gels, one homogenized, one non-homogenized, and I've submerged in 10 milliliters of uh, PBS, one X PBS solution, uh, and we're going to wait until 45 minutes for those to expand to 11 X."
+    },
+    {
+      "end" : 17.22,
+      "start" : 15.66,
+      "text" : "The other hydrogels."
+    },
+    {
+      "end" : 18.42,
+      "start" : 17.22,
+      "text" : "I'm waiting to image it."
+    },
+    {
+      "end" : 24.12,
+      "start" : 18.42,
+      "text" : "Um, Without expansion and then image it after 4X expansion."
+    },
+    {
+      "end" : 28.98,
+      "start" : 24.12,
+      "text" : "And so we get to have one X, 4 X, and 11 X expansion."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Right now, I have taken uh, 2 of the gels, one homogenized, one non-homogenized, and I've submerged in 10 milliliters of uh, PBS, one X PBS solution, uh, and we're going to wait until 45 minutes for those to expand to 11 X. The other hydrogels. I'm waiting to image it. Um, Without expansion and then image it after 4X expansion. And so we get to have one X, 4 X, and 11 X expansion."
+}

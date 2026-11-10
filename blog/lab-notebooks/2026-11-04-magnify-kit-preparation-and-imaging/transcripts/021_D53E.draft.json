@@ -1,0 +1,20 @@
+{
+  "clipId" : "D53E649F-1F20-49EA-BC2A-26AAFC596D19",
+  "createdAt" : "2026-11-04T16:33:07-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 5.7,
+      "start" : 0,
+      "text" : "I'm gonna set the only 3rd one for the rest of the experimentation."
+    },
+    {
+      "end" : 8.58,
+      "start" : 5.7,
+      "text" : "Uh, I just recommended for their indie filter one."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I'm gonna set the only 3rd one for the rest of the experimentation. Uh, I just recommended for their indie filter one."
+}

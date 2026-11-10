@@ -1,0 +1,15 @@
+{
+  "clipId" : "543D3B61-B312-4A50-92D6-7FADF4E8E9B3",
+  "createdAt" : "2026-11-04T15:56:43-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 17.4,
+      "start" : 0,
+      "text" : "For the 11 X batches, uh, I, uh, flip the hydrogel is, uh, every 5 minutes or so to ensure that both sides uh, are in contact with the PBS solution, uh, and I gently flip it using a metal spatula."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "For the 11 X batches, uh, I, uh, flip the hydrogel is, uh, every 5 minutes or so to ensure that both sides uh, are in contact with the PBS solution, uh, and I gently flip it using a metal spatula."
+}

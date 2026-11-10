@@ -1,0 +1,15 @@
+{
+  "clipId" : "0805A061-2A47-4ECB-868F-B95315561E14",
+  "createdAt" : "2026-11-04T16:23:45-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 11.64,
+      "start" : 0.18,
+      "text" : "Turn on the wriggle power supply to an arbitrary wave function of a DC offset of 3 volts and turn on the 561 laser."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Turn on the wriggle power supply to an arbitrary wave function of a DC offset of 3 volts and turn on the 561 laser."
+}

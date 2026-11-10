@@ -1,0 +1,348 @@
+{
+  "clipId" : "48043988-8225-44F6-8346-0B71E18123FF",
+  "createdAt" : "2026-11-04T17:16:15-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7694545454545455,
+      "end" : 21.66,
+      "start" : 0.48,
+      "text" : "Uh, I just tested out, um, the first hydro gel that has been homogenized, uh, and put it on the, uh, peachy dish, and, uh, analyzed it, just took it out, and I put it on a cover slip, where I'm going to image, uh, the beat sample for the homogenized, uh, 1x hydro gel.",
+      "words" : [
+        {
+          "confidence" : 0.103,
+          "end" : 1.92,
+          "start" : 0.48,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.04,
+          "start" : 1.92,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.22,
+          "start" : 2.04,
+          "text" : "just"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 2.58,
+          "start" : 2.22,
+          "text" : "tested"
+        },
+        {
+          "confidence" : 0.508,
+          "end" : 3,
+          "start" : 2.58,
+          "text" : "out,"
+        },
+        {
+          "confidence" : 0.214,
+          "end" : 3.42,
+          "start" : 3,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.851,
+          "end" : 3.72,
+          "start" : 3.42,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.911,
+          "end" : 4.02,
+          "start" : 3.72,
+          "text" : "first"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 5.16,
+          "start" : 4.02,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.798,
+          "end" : 5.46,
+          "start" : 5.16,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 5.76,
+          "start" : 5.46,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 5.94,
+          "start" : 5.76,
+          "text" : "has"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 6.12,
+          "start" : 5.94,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.831,
+          "end" : 7.74,
+          "start" : 6.12,
+          "text" : "homogenized,"
+        },
+        {
+          "confidence" : 0.13,
+          "end" : 7.86,
+          "start" : 7.74,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 7.98,
+          "start" : 7.86,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.1,
+          "start" : 7.98,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.869,
+          "end" : 8.16,
+          "start" : 8.1,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 8.28,
+          "start" : 8.16,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.47,
+          "end" : 8.52,
+          "start" : 8.28,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.026,
+          "end" : 8.7,
+          "start" : 8.52,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.361,
+          "end" : 9.06,
+          "start" : 8.7,
+          "text" : "peachy"
+        },
+        {
+          "confidence" : 0.697,
+          "end" : 9.54,
+          "start" : 9.06,
+          "text" : "dish,"
+        },
+        {
+          "confidence" : 0.516,
+          "end" : 9.9,
+          "start" : 9.54,
+          "text" : "and,"
+        },
+        {
+          "confidence" : 0.154,
+          "end" : 10.44,
+          "start" : 9.9,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 11.16,
+          "start" : 10.44,
+          "text" : "analyzed"
+        },
+        {
+          "confidence" : 0.868,
+          "end" : 11.58,
+          "start" : 11.16,
+          "text" : "it,"
+        },
+        {
+          "confidence" : 0.781,
+          "end" : 11.82,
+          "start" : 11.58,
+          "text" : "just"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.94,
+          "start" : 11.82,
+          "text" : "took"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.12,
+          "start" : 11.94,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.67,
+          "end" : 12.36,
+          "start" : 12.12,
+          "text" : "out,"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 12.54,
+          "start" : 12.36,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 12.66,
+          "start" : 12.54,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.9,
+          "start" : 12.66,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 13.02,
+          "start" : 12.9,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 13.2,
+          "start" : 13.02,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 13.38,
+          "start" : 13.2,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.56,
+          "start" : 13.38,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.792,
+          "end" : 14.22,
+          "start" : 13.56,
+          "text" : "slip,"
+        },
+        {
+          "confidence" : 0.759,
+          "end" : 14.64,
+          "start" : 14.22,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 15,
+          "start" : 14.64,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 15.06,
+          "start" : 15,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 15.18,
+          "start" : 15.06,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.502,
+          "end" : 15.9,
+          "start" : 15.18,
+          "text" : "image,"
+        },
+        {
+          "confidence" : 0.066,
+          "end" : 16.86,
+          "start" : 15.9,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 16.92,
+          "start" : 16.86,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.703,
+          "end" : 17.1,
+          "start" : 16.92,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 17.52,
+          "start" : 17.1,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 18.24,
+          "start" : 17.52,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 18.36,
+          "start" : 18.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.683,
+          "end" : 19.44,
+          "start" : 18.36,
+          "text" : "homogenized,"
+        },
+        {
+          "confidence" : 0.043,
+          "end" : 20.1,
+          "start" : 19.44,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.707,
+          "end" : 20.52,
+          "start" : 20.1,
+          "text" : "1x"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 21.06,
+          "start" : 20.52,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.569,
+          "end" : 21.54,
+          "start" : 21.06,
+          "text" : "gel."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Uh, I just tested out, um, the first hydro gel that has been homogenized, uh, and put it on the, uh, peachy dish, and, uh, analyzed it, just took it out, and I put it on a cover slip, where I'm going to image, uh, the beat sample for the homogenized, uh, 1x hydro gel."
+}

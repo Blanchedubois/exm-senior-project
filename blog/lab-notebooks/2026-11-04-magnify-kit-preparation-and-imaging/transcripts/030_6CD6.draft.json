@@ -1,0 +1,144 @@
+{
+  "clipId" : "6CD64CAA-9715-4DA3-B980-B131C21FC492",
+  "createdAt" : "2026-11-04T17:36:35-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8921428571428569,
+      "end" : 12.3,
+      "start" : 0,
+      "text" : "Finish collecting the homogenized bead samples at approximately 11x, the beads are very sparsely dispersed, very less dense on the image.",
+      "words" : [
+        {
+          "confidence" : 0.454,
+          "end" : 1.32,
+          "start" : 0,
+          "text" : "Finish"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.86,
+          "start" : 1.32,
+          "text" : "collecting"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.16,
+          "start" : 1.86,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 3.06,
+          "start" : 2.16,
+          "text" : "homogenized"
+        },
+        {
+          "confidence" : 0.572,
+          "end" : 3.54,
+          "start" : 3.06,
+          "text" : "bead"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.08,
+          "start" : 3.54,
+          "text" : "samples"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 4.56,
+          "start" : 4.08,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.92,
+          "end" : 5.16,
+          "start" : 4.56,
+          "text" : "approximately"
+        },
+        {
+          "confidence" : 0.633,
+          "end" : 6.12,
+          "start" : 5.16,
+          "text" : "11x,"
+        },
+        {
+          "confidence" : 0.607,
+          "end" : 6.78,
+          "start" : 6.12,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 7.56,
+          "start" : 6.78,
+          "text" : "beads"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.98,
+          "start" : 7.56,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.4,
+          "start" : 7.98,
+          "text" : "very"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 9.12,
+          "start" : 8.4,
+          "text" : "sparsely"
+        },
+        {
+          "confidence" : 0.948,
+          "end" : 10.32,
+          "start" : 9.12,
+          "text" : "dispersed,"
+        },
+        {
+          "confidence" : 0.909,
+          "end" : 10.8,
+          "start" : 10.32,
+          "text" : "very"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.04,
+          "start" : 10.8,
+          "text" : "less"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.4,
+          "start" : 11.04,
+          "text" : "dense"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 11.7,
+          "start" : 11.4,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.891,
+          "end" : 11.82,
+          "start" : 11.7,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 12.18,
+          "start" : 11.82,
+          "text" : "image."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Finish collecting the homogenized bead samples at approximately 11x, the beads are very sparsely dispersed, very less dense on the image."
+}

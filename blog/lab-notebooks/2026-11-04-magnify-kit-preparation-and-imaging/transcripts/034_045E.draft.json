@@ -1,0 +1,310 @@
+{
+  "clipId" : "045E28D0-FDC5-4D10-9B7B-DA1D34758517",
+  "createdAt" : "2026-11-04T18:12:36-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8063333333333332,
+      "end" : 2.64,
+      "start" : 0.06,
+      "text" : "Cleaned everything up.",
+      "words" : [
+        {
+          "confidence" : 0.597,
+          "end" : 1.8,
+          "start" : 0.3,
+          "text" : "Cleaned"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.98,
+          "start" : 1.8,
+          "text" : "everything"
+        },
+        {
+          "confidence" : 0.825,
+          "end" : 2.58,
+          "start" : 1.98,
+          "text" : "up."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9019090909090909,
+      "end" : 6.72,
+      "start" : 2.64,
+      "text" : "Um, moved everything back to the wet lab, which was necessary.",
+      "words" : [
+        {
+          "confidence" : 0.364,
+          "end" : 3.9,
+          "start" : 2.64,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.829,
+          "end" : 4.08,
+          "start" : 3.9,
+          "text" : "moved"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.32,
+          "start" : 4.08,
+          "text" : "everything"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.56,
+          "start" : 4.32,
+          "text" : "back"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.74,
+          "start" : 4.56,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.8,
+          "start" : 4.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 5.04,
+          "start" : 4.8,
+          "text" : "wet"
+        },
+        {
+          "confidence" : 0.901,
+          "end" : 5.52,
+          "start" : 5.04,
+          "text" : "lab,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 5.7,
+          "start" : 5.52,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 5.88,
+          "start" : 5.7,
+          "text" : "was"
+        },
+        {
+          "confidence" : 0.857,
+          "end" : 6.66,
+          "start" : 5.88,
+          "text" : "necessary."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7539375000000001,
+      "end" : 26.841,
+      "start" : 6.72,
+      "text" : "Um, turned off the microscope, uh, made sure everything was clean, and then, um, put everything back, uh, going to go back home, and tomorrow, on Thursday, analyze the images, uh, collected.",
+      "words" : [
+        {
+          "confidence" : 0.232,
+          "end" : 7.98,
+          "start" : 6.72,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.948,
+          "end" : 8.94,
+          "start" : 7.98,
+          "text" : "turned"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.18,
+          "start" : 8.94,
+          "text" : "off"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.36,
+          "start" : 9.18,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.902,
+          "end" : 10.14,
+          "start" : 9.36,
+          "text" : "microscope,"
+        },
+        {
+          "confidence" : 0.119,
+          "end" : 10.74,
+          "start" : 10.14,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.839,
+          "end" : 10.86,
+          "start" : 10.74,
+          "text" : "made"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.04,
+          "start" : 10.86,
+          "text" : "sure"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.22,
+          "start" : 11.04,
+          "text" : "everything"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 11.52,
+          "start" : 11.22,
+          "text" : "was"
+        },
+        {
+          "confidence" : 0.594,
+          "end" : 12.12,
+          "start" : 11.52,
+          "text" : "clean,"
+        },
+        {
+          "confidence" : 0.753,
+          "end" : 12.9,
+          "start" : 12.12,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.55,
+          "end" : 13.26,
+          "start" : 12.9,
+          "text" : "then,"
+        },
+        {
+          "confidence" : 0.262,
+          "end" : 13.74,
+          "start" : 13.26,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 14.46,
+          "start" : 13.74,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 14.7,
+          "start" : 14.46,
+          "text" : "everything"
+        },
+        {
+          "confidence" : 0.746,
+          "end" : 15.24,
+          "start" : 14.7,
+          "text" : "back,"
+        },
+        {
+          "confidence" : 0.14,
+          "end" : 16.38,
+          "start" : 15.24,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.921,
+          "end" : 16.62,
+          "start" : 16.38,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.86,
+          "start" : 16.62,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.98,
+          "start" : 16.86,
+          "text" : "go"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 17.7,
+          "start" : 16.98,
+          "text" : "back"
+        },
+        {
+          "confidence" : 0.556,
+          "end" : 18.18,
+          "start" : 17.7,
+          "text" : "home,"
+        },
+        {
+          "confidence" : 0.955,
+          "end" : 18.3,
+          "start" : 18.18,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.673,
+          "end" : 19.08,
+          "start" : 18.3,
+          "text" : "tomorrow,"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 19.62,
+          "start" : 19.08,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.683,
+          "end" : 20.4,
+          "start" : 19.62,
+          "text" : "Thursday,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 21.24,
+          "start" : 20.4,
+          "text" : "analyze"
+        },
+        {
+          "confidence" : 0.866,
+          "end" : 22.2,
+          "start" : 21.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.478,
+          "end" : 24.3,
+          "start" : 22.2,
+          "text" : "images,"
+        },
+        {
+          "confidence" : 0.204,
+          "end" : 25.14,
+          "start" : 24.3,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.776,
+          "end" : 26.841,
+          "start" : 25.14,
+          "text" : "collected."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Cleaned everything up. Um, moved everything back to the wet lab, which was necessary. Um, turned off the microscope, uh, made sure everything was clean, and then, um, put everything back, uh, going to go back home, and tomorrow, on Thursday, analyze the images, uh, collected."
+}

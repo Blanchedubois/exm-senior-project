@@ -1,0 +1,445 @@
+{
+  "markers" : [
+
+  ],
+  "pageDuration" : 747.2229375,
+  "segments" : [
+    {
+      "clipEnd" : 12.052,
+      "clipId" : "C352AD26-4BB9-4088-86EF-2FBA163B78E3",
+      "clipStart" : 0,
+      "pageEnd" : 12.052,
+      "pageStart" : 0,
+      "wallStart" : "2026-11-04T14:45:44-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 13.052,
+      "pageStart" : 12.052
+    },
+    {
+      "clipEnd" : 32.269,
+      "clipId" : "913E3EC3-567F-4890-80CE-70CA15A39273",
+      "clipStart" : 0,
+      "pageEnd" : 45.321,
+      "pageStart" : 13.052,
+      "wallStart" : "2026-11-04T14:47:01-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 46.321,
+      "pageStart" : 45.321
+    },
+    {
+      "clipEnd" : 30.153,
+      "clipId" : "8AB9079C-20AD-4739-B721-2323B60CFC92",
+      "clipStart" : 0,
+      "pageEnd" : 76.474,
+      "pageStart" : 46.321,
+      "wallStart" : "2026-11-04T14:47:50-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 77.474,
+      "pageStart" : 76.474
+    },
+    {
+      "clipEnd" : 30.958,
+      "clipId" : "D08E05D2-E815-4AF4-A6E1-D17BF961B121",
+      "clipStart" : 0,
+      "pageEnd" : 108.432,
+      "pageStart" : 77.474,
+      "wallStart" : "2026-11-04T15:00:57-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 109.432,
+      "pageStart" : 108.432
+    },
+    {
+      "clipEnd" : 22.034,
+      "clipId" : "5222F1F1-C096-4CDF-9FB3-DB462AF0132A",
+      "clipStart" : 0,
+      "pageEnd" : 131.466,
+      "pageStart" : 109.432,
+      "wallStart" : "2026-11-04T15:06:21-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 132.466,
+      "pageStart" : 131.466
+    },
+    {
+      "clipEnd" : 65.228,
+      "clipId" : "19FD2AAB-7C81-4B31-A35C-8FA5840277A6",
+      "clipStart" : 0,
+      "pageEnd" : 197.694,
+      "pageStart" : 132.466,
+      "wallStart" : "2026-11-04T15:13:02-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 198.694,
+      "pageStart" : 197.694
+    },
+    {
+      "clipEnd" : 17.388,
+      "clipId" : "126C296F-1D7C-4696-9D33-D1343D788EEE",
+      "clipStart" : 0,
+      "pageEnd" : 216.082,
+      "pageStart" : 198.694,
+      "wallStart" : "2026-11-04T15:09:38-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 217.082,
+      "pageStart" : 216.082
+    },
+    {
+      "clipEnd" : 37.536,
+      "clipId" : "B2384A2E-DCD4-41B4-BA93-146A4EFAFB1C",
+      "clipStart" : 0,
+      "pageEnd" : 254.618,
+      "pageStart" : 217.082,
+      "wallStart" : "2026-11-04T15:30:39-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 255.618,
+      "pageStart" : 254.618
+    },
+    {
+      "clipEnd" : 44.28,
+      "clipId" : "E9CA0EBA-F57A-493A-9B1C-F9DC4790C784",
+      "clipStart" : 0,
+      "pageEnd" : 299.898,
+      "pageStart" : 255.618,
+      "wallStart" : "2026-11-04T15:45:01-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 300.898,
+      "pageStart" : 299.898
+    },
+    {
+      "clipEnd" : 22.7040625,
+      "clipId" : "C59198CF-C3C6-4BCB-8FC7-3BC8B8D6A40D",
+      "clipStart" : 0,
+      "pageEnd" : 323.6020625,
+      "pageStart" : 300.898,
+      "wallStart" : "2026-11-04T15:49:54-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 324.6020625,
+      "pageStart" : 323.6020625
+    },
+    {
+      "clipEnd" : 29.117,
+      "clipId" : "7F75242B-5A33-4C3F-B5CD-F65A649D31C8",
+      "clipStart" : 0,
+      "pageEnd" : 353.7190625,
+      "pageStart" : 324.6020625,
+      "wallStart" : "2026-11-04T15:51:44-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 354.7190625,
+      "pageStart" : 353.7190625
+    },
+    {
+      "clipEnd" : 18.077,
+      "clipId" : "543D3B61-B312-4A50-92D6-7FADF4E8E9B3",
+      "clipStart" : 0,
+      "pageEnd" : 372.7960625,
+      "pageStart" : 354.7190625,
+      "wallStart" : "2026-11-04T15:56:24-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 373.7960625,
+      "pageStart" : 372.7960625
+    },
+    {
+      "clipEnd" : 26.219,
+      "clipId" : "580E53E3-7F56-46EC-81B5-804A7BB27781",
+      "clipStart" : 0,
+      "pageEnd" : 400.0150625,
+      "pageStart" : 373.7960625,
+      "wallStart" : "2026-11-04T16:01:14-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 401.0150625,
+      "pageStart" : 400.0150625
+    },
+    {
+      "clipEnd" : 8.671,
+      "clipId" : "634BA93F-D83B-4200-8B99-D947081183D3",
+      "clipStart" : 0,
+      "pageEnd" : 409.6860625,
+      "pageStart" : 401.0150625,
+      "wallStart" : "2026-11-04T16:15:56-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 410.6860625,
+      "pageStart" : 409.6860625
+    },
+    {
+      "clipEnd" : 12.098,
+      "clipId" : "0805A061-2A47-4ECB-868F-B95315561E14",
+      "clipStart" : 0,
+      "pageEnd" : 422.7840625,
+      "pageStart" : 410.6860625,
+      "wallStart" : "2026-11-04T16:23:32-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 423.7840625,
+      "pageStart" : 422.7840625
+    },
+    {
+      "clipEnd" : 2.001,
+      "clipId" : "3B96B133-6350-4D91-9FFF-1CC563263399",
+      "clipStart" : 0,
+      "pageEnd" : 425.7850625,
+      "pageStart" : 423.7840625,
+      "wallStart" : "2026-11-04T16:28:04-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 426.7850625,
+      "pageStart" : 425.7850625
+    },
+    {
+      "clipEnd" : 11.04,
+      "clipId" : "087739B1-11A4-49F1-B57A-9FE33869F0BC",
+      "clipStart" : 0,
+      "pageEnd" : 437.8250625,
+      "pageStart" : 426.7850625,
+      "wallStart" : "2026-11-04T16:28:09-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 438.8250625,
+      "pageStart" : 437.8250625
+    },
+    {
+      "clipEnd" : 10.005,
+      "clipId" : "67CF5BD7-E9FD-44FF-9973-C3AEA1EDC3F0",
+      "clipStart" : 0,
+      "pageEnd" : 448.8300625,
+      "pageStart" : 438.8250625,
+      "wallStart" : "2026-11-04T16:29:58-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 449.8300625,
+      "pageStart" : 448.8300625
+    },
+    {
+      "clipEnd" : 9.062,
+      "clipId" : "595586B8-1371-426C-8F95-1A2E89ECBD1B",
+      "clipStart" : 0,
+      "pageEnd" : 458.8920625,
+      "pageStart" : 449.8300625,
+      "wallStart" : "2026-11-04T16:30:34-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 459.8920625,
+      "pageStart" : 458.8920625
+    },
+    {
+      "clipEnd" : 26.128,
+      "clipId" : "F525AA6B-958E-477C-8A33-59CE0AB94495",
+      "clipStart" : 0,
+      "pageEnd" : 486.0200625,
+      "pageStart" : 459.8920625,
+      "wallStart" : "2026-11-04T16:32:29-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 487.0200625,
+      "pageStart" : 486.0200625
+    },
+    {
+      "clipEnd" : 9.108,
+      "clipId" : "D53E649F-1F20-49EA-BC2A-26AAFC596D19",
+      "clipStart" : 0,
+      "pageEnd" : 496.1280625,
+      "pageStart" : 487.0200625,
+      "wallStart" : "2026-11-04T16:32:57-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 497.1280625,
+      "pageStart" : 496.1280625
+    },
+    {
+      "clipEnd" : 29.969,
+      "clipId" : "4A3006B2-49CA-41EE-ADC6-F451E0CBAAB6",
+      "clipStart" : 0,
+      "pageEnd" : 527.0970625,
+      "pageStart" : 497.1280625,
+      "wallStart" : "2026-11-04T16:37:23-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 528.0970625,
+      "pageStart" : 527.0970625
+    },
+    {
+      "clipEnd" : 31.809,
+      "clipId" : "3382F3BB-A379-4967-874D-1E517C5ED942",
+      "clipStart" : 0,
+      "pageEnd" : 559.9060625,
+      "pageStart" : 528.0970625,
+      "wallStart" : "2026-11-04T16:44:24-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 560.9060625,
+      "pageStart" : 559.9060625
+    },
+    {
+      "clipEnd" : 7.866,
+      "clipId" : "EC764410-DEBD-4EF8-AEAB-2B7A1113E87D",
+      "clipStart" : 0,
+      "pageEnd" : 568.7720625,
+      "pageStart" : 560.9060625,
+      "wallStart" : "2026-11-04T17:03:21-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 569.7720625,
+      "pageStart" : 568.7720625
+    },
+    {
+      "clipEnd" : 10.373,
+      "clipId" : "DF9B1541-1E97-4990-960D-50A10C1D56C9",
+      "clipStart" : 0,
+      "pageEnd" : 580.1450625,
+      "pageStart" : 569.7720625,
+      "wallStart" : "2026-11-04T17:04:39-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 581.1450625,
+      "pageStart" : 580.1450625
+    },
+    {
+      "clipEnd" : 6.118,
+      "clipId" : "0DCECE7E-5E45-467A-A8A3-C3C9D6872D1B",
+      "clipStart" : 0,
+      "pageEnd" : 587.2630625,
+      "pageStart" : 581.1450625,
+      "wallStart" : "2026-11-04T17:06:14-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 588.2630625,
+      "pageStart" : 587.2630625
+    },
+    {
+      "clipEnd" : 21.942,
+      "clipId" : "48043988-8225-44F6-8346-0B71E18123FF",
+      "clipStart" : 0,
+      "pageEnd" : 610.2050625,
+      "pageStart" : 588.2630625,
+      "wallStart" : "2026-11-04T17:15:52-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 611.2050625,
+      "pageStart" : 610.2050625
+    },
+    {
+      "clipEnd" : 18.098,
+      "clipId" : "C2D24D81-807C-4DDA-89A9-C975EDE3ED75",
+      "clipStart" : 0,
+      "pageEnd" : 629.3030625,
+      "pageStart" : 611.2050625,
+      "wallStart" : "2026-11-04T17:22:05-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 630.3030625,
+      "pageStart" : 629.3030625
+    },
+    {
+      "clipEnd" : 17.941875,
+      "clipId" : "09D21122-F116-4750-BA5B-0B38EE282A91",
+      "clipStart" : 0,
+      "pageEnd" : 648.2449375,
+      "pageStart" : 630.3030625,
+      "wallStart" : "2026-11-04T17:25:28-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 649.2449375,
+      "pageStart" : 648.2449375
+    },
+    {
+      "clipEnd" : 13.593,
+      "clipId" : "6CD64CAA-9715-4DA3-B980-B131C21FC492",
+      "clipStart" : 0,
+      "pageEnd" : 662.8379375,
+      "pageStart" : 649.2449375,
+      "wallStart" : "2026-11-04T17:36:20-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 663.8379375,
+      "pageStart" : 662.8379375
+    },
+    {
+      "clipEnd" : 20.746,
+      "clipId" : "96E6BA53-7C94-4E9A-9AAE-DC1AECEFEF88",
+      "clipStart" : 0,
+      "pageEnd" : 684.5839375,
+      "pageStart" : 663.8379375,
+      "wallStart" : "2026-11-04T17:36:36-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 685.5839375,
+      "pageStart" : 684.5839375
+    },
+    {
+      "clipEnd" : 11.293,
+      "clipId" : "51A6DBA4-5201-41D8-B769-36373126376D",
+      "clipStart" : 0,
+      "pageEnd" : 696.8769375,
+      "pageStart" : 685.5839375,
+      "wallStart" : "2026-11-04T17:41:15-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 697.8769375,
+      "pageStart" : 696.8769375
+    },
+    {
+      "clipEnd" : 21.505,
+      "clipId" : "57962767-A12F-4503-9E52-F2738D365241",
+      "clipStart" : 0,
+      "pageEnd" : 719.3819375,
+      "pageStart" : 697.8769375,
+      "wallStart" : "2026-11-04T17:41:28-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 720.3819375,
+      "pageStart" : 719.3819375
+    },
+    {
+      "clipEnd" : 26.841,
+      "clipId" : "045E28D0-FDC5-4D10-9B7B-DA1D34758517",
+      "clipStart" : 0,
+      "pageEnd" : 747.2229375,
+      "pageStart" : 720.3819375,
+      "wallStart" : "2026-11-04T18:12:08-05:00"
+    }
+  ]
+}

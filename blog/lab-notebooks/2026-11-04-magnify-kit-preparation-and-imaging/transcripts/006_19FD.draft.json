@@ -1,0 +1,45 @@
+{
+  "clipId" : "19FD2AAB-7C81-4B31-A35C-8FA5840277A6",
+  "createdAt" : "2026-11-04T15:14:10-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 6,
+      "start" : 0,
+      "text" : "I am skipping the immunostaying steps simply because we have beat samples and not an actual biological sample."
+    },
+    {
+      "end" : 7.8,
+      "start" : 6,
+      "text" : "If we had a biological sample,"
+    },
+    {
+      "end" : 12,
+      "start" : 7.8,
+      "text" : "We would need to immunostain it, so that we can see it under the microscope."
+    },
+    {
+      "end" : 39.66,
+      "start" : 12,
+      "text" : "But instead, what we'll be doing is skipping that step, which would have added 2 to 3 hours of incubation time, and skipping the post staining step, where we wash it again in the one X bar for W solution, and skip right to the expansion step, where we expand the hydro jaws by swallowing it in or gently adding one milliliters of one X PBS, and using the brush to flip it carefully."
+    },
+    {
+      "end" : 48.24,
+      "start" : 39.66,
+      "text" : "Then we handle the gel delicately to avoid damage and fill up the plate with one X PBS for 4 X expansion on the orbital shaker for 15 minutes."
+    },
+    {
+      "end" : 56.1,
+      "start" : 48.24,
+      "text" : "And for 11 X expansion, we do a total of 45 minutes with 3 minute batches of 15 minutes each under the PBS solution."
+    },
+    {
+      "end" : 61.38,
+      "start" : 56.1,
+      "text" : "And then we image for both the 4x, the 11x, and without the buffer solution at all."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I am skipping the immunostaying steps simply because we have beat samples and not an actual biological sample. If we had a biological sample, We would need to immunostain it, so that we can see it under the microscope. But instead, what we'll be doing is skipping that step, which would have added 2 to 3 hours of incubation time, and skipping the post staining step, where we wash it again in the one X bar for W solution, and skip right to the expansion step, where we expand the hydro jaws by swallowing it in or gently adding one milliliters of one X PBS, and using the brush to flip it carefully. Then we handle the gel delicately to avoid damage and fill up the plate with one X PBS for 4 X expansion on the orbital shaker for 15 minutes. And for 11 X expansion, we do a total of 45 minutes with 3 minute batches of 15 minutes each under the PBS solution. And then we image for both the 4x, the 11x, and without the buffer solution at all."
+}

@@ -1,0 +1,15 @@
+{
+  "clipId" : "634BA93F-D83B-4200-8B99-D947081183D3",
+  "createdAt" : "2026-11-04T16:16:06-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 7.86,
+      "start" : 0.3,
+      "text" : "I just took the dark count of a 1000 frames, with an interval of 0 milliseconds, and saved it to the... mess."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I just took the dark count of a 1000 frames, with an interval of 0 milliseconds, and saved it to the... mess."
+}

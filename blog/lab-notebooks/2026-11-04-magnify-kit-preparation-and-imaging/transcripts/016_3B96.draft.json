@@ -1,0 +1,15 @@
+{
+  "clipId" : "3B96B133-6350-4D91-9FFF-1CC563263399",
+  "createdAt" : "2026-11-04T16:28:07-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 2.001,
+      "start" : 0.12,
+      "text" : "I measure."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I measure."
+}

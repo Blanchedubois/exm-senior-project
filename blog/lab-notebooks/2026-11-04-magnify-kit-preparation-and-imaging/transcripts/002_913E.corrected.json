@@ -1,0 +1,27 @@
+{
+  "clipId" : "913E3EC3-567F-4890-80CE-70CA15A39273",
+  "corrected" : true,
+  "createdAt" : "2026-11-04T14:47:34-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 19.44,
+      "original" : "I then removed the square cover slip, and I submerged, uh, 2 of the Hajjals in 2 separate falcon tubes, 15 milliliter falcon tubes, with each of the falcon tubes having 3 milliliters of the buffer H solution.",
+      "start" : 0.6,
+      "text" : "I then removed the square cover slip, and I submerged, uh, 2 of the Hydrogels in 2 separate falcon tubes, 15 milliliter falcon tubes, with each of the falcon tubes having 3 milliliters of the buffer H solution."
+    },
+    {
+      "end" : 24.96,
+      "start" : 19.44,
+      "text" : "Then, in the 2 separate falcon tubes with each having hydrogel."
+    },
+    {
+      "end" : 31.08,
+      "start" : 24.96,
+      "text" : "I put it in the incubator for 45 minutes at 95 degrees Celsius roughly."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I then removed the square cover slip, and I submerged, uh, 2 of the Hydrogels in 2 separate falcon tubes, 15 milliliter falcon tubes, with each of the falcon tubes having 3 milliliters of the buffer H solution. Then, in the 2 separate falcon tubes with each having hydrogel. I put it in the incubator for 45 minutes at 95 degrees Celsius roughly."
+}

@@ -1,0 +1,15 @@
+{
+  "clipId" : "67CF5BD7-E9FD-44FF-9973-C3AEA1EDC3F0",
+  "createdAt" : "2026-11-04T16:30:09-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 8.88,
+      "start" : 0.6,
+      "text" : "For the indie filter at being at one, the laser power for the 561 is 3.03 millowatts."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "For the indie filter at being at one, the laser power for the 561 is 3.03 millowatts."
+}

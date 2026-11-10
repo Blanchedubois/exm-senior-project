@@ -1,0 +1,40 @@
+{
+  "clipId" : "E9CA0EBA-F57A-493A-9B1C-F9DC4790C784",
+  "createdAt" : "2026-11-04T15:45:47-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 8.88,
+      "start" : 0.24,
+      "text" : "So, uh, I've just reached the optics, lad, and I have 4 Petri dishes out, uh, for each of the 4 hydrogels."
+    },
+    {
+      "end" : 11.4,
+      "start" : 8.88,
+      "text" : "The hydrogels are going to be split into 2 batches."
+    },
+    {
+      "end" : 20.1,
+      "start" : 11.4,
+      "text" : "2 of them have gone through the homogenization step with uh, the one X buffer W solution, uh, uh, and a buffer H solution."
+    },
+    {
+      "end" : 24.48,
+      "start" : 20.1,
+      "text" : "Uh, while the other has uh, not gone through any homogenization step."
+    },
+    {
+      "end" : 33.36,
+      "start" : 24.48,
+      "text" : "For each of the batches, one of the hydrogels are going to have expansion up to 4X while the other are going to have expansion up to 11 X."
+    },
+    {
+      "end" : 42.42,
+      "start" : 33.36,
+      "text" : "So we will be comparing both the homogenization step and the degree of expansion we get from either 4x or 11 X."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "So, uh, I've just reached the optics, lad, and I have 4 Petri dishes out, uh, for each of the 4 hydrogels. The hydrogels are going to be split into 2 batches. 2 of them have gone through the homogenization step with uh, the one X buffer W solution, uh, uh, and a buffer H solution. Uh, while the other has uh, not gone through any homogenization step. For each of the batches, one of the hydrogels are going to have expansion up to 4X while the other are going to have expansion up to 11 X. So we will be comparing both the homogenization step and the degree of expansion we get from either 4x or 11 X."
+}

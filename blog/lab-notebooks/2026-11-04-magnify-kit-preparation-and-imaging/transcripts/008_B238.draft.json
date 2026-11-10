@@ -1,0 +1,20 @@
+{
+  "clipId" : "B2384A2E-DCD4-41B4-BA93-146A4EFAFB1C",
+  "createdAt" : "2026-11-04T15:31:18-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 11.64,
+      "start" : 0.72,
+      "text" : "Instead of using the orbital shaker, uh, we're going to omit that step and instead try to submerge it fully in the one X PBS solution."
+    },
+    {
+      "end" : 36.78,
+      "start" : 11.64,
+      "text" : "So instead of using one milliliter of one x PBS per hydrogel for each expansion, uh, interval of 15 minutes to 4x will instead be submerging it fully in, uh, roughly 10 milliliters of one x PBS for 50 minutes as well to reach 4x expansion and 45 minutes in total to reach 11 x expansion."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Instead of using the orbital shaker, uh, we're going to omit that step and instead try to submerge it fully in the one X PBS solution. So instead of using one milliliter of one x PBS per hydrogel for each expansion, uh, interval of 15 minutes to 4x will instead be submerging it fully in, uh, roughly 10 milliliters of one x PBS for 50 minutes as well to reach 4x expansion and 45 minutes in total to reach 11 x expansion."
+}

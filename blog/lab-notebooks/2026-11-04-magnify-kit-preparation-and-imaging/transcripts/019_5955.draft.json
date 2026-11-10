@@ -1,0 +1,15 @@
+{
+  "clipId" : "595586B8-1371-426C-8F95-1A2E89ECBD1B",
+  "createdAt" : "2026-11-04T16:30:44-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 8.04,
+      "start" : 0,
+      "text" : "With the endie filter being at 2 the laser powers 284.5 microwatts?"
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "With the endie filter being at 2 the laser powers 284.5 microwatts?"
+}

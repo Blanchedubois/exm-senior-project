@@ -1,0 +1,20 @@
+{
+  "clipId" : "3382F3BB-A379-4967-874D-1E517C5ED942",
+  "createdAt" : "2026-11-04T16:44:57-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 28.5,
+      "start" : 1.2,
+      "text" : "Uh, I've taken more PBS solution, and, uh, put it into two beakers separately of one X PBS solution, uh, and then I've taken a hydro gel, uh, that have been expanded for 11 X allegedly for each, and put it into each of the beakers, and I've started a stopwatch, uh, and set a timer for 15 minutes, and I'm gonna start imaging the, uh, 1 X hydro gels for both the homogenization, uh,"
+    },
+    {
+      "end" : 31.14,
+      "start" : 28.5,
+      "text" : "hydro gel and the non homogenized hydro gel."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Uh, I've taken more PBS solution, and, uh, put it into two beakers separately of one X PBS solution, uh, and then I've taken a hydro gel, uh, that have been expanded for 11 X allegedly for each, and put it into each of the beakers, and I've started a stopwatch, uh, and set a timer for 15 minutes, and I'm gonna start imaging the, uh, 1 X hydro gels for both the homogenization, uh, hydro gel and the non homogenized hydro gel."
+}

@@ -1,0 +1,20 @@
+{
+  "clipId" : "D08E05D2-E815-4AF4-A6E1-D17BF961B121",
+  "createdAt" : "2026-11-04T15:01:29-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "end" : 12.06,
+      "start" : 0.36,
+      "text" : "I had just finished the fourth wash of the two gels in 5 millimeters of one X buffer W, solution."
+    },
+    {
+      "end" : 28.26,
+      "start" : 12.06,
+      "text" : "I'm now on the 5th and final wash, where it's on the orbital shaker for at 70 RPM for 15 minutes, under the same solution of 5 millimeters of 1X buffer W, waiting for that to finish right now."
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I had just finished the fourth wash of the two gels in 5 millimeters of one X buffer W, solution. I'm now on the 5th and final wash, where it's on the orbital shaker for at 70 RPM for 15 minutes, under the same solution of 5 millimeters of 1X buffer W, waiting for that to finish right now."
+}
