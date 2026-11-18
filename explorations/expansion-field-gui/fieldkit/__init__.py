@@ -2,7 +2,7 @@
 fieldkit -- headless multi-image orchestration on top of the `gridtrack` core.
 
 The five per-image tracking stages are NOT reimplemented here: this package
-imports `gridtrack` (from the sibling point_tracking_gui) and adds only
+imports `gridtrack` (from the sibling point-tracking-gui) and adds only
 (a) multi-image project management + per-stage CSV output, and
 (b) the pairing stage (initial <-> each expansion) [Phase 3, later].
 
@@ -13,12 +13,12 @@ import os
 import sys
 
 # --- make the shared gridtrack + stageui core importable (reuse, don't duplicate)
-# APPEND (not insert-0): point_tracking_gui also has a top-level `app` package, and
+# APPEND (not insert-0): point-tracking-gui also has a top-level `app` package, and
 # putting it ahead of this app's dir would let it shadow *our* `app`. Appending lets
 # our own packages (app, fieldkit) win from the cwd while still resolving the shared
-# `gridtrack` / `stageui` (which exist only in point_tracking_gui) from there.
+# `gridtrack` / `stageui` (which exist only in point-tracking-gui) from there.
 _ROOT = os.path.dirname(os.path.abspath(__file__))
-_PTG = os.path.normpath(os.path.join(_ROOT, "..", "..", "point_tracking_gui"))
+_PTG = os.path.normpath(os.path.join(_ROOT, "..", "..", "point-tracking-gui"))
 if os.path.isdir(os.path.join(_PTG, "gridtrack")) and _PTG not in sys.path:
     sys.path.append(_PTG)
 

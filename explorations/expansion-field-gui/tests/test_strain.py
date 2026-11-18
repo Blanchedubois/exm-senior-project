@@ -19,7 +19,7 @@ from fieldkit.project import ExpansionProject, DEFAULT_META
 from fieldkit import strain
 from gridtrack.types import CorrectionParams
 
-SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion_camera_sim", "tiffs"))
+SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion-camera-sim", "tiffs"))
 OPTICS = dict(vig_strength=0.88, vig_power=1.8, k1=-0.05, k2=-0.01)
 
 

@@ -8,11 +8,11 @@ can QC and fine-tune the tracking on the whole series before pairing.
 | Question | Choice |
 |---|---|
 | Parameter scope | **Per-image overrides** (Stage-1 optics shared; Stages 2–5 per image) |
-| Where the 5-stage UI comes from | **Shared `stageui` package** (extract from point_tracking_gui) |
+| Where the 5-stage UI comes from | **Shared `stageui` package** (extract from point-tracking-gui) |
 | On selecting an image | **Auto-run all 5 stages** and show overlays |
 
 ### Already done (change #1)
-This app imports `gridtrack` from `../point_tracking_gui/gridtrack`, so the single-tag Stage 2 fix,
+This app imports `gridtrack` from `../point-tracking-gui/gridtrack`, so the single-tag Stage 2 fix,
 tiered Stage 3, region-grow, and dash tagging are **already active** here (verified: `l5` →
 `single_marker`, λ≈4.93, 468 dots + 13 dashes; `fieldkit.pipeline` already feeds dots into Stage 3).
 No porting needed. This plan is purely the Verify UI (change #2).
@@ -23,7 +23,7 @@ No porting needed. This plan is purely the Verify UI (change #2).
 - **This app** (`expansion_field_gui/app`): a *Setup* panel (shared Stage-1 correction sliders +
   "Run all"), a *Pairing* panel, a *Field* view, and an image list. It has **no per-stage tuning
   or overlays** — you can't see Stage 2/3/4/5 on an image, or adjust their params.
-- **`point_tracking_gui/app`**: a full single-image 5-stage tuner — `ImageCanvas` (with
+- **`point-tracking-gui/app`**: a full single-image 5-stage tuner — `ImageCanvas` (with
   `draw_detection`/`draw_grid`/`draw_features` overlays), `Stage1..5Panel`, `ReferencePanel`,
   `AppState`. Exactly the UI we want, but for one image and locked inside that app's `app` package.
 
@@ -33,13 +33,13 @@ The two apps already share the headless **`gridtrack`** core; this plan extends 
 ---
 
 ## 2. Architecture — a shared `stageui` package
-Extract the reusable single-image 5-stage GUI out of `point_tracking_gui/app` into
-**`point_tracking_gui/stageui/`** (a peer of `gridtrack`). Because this app already puts
-`../point_tracking_gui` on `sys.path` (via `fieldkit.__init__`), it can `import stageui` directly —
+Extract the reusable single-image 5-stage GUI out of `point-tracking-gui/app` into
+**`point-tracking-gui/stageui/`** (a peer of `gridtrack`). Because this app already puts
+`../point-tracking-gui` on `sys.path` (via `fieldkit.__init__`), it can `import stageui` directly —
 same mechanism as `gridtrack`. No cross-`app` import collision.
 
 ```
-point_tracking_gui/
+point-tracking-gui/
   gridtrack/                     (headless core — unchanged)
   stageui/            NEW        shared GUI building blocks (no app-specific globals)
     __init__.py
@@ -54,14 +54,14 @@ point_tracking_gui/
 ```
 
 **`StageWorkspace(state, log_fn)`** is the key new abstraction — it is exactly what
-`point_tracking_gui/app/main` builds inline today (left stage-nav list, `QStackedWidget` of the
+`point-tracking-gui/app/main` builds inline today (left stage-nav list, `QStackedWidget` of the
 five panels, the canvas, wired together), packaged as a single widget so **both** apps embed it.
 
 The panels keep their `(state, canvas, log)` contract; add one signal `paramsChanged(stage:int)`
 each emits when a slider/param moves, so an embedder (the Verify view) can persist per-image params
 and invalidate downstream stages.
 
-**Refactor safety:** `point_tracking_gui/app/main.py` becomes ~30 lines around `StageWorkspace`;
+**Refactor safety:** `point-tracking-gui/app/main.py` becomes ~30 lines around `StageWorkspace`;
 its existing test suite + a launch smoke test guard the move (V0 below).
 
 ---
@@ -108,7 +108,7 @@ A new central tab **"Verify"** beside *Image* and *Field*, driven by the existin
 - **"Copy params → all"** copies this image's `ImageParams` to every image (convenience for a
   consistent series).
 
-The five panels/overlays are exactly the ones you already use in point_tracking_gui:
+The five panels/overlays are exactly the ones you already use in point-tracking-gui:
 Stage 1 sliders + before/after, Stage 2 tags + IDs, Stage 3 grid + reference schematic + method/λ,
 Stage 4 dot/dash markers + table, Stage 5 filter toggles + red/amber.
 
@@ -138,7 +138,7 @@ Stage 4 (trackpy) takes ~seconds/image, so:
 
 ## 7. Phases (build order) — status
 1. **V0 — Extract `stageui`.** ✅ DONE. Panels/canvas/widgets/state moved into
-   `point_tracking_gui/stageui/`; `StageWorkspace` added; `point_tracking_gui/app/main` is a thin
+   `point-tracking-gui/stageui/`; `StageWorkspace` added; `point-tracking-gui/app/main` is a thin
    shell. Gate met: 25 tests pass + import-check OK.
 2. **V1 — `ImageParams`** in `fieldkit.project`. ✅ DONE. `ImageParams(measure, filters,
    transform_model, ransac_px)` + `project.image_params` + `params_for(path)`; `pipeline.process_image`
@@ -163,15 +163,15 @@ re-runs (`l1` → 25 tags). Note: the sandbox Python 3.14 venv can't init any Qt
 GUI is exercised through the **launch venv** (`~/Library/Application Support/HydrogelMarkerGUI/…`),
 which the `.command` uses.
 
-**Also fixed here:** `fieldkit/__init__.py` now **appends** `point_tracking_gui` to `sys.path`
+**Also fixed here:** `fieldkit/__init__.py` now **appends** `point-tracking-gui` to `sys.path`
 (was `insert(0, …)`) so that app's top-level `app` package can't shadow this app's own `app` package
 (both apps name it `app`); `gridtrack`/`stageui` still resolve since they exist only in
-point_tracking_gui.
+point-tracking-gui.
 
 ---
 
 ## 8. Open items / risks (thought through)
-- **Refactor risk to point_tracking_gui** — mitigated by its test suite + launch check; the move is
+- **Refactor risk to point-tracking-gui** — mitigated by its test suite + launch check; the move is
   mechanical (relative imports within `stageui`).
 - **GUI can't be fully unit-tested here** (offscreen Qt is flaky in this environment) — validate the
   headless pieces (`ImageParams`, `process_one`, caching keys) with pytest, and import-check the GUI

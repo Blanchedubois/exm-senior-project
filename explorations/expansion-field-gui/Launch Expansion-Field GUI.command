@@ -17,8 +17,8 @@ echo "======================================================"
 echo " Expansion-Field GUI"
 echo "======================================================"
 
-if [ ! -d "../point_tracking_gui/gridtrack" ]; then
-  echo "Could not find ../point_tracking_gui/gridtrack — keep both folders side by side."
+if [ ! -d "../point-tracking-gui/gridtrack" ]; then
+  echo "Could not find ../point-tracking-gui/gridtrack — keep both folders side by side."
   read -n1 -s -p "Press any key…"; exit 1
 fi
 

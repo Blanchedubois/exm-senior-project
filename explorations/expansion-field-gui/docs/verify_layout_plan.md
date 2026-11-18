@@ -37,7 +37,7 @@ Two structural faults:
 ## 2. Design goals
 - On the Verify tab the **image is the dominant element** (target ≥ 55–60 % of width).
 - Keep everything reachable: image cycling, the five stage panels, their overlays.
-- **Don't regress** the standalone `point_tracking_gui` app — it embeds the *same* `StageWorkspace`,
+- **Don't regress** the standalone `point-tracking-gui` app — it embeds the *same* `StageWorkspace`,
   so improvements there benefit both.
 
 ---
@@ -91,7 +91,7 @@ already fix the squish.)
   `QScrollArea`; set initial splitter sizes + stretch. (Benefits both apps.)
 - **`expansion_field_gui/app/main.py`** — on `view_tabs.currentChanged`, show/hide `ctrl_tabs` for the
   Verify tab; optionally set the outer splitter's initial sizes so Verify starts wide.
-- **`point_tracking_gui/app/main.py`** — no change needed (it embeds `StageWorkspace`); just confirm it
+- **`point-tracking-gui/app/main.py`** — no change needed (it embeds `StageWorkspace`); just confirm it
   still looks right with the horizontal nav (its 25 tests + a launch check guard it).
 - No headless/`gridtrack`/`fieldkit` changes — this is pure GUI layout.
 

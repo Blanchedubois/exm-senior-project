@@ -15,7 +15,7 @@ This document plans the code. It is written to be handed to an implementer and e
 >   µm coordinate). This is the "predefined reference for where the trackers should be".
 > - `hydrogel_marker_analysis/docs/ANALYSIS_PLAN.md` — the headless analysis pipeline this GUI
 >   operationalises interactively.
-> - `expansion_camera_sim/` — produces **labelled synthetic TIFFs** (with *known* vignette,
+> - `expansion-camera-sim/` — produces **labelled synthetic TIFFs** (with *known* vignette,
 >   lens distortion, rotation, warp, noise) → our **ground-truth test set** (§11).
 
 ---
@@ -57,7 +57,7 @@ against the simulator's ground truth without ever opening a window (§11).
 ## 2. High-level architecture
 
 ```
-point_tracking_gui/
+point-tracking-gui/
   IMPLEMENTATION_PLAN.md         # this document
   README.md                     # quick start once built
   requirements.txt
@@ -85,7 +85,7 @@ point_tracking_gui/
     widgets.py       # reusable slider-with-spinbox, collapsible panel, log console
   tests/
     test_correct.py test_address.py test_reference.py test_measure.py
-    conftest.py      # loads expansion_camera_sim frames + grid_metadata as fixtures
+    conftest.py      # loads expansion-camera-sim frames + grid_metadata as fixtures
 ```
 
 **Stage ↔ module map**
@@ -229,7 +229,7 @@ missing / unmatched (needs attention), **cyan** = reference schematic.
 ## 6. Stage 1 — Correct vignetting & lens distortion (sliders)
 
 **Purpose.** Undo the microscope optics so tags and dots are geometrically true and evenly lit
-*before* any detection. These are the exact inverse of the effects `expansion_camera_sim` adds,
+*before* any detection. These are the exact inverse of the effects `expansion-camera-sim` adds,
 which makes the simulator the perfect calibration/validation target.
 
 **Core API (`correct.py`)**
@@ -242,11 +242,11 @@ def estimate_vignette(img) -> CorrectionParams                        # auto: fi
 def estimate_distortion_from_markers(det) -> tuple[float,float]       # auto: minimise tag-row curvature
 ```
 - **Vignette (flat-field):** divide by the radial model `V(r)=1 − s·(r/r_max)^p`. Reuse the
-  exact formula from `expansion_camera_sim` (`flat_field`) so a corrected sim frame is flat.
+  exact formula from `expansion-camera-sim` (`flat_field`) so a corrected sim frame is flat.
   Provide an **auto** button: fit a smooth low-order polynomial / large-Gaussian background to
   estimate `s,p` from the image itself; sliders then fine-tune.
 - **Lens distortion:** exact radial inverse of Brown-Conrady `r·(1+k1 r²+k2 r⁴)` (the
-  numerically-inverted LUT already prototyped in `expansion_camera_sim.undistort_lens`), or
+  numerically-inverted LUT already prototyped in `expansion-camera-sim.undistort_lens`), or
   `cv2.undistort` with `K=[[f,0,cx],[0,f,cy],[0,0,1]]`, `dist=[k1,k2,0,0]`. Sliders for `k1,k2`
   (and optional centre).
 
@@ -412,15 +412,15 @@ Algorithm (per box, looping the boxes from `state.grid`):
 | Assignment, transforms, fits | `scipy`, `numpy` | `linear_sum_assignment`, `optimize`, `linalg` |
 | Tables / export | `pandas`, `pyarrow` | `FeatureTable` → parquet/csv |
 | GUI | `PySide6` + `pyqtgraph` | isolated to `app/` (see §5) |
-| Tests | `pytest` | fixtures from `expansion_camera_sim` |
+| Tests | `pytest` | fixtures from `expansion-camera-sim` |
 
-`requirements.txt` pins these; a `.venv` is set up the same way as `expansion_camera_sim`.
+`requirements.txt` pins these; a `.venv` is set up the same way as `expansion-camera-sim`.
 
 ---
 
 ## 11. Validation strategy — the simulator is the ground truth
 
-Because `expansion_camera_sim` writes frames with **known** vignette/distortion/rotation and a
+Because `expansion-camera-sim` writes frames with **known** vignette/distortion/rotation and a
 **known** `grid_metadata.json`, it is a complete, labelled test set. Build tests from day one:
 
 1. **Correction (Stage 1):** feed a sim frame with known `vignette_strength/k1/k2`; assert

@@ -2,7 +2,7 @@
 
 A multi-image GUI that loads an **initial** image plus a **series of expansion images** of the
 same printed pattern, runs the **same five tracking stages** on every image (reusing the
-`gridtrack` core from `../point_tracking_gui`), and then **pairs the initial markers to each
+`gridtrack` core from `../point-tracking-gui`), and then **pairs the initial markers to each
 expansion's markers by their tags** to produce the **expansion displacement vector field**.
 
 **Status:** all phases implemented (P0–P6). Project scaffold + reuse of `gridtrack`; batch
@@ -13,7 +13,7 @@ CSVs; **strain** (`F`, `J = det F`, principal strains); **field view** with magn
 
 ### Headless batch (CLI)
 ```bash
-../point_tracking_gui/.venv/bin/python run_batch.py \
+../point-tracking-gui/.venv/bin/python run_batch.py \
   --initial init.tif --expansions e2.tif e3.tif --out OUT \
   --vig-strength 0.88 --vig-power 1.8 --k1 -0.05 --k2 -0.01
 ```
@@ -21,9 +21,9 @@ CSVs; **strain** (`F`, `J = det F`, principal strains); **field view** with magn
 ## Run
 
 ```bash
-# reuses the deps already installed for ../point_tracking_gui
-../point_tracking_gui/.venv/bin/python run.py     # launch the GUI
-../point_tracking_gui/.venv/bin/python -m pytest tests/ -q
+# reuses the deps already installed for ../point-tracking-gui
+../point-tracking-gui/.venv/bin/python run.py     # launch the GUI
+../point-tracking-gui/.venv/bin/python -m pytest tests/ -q
 ```
 
 In the GUI: **Add initial image**, **Add expansion images**, **Set output dir**, set the shared
@@ -65,6 +65,6 @@ pr.process_all()          # stages 1-5 on every image + CSVs
 
 ## Reuse
 The per-image processing is the exact five stages already built and validated in
-`../point_tracking_gui/gridtrack/` — this project imports that core and adds only multi-image
+`../point-tracking-gui/gridtrack/` — this project imports that core and adds only multi-image
 orchestration (`fieldkit`) and the pairing/field GUI. Correspondence is a **table join on the
 tag** because every feature already carries an absolute address.

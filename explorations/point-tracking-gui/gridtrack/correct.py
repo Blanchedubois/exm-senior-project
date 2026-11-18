@@ -6,7 +6,7 @@ Correct microscope optics BEFORE any detection:
   1. Vignetting  -> flat-field: divide by the radial illumination model.
   2. Lens distortion -> exact radial un-distortion (inverse Brown-Conrady).
 
-These are the inverse of the effects `expansion_camera_sim` applies, so a
+These are the inverse of the effects `expansion-camera-sim` applies, so a
 corrected synthetic frame becomes flat and geometrically true -- which is also
 how the correctness of this module is tested (see tests/).
 

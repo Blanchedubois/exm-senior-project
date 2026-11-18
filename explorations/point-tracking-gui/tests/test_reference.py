@@ -14,7 +14,7 @@ from gridtrack.types import CorrectionParams
 
 OPTICS = dict(vig_strength=0.88, vig_power=1.8, k1=-0.05, k2=-0.01)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion_camera_sim"))
+SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion-camera-sim"))
 META = os.path.normpath(os.path.join(ROOT, "..", "hydrogel_marker_analysis",
                                      "toolkit", "grid_metadata.json"))
 

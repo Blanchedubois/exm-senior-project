@@ -23,11 +23,11 @@ implementation.
 ## 1. Relationship to the existing code (reuse, don't duplicate)
 
 The per-image processing is *exactly* the five stages already built and validated in
-`../point_tracking_gui/gridtrack/`. This project **does not reimplement them** — it imports
+`../point-tracking-gui/gridtrack/`. This project **does not reimplement them** — it imports
 `gridtrack` and adds only (a) multi-image orchestration and (b) the pairing stage.
 
 ```
-gridtrack   (../point_tracking_gui/gridtrack)     # HEADLESS CORE, unchanged
+gridtrack   (../point-tracking-gui/gridtrack)     # HEADLESS CORE, unchanged
   io, correct, address, reference, measure, correspond, filters, types
 
 expansion_field_gui/
@@ -48,7 +48,7 @@ expansion_field_gui/
     test_pairing.py  # validate against the simulator's expansion series
 ```
 
-> **Packaging note.** For a clean import, either (a) add `../point_tracking_gui` to `sys.path`
+> **Packaging note.** For a clean import, either (a) add `../point-tracking-gui` to `sys.path`
 > in `fieldkit/__init__.py`, or (b) promote `gridtrack` to a small installed package
 > (`pip install -e`). Recommend (b) eventually; (a) is fine to start. This is the only coupling.
 
@@ -251,7 +251,7 @@ pyqtgraph, on the **initial** image (or a blank µm canvas):
 
 ## 9. Validation — the simulator's expansion series is ground truth
 
-`../expansion_camera_sim/tiffs/` is a labelled expansion series (`λ = 1 … 5`) of the same pattern
+`../expansion-camera-sim/tiffs/` is a labelled expansion series (`λ = 1 … 5`) of the same pattern
 with known optics, rotation, drift and warp. Tests (`tests/test_pairing.py`):
 1. **Recovered expansion factor.** Pair `l1p00` (initial) → `l2p00`/`l3p00`; assert `λ_rel` ≈ 2.0 /
    3.0 (the simulator's relative expansion) within a few %.

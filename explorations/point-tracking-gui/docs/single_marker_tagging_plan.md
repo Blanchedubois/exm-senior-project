@@ -157,7 +157,7 @@ GUI/pipeline runs a quick dot detection before Stage 3 (or reuses Stage 4's) and
   too few tags will now tag their central dots via the single-marker tier, improving pairing reach.
 
 ## 8. Validation (simulator is ground truth)
-`../expansion_camera_sim/tiffs`: the fixed-zoom frames lose tags as λ grows, so they exercise
+`../expansion-camera-sim/tiffs`: the fixed-zoom frames lose tags as λ grows, so they exercise
 every tier:
 - `l1p00` (25 tags) → global; `l2p00` (9) → global; **`l4p00` / `l5p00` (~1 tag) → single-marker**.
 - Assert: the single-marker tier tags the visible dots with the **correct (box, i, j)** (compare to

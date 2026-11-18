@@ -17,7 +17,7 @@ pip install -r requirements.txt          # (Stage 1 needs: numpy opencv-contrib-
 python run.py                            # launch the GUI
 ```
 
-Then **Open TIFF…** (e.g. a frame from `../expansion_camera_sim/tiffs/`), and:
+Then **Open TIFF…** (e.g. a frame from `../expansion-camera-sim/tiffs/`), and:
 - **Stage 1** — drag the vignette / lens-distortion sliders (or **Auto-estimate vignette**) with
   live preview; toggle the straightness grid and before/after to judge the correction.
 - **Stage 2** — click **Detect & orient**: tags are decoded, the image is rotated upright, and
@@ -62,4 +62,4 @@ python -m pytest tests/ -q
 All image processing lives in a **headless core package `gridtrack/`** (no GUI imports); the
 `app/` layer only calls it and draws overlays. So the same processing is reusable in other
 GUIs and batch scripts. Validation uses the labelled synthetic frames from
-`../expansion_camera_sim/` as ground truth.
+`../expansion-camera-sim/` as ground truth.

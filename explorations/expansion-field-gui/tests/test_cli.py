@@ -13,7 +13,7 @@ sys.path.insert(0, ROOT)
 from fieldkit import cli
 from fieldkit.project import ExpansionProject, DEFAULT_META
 
-SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion_camera_sim", "tiffs"))
+SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion-camera-sim", "tiffs"))
 
 
 def _skip_if_missing():

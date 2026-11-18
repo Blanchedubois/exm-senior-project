@@ -13,13 +13,13 @@ from gridtrack import io, correct, address
 from gridtrack.types import CorrectionParams
 
 OPTICS = dict(vig_strength=0.88, vig_power=1.8, k1=-0.05, k2=-0.01)
-SIM = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", "expansion_camera_sim"))
+SIM = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", "expansion-camera-sim"))
 
 
 def _load_corrected(name):
     p = os.path.join(SIM, "tiffs", name)
     if not os.path.exists(p):
-        pytest.skip("expansion_camera_sim frames not generated")
+        pytest.skip("expansion-camera-sim frames not generated")
     raw = io.load_tiff(p)
     return correct.apply(raw, CorrectionParams(**OPTICS))
 

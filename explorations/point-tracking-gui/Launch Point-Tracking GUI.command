@@ -26,7 +26,7 @@ done
 echo "Python: $($PY --version 2>&1)  ($PY)"
 
 # LOCAL virtual environment (outside iCloud)
-VENV="$HOME/Library/Application Support/HydrogelMarkerGUI/point_tracking_gui"
+VENV="$HOME/Library/Application Support/HydrogelMarkerGUI/point-tracking-gui"
 mkdir -p "$(dirname "$VENV")"
 
 if [ ! -d "$VENV" ]; then

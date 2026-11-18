@@ -131,7 +131,7 @@ markers already; they'll simply be correctly tagged.
   the dots.
 
 ## 8. Validation (simulator is ground truth)
-`../expansion_camera_sim`: the boundary is rendered with the rigid-offset model (§2b), so it
+`../expansion-camera-sim`: the boundary is rendered with the rigid-offset model (§2b), so it
 directly tests the model-robust indexing.
 - **Single tag (`l5`, `l4`):** dashes on region-grown edges get a stable `(edge, k)`; assert the
   per-edge index sequence is monotonic, unique, gap-consistent, and `≤ K`.

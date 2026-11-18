@@ -136,7 +136,7 @@ add the same four controls there and extend `_pull_correction()`. (Both edit the
 
 ---
 
-## 7. Tests (headless, `point_tracking_gui/tests/`)
+## 7. Tests (headless, `point-tracking-gui/tests/`)
 - **DC/flat pass-through:** a constant image is unchanged (gain 1 at D=0).
 - **Attenuation:** synthesise two sine gratings — one below, one above the cut-off — assert the
   above-cut-off amplitude is strongly reduced and the below-cut-off one is ~preserved (per shape).

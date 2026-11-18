@@ -5,14 +5,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 
-SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion_camera_sim"))
+SIM = os.path.normpath(os.path.join(ROOT, "..", "expansion-camera-sim"))
 
 
 @pytest.fixture
 def sim_frame_path():
     p = os.path.join(SIM, "tiffs", "expansion_l1p00x.tif")
     if not os.path.exists(p):
-        pytest.skip("expansion_camera_sim frames not generated")
+        pytest.skip("expansion-camera-sim frames not generated")
     return p
 
 
