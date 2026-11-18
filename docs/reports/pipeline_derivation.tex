@@ -1,0 +1,424 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\definecolor{navy}{HTML}{16294A}
+\usepackage{sectsty}
+\allsectionsfont{\color{navy}\sffamily}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\dset}[1]{\mathbf{#1}}          % dataset (vector)
+\newcommand{\Sg}{\mathcal{S}}               % SG operator
+\newcommand{\unc}[1]{\sigma_{#1}}           % 1-sigma uncertainty
+
+\title{\color{navy}\bfseries Analysis pipeline for two-dimensional equibiaxial\\ hydrogel expansion: derivation and error analysis}
+\author{ExMF subgroup}
+\date{June 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This document derives, stage by stage, the analysis pipeline that converts raw
+strain-gauge measurements from a nine-bladed iris stretcher into a force-versus-expansion
+curve for a hydrogel under two-dimensional equibiaxial expansion. The method couples two
+parallel measurement streams, a hydrogel test and a spring calibration of known constant,
+each recorded as a function of motor step count. We fix a single, consistent notation for
+the whole pipeline, then treat in turn: data acquisition, drift correction, the conversion
+of step count to expansion through the iris linkage geometry, the conversion of spring
+expansion to force, and the Savitzky--Golay interpolation that joins the two streams on a
+common ADC axis. A final section propagates the measurement uncertainties.
+\end{abstract}
+
+\section{Overview}
+The apparatus drives a hydrogel through a controlled two-dimensional equibiaxial expansion
+using a nine-bladed iris. Each arm carries a strain gauge whose digitised output (the ADC
+reading) responds to the load transmitted through that arm. The goal of the analysis is a
+\emph{force-versus-expansion} curve, per arm.
+
+Two tests are run on the same stretcher and travel through the pipeline in parallel
+(Figure: see the separate pipeline flowchart):
+\begin{enumerate}[nosep,leftmargin=1.6em]
+  \item a \textbf{hydrogel test}, which records the gauge response as the iris stretches the hydrogel; and
+  \item a \textbf{spring calibration}, which replaces the hydrogel with a spring of known constant and provides the reference for converting an ADC reading into a force.
+\end{enumerate}
+The pipeline then proceeds in five stages:
+\begin{enumerate}[nosep,leftmargin=1.6em]
+  \item[\textbf{1.}] \textbf{Acquisition} --- record ADC versus step count for both tests (Section~\ref{sec:acq}).
+  \item[\textbf{2.}] \textbf{Drift correction} --- subtract a no-load baseline from both streams (Section~\ref{sec:drift}).
+  \item[\textbf{3.}] \textbf{Step count $\to$ expansion} --- map step count to normalised expansion through the iris linkage geometry (Phase~2).
+  \item[\textbf{4.}] \textbf{Expansion $\to$ force} --- convert the spring stream to force using the known spring constant; carry the hydrogel stream forward unchanged (Phase~3).
+  \item[\textbf{5.}] \textbf{Interpolation} --- resample the spring force onto the hydrogel ADC grid with a Savitzky--Golay fit, giving force paired with expansion (Phase~3).
+\end{enumerate}
+The two streams share the ADC reading as a common variable but are measured at different ADC
+values, which is precisely why the interpolation in stage~5 is required. Section on error
+analysis (Phase~4) propagates the drift uncertainty and the arm-angle manufacturing deviation
+to the final curve.
+
+\section{Notation and conventions}
+\label{sec:notation}
+All quantities below are defined \emph{per arm}; the arm index $a=1,\dots,9$ is suppressed
+throughout for clarity, and the derivation is written for a single representative arm. Within
+one sweep, samples are indexed by $i=1,\dots,N$, ordered by the commanded step count.
+
+A \textbf{dataset} is the full indexed family of samples, written as a set
+$\{(n_i, V_{h,i})\}_{i=1}^{N}$ or, equivalently, as aligned column vectors. Bold upright
+symbols denote these per-sweep vectors, e.g. $\dset{V}_h=(V_{h,1},\dots,V_{h,N})^{\top}$;
+the corresponding light symbol with a subscript, $V_{h,i}$, is a single element. Relations
+between datasets are elementwise unless stated otherwise.
+
+\begin{table}[h]
+\centering
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning}\\
+\midrule
+$i=1,\dots,N$ & sample index within a sweep\\
+$n_i$ ; $\dset{n}$ & motor step count (independent acquisition variable); its dataset\\
+$V_{h,i},\,V_{s,i}$ ; $\dset{V}_h,\dset{V}_s$ & ADC (strain-gauge) reading, hydrogel / spring; their datasets\\
+$D_i$ ; $\dset{D}$ & drift (no-load) ADC reading; its dataset\\
+$V'_{h,i},\,V'_{s,i}$ & drift-corrected ADC reading, hydrogel / spring\\
+$E_{h,i},\,E_{s,i}$ & normalised expansion, hydrogel / spring\\
+$F_{s,i}$ ; $F_{h,i}$ & spring force; hydrogel force (final, after interpolation)\\
+$k$ ; $R_0$ & spring constant; geometric reference scale (Section, Phase~3)\\
+$\Theta$ ; $\theta=\Theta-\tfrac{\pi}{2}$ & output-gear angle; mechanism angle\\
+$r_0,\,r_p,\,r_{\mathrm{pin}},\,y_0$ & iris linkage lengths / offsets (Phase~2)\\
+$c_0,c_1,c_2,c_3$ & linkage joint coordinates (Phase~2)\\
+$E_0$ & relaxed (rest) reference scale for the expansion factor\\
+$\Sg$ ; $\dset{H}$ & Savitzky--Golay operator; its smoother (hat) matrix\\
+$w=2m+1$ ; $p$ & SG window length (half-width $m$); polynomial order\\
+$W$ & SG window size, the quantity selected by SURE (Phase~3)\\
+$\sigma_{\mathrm{eff},i}$ & effective (both-axis) measurement uncertainty at sample $i$\\
+$\theta_D$ & per-arm angular manufacturing deviation\\
+$\unc{X}$ & $1\sigma$ uncertainty of a quantity $X$ (e.g. $\unc{V_D}$, $\unc{E}$)\\
+$\hat{(\,\cdot\,)}$ & a smoothed / fitted estimate\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Uncertainty convention.} We write $\unc{X}$ for the standard ($1\sigma$)
+uncertainty of $X$, and reserve $\partial$ exclusively for partial derivatives. First-order
+(Gaussian) propagation is used throughout: for $Y=f(X_1,\dots,X_k)$ with independent inputs,
+\begin{equation}
+\unc{Y}^2 \;=\; \sum_{\ell}\left(\frac{\partial f}{\partial X_\ell}\right)^{\!2}\unc{X_\ell}^2 .
+\label{eq:prop}
+\end{equation}
+Where a worst-case linear sum of error contributions is preferred instead of the quadrature
+form~\eqref{eq:prop}, it is stated explicitly.
+
+\section{Stage 1: Data acquisition}
+\label{sec:acq}
+Both tests use the same iris stretcher and record the strain-gauge response as a function of
+the commanded motor step count. A sweep produces $N$ samples; sample $i$ consists of the step
+count $n_i$ and the corresponding ADC reading $V_{\bullet,i}$. The two acquired datasets are
+\begin{equation}
+\text{hydrogel:}\quad \{(n_i,\,V_{h,i})\}_{i=1}^{N},
+\qquad\qquad
+\text{spring:}\quad \{(n_i,\,V_{s,i})\}_{i=1}^{N},
+\end{equation}
+or, in vector form, the aligned pairs $(\dset{n},\dset{V}_h)$ and $(\dset{n},\dset{V}_s)$.
+The hydrogel test loads the gauges through the stretched hydrogel; the spring calibration
+replaces the hydrogel with a spring of known constant $k$, and so provides the map that later
+turns an ADC reading into a force. Both sweeps are acquired per arm and run through the
+pipeline side by side until the interpolation of stage~5 joins them.
+
+A third, no-load sweep records the baseline behaviour of the gauges and is used in stage~2:
+\begin{equation}
+\text{drift:}\quad \{(n_i,\,D_i)\}_{i=1}^{N}\ \equiv\ (\dset{n},\dset{D}).
+\end{equation}
+
+At this stage the only model is the measurement itself: $V$ is the raw ADC reading and $n$ the
+independent step count, with no calibration yet applied.
+
+\section{Stage 2: Drift correction}
+\label{sec:drift}
+The drift dataset $\dset{D}$ is recorded with no load, capturing the baseline drift and offset
+of the gauges as the mechanism moves. Because it is acquired on the same step-count grid
+$\dset{n}$, it is subtracted sample-by-sample from each measurement stream to remove the
+baseline, giving the drift-corrected readings
+\begin{equation}
+V'_{h,i}=V_{h,i}-D_i,
+\qquad
+V'_{s,i}=V_{s,i}-D_i,
+\qquad\text{i.e.}\qquad
+\dset{V}'_h=\dset{V}_h-\dset{D},\quad
+\dset{V}'_s=\dset{V}_s-\dset{D}.
+\label{eq:drift}
+\end{equation}
+Both corrected datasets remain in the form ADC versus step count; only the ADC axis has been
+shifted.
+
+\paragraph{Uncertainty introduced.}
+Subtraction~\eqref{eq:drift} injects the uncertainty of the baseline into the corrected
+reading. Treating the raw read noise $\unc{V}$ and the drift uncertainty $\unc{D}$ as
+independent, \eqref{eq:prop} gives a vertical (ADC-axis) uncertainty carried on both streams,
+\begin{equation}
+\unc{V'}^2 \;=\; \unc{V}^2 + \unc{D}^2 .
+\label{eq:driftunc}
+\end{equation}
+When the dominant term is the baseline, $\unc{V'}\!\approx\!\unc{V_D}$, where $\unc{V_D}$
+denotes the drift-induced ADC uncertainty; this is the quantity propagated forward in
+Phase~4. No horizontal (step-count) uncertainty is introduced here, since the grid $\dset{n}$
+is shared and exact.
+
+\section{Stage 3: Step count to expansion}
+\label{sec:expansion}
+Stage~3 maps the commanded step count $n_i$ to a normalised expansion $E_i$ through the
+kinematics of the iris linkage, leaving the (drift-corrected) ADC axis untouched. The result
+re-expresses each stream as ADC versus expansion: the hydrogel as $(\dset{E}_h,\dset{V}'_h)$
+and the spring as $(\dset{E}_s,\dset{V}'_s)$. The derivation below is geometric and applies
+to either stream; the only difference between them is the reference scale $E_0$ used at the
+final step.
+
+\subsection{Step count to mechanism angle}
+The motor step count drives the output gear through a fixed transmission. With gear ratio $g$
+and $p$ encoder pulses per revolution,
+\begin{equation}
+\Theta \;=\; \frac{2\pi\,n}{g\,p},
+\qquad
+\theta \;=\; \Theta-\frac{\pi}{2},
+\qquad
+s\equiv\sin\theta,\quad c\equiv\cos\theta,
+\end{equation}
+where $\Theta$ is the output-gear angle and $\theta$ the mechanism angle measured from the
+horizontal.
+
+\subsection{Linkage points}
+We place the linkage joints at
+\begin{equation}
+c_0=(0,\,y_0),\qquad c_1=(x_1,\,y_1),\qquad c_2=(x_2,\,y_2),\qquad c_3=(x_3,\,y_3),
+\end{equation}
+with $c_1$ constrained to the driving circle of radius $r_0$,
+\begin{equation}
+x_1=r_0\cos\theta,\qquad y_1=r_0\sin\theta,\qquad x_1^2+y_1^2=r_0^2 .
+\end{equation}
+
+\subsection{Constraints}
+Two conditions fix $c_2$. First, the arm $c_1c_2$ is rigid, of constant length $r_p$:
+\begin{equation}
+r_p^2=(x_1-x_2)^2+(y_1-y_2)^2 .
+\label{eq:arm}
+\end{equation}
+Second, $c_2$ lies on the straight line through $c_0$ and $c_1$, so
+\begin{equation}
+y_2=\mu\,x_2+y_0,
+\qquad
+\mu=\frac{y_1-y_0}{x_1-x_0}=\frac{y_1-y_0}{x_1}\quad(x_0=0).
+\label{eq:coll}
+\end{equation}
+
+\subsection{Quadratic for \texorpdfstring{$x_2$}{x2}}
+Substituting the collinearity relation~\eqref{eq:coll} into the arm constraint~\eqref{eq:arm}
+gives a quadratic in $x_2$,
+\begin{equation}
+r_p^2=(x_1-x_2)^2+\bigl(y_1-(\mu x_2+y_0)\bigr)^2
+\;\;\Longrightarrow\;\;
+a\,x_2^2+b\,x_2+c=0,
+\end{equation}
+with coefficients
+\begin{equation}
+a=1+\mu^2,
+\qquad
+b=-2x_1-2y_1\mu+2\mu y_0,
+\qquad
+c=x_1^2+y_1^2-2y_1 y_0+y_0^2-r_p^2 .
+\end{equation}
+The physical (inner) solution is the minus root,
+\begin{equation}
+\Delta=b^2-4ac,
+\qquad
+x_2=\frac{-b-\sqrt{\Delta}}{2a},
+\qquad
+y_2=\mu\,x_2+y_0 .
+\end{equation}
+A pose with $\Delta<0$ (or $c=0$, an unreachable angle) is geometrically impossible and is
+returned as \texttt{NaN} and dropped from the curve.
+
+\subsection{Expansion factor}
+The gripper radial position is the distance of $c_2$ from the centre,
+\begin{equation}
+\rho=\sqrt{x_2^2+y_2^2}=\sqrt{a\,x_2^2+2\mu y_0 x_2+y_0^2},
+\end{equation}
+the second form following from $y_2=\mu x_2+y_0$. Normalising by the relaxed (rest) reference
+scale gives the expansion factor,
+\begin{equation}
+E_x=\frac{\rho-r_{\mathrm{pin}}}{E_0-r_{\mathrm{pin}}},
+\qquad
+E_0=r_0-r_p,
+\qquad\xrightarrow{\;r_{\mathrm{pin}}=0\;}\qquad
+E_x=\frac{\rho}{\,r_0-r_p\,}.
+\label{eq:expfactor}
+\end{equation}
+By construction $E_x=1$ at the rest pose. Evaluating~\eqref{eq:expfactor} at each $\theta(n_i)$
+produces the per-sample expansion; the streams become $(\dset{E}_h,\dset{V}'_h)$ and
+$(\dset{E}_s,\dset{V}'_s)$. The two streams use their own reference scales (the spring uses
+$E_0=r_0-r_p$, carried into Stage~4 as $R_0$).
+
+\paragraph{Uncertainty introduced.}
+The arm-angle manufacturing deviation $\theta_D$ enters here as a \emph{horizontal}
+(expansion-axis) uncertainty,
+\begin{equation}
+\unc{E}=\left|\frac{\partial E_x}{\partial \Theta}\right|\theta_D ,
+\label{eq:Eunc}
+\end{equation}
+which collapses to zero as $E_x\!\to\!1$. It is propagated in full in Section~\ref{sec:errors}.
+
+\section{Stage 4: Expansion to force}
+\label{sec:force}
+The spring stream is converted from expansion to force using the known spring constant; the
+hydrogel stream is carried forward unchanged. For a single arm the force is
+\begin{equation}
+F_s=4\cos^{2}\!\left(\frac{\pi}{18}\right)(E_s-1)\,R_0\,k,
+\label{eq:force}
+\end{equation}
+where $k$ is the spring constant, $R_0=E_0^{(3)}=r_0-r_p\approx 0.0182\,\mathrm{m}$ is the
+Stage-3 reference scale (with $r_{\mathrm{pin}}=0$), and $4\cos^2(\pi/18)$ is the fixed
+geometric factor of the nine-bladed iris. The factor $(E_s-1)$ makes $F_s=0$ at rest.
+
+Equation~\eqref{eq:force} turns the spring stream into ADC versus force,
+$(\dset{F}_s,\dset{V}'_s)$; equivalently it defines the per-arm calibration that maps an ADC
+reading to a force. The hydrogel stream remains $(\dset{E}_h,\dset{V}'_h)$. Both streams now
+share the ADC reading as a common variable, but in different pairings:
+\begin{equation}
+\text{hydrogel: } (\dset{E}_h,\dset{V}'_h),
+\qquad\qquad
+\text{spring: } (\dset{F}_s,\dset{V}'_s).
+\end{equation}
+
+\section{Stage 5: Savitzky--Golay interpolation onto a common ADC axis}
+\label{sec:sg}
+\paragraph{The problem.}
+Both streams are measured against the ADC reading, but at \emph{different} ADC values, because
+the hydrogel and spring sweeps do not land on the same $V'$. They therefore cannot be paired
+sample-for-sample. The solution is to interpolate one stream onto the other's ADC grid.
+
+\paragraph{The Savitzky--Golay operator.}
+A Savitzky--Golay (SG) filter fits a low-order polynomial to a moving window of points and
+reads off the fitted value at the query point. It is a \emph{linear} operator, so applying it
+to a dataset is a matrix--vector product. Writing the spring force on its own ADC grid as
+$\dset{F}_s$, the smoothed/resampled force is
+\begin{equation}
+\hat{\dset{F}}=\dset{H}\,\dset{F}_s,
+\qquad
+\hat F_i=\sum_{j} H_{ij}\,F_{s,j},
+\end{equation}
+where the smoother (hat) matrix follows from the (weighted) local least-squares fit,
+\begin{equation}
+\dset{H}=\dset{A}\bigl(\dset{A}^{\!\top}\dset{W}\dset{A}\bigr)^{-1}\dset{A}^{\!\top}\dset{W},
+\qquad
+\dset{W}=\operatorname{diag}\!\bigl(\sigma_{\mathrm{eff},i}^{-2}\bigr),
+\qquad
+\operatorname{tr}(\dset{H})=\sum_i H_{ii}.
+\end{equation}
+Here $\dset{A}$ is the Vandermonde design matrix of the local polynomial basis (order $p$),
+and the window length $w=2m+1$ sets the bandwidth of $\dset{H}$ (a wider window is a wider
+band). Resampling the spring calibration at the hydrogel ADC values $\dset{V}'_h$ gives a
+force at every hydrogel sample,
+\begin{equation}
+F_{h,i}=\hat{s}\bigl(V'_{h,i}\bigr)=\bigl(\dset{S}\,\dset{F}_s\bigr)_i,
+\qquad
+\dset{S}=\dset{S}(\dset{V}'_s,\dset{V}'_h)\in\mathbb{R}^{N_h\times N_s},
+\end{equation}
+with $\dset{S}$ the (rectangular) SG resampling operator built from the spring grid and
+evaluated on the hydrogel grid.
+
+\paragraph{Window selection (SURE).}
+The window size $W$ is chosen objectively by minimising Stein's Unbiased Risk Estimate, which
+estimates the deviation of the fit from the true signal using only the measured error,
+\begin{equation}
+\mathrm{SURE}(W)=\underbrace{\sum_i\bigl(F_i-\hat F_i\bigr)^2}_{\text{fit to data}}
+\;-\;\sum_i\sigma_{\mathrm{eff},i}^2
+\;+\;\underbrace{2\sum_i\sigma_{\mathrm{eff},i}^2\,H_{ii}}_{\text{complexity penalty}} .
+\label{eq:sure}
+\end{equation}
+The leverage $H_{ii}$ measures how much each point drives its own fitted value, so
+$\operatorname{tr}(\dset{H})=\sum_i H_{ii}$ is the effective number of degrees of freedom: a
+narrow window gives high leverage ($\operatorname{tr}\dset{H}\!\to\!N$) and a large penalty,
+a wide window spreads the influence ($\operatorname{tr}\dset{H}\!\to\!p+1$). The correction is
+exact rather than heuristic, since $\sigma_{\mathrm{eff},i}^2H_{ii}=\mathrm{Cov}(\hat F_i,F_i)$
+and Stein's identity sets the total optimism to $\sum_i\mathrm{Cov}(\hat F_i,F_i)$. In
+practice $\dset{H}$, and hence $t=\operatorname{tr}(\dset{H})$, is read from the
+\texttt{interp\_savgol} routine, and $W$ is taken at the minimiser of~\eqref{eq:sure}.
+
+The effective variance combines the uncertainties on both axes (the Orear effective-variance
+construction),
+\begin{equation}
+\sigma_{\mathrm{eff},i}^2=\sigma_{F,i}^2+\left(\frac{\partial F}{\partial V}\right)^{\!2}\sigma_{V,i}^2 .
+\label{eq:seff}
+\end{equation}
+
+\paragraph{Result.}
+Each hydrogel sample already carries an expansion $E_{h,i}$, so the resampled force can be
+paired with it directly, yielding the final per-arm curve
+\begin{equation}
+\boxed{\;(\dset{E}_h,\,\dset{F}_h)\;}\qquad\text{(force versus expansion).}
+\end{equation}
+
+\section{Error analysis}
+\label{sec:errors}
+Two physical sources of uncertainty enter the pipeline: the baseline drift (a vertical, ADC
+uncertainty) and the arm-angle manufacturing deviation $\theta_D$ (a horizontal uncertainty
+in the kinematics). They are propagated to the final curve with the first-order
+rule~\eqref{eq:prop}.
+
+\paragraph{Drift (vertical, ADC).}
+From Stage~2, each drift-corrected reading carries
+\begin{equation}
+\unc{V'}^2=\unc{V}^2+\unc{D}^2 \;\approx\; \unc{V_D}^2 ,
+\end{equation}
+a vertical uncertainty on the ADC axis common to both streams.
+
+\paragraph{Arm-angle deviation (horizontal).}
+The per-arm deviation $\theta_D$ (taken from the arm-angle characterisation,
+$\theta_D\approx 1.933^{\circ}$ per arm) propagates through the kinematics of Stage~3 to a
+horizontal expansion uncertainty,
+\begin{equation}
+\unc{E}=\left|\frac{\partial E_x}{\partial\Theta}\right|\theta_D,
+\end{equation}
+and, on the spring side through the force law~\eqref{eq:force}, to a force uncertainty
+\begin{equation}
+\unc{F}=\left|\frac{\partial F_s}{\partial\Theta}\right|\theta_D .
+\end{equation}
+Both collapse to zero as the expansion approaches unity, consistent with the rest pose being
+exactly defined.
+
+\paragraph{Combined ADC uncertainty after the expansion mapping.}
+Carrying the drift uncertainty and the expansion uncertainty through to the ADC axis after
+Stage~3 gives, in quadrature,
+\begin{equation}
+\unc{V'_h}^2=\unc{V_D}^2+\left(\frac{\partial V'_h}{\partial E_h}\right)^{\!2}\unc{E_h}^2,
+\end{equation}
+with the analogous expression on the spring stream (replacing $E_s$, and $F_s$ at the force
+stage). These are the per-stage terms attached to each box of the pipeline flowchart.
+
+\paragraph{Final curve.}
+On the final force-versus-expansion plot the two contributions appear as orthogonal error
+bars: a vertical bar $\unc{F}$ in force and a horizontal bar $\unc{E}$ in expansion, both
+inherited from the arm-angle deviation, while the effective variance~\eqref{eq:seff} carries
+the combined axis uncertainties into the Savitzky--Golay fit.
+
+\appendix
+\section{Construction of the SG hat matrix}
+\label{app:hat}
+Each row of $\dset{H}$ is the weight vector of the local weighted least-squares polynomial fit,
+evaluated at the centre point. For point $i$ with window
+$\mathcal{W}_i=\{\,j:|n_j-n_i|\le mh\,\}$ (index half-width $m$, or a distance $h$ for irregular
+abscissae),
+\begin{equation}
+\dset{h}_i^{\top}=\dset{e}_0^{\top}\bigl(\dset{A}_i^{\top}\dset{W}_i\dset{A}_i\bigr)^{-1}\dset{A}_i^{\top}\dset{W}_i,
+\qquad
+(\dset{A}_i)_{jk}=(n_j-n_i)^{k},\ \ k=0,\dots,p,
+\end{equation}
+where $\dset{e}_0=(1,0,\dots,0)^{\top}$ selects the constant term (the fit at $n_i$), and
+$H_{ij}=(\dset{h}_i)_j$ on the window and $0$ otherwise. Stacking the rows gives the banded
+$\dset{H}$ with $\hat{\dset{F}}=\dset{H}\dset{F}$. On a uniform grid the rows repeat into a
+Toeplitz band of the classic coefficients $c_{-m},\dots,c_{m}$; for irregular $n_i$ each row's
+weights differ. Dropping $\dset{W}_i$ recovers the unweighted classical filter.
+
+\end{document}
