@@ -1,0 +1,145 @@
+QUICK REFERENCE GUIDE
+=====================
+
+UPLOAD CODE TO ESP32-S3
+-----------------------
+Using Arduino CLI:
+  arduino-cli compile --fqbn esp32:esp32:adafruit_feather_esp32s3 <sketch_path>
+  arduino-cli upload -p /dev/cu.usbmodem1101 --fqbn esp32:esp32:adafruit_feather_esp32s3 <sketch_path>
+
+Using Arduino IDE:
+  1. Open sketch in Arduino IDE
+  2. Tools → Board → ESP32 Arduino → "Adafruit Feather ESP32-S3"
+  3. Tools → Port → Select correct port
+  4. Click Upload button
+
+SERIAL MONITOR
+--------------
+Baud Rate: 115200
+Port: /dev/cu.usbmodem1101 (or equivalent)
+
+Arduino IDE: Tools → Serial Monitor
+Terminal: screen /dev/cu.usbmodem1101 115200
+
+KEY I2C ADDRESSES
+-----------------
+NAU7802 ADCs: 0x36
+TCA9548A MUX 1: 0x71
+TCA9548A MUX 2: 0x73
+
+MULTIPLEXER CHANNEL SELECTION
+------------------------------
+void tcaSelect(uint8_t mux_addr, uint8_t channel) {
+  Wire.beginTransmission(mux_addr);
+  Wire.write(1 << channel);
+  Wire.endTransmission();
+}
+
+Example:
+  tcaSelect(0x71, 0);  // Select MUX 0x71, Channel 0
+  delay(10);           // Brief delay
+  // Now ADC operations affect only the selected channel
+
+DISABLE ALL CHANNELS
+--------------------
+void tcaDisable(uint8_t mux_addr) {
+  Wire.beginTransmission(mux_addr);
+  Wire.write(0);
+  Wire.endTransmission();
+}
+
+READ NAU7802 AT 0x36
+--------------------
+Wire.requestFrom(0x36, (uint8_t)8);
+while (Wire.available()) {
+  byte b = Wire.read();
+  // Process byte
+}
+
+VOLTAGE CONVERSION
+------------------
+Formula: voltage = (adc_reading / 16777216.0) * reference_voltage
+
+Example:
+  int32_t reading = 6068572;
+  float voltage = (reading / 16777216.0) * 3.0;
+  // Result: 1.085145 V
+
+ADC CHANNEL MAP
+---------------
+ADC1 → MUX 0x71, Channel 0
+ADC2 → MUX 0x71, Channel 1
+ADC3 → MUX 0x71, Channel 2
+ADC4 → MUX 0x71, Channel 3
+ADC5 → MUX 0x73, Channel 0
+ADC6 → MUX 0x73, Channel 1
+ADC7 → MUX 0x73, Channel 2
+ADC8 → MUX 0x73, Channel 3
+ADC9 → MUX 0x73, Channel 4
+
+I2C SCANNER CODE SNIPPET
+-------------------------
+for (byte addr = 1; addr < 127; addr++) {
+  Wire.beginTransmission(addr);
+  byte error = Wire.endTransmission();
+  if (error == 0) {
+    Serial.print("Found device at 0x");
+    Serial.println(addr, HEX);
+  }
+}
+
+TROUBLESHOOTING CHECKLIST
+--------------------------
+□ Is I2C clock set to 400kHz? (Wire.setClock(400000))
+□ Is MUX channel selected before ADC operation?
+□ Is address 0x36 being used (not 0x2A)?
+□ Are RESET pins on TCA9548A pulled HIGH?
+□ Is Serial Monitor at 115200 baud?
+□ Did you press RESET after uploading?
+
+COMMON ERRORS
+-------------
+"Failed to find ADC":
+  → Check I2C address (should be 0x36)
+  → Verify MUX channel selection
+  → Ensure device is powered
+
+All readings are -1 (0xFFFFFF):
+  → Need to trigger conversion
+  → Data may not be ready
+  → Try different read sequence
+
+Same data on all channels:
+  → Verify tcaSelect() is called
+  → Check MUX addressing (0x71 vs 0x73)
+  → Ensure proper channel selection
+
+USEFUL ARDUINO COMMANDS
+-----------------------
+List available boards:
+  arduino-cli board list
+
+List installed cores:
+  arduino-cli core list
+
+Install library:
+  arduino-cli lib install "Library Name"
+
+Search for library:
+  arduino-cli lib search "keyword"
+
+BOARD SPECIFICATIONS
+--------------------
+FQBN: esp32:esp32:adafruit_feather_esp32s3
+Upload Speed: 921600
+CPU Frequency: 240MHz
+Flash Size: 4MB
+PSRAM: 2MB
+
+FILE LOCATIONS
+--------------
+Working Code: direct_adc_reader.ino
+Documentation: README.md
+Hardware Specs: hardware_specs.txt
+Debug Log: debugging_log.txt
+This Guide: quick_reference.txt

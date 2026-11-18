@@ -1,0 +1,32 @@
+{
+  "name": "4Nov26 Magnify kit bead gels",
+  "data_root": "/Volumes/Volume 2 shared folder/TejasvinShrikanth/IX83/4Nov26",
+  "dark_folder": "DarkCount_1",
+  "wavelength_nm": 561,
+  "laser_power_mw": 3.03,
+  "bead": "2 um Nile Red",
+  "nominal_expansion": 11,
+  "nominal_expansion_source": "Magnify kit target; gel size not measured after expansion",
+  "expansion_basis": "linear",
+  "expansion_basis_source": "Klimas et al., Nat Biotechnol 2023 (doi:10.1038/s41587-022-01546-1): up to 11x linear (~1,300x volume); average 10.38x across replicates. Linear 11x = 121x area.",
+  "area_selection": "random",
+  "conditions": [
+    {"key": "H_1x", "label": "Homogenized, 1×", "preparation": "Homogenized", "factor": 1,
+     "areas": ["HomogenizedBeadSample1x_5", "HomogenizedBeadSample1x_6", "HomogenizedBeadSample1x_8"]},
+    {"key": "H_11x", "label": "Homogenized, ~11×", "preparation": "Homogenized", "factor": 11,
+     "areas": ["HomogenizedBeadSamplea~11x_1", "HomogenizedBeadSamplea~11x_2", "HomogenizedBeadSamplea~11x_3"]},
+    {"key": "NH_1x", "label": "Non-homogenized, 1×", "preparation": "NonHomogenized", "factor": 1,
+     "areas": ["NonHomogenizedBeadSample1x_1", "NonHomogenizedBeadSample1x_2", "NonHomogenizedBeadSample1x_3"]},
+    {"key": "NH_11x", "label": "Non-homogenized, ~11×", "preparation": "NonHomogenized", "factor": 11,
+     "areas": ["NonHomogenizedBeadSamplea~11x_1", "NonHomogenizedBeadSamplea~11x_2", "NonHomogenizedBeadSamplea~11x_3"]}
+  ],
+  "excluded": {
+    "BeadSample200nmMai_1": "laser calibration with different beads; not part of the experiment",
+    "BeadSample5um beads_1": "laser calibration with different beads; not part of the experiment",
+    "HomogenizedBeadSample1x_1": "same area as _5, exposure test (10 ms)",
+    "HomogenizedBeadSample1x_2": "same area as _5, exposure test (150 ms)",
+    "HomogenizedBeadSample1x_3": "same area as _5, exposure test (150 ms)",
+    "HomogenizedBeadSample1x_4": "same area as _5, exposure test (500 ms)",
+    "HomogenizedBeadSample1x_7": "repeat of _6 at the same position"
+  }
+}

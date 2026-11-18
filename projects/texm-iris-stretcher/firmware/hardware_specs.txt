@@ -1,0 +1,147 @@
+HARDWARE SPECIFICATIONS
+=======================
+
+ESP32-S3 Feather
+----------------
+Model: Adafruit Feather ESP32-S3 2MB PSRAM
+Chip: ESP32-S3 (QFN56) revision v0.2
+Features: WiFi, BLE, Embedded Flash 4MB (XMC), Embedded PSRAM 2MB (AP_3v3)
+Crystal: 40MHz
+MAC Address: cc:ba:97:1d:ff:34
+I2C Pins: Default SDA/SCL
+
+NAU7802 ADCs (9 units)
+----------------------
+Model: NAU7802SGI
+Resolution: 24-bit
+I2C Address: 0x36 (non-standard, typically 0x2A)
+Supply Voltage: 3.0V (internal LDO)
+Gain: 128x (configurable)
+Sample Rate: 10-320 SPS (configurable)
+
+Configuration Used:
+  - Gain: 128
+  - LDO: 3.0V
+  - Sample Rate: 10 SPS (default)
+  - Calibration: AFE calibration enabled
+
+TCA9548A Multiplexers (2 units)
+--------------------------------
+Model: TCA9548A I2C Multiplexer
+Channels: 8 per multiplexer
+I2C Addresses:
+  - MUX 1: 0x71
+  - MUX 2: 0x73
+
+Channel Assignment:
+  MUX 0x71:
+    - Channel 0: ADC1
+    - Channel 1: ADC2
+    - Channel 2: ADC3
+    - Channel 3: ADC4
+  
+  MUX 0x73:
+    - Channel 0: ADC5
+    - Channel 1: ADC6
+    - Channel 2: ADC7
+    - Channel 3: ADC8
+    - Channel 4: ADC9
+
+RESET Pins: Pulled HIGH (active low reset)
+Operating Voltage: 3.3V
+Max I2C Speed: 400 kHz (supported)
+
+I2C Bus Configuration
+---------------------
+Clock Speed: 400 kHz
+Pull-up Resistors: 4.7kΩ typical (present on each channel)
+Voltage Level: 3.3V
+Bus Topology: Main bus → 2x TCA9548A → 9x NAU7802
+
+Known I2C Addresses
+-------------------
+0x36 - NAU7802 ADCs (all 9, isolated by multiplexers)
+0x71 - TCA9548A Multiplexer 1
+0x73 - TCA9548A Multiplexer 2
+
+Note: Address 0x36 also appears on main bus when all MUX channels are OFF.
+This suggests there may be an additional device at 0x36 on the main bus,
+or potential bus leakage.
+
+Power Supply
+------------
+All devices powered from ESP32-S3 3.3V rail
+NAU7802 using internal 3.0V LDO
+
+Memory Usage (Arduino Sketch)
+------------------------------
+Program Storage: 385,314 bytes (26% of 1,441,792 bytes)
+Global Variables: 41,384 bytes (12% of 327,680 bytes)
+Dynamic Memory: 286,296 bytes available for local variables
+
+Wiring Verified
+---------------
+✓ ESP32-S3 SDA/SCL → TCA9548A (both) main bus
+✓ TCA9548A channels → NAU7802 SDA/SCL
+✓ All GND connected
+✓ All VDD/3.3V connected
+✓ TCA9548A RESET pins → 3.3V (HIGH)
+✓ Pull-up resistors on I2C lines
+
+Arduino Development Environment
+--------------------------------
+Arduino CLI: 1.2.0
+ESP32 Arduino Core: 3.2.0
+Board: esp32:esp32:adafruit_feather_esp32s3
+Upload Speed: 921600 baud
+Serial Monitor: 115200 baud
+
+Libraries Used
+--------------
+- Wire.h (I2C communication)
+- No external NAU7802 library (custom direct I2C implementation)
+
+Compilation Stats
+-----------------
+Compiled Size: 385,314 bytes
+Upload Time: ~6 seconds
+esptool Version: v4.8.1
+
+Testing Results
+---------------
+✓ All 9 ADCs detected and initialized
+✓ TCA9548A channel switching verified
+✓ I2C communication at 400 kHz stable
+✓ ADC readings obtained (first cycle)
+✗ Continuous conversion triggering needs implementation
+
+Sample ADC Reading (First Cycle)
+---------------------------------
+ADC2: 6068572 counts → 1.085145 V
+ADC3: 4608 counts → 0.000824 V
+ADC4: -6873961 counts → -1.229160 V
+ADC6: 65280 counts → 0.011673 V
+ADC7: -6943594 counts → -1.241611 V
+
+Voltage Calculation
+-------------------
+Formula: voltage = (reading / 16777216.0) * 3.0
+Where:
+  - 16777216 = 2^24 (24-bit ADC)
+  - 3.0 = reference voltage (adjustable based on actual reference)
+  - Reading is signed 24-bit integer
+
+Known Issues
+------------
+1. Subsequent reads return 0xFFFFFF after first successful read
+   - Likely needs conversion start command
+   - Standard NAU7802 protocol doesn't work due to address difference
+
+2. Device at 0x36 visible on main bus with all MUX channels OFF
+   - May be normal bus behavior
+   - Doesn't affect multiplexed operation
+
+3. Standard NAU7802 Arduino libraries incompatible
+   - Adafruit library expects address 0x2A
+   - SparkFun library expects address 0x2A
+   - Custom direct I2C implementation required

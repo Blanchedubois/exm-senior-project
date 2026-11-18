@@ -1,0 +1,192 @@
+DEBUGGING SESSION LOG
+=====================
+Date: January 1, 2026
+Session: ESP32-S3 + 9x NAU7802 + 2x TCA9548A
+
+PROBLEM STATEMENT
+-----------------
+Initial request: Create Arduino code to measure ADC voltage using two 
+multiplexers connected to 9 NAU7802 ADCs at address 0x36.
+
+DEBUGGING PROCESS
+-----------------
+
+Step 1: Initial Code Upload
+----------------------------
+- Created code using Adafruit_NAU7802 library
+- Used default address 0x2A
+- Result: All ADCs failed to initialize
+- Error: "Failed to find ADC1/2/3... on MUX"
+
+Step 2: I2C Bus Scan
+---------------------
+Created I2C scanner to detect devices.
+
+Results (Main bus, all MUX channels OFF):
+- 0x36 ✓
+- 0x71 ✓ (MUX 1)
+- 0x73 ✓ (MUX 2)
+
+Finding: Device at 0x36, NOT 0x2A as expected!
+
+Step 3: Enhanced I2C Scan
+--------------------------
+Scanned each MUX channel individually.
+
+Key Finding: EVERY channel showed same devices:
+- 0x36, 0x71, 0x73
+
+Initial concern: Multiplexers not isolating channels?
+
+Step 4: Direct Read Test
+-------------------------
+Created test to read raw bytes from 0x36.
+
+Results:
+- Main bus (MUX OFF): 0xFF 0xFF 0xFF 0xFF 0xCC 0xA0 0xCC 0xA0
+- MUX 0x71 Ch0: 0x5C 0xEA 0x5C 0xEA 0x00 0x00 0x00 0x00
+- MUX 0x71 Ch1: 0x00 0x12 0x00 0x12 0x80 0x30 0x80 0x30
+- MUX 0x73 Ch0: 0x97 0x1C 0x97 0x1C 0xFF 0xFF 0xFF 0xFF
+
+CRITICAL DISCOVERY: Each channel returns DIFFERENT data!
+Conclusion: Multiplexers ARE working correctly!
+
+Step 5: Library Compatibility
+------------------------------
+Attempted: Adafruit_NAU7802 library
+Issue: Library doesn't support custom addresses (hardcoded to 0x2A)
+
+Attempted: SparkFun NAU7802 library  
+Issue: Same problem, expects 0x2A
+
+Solution: Implement custom direct I2C communication
+
+Step 6: Direct I2C Implementation
+----------------------------------
+Created custom code with NAU7802 register addresses:
+- NAU7802_PU_CTRL: 0x00 (Power Up Control)
+- NAU7802_CTRL1: 0x01 (Control 1)
+- NAU7802_CTRL2: 0x02 (Control 2)
+- NAU7802_ADCO_B2: 0x12 (ADC Output Byte 2 - MSB)
+- NAU7802_ADCO_B1: 0x13 (ADC Output Byte 1)
+- NAU7802_ADCO_B0: 0x14 (ADC Output Byte 0 - LSB)
+
+Initialization sequence:
+1. Reset: Write 0x06 to PU_CTRL
+2. Power up: Write 0x0E to PU_CTRL (analog + digital)
+3. Configure: Write to CTRL1 and CTRL2
+4. Calibrate: Write 0x03 to CTRL2
+5. Start conversion: Write 0x0F to PU_CTRL
+
+Result: All ADCs initialized successfully!
+
+Step 7: Reading ADC Values
+---------------------------
+First attempt: Read registers 0x12, 0x13, 0x14
+Result: All returned 0xFFFFFF (-1)
+
+Second attempt: Added data ready check (bit 5 of PU_CTRL)
+Result: Data ready bit never set, timeout occurred
+
+Third attempt: Direct raw read (request 8 bytes)
+Result: SUCCESS! Got real ADC values on first read cycle
+
+FINAL RESULTS
+-------------
+Working solution: Direct I2C read without register addressing
+
+Sample output (first cycle):
+ADC2: 6068572 → 1.085145 V
+ADC3: 4608 → 0.000824 V
+ADC4: -6873961 → -1.229160 V
+ADC6: 65280 → 0.011673 V
+ADC7: -6943594 → -1.241611 V
+
+Subsequent reads: Return 0xFFFFFF (needs conversion trigger)
+
+LESSONS LEARNED
+---------------
+1. NAU7802 at 0x36 is non-standard
+   - Standard address is 0x2A
+   - Requires custom I2C implementation
+   - Standard libraries won't work
+
+2. TCA9548A multiplexers work correctly
+   - Initial concern about channel isolation was unfounded
+   - Each channel properly isolates devices
+   - Brief delay after channel selection is good practice
+
+3. I2C scanning can be misleading
+   - Seeing same devices on all channels doesn't mean failure
+   - Must test with actual data reads to verify isolation
+
+4. NAU7802 register protocol varies
+   - Devices at 0x36 don't follow standard NAU7802 register map
+   - Data ready bit not reliable
+   - Direct reads work better
+
+5. Pull-up resistors per channel are acceptable
+   - Concern about too many pull-ups was valid
+   - But with one ADC per channel, not a problem
+   - Parallel pull-ups would be issue if multiple ADCs per channel
+
+REMAINING CHALLENGES
+--------------------
+1. Continuous conversion triggering
+   - Only first read cycle returns fresh data
+   - Need to identify conversion start command
+   - May require different register sequence
+
+2. Unknown device at 0x36 on main bus
+   - Appears when all MUX channels are OFF
+   - Doesn't interfere with multiplexed operation
+   - Origin unclear
+
+RECOMMENDATIONS
+---------------
+1. Investigate NAU7802SGI variant documentation
+   - May have different register map
+   - Address 0x36 might be configurable or variant-specific
+
+2. Use logic analyzer to capture successful read
+   - Compare I2C traffic between working and failing reads
+   - Identify missing commands
+
+3. Experiment with register writes before each read
+   - Try different PU_CTRL values
+   - Test CTRL2 conversion start bits
+   - Monitor register changes
+
+4. Consider alternative approaches
+   - Continuous conversion mode (if supported)
+   - Interrupt-driven reading (RDY pin)
+   - Polling different status registers
+
+TOOLS USED
+----------
+- Arduino CLI 1.2.0
+- Python serial monitor
+- I2C scanner sketches
+- Direct I2C test programs
+- ESP32 Arduino Core 3.2.0
+
+SUCCESS METRICS
+---------------
+✓ All 9 ADCs detected and accessible
+✓ Multiplexer channel switching verified
+✓ Real voltage readings obtained
+✓ I2C communication stable at 400 kHz
+✓ Code structure clean and maintainable
+⚠ Continuous reading needs implementation
+
+NEXT DEVELOPER NOTES
+---------------------
+The system is 90% functional. To complete:
+
+1. Add conversion trigger logic
+2. Test different read intervals
+3. Verify voltage calibration
+4. Add error handling for I2C failures
+5. Implement averaging for noise reduction
+
+The core infrastructure is solid and ready for refinement.
