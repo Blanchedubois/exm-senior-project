@@ -4,7 +4,7 @@
 
 The earlier posts were about the markers and the software: how big to print them, how each dot gets an error bar, how dots are named and paired. This post steps back to the science they serve. It is a plain-language version of my senior project proposal, *Quantifying Expansion Anisotropy in Osmotic and Tensile Expansion Microscopy: A Comparison of MAGNIFY and TExM*, written with my mentors Vignesh Venkataramani and Lydia Kisley.
 
-The full proposal, with its LaTeX source and references, is in [`proposal/`](../proposal/) ([PDF](../proposal/research_proposal.pdf)).
+The full proposal, with its LaTeX source and references, is in [`proposal/`](../docs/proposal/) ([PDF](../docs/proposal/research_proposal.pdf)).
 
 ## The question in one paragraph
 

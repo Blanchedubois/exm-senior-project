@@ -6,7 +6,7 @@ On 4 November I prepared four hydrogels from the Magnify cell culture expansion 
 
 The short answer: **neither "11×" gel came close to 11×.** From the drop in bead density, the homogenized gel expanded about **1.2×** and the non-homogenized gel about **2.4×**. The most likely reason is in the protocol: I expanded the gels in 1× PBS, but the kit sheet only promises 4× in PBS. 11× needs washes in de-ionised water.
 
-This is a rough analysis, built to check whether the expansion happened at all. It isn't a precise measurement of the expansion factor. The raw lab notebook (voice notes, transcripts and photos) is in [`lab-notebooks/2026-11-04-magnify-kit-preparation-and-imaging/`](lab-notebooks/2026-11-04-magnify-kit-preparation-and-imaging/).
+This is a rough analysis, built to check whether the expansion happened at all. It isn't a precise measurement of the expansion factor. The raw lab notebook (voice notes, transcripts and photos) is in [`lab-notebook/2026-11-04-magnify-kit-preparation-and-imaging/`](../lab-notebook/2026-11-04-magnify-kit-preparation-and-imaging/).
 
 ![Measured vs ideal expansion](images/2026-11-09-magnify-expansion-vs-ideal.png)
 

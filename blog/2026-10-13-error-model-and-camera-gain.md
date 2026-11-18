@@ -2,7 +2,7 @@
 
 *2026-10-13*
 
-The port plan for the ArUco tagger is now written ([`ArUco_Reference_Tagger/docs/`](../ArUco_Reference_Tagger/docs/)). One decision in it deserves its own note, because it changes what the downstream distortion analysis can claim: every detected feature will carry a position uncertainty, and every ArUco tag a rotation uncertainty. This post explains where those numbers come from and what the camera gain has to do with it.
+The port plan for the ArUco tagger is now written ([`aruco-reference-tagger/docs/`](../projects/aruco-reference-tagger/docs/)). One decision in it deserves its own note, because it changes what the downstream distortion analysis can claim: every detected feature will carry a position uncertainty, and every ArUco tag a rotation uncertainty. This post explains where those numbers come from and what the camera gain has to do with it.
 
 ## Why an error per dot
 

@@ -1,0 +1,83 @@
+
+==============================================================================
+FRAME 1.5x   1.5XMISTstitchedimg-stitched-0.ome.tif   2678x2676 px
+==============================================================================
+  real dots detected 2,902 | template from 400 isolated dots | background 0.9 | template peak +166.4
+
+  CONTROL (single isolated dots): 337/361 detected = 93.4% per-dot efficiency, localisation RMS 0.252 px (clean matches)
+  => pair-resolution ceiling = 93.4%^2 = 87.1%
+
+ sep px  x FWHM  sites   both   one  none    both %   vs ceiling    loc RMS px
+      4    0.53    361      5   337    19      1.4%         1.6%         2.031
+      5    0.67    361      9   336    16      2.5%         2.9%         2.624
+      6    0.80    361      9   334    18      2.5%         2.9%         2.996
+      7    0.93    361      7   303    51      1.9%         2.2%           nan
+      8    1.07    361      6   304    51      1.7%         1.9%         2.801
+      9    1.20    361      3   244   114      0.8%         1.0%           nan
+     10    1.33    361      1   185   175      0.3%         0.3%           nan
+     11    1.47    361     98    45   218     27.1%        31.2%         0.148
+     12    1.60    361    326    22    13     90.3%       103.6%         0.195
+     13    1.73    361    329    14    18     91.1%       104.6%         0.249
+     14    1.87    361    321    20    20     88.9%       102.0%         0.184
+     15    2.00    361    322    25    14     89.2%       102.4%         0.229
+     16    2.13    361    309    35    17     85.6%        98.2%         0.232
+     17    2.27    361    319    29    13     88.4%       101.4%         0.179
+     18    2.40    361    316    27    18     87.5%       100.4%         0.178
+     19    2.53    361    311    32    18     86.1%        98.9%         0.232
+     20    2.67    361    315    27    19     87.3%       100.1%         0.231
+     21    2.80    361    312    32    17     86.4%        99.2%         0.210
+     22    2.93    361    309    36    16     85.6%        98.2%         0.170
+     23    3.07    361    319    28    14     88.4%       101.4%         0.234
+     24    3.20    361    305    40    16     84.5%        96.9%         0.272
+
+  separation at which pair resolution reaches a fraction of the ceiling:
+     50% of ceiling: 12 px = 1.60 x FWHM
+     90% of ceiling: 12 px = 1.60 x FWHM
+     95% of ceiling: 12 px = 1.60 x FWHM
+     99% of ceiling: not reached in sweep
+
+==============================================================================
+FRAME 4.2x   4.2XMISTstitchedimg-stitched-0.ome.tif   2716x2659 px
+==============================================================================
+  real dots detected 321 | template from 319 isolated dots | background 2.0 | template peak +214.9
+
+  CONTROL (single isolated dots): 344/361 detected = 95.3% per-dot efficiency, localisation RMS 0.215 px (clean matches)
+  => pair-resolution ceiling = 95.3%^2 = 90.8%
+
+ sep px  x FWHM  sites   both   one  none    both %   vs ceiling    loc RMS px
+      4    0.53    361      5   339    17      1.4%         1.5%         1.795
+      5    0.67    361      6   335    20      1.7%         1.8%         2.262
+      6    0.80    361      2   341    18      0.6%         0.6%         2.737
+      7    0.93    361      3   337    21      0.8%         0.9%           nan
+      8    1.07    361      5   329    27      1.4%         1.5%           nan
+      9    1.20    361      3   282    76      0.8%         0.9%           nan
+     10    1.33    361      2   236   123      0.6%         0.6%           nan
+     11    1.47    361      0   213   148      0.0%         0.0%           nan
+     12    1.60    361     82    97   182     22.7%        25.0%         0.354
+     13    1.73    361    178    49   134     49.3%        54.3%         0.405
+     14    1.87    361    206    16   139     57.1%        62.8%         0.275
+     15    2.00    361    262     9    90     72.6%        79.9%         0.269
+     16    2.13    361    271    17    73     75.1%        82.7%         0.233
+     17    2.27    361    317     7    37     87.8%        96.7%         0.273
+     18    2.40    361    333    14    14     92.2%       101.6%         0.272
+     19    2.53    361    338    15     8     93.6%       103.1%         0.366
+     20    2.67    361    336    19     6     93.1%       102.5%         0.273
+     21    2.80    361    327    26     8     90.6%        99.8%         0.236
+     22    2.93    361    319    33     9     88.4%        97.3%         0.253
+     23    3.07    361    312    40     9     86.4%        95.2%         0.285
+     24    3.20    361    320    36     5     88.6%        97.6%         0.231
+
+  separation at which pair resolution reaches a fraction of the ceiling:
+     50% of ceiling: 13 px = 1.73 x FWHM
+     90% of ceiling: 17 px = 2.27 x FWHM
+     95% of ceiling: 17 px = 2.27 x FWHM
+     99% of ceiling: not reached in sweep
+
+==============================================================================
+SUMMARY — replaces the assumed 2.0x rule in plan section 2.3
+==============================================================================
+  frame  per-dot eff   90% ceiling   95% ceiling   99% ceiling
+   1.5x       93.4%   1.60 x FWHM   1.60 x FWHM   not reached
+   4.2x       95.3%   2.27 x FWHM   2.27 x FWHM   not reached
+
+wrote <repo>/aruco-marker-design/docs/phase0/sep_threshold_*.json

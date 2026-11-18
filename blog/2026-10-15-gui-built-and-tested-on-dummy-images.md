@@ -29,7 +29,7 @@ The **Export bundle** button writes one folder holding every feature's position 
 
 ## How the fake images are made
 
-The generator is `ArUco_Tracker_V2/tools/make_dummy_series.py`. It builds an image the way the microscope would see a real print, one physical effect at a time:
+The generator is `projects/aruco-marker-design/tools/make_dummy_series.py`. It builds an image the way the microscope would see a real print, one physical effect at a time:
 
 1. **The print.** It starts from the same design file the Nanoscribe prints from, so every tag, dot and dash is where the real print puts it. An optional setting adds a fixed random placement error to every feature, the same in every image, as a real print would have.
 2. **The gel.** The features are moved as rigid islands: each one keeps its printed size while the spacing between them grows by the expansion factor. That is how a printed marker sits on an expanding gel.

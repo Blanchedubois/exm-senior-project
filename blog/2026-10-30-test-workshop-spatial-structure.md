@@ -15,7 +15,7 @@ Before trusting any of that on real gels, I wanted to see each step work, and fa
 
 ## What was built: the ExM Distortion Explorer
 
-The new code lives in `ArUco_Reference_Tagger/exm_explorer_prompt/` on the `exm-explorer` branch. It grew out of the earlier batch simulation and has three parts so far.
+The new code lives in `explorations/exm-distortion-explorer/` on the `exm-explorer` branch. It grew out of the earlier batch simulation and has three parts so far.
 
 1. **A gel model.** I place "sites" on the real fiducial grid: elliptical patches where the gel wants to expand differently from the rest, for example 12 % less, or 5 % more along one axis and 5 % less across it. A linear-elastic solver then works out how the whole gel moves around those patches. As before, every printed dot, dash and ArUco tag is a rigid island that keeps its printed size; only the islands' centres move.
 2. **The analysis from the batch run, ported and tested.** This covers the ACF, the dot-lattice fit, the tag-centre registration, and the windowed lattice-aware cross-correlation (CCF) with unwrapping. On the batch run's own images it reproduces the earlier numbers to the fourth decimal. A fast path renders the expanded image straight into the pre-expansion frame, which is quick enough to update while a site is being dragged.
@@ -170,4 +170,4 @@ To be explicit about what this post does and does not show:
 - Warp through the tag centres before the CCF, so large smooth distortion does not lose the lattice.
 - Image unexpanded control gels several times to set the real noise floor before any distortion is reported.
 
-The study script is `ArUco_Reference_Tagger/exm_explorer_prompt/studies/spatial_structure.py`. It writes every number above to `studies/results/spatial_structure.json`.
+The study script is `explorations/exm-distortion-explorer/studies/spatial_structure.py`. It writes every number above to `studies/results/spatial_structure.json`.

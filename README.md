@@ -16,13 +16,13 @@ The pattern is printed by two-photon polymerisation on a Nanoscribe in fluoresce
 - **Dashes** on the box boundaries, the human-readable grid and coarse strain field.
 - **Dots** (2.125 µm, 5 µm pitch, 17,825 per field) filling every box. These are the measurement tier: each dot is addressed as (node, row, column) from the tag ids.
 
-![Final design: full field, one box, corner detail](ArUco_Tracker_V2/designs/1_optimistic/render.png)
+![Final design: full field, one box, corner detail](projects/aruco-marker-design/designs/1_optimistic/render.png)
 
-![One box of the final design](ArUco_Tracker_V2/docs/v2_box_optimistic.png)
+![One box of the final design](projects/aruco-marker-design/docs/v2_box_optimistic.png)
 
 Three gated sizes of the same pattern exist (23, 27 and 34 µm tags), chosen by the measured point-spread function of the microscope. Validated end to end through a calibrated camera model, the 23 µm design still decodes 4 of 4 tags in frame at 6× expansion and recovers the expansion factor to 0.02 %:
 
-![End-to-end validation of the final design](ArUco_Tracker_V2/final_design/optimistic_one_figure.png)
+![End-to-end validation of the final design](projects/aruco-marker-design/final_design/optimistic_one_figure.png)
 
 ## What the analysis does
 
@@ -42,11 +42,11 @@ The same markers, imaging and analysis are applied to MAGNIFY (expansion varied 
 
 | Folder | Contents |
 |---|---|
-| `ArUco_Reference_Tagger/` | The ArUco analysis app, being ported piece by piece from the V1 tagger. |
-| `Reference_Warp_Tagger/` | The working V1 app for the earlier glyph-numbered marker print: optics correction, detection, filtering, reference-warp tagging, pairing, overlay, displacement field and expansion summary. The port starts from this code. |
-| `ArUco_Tracker_V2/` | Design of the ArUco print: pattern generator, camera simulator, detector prototypes, gating studies, CAD exports and the final design. |
+| `projects/aruco-reference-tagger/` | The ArUco analysis app, being ported piece by piece from the V1 tagger. |
+| `projects/reference-warp-tagger/` | The working V1 app for the earlier glyph-numbered marker print: optics correction, detection, filtering, reference-warp tagging, pairing, overlay, displacement field and expansion summary. The port starts from this code. |
+| `projects/aruco-marker-design/` | Design of the ArUco print: pattern generator, camera simulator, detector prototypes, gating studies, CAD exports and the final design. |
 
-Microscope TIFF frames and simulator outputs are not committed. The six real stitched frames the V1 app was validated on belong in `Reference_Warp_Tagger/Stitched Images/`.
+Microscope TIFF frames and simulator outputs are not committed. The six real stitched frames the V1 app was validated on belong in `projects/reference-warp-tagger/Stitched Images/`.
 
 ## Project log
 
@@ -54,4 +54,4 @@ Occasional progress updates are posted in [blog/](blog/README.md).
 
 ## Status
 
-The V1 tagger is complete and validated on six real frames at 1.5× to 4.2×. The ArUco detector and series driver exist as a headless library inside the V1 code and are tested against the simulator. The port into `ArUco_Reference_Tagger/` is in progress.
+The V1 tagger is complete and validated on six real frames at 1.5× to 4.2×. The ArUco detector and series driver exist as a headless library inside the V1 code and are tested against the simulator. The port into `projects/aruco-reference-tagger/` is in progress.

@@ -2,7 +2,7 @@
 
 *2026-10-13*
 
-This repository now holds the three pieces of the marker-tracking work in one place: the working V1 Reference-Warp Tagger for the glyph-numbered print, the ArUco Tracker V2 design and simulation work, and an empty `ArUco_Reference_Tagger/` folder where the V2 analysis app will be built.
+This repository now holds the three pieces of the marker-tracking work in one place: the working V1 Reference-Warp Tagger for the glyph-numbered print, the ArUco Tracker V2 design and simulation work, and an empty `projects/aruco-reference-tagger/` folder where the V2 analysis app will be built.
 
 ## Where things stand
 
@@ -12,4 +12,4 @@ The V2 print replaces the printed digits with ArUco tags at every grid node. The
 
 ## Next
 
-Port the V1 app into `ArUco_Reference_Tagger/` one module at a time, starting with the detector-agnostic core (types, optics correction, image IO), then swapping the glyph detection stage for the ArUco one and removing the box-numbering rescue that ids make unnecessary.
+Port the V1 app into `projects/aruco-reference-tagger/` one module at a time, starting with the detector-agnostic core (types, optics correction, image IO), then swapping the glyph detection stage for the ArUco one and removing the box-numbering rescue that ids make unnecessary.

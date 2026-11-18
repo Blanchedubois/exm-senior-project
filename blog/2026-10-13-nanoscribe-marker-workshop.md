@@ -2,7 +2,7 @@
 
 *2026-10-13*
 
-Before any marker is printed, the design has to fit the microscope that will image it. This post summarises the two workshops that produced the current Nanoscribe design: the ArUco tracker workshop, which sized the tags and the dot lattice against the measured optics, and the spacing workshop, which turned that into three printable designs plus one test print that decides between them. Everything here lives in [`ArUco_Tracker_V2/`](../ArUco_Tracker_V2/); the numbers are from the gated build files and the simulation scripts in `workshop/scripts/`.
+Before any marker is printed, the design has to fit the microscope that will image it. This post summarises the two workshops that produced the current Nanoscribe design: the ArUco tracker workshop, which sized the tags and the dot lattice against the measured optics, and the spacing workshop, which turned that into three printable designs plus one test print that decides between them. Everything here lives in [`aruco-marker-design/`](../projects/aruco-marker-design/); the numbers are from the gated build files and the simulation scripts in `workshop/scripts/`.
 
 ## Why the earlier design had to be redone
 
@@ -30,7 +30,7 @@ The detector requirements that fell out (no CLAHE, error correction on, exclude 
 
 With the tag tier fixed at 23 µm, the remaining question is the dot spacing, which depends on the blur the microscope delivers after focus is flattened. Rather than guess, the spacing workshop built three complete designs that differ only in dot spacing, plus a fourth print to decide between them.
 
-![The three designs and the spectrum print](../ArUco_Tracker_V2/designs/comparison.png)
+![The three designs and the spectrum print](../projects/aruco-marker-design/designs/comparison.png)
 
 | design | dot | spacing | dots per field | fully recognised up to a blur of |
 |---|---|---|---|---|
@@ -43,7 +43,7 @@ All three share the same 750 × 750 × 2 µm envelope, 5 × 5 boxes, 36 tags wit
 
 ### The spectrum print
 
-![The spectrum print: 25 boxes, 25 dot patterns](../ArUco_Tracker_V2/designs/4_spectrum/render.png)
+![The spectrum print: 25 boxes, 25 dot patterns](../projects/aruco-marker-design/designs/4_spectrum/render.png)
 
 The spectrum print is the one to print first. Its 25 boxes are 25 different dot patterns: the gap between dots widens left to right (2.875 to 4.875 µm) and the dot grows top to bottom (2.125 to 4 µm). The top row is the three designs themselves at the reference dot size, with two intermediate spacings between them. The bottom-right box, a 4 µm dot at the widest gap, is the safest pattern on the print. The bottom-left, a 4 µm dot at the tightest gap, cannot resolve at any blur under the design rule and is printed as the known-bad corner that shows the test is discriminating.
 

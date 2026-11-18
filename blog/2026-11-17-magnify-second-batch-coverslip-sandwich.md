@@ -6,7 +6,7 @@ After the [first batch](2026-11-09-magnify-kit-bead-gels.md) of Magnify bead gel
 
 The short answer: **the gels still didn't come close to 11×.** Measured with a ruler, each gel grew only about **1.14–1.23×** in diameter between the end of homogenization and the end of expansion. Compared with the silicone ring they were cast in, I estimated about 3×. No gels were imaged this time.
 
-These are ruler measurements of whole gels, taken by eye. They show whether the gels expanded at all, not a precise expansion factor. The raw lab notebooks (voice notes, transcripts and photos) are in [`lab-notebooks/2026-11-10-magnify-gels-preparation/`](lab-notebooks/2026-11-10-magnify-gels-preparation/) and [`lab-notebooks/2026-11-16-magnify-gels-homogenization-and-expansion/`](lab-notebooks/2026-11-16-magnify-gels-homogenization-and-expansion/).
+These are ruler measurements of whole gels, taken by eye. They show whether the gels expanded at all, not a precise expansion factor. The raw lab notebooks (voice notes, transcripts and photos) are in [`lab-notebook/2026-11-10-magnify-gels-preparation/`](../lab-notebook/2026-11-10-magnify-gels-preparation/) and [`lab-notebook/2026-11-16-magnify-gels-homogenization-and-expansion/`](../lab-notebook/2026-11-16-magnify-gels-homogenization-and-expansion/).
 
 ## Day 1 (10 November): casting six gels
 
