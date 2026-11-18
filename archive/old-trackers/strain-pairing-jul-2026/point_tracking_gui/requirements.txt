@@ -1,0 +1,12 @@
+# Stage 1 (implemented)
+numpy
+opencv-contrib-python
+tifffile
+scipy
+PySide6
+pyqtgraph
+# Stages 2-4 (planned)
+scikit-image
+pandas
+pyarrow
+trackpy

@@ -1,0 +1,2 @@
+vig_strength,vig_power,vig_cx,vig_cy,vig_floor,k1,k2,dist_cx,dist_cy,lp_enable,lp_cutoff,lp_shape,lp_order,invert,clahe_clip
+0.0,2.0,0.5,0.5,0.08,-0.035,0.0,0.5,0.5,True,0.28,gaussian,2,True,2.0

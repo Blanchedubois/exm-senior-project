@@ -1,0 +1,231 @@
+{
+  "initial_path": "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l1p50x.tif",
+  "expansion_paths": [
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l2p00x.tif",
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l2p50x.tif",
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l3p00x.tif",
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l4p00x.tif",
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l5p00x.tif"
+  ],
+  "reference_path": "<repo>/hydrogel_marker_analysis/toolkit/grid_metadata.json",
+  "transform_model": "similarity",
+  "correction": {
+    "vig_strength": 0.0,
+    "vig_power": 2.0,
+    "vig_cx": 0.5,
+    "vig_cy": 0.5,
+    "vig_floor": 0.08,
+    "k1": -0.035,
+    "k2": 0.0,
+    "dist_cx": 0.5,
+    "dist_cy": 0.5,
+    "lp_enable": true,
+    "lp_cutoff": 0.28,
+    "lp_shape": "gaussian",
+    "lp_order": 2,
+    "invert": true,
+    "clahe_clip": 2.0
+  },
+  "measure": {
+    "diameter": 9,
+    "minmass": 150.0,
+    "ecc_max": 0.35,
+    "gate_frac": 0.5,
+    "dash_min_elong": 1.8,
+    "dash_area_min": 15.0,
+    "dash_area_max": 600.0,
+    "detect_dashes": true
+  },
+  "filters": {
+    "enable_proximity": true,
+    "min_sep_frac": 0.5,
+    "enable_quality": true,
+    "quality_mad": 5.0,
+    "enable_residual": true,
+    "residual_mad": 6.0,
+    "residual_max_px": 0.0,
+    "enable_smoothness": false,
+    "neighbor_k": 8,
+    "neighbor_mad": 6.0,
+    "enable_border": true,
+    "border_px": 8.0
+  },
+  "image_params": {
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l1p50x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    },
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l2p00x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    },
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l3p00x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    },
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l4p00x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    },
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l5p00x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    },
+    "<repo>/expansion_camera_sim/degradations/L3_strong/expansion_l2p50x.tif": {
+      "measure": {
+        "diameter": 9,
+        "minmass": 150.0,
+        "ecc_max": 0.35,
+        "gate_frac": 0.5,
+        "dash_min_elong": 1.8,
+        "dash_area_min": 15.0,
+        "dash_area_max": 600.0,
+        "detect_dashes": true
+      },
+      "filters": {
+        "enable_proximity": true,
+        "min_sep_frac": 0.5,
+        "enable_quality": true,
+        "quality_mad": 5.0,
+        "enable_residual": true,
+        "residual_mad": 6.0,
+        "residual_max_px": 0.0,
+        "enable_smoothness": false,
+        "neighbor_k": 8,
+        "neighbor_mad": 6.0,
+        "enable_border": true,
+        "border_px": 8.0
+      },
+      "transform_model": "similarity",
+      "ransac_px": 4.0
+    }
+  },
+  "processed": [
+    "expansion_l1p50x.tif",
+    "expansion_l2p00x.tif",
+    "expansion_l2p50x.tif",
+    "expansion_l3p00x.tif",
+    "expansion_l4p00x.tif",
+    "expansion_l5p00x.tif"
+  ]
+}

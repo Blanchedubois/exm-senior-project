@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- units: 1 viewBox unit = 1 micron; physical size = 10.200 x 10.200 um. black = write region. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0.01020mm" height="0.01020mm" viewBox="0 0 10.2000 10.2000">
+<rect x="0" y="0" width="10.2000" height="10.2000" fill="white"/>
+<g fill="black" stroke="none">
+<rect x="2.1000" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="2.8500" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="3.6000" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="5.1000" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="6.6000" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="2.1000" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="2.8500" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="2.8500" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="2.8500" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="2.8500" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="3.6000" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="5.1000" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="6.6000" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="3.6000" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="4.3500" width="0.7500" height="0.7500"/>
+<rect x="2.8500" y="4.3500" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="4.3500" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="5.1000" width="0.7500" height="0.7500"/>
+<rect x="2.8500" y="5.1000" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="5.1000" width="0.7500" height="0.7500"/>
+<rect x="6.6000" y="5.1000" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="5.1000" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="5.8500" width="0.7500" height="0.7500"/>
+<rect x="5.1000" y="5.8500" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="5.8500" width="0.7500" height="0.7500"/>
+<rect x="6.6000" y="5.8500" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="5.8500" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="6.6000" width="0.7500" height="0.7500"/>
+<rect x="2.8500" y="6.6000" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="6.6000" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="6.6000" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="6.6000" width="0.7500" height="0.7500"/>
+<rect x="2.1000" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="2.8500" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="3.6000" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="4.3500" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="5.1000" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="5.8500" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="6.6000" y="7.3500" width="0.7500" height="0.7500"/>
+<rect x="7.3500" y="7.3500" width="0.7500" height="0.7500"/>
+<ellipse cx="3.6000" cy="4.3500" rx="0.2700" ry="0.1000" transform="rotate(135.0 3.6000 4.3500)"/>
+<ellipse cx="5.1000" cy="5.8500" rx="0.2700" ry="0.1000" transform="rotate(45.0 5.1000 5.8500)"/>
+<ellipse cx="5.1000" cy="6.6000" rx="0.2700" ry="0.1000" transform="rotate(135.0 5.1000 6.6000)"/>
+</g>
+</svg>

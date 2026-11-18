@@ -1,0 +1,47 @@
+{
+  "box_um": 150.0,
+  "dot_pitch": 8.0,
+  "dot_phase": 5.0,
+  "digit_half": 6.9,
+  "dash_start": 12.0,
+  "dash_spacing": 14.0,
+  "dashes_per_edge": 10,
+  "fiducials_um": {
+    "corner00": [
+      23,
+      24
+    ],
+    "corner02": [
+      23,
+      127
+    ],
+    "corner20": [
+      127,
+      24
+    ],
+    "corner22": [
+      127,
+      127
+    ],
+    "center": [
+      75,
+      75
+    ],
+    "A": [
+      27,
+      74
+    ],
+    "B": [
+      74,
+      27
+    ],
+    "C": [
+      122,
+      75
+    ],
+    "D": [
+      74,
+      123
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+vig_strength,vig_power,vig_cx,vig_cy,vig_floor,k1,k2,dist_cx,dist_cy,invert,clahe_clip
+0.06,2.0,0.5,0.5,0.08,-0.07,0.0,0.5,0.5,True,2.0

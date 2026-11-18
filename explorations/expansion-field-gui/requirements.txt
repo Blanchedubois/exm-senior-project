@@ -1,0 +1,12 @@
+# The per-image stages are reused from ../point_tracking_gui/gridtrack, so this
+# tool needs the same dependencies plus the GUI toolkit:
+numpy
+opencv-contrib-python
+tifffile
+scipy
+scikit-image
+pandas
+pyarrow
+trackpy
+PySide6
+pyqtgraph
