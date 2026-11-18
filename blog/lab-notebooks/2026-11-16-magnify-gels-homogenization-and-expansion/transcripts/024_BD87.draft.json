@@ -1,0 +1,114 @@
+{
+  "clipId" : "BD877D6F-8242-474E-8FCC-D2EDAC063D4A",
+  "createdAt" : "2026-11-16T16:20:10-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.944625,
+      "end" : 7.74,
+      "start" : 0.06,
+      "text" : "I'm not gonna throw out the gels and clean up everything and shut down for today.",
+      "words" : [
+        {
+          "confidence" : 0.989,
+          "end" : 1.5,
+          "start" : 0.06,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.582,
+          "end" : 1.62,
+          "start" : 1.5,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.902,
+          "end" : 1.8,
+          "start" : 1.62,
+          "text" : "gonna"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 2.64,
+          "start" : 1.8,
+          "text" : "throw"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 2.88,
+          "start" : 2.64,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.06,
+          "start" : 2.88,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 3.36,
+          "start" : 3.06,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.96,
+          "start" : 3.36,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.74,
+          "start" : 3.96,
+          "text" : "clean"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 5.04,
+          "start" : 4.74,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.94,
+          "start" : 5.04,
+          "text" : "everything"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 6.36,
+          "start" : 5.94,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.54,
+          "start" : 6.36,
+          "text" : "shut"
+        },
+        {
+          "confidence" : 0.95,
+          "end" : 6.84,
+          "start" : 6.54,
+          "text" : "down"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 7.02,
+          "start" : 6.84,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.803,
+          "end" : 7.56,
+          "start" : 7.02,
+          "text" : "today."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I'm not gonna throw out the gels and clean up everything and shut down for today."
+}

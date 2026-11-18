@@ -1,0 +1,212 @@
+{
+  "clipId" : "8537D24F-7020-43A0-9F15-C28942B46DB0",
+  "createdAt" : "2026-11-16T14:48:00-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8301111111111112,
+      "end" : 7.26,
+      "start" : 0,
+      "text" : "Uh, I just replaced the one X buffer W solution for both of the 215 milliliter falcon tubes.",
+      "words" : [
+        {
+          "confidence" : 0.485,
+          "end" : 1.08,
+          "start" : 0,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.26,
+          "start" : 1.08,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.5,
+          "start" : 1.26,
+          "text" : "just"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.98,
+          "start" : 1.5,
+          "text" : "replaced"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 2.4,
+          "start" : 1.98,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.889,
+          "end" : 2.82,
+          "start" : 2.4,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.816,
+          "end" : 3.06,
+          "start" : 2.82,
+          "text" : "X"
+        },
+        {
+          "confidence" : 0.921,
+          "end" : 3.48,
+          "start" : 3.06,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.9,
+          "end" : 3.66,
+          "start" : 3.48,
+          "text" : "W"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 4.14,
+          "start" : 3.66,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.38,
+          "start" : 4.14,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.5,
+          "start" : 4.38,
+          "text" : "both"
+        },
+        {
+          "confidence" : 0.869,
+          "end" : 4.74,
+          "start" : 4.5,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 4.86,
+          "start" : 4.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.126,
+          "end" : 5.7,
+          "start" : 4.86,
+          "text" : "215"
+        },
+        {
+          "confidence" : 0.409,
+          "end" : 6.24,
+          "start" : 5.7,
+          "text" : "milliliter"
+        },
+        {
+          "confidence" : 0.852,
+          "end" : 6.72,
+          "start" : 6.24,
+          "text" : "falcon"
+        },
+        {
+          "confidence" : 0.754,
+          "end" : 7.2,
+          "start" : 6.72,
+          "text" : "tubes."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8683846153846153,
+      "end" : 11.64,
+      "start" : 7.26,
+      "text" : "Uh, and I've set a timer for it to run for 15 minutes.",
+      "words" : [
+        {
+          "confidence" : 0.172,
+          "end" : 7.8,
+          "start" : 7.26,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.881,
+          "end" : 7.92,
+          "start" : 7.8,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.749,
+          "end" : 8.16,
+          "start" : 7.92,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 8.28,
+          "start" : 8.16,
+          "text" : "set"
+        },
+        {
+          "confidence" : 0.685,
+          "end" : 8.52,
+          "start" : 8.28,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 8.82,
+          "start" : 8.52,
+          "text" : "timer"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 9.72,
+          "start" : 8.82,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 9.84,
+          "start" : 9.72,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 10.02,
+          "start" : 9.84,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.14,
+          "start" : 10.02,
+          "text" : "run"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.32,
+          "start" : 10.14,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 10.56,
+          "start" : 10.32,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 11.58,
+          "start" : 10.56,
+          "text" : "minutes."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Uh, I just replaced the one X buffer W solution for both of the 215 milliliter falcon tubes. Uh, and I've set a timer for it to run for 15 minutes."
+}

@@ -1,0 +1,526 @@
+{
+  "clipId" : "8F9E967E-4611-443B-8EA5-18C2B626465A",
+  "createdAt" : "2026-11-10T14:59:24-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8492249999999999,
+      "end" : 18.54,
+      "start" : 0.06,
+      "text" : "I've added uh, another uh, 30 microliters of uh, the stockbeat solution to make a total of 50 microliters for each of the uh, silicone rings uh, in each of the wells, the 6 wall plate of the stock solution.",
+      "words" : [
+        {
+          "confidence" : 0.998,
+          "end" : 1.5,
+          "start" : 0.06,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.74,
+          "start" : 1.5,
+          "text" : "added"
+        },
+        {
+          "confidence" : 0.189,
+          "end" : 2.4,
+          "start" : 1.74,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.64,
+          "start" : 2.4,
+          "text" : "another"
+        },
+        {
+          "confidence" : 0.357,
+          "end" : 3.42,
+          "start" : 2.64,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.9,
+          "start" : 3.42,
+          "text" : "30"
+        },
+        {
+          "confidence" : 0.927,
+          "end" : 4.8,
+          "start" : 3.9,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.925,
+          "end" : 5.58,
+          "start" : 4.8,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.392,
+          "end" : 6.3,
+          "start" : 5.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.756,
+          "end" : 6.42,
+          "start" : 6.3,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.712,
+          "end" : 7.14,
+          "start" : 6.42,
+          "text" : "stockbeat"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.5,
+          "start" : 7.14,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.964,
+          "end" : 8.22,
+          "start" : 7.5,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.4,
+          "start" : 8.22,
+          "text" : "make"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.52,
+          "start" : 8.4,
+          "text" : "a"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.64,
+          "start" : 8.52,
+          "text" : "total"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.94,
+          "start" : 8.64,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.24,
+          "start" : 8.94,
+          "text" : "50"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 10.14,
+          "start" : 9.24,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.917,
+          "end" : 10.86,
+          "start" : 10.14,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.16,
+          "start" : 10.86,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.64,
+          "start" : 11.16,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.88,
+          "start" : 11.64,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.269,
+          "end" : 12.66,
+          "start" : 11.88,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 13.26,
+          "start" : 12.66,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 13.68,
+          "start" : 13.26,
+          "text" : "rings"
+        },
+        {
+          "confidence" : 0.261,
+          "end" : 14.64,
+          "start" : 13.68,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 14.82,
+          "start" : 14.64,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 14.94,
+          "start" : 14.82,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 15.12,
+          "start" : 14.94,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 15.24,
+          "start" : 15.12,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.683,
+          "end" : 15.96,
+          "start" : 15.24,
+          "text" : "wells,"
+        },
+        {
+          "confidence" : 0.939,
+          "end" : 16.08,
+          "start" : 15.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.782,
+          "end" : 16.2,
+          "start" : 16.08,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.506,
+          "end" : 16.44,
+          "start" : 16.2,
+          "text" : "wall"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 16.74,
+          "start" : 16.44,
+          "text" : "plate"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 17.46,
+          "start" : 16.74,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 17.64,
+          "start" : 17.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.82,
+          "start" : 17.64,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.783,
+          "end" : 18.48,
+          "start" : 17.82,
+          "text" : "solution."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8552413793103447,
+      "end" : 29.46,
+      "start" : 18.54,
+      "text" : "Um, the issue is now that some of the stock solutions be sucked under, um, the gap between the silicone ring and the cover slip due to capital reaction.",
+      "words" : [
+        {
+          "confidence" : 0.29,
+          "end" : 19.44,
+          "start" : 18.54,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.414,
+          "end" : 19.92,
+          "start" : 19.44,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.1,
+          "start" : 19.92,
+          "text" : "issue"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.4,
+          "start" : 20.1,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.64,
+          "start" : 20.4,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 21.12,
+          "start" : 20.64,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 21.48,
+          "start" : 21.12,
+          "text" : "some"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 21.66,
+          "start" : 21.48,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 21.78,
+          "start" : 21.66,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 21.96,
+          "start" : 21.78,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.377,
+          "end" : 22.44,
+          "start" : 21.96,
+          "text" : "solutions"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 22.68,
+          "start" : 22.44,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 22.98,
+          "start" : 22.68,
+          "text" : "sucked"
+        },
+        {
+          "confidence" : 0.601,
+          "end" : 23.46,
+          "start" : 22.98,
+          "text" : "under,"
+        },
+        {
+          "confidence" : 0.242,
+          "end" : 24.54,
+          "start" : 23.46,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 25.08,
+          "start" : 24.54,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 25.38,
+          "start" : 25.08,
+          "text" : "gap"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 25.62,
+          "start" : 25.38,
+          "text" : "between"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 25.98,
+          "start" : 25.62,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.909,
+          "end" : 26.7,
+          "start" : 25.98,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 27.06,
+          "start" : 26.7,
+          "text" : "ring"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 27.42,
+          "start" : 27.06,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 27.54,
+          "start" : 27.42,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 27.72,
+          "start" : 27.54,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 28.2,
+          "start" : 27.72,
+          "text" : "slip"
+        },
+        {
+          "confidence" : 0.927,
+          "end" : 28.5,
+          "start" : 28.2,
+          "text" : "due"
+        },
+        {
+          "confidence" : 0.898,
+          "end" : 28.68,
+          "start" : 28.5,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.454,
+          "end" : 28.86,
+          "start" : 28.68,
+          "text" : "capital"
+        },
+        {
+          "confidence" : 0.851,
+          "end" : 29.4,
+          "start" : 28.86,
+          "text" : "reaction."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7394615384615384,
+      "end" : 36.48,
+      "start" : 29.46,
+      "text" : "But we will see how that affects, um, the Hyjel, uh, imaging tomorrow.",
+      "words" : [
+        {
+          "confidence" : 0.49,
+          "end" : 30.6,
+          "start" : 29.46,
+          "text" : "But"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 31.08,
+          "start" : 30.6,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.32,
+          "start" : 31.08,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 31.5,
+          "start" : 31.32,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 31.68,
+          "start" : 31.5,
+          "text" : "how"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 32.28,
+          "start" : 31.68,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.661,
+          "end" : 32.94,
+          "start" : 32.28,
+          "text" : "affects,"
+        },
+        {
+          "confidence" : 0.268,
+          "end" : 33.84,
+          "start" : 32.94,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.953,
+          "end" : 34.2,
+          "start" : 33.84,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.136,
+          "end" : 35.34,
+          "start" : 34.2,
+          "text" : "Hyjel,"
+        },
+        {
+          "confidence" : 0.153,
+          "end" : 35.58,
+          "start" : 35.34,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 35.94,
+          "start" : 35.58,
+          "text" : "imaging"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 36.42,
+          "start" : 35.94,
+          "text" : "tomorrow."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I've added uh, another uh, 30 microliters of uh, the stockbeat solution to make a total of 50 microliters for each of the uh, silicone rings uh, in each of the wells, the 6 wall plate of the stock solution. Um, the issue is now that some of the stock solutions be sucked under, um, the gap between the silicone ring and the cover slip due to capital reaction. But we will see how that affects, um, the Hyjel, uh, imaging tomorrow."
+}

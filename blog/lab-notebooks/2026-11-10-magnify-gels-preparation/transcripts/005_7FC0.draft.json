@@ -1,0 +1,114 @@
+{
+  "clipId" : "7FC0C3D8-173E-4E65-809C-CE7023AB22A9",
+  "createdAt" : "2026-11-10T15:06:45-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8270624999999998,
+      "end" : 7.2,
+      "start" : 0,
+      "text" : "Just pipe it with 500 microliters of solution G into an empty 2 milliliter Eppendorf tube.",
+      "words" : [
+        {
+          "confidence" : 0.952,
+          "end" : 0.36,
+          "start" : 0,
+          "text" : "Just"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 0.72,
+          "start" : 0.36,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.849,
+          "end" : 0.9,
+          "start" : 0.72,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.084,
+          "end" : 1.26,
+          "start" : 0.9,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 1.56,
+          "start" : 1.26,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.725,
+          "end" : 2.64,
+          "start" : 1.56,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 2.82,
+          "start" : 2.64,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 3.12,
+          "start" : 2.82,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 3.36,
+          "start" : 3.12,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.9,
+          "start" : 3.36,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.14,
+          "start" : 3.9,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.873,
+          "end" : 4.5,
+          "start" : 4.14,
+          "text" : "empty"
+        },
+        {
+          "confidence" : 0.672,
+          "end" : 4.74,
+          "start" : 4.5,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.393,
+          "end" : 5.28,
+          "start" : 4.74,
+          "text" : "milliliter"
+        },
+        {
+          "confidence" : 0.835,
+          "end" : 6.48,
+          "start" : 5.28,
+          "text" : "Eppendorf"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 7.14,
+          "start" : 6.48,
+          "text" : "tube."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Just pipe it with 500 microliters of solution G into an empty 2 milliliter Eppendorf tube."
+}

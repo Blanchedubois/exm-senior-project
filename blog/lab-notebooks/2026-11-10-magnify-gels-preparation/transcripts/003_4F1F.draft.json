@@ -1,0 +1,772 @@
+{
+  "clipId" : "4F1F98F8-2B52-45AF-A583-D7BDDB0A9D65",
+  "createdAt" : "2026-11-10T14:53:22-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8924864864864867,
+      "end" : 10.14,
+      "start" : 0,
+      "text" : "What I've done is I've taken uh, 6 uh, cover slips and I put them each into the wells of the 6 well played and on top of the cover slip, I've added uh, a silicone ring.",
+      "words" : [
+        {
+          "confidence" : 0.992,
+          "end" : 1.14,
+          "start" : 0,
+          "text" : "What"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 1.44,
+          "start" : 1.14,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.56,
+          "start" : 1.44,
+          "text" : "done"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 1.74,
+          "start" : 1.56,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 2.1,
+          "start" : 1.74,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 2.22,
+          "start" : 2.1,
+          "text" : "taken"
+        },
+        {
+          "confidence" : 0.218,
+          "end" : 2.7,
+          "start" : 2.22,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 2.88,
+          "start" : 2.7,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.219,
+          "end" : 3.42,
+          "start" : 2.88,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.816,
+          "end" : 3.6,
+          "start" : 3.42,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 4.08,
+          "start" : 3.6,
+          "text" : "slips"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.26,
+          "start" : 4.08,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 4.32,
+          "start" : 4.26,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.5,
+          "start" : 4.32,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.56,
+          "start" : 4.5,
+          "text" : "them"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.74,
+          "start" : 4.56,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 4.92,
+          "start" : 4.74,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.1,
+          "start" : 4.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 5.4,
+          "start" : 5.1,
+          "text" : "wells"
+        },
+        {
+          "confidence" : 0.898,
+          "end" : 6,
+          "start" : 5.4,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.18,
+          "start" : 6,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 6.3,
+          "start" : 6.18,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 6.6,
+          "start" : 6.3,
+          "text" : "well"
+        },
+        {
+          "confidence" : 0.748,
+          "end" : 6.78,
+          "start" : 6.6,
+          "text" : "played"
+        },
+        {
+          "confidence" : 0.908,
+          "end" : 7.08,
+          "start" : 6.78,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.2,
+          "start" : 7.08,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.32,
+          "start" : 7.2,
+          "text" : "top"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.44,
+          "start" : 7.32,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.56,
+          "start" : 7.44,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 7.74,
+          "start" : 7.56,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.696,
+          "end" : 8.1,
+          "start" : 7.74,
+          "text" : "slip,"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 8.28,
+          "start" : 8.1,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.34,
+          "start" : 8.28,
+          "text" : "added"
+        },
+        {
+          "confidence" : 0.178,
+          "end" : 8.94,
+          "start" : 8.34,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 9.06,
+          "start" : 8.94,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.941,
+          "end" : 9.6,
+          "start" : 9.06,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.648,
+          "end" : 10.08,
+          "start" : 9.6,
+          "text" : "ring."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8405581395348839,
+      "end" : 27.84,
+      "start" : 10.14,
+      "text" : "Uh, and then I've taken um, a one to 100 stock solution of 2 micrometer now red, uh, bead samples, uh, and I've put in 20 microliters of, uh, the stock solution into each of the silicon rings of the 6 well plate.",
+      "words" : [
+        {
+          "confidence" : 0.143,
+          "end" : 10.92,
+          "start" : 10.14,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.796,
+          "end" : 11.1,
+          "start" : 10.92,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.22,
+          "start" : 11.1,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.64,
+          "start" : 11.22,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.76,
+          "start" : 11.64,
+          "text" : "taken"
+        },
+        {
+          "confidence" : 0.291,
+          "end" : 12.54,
+          "start" : 11.76,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 12.72,
+          "start" : 12.54,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 12.96,
+          "start" : 12.72,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 13.14,
+          "start" : 12.96,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 13.5,
+          "start" : 13.14,
+          "text" : "100"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.92,
+          "start" : 13.5,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 14.4,
+          "start" : 13.92,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 14.64,
+          "start" : 14.4,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 14.82,
+          "start" : 14.64,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.824,
+          "end" : 15.48,
+          "start" : 14.82,
+          "text" : "micrometer"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 15.66,
+          "start" : 15.48,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.447,
+          "end" : 16.08,
+          "start" : 15.66,
+          "text" : "red,"
+        },
+        {
+          "confidence" : 0.252,
+          "end" : 16.62,
+          "start" : 16.08,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 16.86,
+          "start" : 16.62,
+          "text" : "bead"
+        },
+        {
+          "confidence" : 0.787,
+          "end" : 17.58,
+          "start" : 16.86,
+          "text" : "samples,"
+        },
+        {
+          "confidence" : 0.226,
+          "end" : 18.12,
+          "start" : 17.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.932,
+          "end" : 18.3,
+          "start" : 18.12,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 18.6,
+          "start" : 18.3,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 18.84,
+          "start" : 18.6,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 19.08,
+          "start" : 18.84,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.74,
+          "start" : 19.08,
+          "text" : "20"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 20.88,
+          "start" : 19.74,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.485,
+          "end" : 21.96,
+          "start" : 20.88,
+          "text" : "of,"
+        },
+        {
+          "confidence" : 0.25,
+          "end" : 22.32,
+          "start" : 21.96,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 22.5,
+          "start" : 22.32,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 22.74,
+          "start" : 22.5,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 23.34,
+          "start" : 22.74,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 23.94,
+          "start" : 23.34,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 24.72,
+          "start" : 23.94,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 25.08,
+          "start" : 24.72,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 25.38,
+          "start" : 25.08,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.697,
+          "end" : 26.04,
+          "start" : 25.38,
+          "text" : "silicon"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 26.34,
+          "start" : 26.04,
+          "text" : "rings"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 26.94,
+          "start" : 26.34,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 27,
+          "start" : 26.94,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 27.12,
+          "start" : 27,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.542,
+          "end" : 27.36,
+          "start" : 27.12,
+          "text" : "well"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 27.78,
+          "start" : 27.36,
+          "text" : "plate."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8143953488372091,
+      "end" : 44.58,
+      "start" : 27.84,
+      "text" : "I've spread out the beet sample stock solution to make sure it touches everywhere, uh, consistently around, uh, uh, the gap inside of the ring, uh, and waiting for it to dry, and I'm going to now prepare the uh, activated geling solution.",
+      "words" : [
+        {
+          "confidence" : 0.995,
+          "end" : 28.5,
+          "start" : 27.84,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.74,
+          "start" : 28.5,
+          "text" : "spread"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 28.92,
+          "start" : 28.74,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 29.58,
+          "start" : 28.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.451,
+          "end" : 30.24,
+          "start" : 29.58,
+          "text" : "beet"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 30.78,
+          "start" : 30.24,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 31.32,
+          "start" : 30.78,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 31.8,
+          "start" : 31.32,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 32.04,
+          "start" : 31.8,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 32.16,
+          "start" : 32.04,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 32.28,
+          "start" : 32.16,
+          "text" : "sure"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 32.46,
+          "start" : 32.28,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 32.76,
+          "start" : 32.46,
+          "text" : "touches"
+        },
+        {
+          "confidence" : 0.555,
+          "end" : 33.36,
+          "start" : 32.76,
+          "text" : "everywhere,"
+        },
+        {
+          "confidence" : 0.266,
+          "end" : 34.26,
+          "start" : 33.36,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 34.86,
+          "start" : 34.26,
+          "text" : "consistently"
+        },
+        {
+          "confidence" : 0.508,
+          "end" : 35.28,
+          "start" : 34.86,
+          "text" : "around,"
+        },
+        {
+          "confidence" : 0.258,
+          "end" : 36.24,
+          "start" : 35.28,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.204,
+          "end" : 36.66,
+          "start" : 36.24,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.941,
+          "end" : 37.02,
+          "start" : 36.66,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 37.44,
+          "start" : 37.02,
+          "text" : "gap"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 37.86,
+          "start" : 37.44,
+          "text" : "inside"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 38.1,
+          "start" : 37.86,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 38.16,
+          "start" : 38.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.519,
+          "end" : 38.64,
+          "start" : 38.16,
+          "text" : "ring,"
+        },
+        {
+          "confidence" : 0.224,
+          "end" : 39.48,
+          "start" : 38.64,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 39.66,
+          "start" : 39.48,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 40.02,
+          "start" : 39.66,
+          "text" : "waiting"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 40.26,
+          "start" : 40.02,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 40.38,
+          "start" : 40.26,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 40.5,
+          "start" : 40.38,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.525,
+          "end" : 40.92,
+          "start" : 40.5,
+          "text" : "dry,"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 40.98,
+          "start" : 40.92,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 41.22,
+          "start" : 40.98,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.592,
+          "end" : 41.28,
+          "start" : 41.22,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.494,
+          "end" : 41.4,
+          "start" : 41.28,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 41.52,
+          "start" : 41.4,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 41.82,
+          "start" : 41.52,
+          "text" : "prepare"
+        },
+        {
+          "confidence" : 0.919,
+          "end" : 42.78,
+          "start" : 41.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.085,
+          "end" : 43.38,
+          "start" : 42.78,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 43.74,
+          "start" : 43.38,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.809,
+          "end" : 44.16,
+          "start" : 43.74,
+          "text" : "geling"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 44.52,
+          "start" : 44.16,
+          "text" : "solution."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "What I've done is I've taken uh, 6 uh, cover slips and I put them each into the wells of the 6 well played and on top of the cover slip, I've added uh, a silicone ring. Uh, and then I've taken um, a one to 100 stock solution of 2 micrometer now red, uh, bead samples, uh, and I've put in 20 microliters of, uh, the stock solution into each of the silicon rings of the 6 well plate. I've spread out the beet sample stock solution to make sure it touches everywhere, uh, consistently around, uh, uh, the gap inside of the ring, uh, and waiting for it to dry, and I'm going to now prepare the uh, activated geling solution."
+}

@@ -1,0 +1,170 @@
+{
+  "clipId" : "9F5D3973-0C48-462C-8F88-B75458DA2521",
+  "createdAt" : "2026-11-10T17:07:14-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9032500000000001,
+      "end" : 2.52,
+      "start" : 0,
+      "text" : "I've turned off everything.",
+      "words" : [
+        {
+          "confidence" : 0.997,
+          "end" : 1.08,
+          "start" : 0,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.26,
+          "start" : 1.08,
+          "text" : "turned"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.62,
+          "start" : 1.26,
+          "text" : "off"
+        },
+        {
+          "confidence" : 0.619,
+          "end" : 2.46,
+          "start" : 1.62,
+          "text" : "everything."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8118500000000001,
+      "end" : 10.14,
+      "start" : 2.52,
+      "text" : "Uh, and now I'm getting ready to close up for today, uh, as the hedge gels have been finished preparing.",
+      "words" : [
+        {
+          "confidence" : 0.277,
+          "end" : 3.48,
+          "start" : 2.52,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.964,
+          "end" : 3.78,
+          "start" : 3.48,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.02,
+          "start" : 3.78,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.38,
+          "start" : 4.02,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.62,
+          "start" : 4.38,
+          "text" : "getting"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.92,
+          "start" : 4.62,
+          "text" : "ready"
+        },
+        {
+          "confidence" : 1,
+          "end" : 5.16,
+          "start" : 4.92,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.34,
+          "start" : 5.16,
+          "text" : "close"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.58,
+          "start" : 5.34,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.76,
+          "start" : 5.58,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.536,
+          "end" : 6.3,
+          "start" : 5.76,
+          "text" : "today,"
+        },
+        {
+          "confidence" : 0.313,
+          "end" : 7.02,
+          "start" : 6.3,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 7.2,
+          "start" : 7.02,
+          "text" : "as"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 7.74,
+          "start" : 7.2,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.144,
+          "end" : 8.04,
+          "start" : 7.74,
+          "text" : "hedge"
+        },
+        {
+          "confidence" : 0.199,
+          "end" : 8.22,
+          "start" : 8.04,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 8.46,
+          "start" : 8.22,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 8.58,
+          "start" : 8.46,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.76,
+          "start" : 8.58,
+          "text" : "finished"
+        },
+        {
+          "confidence" : 0.857,
+          "end" : 10.08,
+          "start" : 8.76,
+          "text" : "preparing."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I've turned off everything. Uh, and now I'm getting ready to close up for today, uh, as the hedge gels have been finished preparing."
+}

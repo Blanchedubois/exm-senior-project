@@ -1,0 +1,1186 @@
+{
+  "clipId" : "86748AEF-2B7C-41D9-9E68-3585788D2D71",
+  "createdAt" : "2026-11-16T13:08:24-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7294761904761906,
+      "end" : 9,
+      "start" : 1.56,
+      "text" : "So, based on this, we'll be taking 3 hydrogelous and expanding it to 11 x to CD expanse to 11 x.",
+      "words" : [
+        {
+          "confidence" : 0.585,
+          "end" : 3.12,
+          "start" : 1.56,
+          "text" : "So,"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 3.48,
+          "start" : 3.12,
+          "text" : "based"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.96,
+          "start" : 3.48,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.882,
+          "end" : 4.2,
+          "start" : 3.96,
+          "text" : "this,"
+        },
+        {
+          "confidence" : 0.654,
+          "end" : 4.68,
+          "start" : 4.2,
+          "text" : "we'll"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 4.8,
+          "start" : 4.68,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 4.92,
+          "start" : 4.8,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 5.22,
+          "start" : 4.92,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.618,
+          "end" : 5.94,
+          "start" : 5.22,
+          "text" : "hydrogelous"
+        },
+        {
+          "confidence" : 0.813,
+          "end" : 6.12,
+          "start" : 5.94,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.42,
+          "start" : 6.12,
+          "text" : "expanding"
+        },
+        {
+          "confidence" : 0.854,
+          "end" : 6.54,
+          "start" : 6.42,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.693,
+          "end" : 6.66,
+          "start" : 6.54,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.958,
+          "end" : 6.78,
+          "start" : 6.66,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.099,
+          "end" : 7.02,
+          "start" : 6.78,
+          "text" : "x"
+        },
+        {
+          "confidence" : 0.659,
+          "end" : 7.2,
+          "start" : 7.02,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.299,
+          "end" : 7.5,
+          "start" : 7.2,
+          "text" : "CD"
+        },
+        {
+          "confidence" : 0.675,
+          "end" : 7.92,
+          "start" : 7.5,
+          "text" : "expanse"
+        },
+        {
+          "confidence" : 0.608,
+          "end" : 7.98,
+          "start" : 7.92,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.745,
+          "end" : 8.1,
+          "start" : 7.98,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.288,
+          "end" : 8.58,
+          "start" : 8.1,
+          "text" : "x."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8164444444444445,
+      "end" : 23.52,
+      "start" : 9,
+      "text" : "And then we'll do this by homogenizing it first. The homogenization step involves taking a 15 milliliter volume to you, and adding 3 milliliters of buffer H to ensure the gel is fully submerged, and then incubating it at 95 degrees Celsius for 45 minutes.",
+      "words" : [
+        {
+          "confidence" : 0.166,
+          "end" : 9.06,
+          "start" : 9,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 9.24,
+          "start" : 9.06,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 9.54,
+          "start" : 9.24,
+          "text" : "we'll"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.6,
+          "start" : 9.54,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.72,
+          "start" : 9.6,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.9,
+          "start" : 9.72,
+          "text" : "by"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 10.86,
+          "start" : 9.9,
+          "text" : "homogenizing"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 11.04,
+          "start" : 10.86,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.387,
+          "end" : 11.46,
+          "start" : 11.04,
+          "text" : "first."
+        },
+        {
+          "confidence" : 0.317,
+          "end" : 12.3,
+          "start" : 11.46,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 13.02,
+          "start" : 12.3,
+          "text" : "homogenization"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 13.38,
+          "start" : 13.02,
+          "text" : "step"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 13.86,
+          "start" : 13.38,
+          "text" : "involves"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 14.58,
+          "start" : 13.86,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.765,
+          "end" : 15,
+          "start" : 14.58,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 15.42,
+          "start" : 15,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.478,
+          "end" : 15.72,
+          "start" : 15.42,
+          "text" : "milliliter"
+        },
+        {
+          "confidence" : 0.954,
+          "end" : 15.9,
+          "start" : 15.72,
+          "text" : "volume"
+        },
+        {
+          "confidence" : 0.464,
+          "end" : 16.26,
+          "start" : 15.9,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.13,
+          "end" : 16.5,
+          "start" : 16.26,
+          "text" : "you,"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 16.68,
+          "start" : 16.5,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.04,
+          "start" : 16.68,
+          "text" : "adding"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 17.22,
+          "start" : 17.04,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 17.82,
+          "start" : 17.22,
+          "text" : "milliliters"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 18,
+          "start" : 17.82,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 18.42,
+          "start" : 18,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.761,
+          "end" : 18.66,
+          "start" : 18.42,
+          "text" : "H"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 19.26,
+          "start" : 18.66,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.87,
+          "end" : 19.5,
+          "start" : 19.26,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 19.56,
+          "start" : 19.5,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.287,
+          "end" : 19.74,
+          "start" : 19.56,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.69,
+          "end" : 19.92,
+          "start" : 19.74,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.89,
+          "end" : 20.1,
+          "start" : 19.92,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.783,
+          "end" : 20.58,
+          "start" : 20.1,
+          "text" : "submerged,"
+        },
+        {
+          "confidence" : 0.964,
+          "end" : 20.82,
+          "start" : 20.58,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 20.94,
+          "start" : 20.82,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 21.48,
+          "start" : 20.94,
+          "text" : "incubating"
+        },
+        {
+          "confidence" : 0.556,
+          "end" : 21.6,
+          "start" : 21.48,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.569,
+          "end" : 21.72,
+          "start" : 21.6,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 22.02,
+          "start" : 21.72,
+          "text" : "95"
+        },
+        {
+          "confidence" : 0.552,
+          "end" : 22.2,
+          "start" : 22.02,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.732,
+          "end" : 22.44,
+          "start" : 22.2,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 22.8,
+          "start" : 22.44,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 23.16,
+          "start" : 22.8,
+          "text" : "45"
+        },
+        {
+          "confidence" : 0.955,
+          "end" : 23.46,
+          "start" : 23.16,
+          "text" : "minutes."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8392580645161289,
+      "end" : 35.46,
+      "start" : 23.52,
+      "text" : "Then I'll be preparing the buffer, one XW solution, where I'll be taking 5 millils of text buffer W with 45 milliliters of water to create one X buffer W solution.",
+      "words" : [
+        {
+          "confidence" : 0.89,
+          "end" : 24.3,
+          "start" : 23.52,
+          "text" : "Then"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 24.84,
+          "start" : 24.3,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 24.96,
+          "start" : 24.84,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 25.32,
+          "start" : 24.96,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 26.22,
+          "start" : 25.32,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.808,
+          "end" : 26.76,
+          "start" : 26.22,
+          "text" : "buffer,"
+        },
+        {
+          "confidence" : 0.58,
+          "end" : 27,
+          "start" : 26.76,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.588,
+          "end" : 27.54,
+          "start" : 27,
+          "text" : "XW"
+        },
+        {
+          "confidence" : 0.757,
+          "end" : 28.32,
+          "start" : 27.54,
+          "text" : "solution,"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 28.68,
+          "start" : 28.32,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 29.04,
+          "start" : 28.68,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 29.1,
+          "start" : 29.04,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 29.22,
+          "start" : 29.1,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 29.46,
+          "start" : 29.22,
+          "text" : "5"
+        },
+        {
+          "confidence" : 0.465,
+          "end" : 29.94,
+          "start" : 29.46,
+          "text" : "millils"
+        },
+        {
+          "confidence" : 0.405,
+          "end" : 30.18,
+          "start" : 29.94,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.303,
+          "end" : 30.78,
+          "start" : 30.18,
+          "text" : "text"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 31.62,
+          "start" : 30.78,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.877,
+          "end" : 31.8,
+          "start" : 31.62,
+          "text" : "W"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 32.1,
+          "start" : 31.8,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 32.52,
+          "start" : 32.1,
+          "text" : "45"
+        },
+        {
+          "confidence" : 0.83,
+          "end" : 33.06,
+          "start" : 32.52,
+          "text" : "milliliters"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 33.3,
+          "start" : 33.06,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 33.42,
+          "start" : 33.3,
+          "text" : "water"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 33.66,
+          "start" : 33.42,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 33.84,
+          "start" : 33.66,
+          "text" : "create"
+        },
+        {
+          "confidence" : 0.88,
+          "end" : 34.08,
+          "start" : 33.84,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.648,
+          "end" : 34.2,
+          "start" : 34.08,
+          "text" : "X"
+        },
+        {
+          "confidence" : 0.618,
+          "end" : 34.74,
+          "start" : 34.2,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.828,
+          "end" : 34.86,
+          "start" : 34.74,
+          "text" : "W"
+        },
+        {
+          "confidence" : 0.811,
+          "end" : 35.4,
+          "start" : 34.86,
+          "text" : "solution."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8329047619047619,
+      "end" : 50.22,
+      "start" : 35.46,
+      "text" : "Then, uh, post-homogenization wash instead, where I placed the specimen in a gel catcher to discard the modernization buffer, and then wash it 5 times at 15 minutes per wash on an orbo shaker with 5 milliliters of one X buffer solution.",
+      "words" : [
+        {
+          "confidence" : 0.197,
+          "end" : 36.18,
+          "start" : 35.46,
+          "text" : "Then,"
+        },
+        {
+          "confidence" : 0.183,
+          "end" : 36.72,
+          "start" : 36.18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.823,
+          "end" : 37.74,
+          "start" : 36.72,
+          "text" : "post-homogenization"
+        },
+        {
+          "confidence" : 0.199,
+          "end" : 37.98,
+          "start" : 37.74,
+          "text" : "wash"
+        },
+        {
+          "confidence" : 0.099,
+          "end" : 38.58,
+          "start" : 37.98,
+          "text" : "instead,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 38.64,
+          "start" : 38.58,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 38.76,
+          "start" : 38.64,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.548,
+          "end" : 39,
+          "start" : 38.76,
+          "text" : "placed"
+        },
+        {
+          "confidence" : 0.691,
+          "end" : 39.18,
+          "start" : 39,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 39.54,
+          "start" : 39.18,
+          "text" : "specimen"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 39.66,
+          "start" : 39.54,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 39.78,
+          "start" : 39.66,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 39.96,
+          "start" : 39.78,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 40.38,
+          "start" : 39.96,
+          "text" : "catcher"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 40.5,
+          "start" : 40.38,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 40.8,
+          "start" : 40.5,
+          "text" : "discard"
+        },
+        {
+          "confidence" : 0.961,
+          "end" : 40.92,
+          "start" : 40.8,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.405,
+          "end" : 41.82,
+          "start" : 40.92,
+          "text" : "modernization"
+        },
+        {
+          "confidence" : 0.812,
+          "end" : 42.48,
+          "start" : 41.82,
+          "text" : "buffer,"
+        },
+        {
+          "confidence" : 0.898,
+          "end" : 42.96,
+          "start" : 42.48,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 43.14,
+          "start" : 42.96,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 43.38,
+          "start" : 43.14,
+          "text" : "wash"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 43.68,
+          "start" : 43.38,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 43.98,
+          "start" : 43.68,
+          "text" : "5"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 44.22,
+          "start" : 43.98,
+          "text" : "times"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 44.94,
+          "start" : 44.22,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 45.24,
+          "start" : 44.94,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 45.54,
+          "start" : 45.24,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 46.2,
+          "start" : 45.54,
+          "text" : "per"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 46.38,
+          "start" : 46.2,
+          "text" : "wash"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 46.68,
+          "start" : 46.38,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 46.86,
+          "start" : 46.68,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.824,
+          "end" : 47.1,
+          "start" : 46.86,
+          "text" : "orbo"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 47.46,
+          "start" : 47.1,
+          "text" : "shaker"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 47.82,
+          "start" : 47.46,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 48.12,
+          "start" : 47.82,
+          "text" : "5"
+        },
+        {
+          "confidence" : 0.923,
+          "end" : 48.72,
+          "start" : 48.12,
+          "text" : "milliliters"
+        },
+        {
+          "confidence" : 0.923,
+          "end" : 48.9,
+          "start" : 48.72,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 49.02,
+          "start" : 48.9,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.866,
+          "end" : 49.2,
+          "start" : 49.02,
+          "text" : "X"
+        },
+        {
+          "confidence" : 0.171,
+          "end" : 49.68,
+          "start" : 49.2,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.919,
+          "end" : 50.1,
+          "start" : 49.68,
+          "text" : "solution."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.6578181818181817,
+      "end" : 53.4,
+      "start" : 50.22,
+      "text" : "And then, uh, we're going to go to the process state.",
+      "words" : [
+        {
+          "confidence" : 0.718,
+          "end" : 51.06,
+          "start" : 50.22,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.498,
+          "end" : 51.42,
+          "start" : 51.06,
+          "text" : "then,"
+        },
+        {
+          "confidence" : 0.174,
+          "end" : 51.78,
+          "start" : 51.42,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 52.08,
+          "start" : 51.78,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.538,
+          "end" : 52.2,
+          "start" : 52.08,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.421,
+          "end" : 52.26,
+          "start" : 52.2,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 52.38,
+          "start" : 52.26,
+          "text" : "go"
+        },
+        {
+          "confidence" : 0.788,
+          "end" : 52.5,
+          "start" : 52.38,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.82,
+          "end" : 52.62,
+          "start" : 52.5,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.814,
+          "end" : 52.74,
+          "start" : 52.62,
+          "text" : "process"
+        },
+        {
+          "confidence" : 0.521,
+          "end" : 53.34,
+          "start" : 52.74,
+          "text" : "state."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8996315789473682,
+      "end" : 70.035,
+      "start" : 53.4,
+      "text" : "But since we do not have any cells or any sort of sample biological specimen, we won't be going to the staining process, and instead, we're going to be skipping that process and going directly towards the washing.",
+      "words" : [
+        {
+          "confidence" : 0.519,
+          "end" : 53.64,
+          "start" : 53.4,
+          "text" : "But"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 53.94,
+          "start" : 53.64,
+          "text" : "since"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 54.12,
+          "start" : 53.94,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 54.24,
+          "start" : 54.12,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 54.42,
+          "start" : 54.24,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 54.6,
+          "start" : 54.42,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 55.5,
+          "start" : 54.6,
+          "text" : "any"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 56.04,
+          "start" : 55.5,
+          "text" : "cells"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 56.34,
+          "start" : 56.04,
+          "text" : "or"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 57,
+          "start" : 56.34,
+          "text" : "any"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 57.18,
+          "start" : 57,
+          "text" : "sort"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 57.36,
+          "start" : 57.18,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 58.02,
+          "start" : 57.36,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 58.86,
+          "start" : 58.02,
+          "text" : "biological"
+        },
+        {
+          "confidence" : 0.889,
+          "end" : 59.46,
+          "start" : 58.86,
+          "text" : "specimen,"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 59.7,
+          "start" : 59.46,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 59.94,
+          "start" : 59.7,
+          "text" : "won't"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 60.06,
+          "start" : 59.94,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 60.18,
+          "start" : 60.06,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.739,
+          "end" : 60.3,
+          "start" : 60.18,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.938,
+          "end" : 60.42,
+          "start" : 60.3,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.522,
+          "end" : 60.72,
+          "start" : 60.42,
+          "text" : "staining"
+        },
+        {
+          "confidence" : 0.573,
+          "end" : 61.56,
+          "start" : 60.72,
+          "text" : "process,"
+        },
+        {
+          "confidence" : 0.274,
+          "end" : 61.62,
+          "start" : 61.56,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.531,
+          "end" : 61.98,
+          "start" : 61.62,
+          "text" : "instead,"
+        },
+        {
+          "confidence" : 0.951,
+          "end" : 62.28,
+          "start" : 61.98,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 62.4,
+          "start" : 62.28,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 62.52,
+          "start" : 62.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 62.64,
+          "start" : 62.52,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 63.84,
+          "start" : 62.64,
+          "text" : "skipping"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 63.96,
+          "start" : 63.84,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 64.14,
+          "start" : 63.96,
+          "text" : "process"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 64.62,
+          "start" : 64.14,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 64.8,
+          "start" : 64.62,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 65.4,
+          "start" : 64.8,
+          "text" : "directly"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 65.7,
+          "start" : 65.4,
+          "text" : "towards"
+        },
+        {
+          "confidence" : 0.84,
+          "end" : 68.28,
+          "start" : 65.7,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.678,
+          "end" : 68.7,
+          "start" : 68.28,
+          "text" : "washing."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "So, based on this, we'll be taking 3 hydrogelous and expanding it to 11 x to CD expanse to 11 x. And then we'll do this by homogenizing it first. The homogenization step involves taking a 15 milliliter volume to you, and adding 3 milliliters of buffer H to ensure the gel is fully submerged, and then incubating it at 95 degrees Celsius for 45 minutes. Then I'll be preparing the buffer, one XW solution, where I'll be taking 5 millils of text buffer W with 45 milliliters of water to create one X buffer W solution. Then, uh, post-homogenization wash instead, where I placed the specimen in a gel catcher to discard the modernization buffer, and then wash it 5 times at 15 minutes per wash on an orbo shaker with 5 milliliters of one X buffer solution. And then, uh, we're going to go to the process state. But since we do not have any cells or any sort of sample biological specimen, we won't be going to the staining process, and instead, we're going to be skipping that process and going directly towards the washing."
+}

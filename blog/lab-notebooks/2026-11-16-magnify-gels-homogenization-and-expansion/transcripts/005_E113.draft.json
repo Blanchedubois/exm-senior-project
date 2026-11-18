@@ -1,0 +1,258 @@
+{
+  "clipId" : "E1137C64-5475-48DD-A86A-A385F480831F",
+  "createdAt" : "2026-11-16T13:19:45-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8366,
+      "end" : 15.42,
+      "start" : 0.12,
+      "text" : "I've now taken, um, the unexposed hydro gel, opened it and put it in 3 milliliters of buffer H solution in a separate 15 milliliter falcon 2, and I'm gonna incubate it for 45 minutes, uh, at 95 degrees Celsius.",
+      "words" : [
+        {
+          "confidence" : 0.884,
+          "end" : 1.62,
+          "start" : 0.12,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 1.8,
+          "start" : 1.62,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.391,
+          "end" : 2.64,
+          "start" : 1.8,
+          "text" : "taken,"
+        },
+        {
+          "confidence" : 0.379,
+          "end" : 3.12,
+          "start" : 2.64,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.85,
+          "end" : 3.96,
+          "start" : 3.12,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.926,
+          "end" : 4.5,
+          "start" : 3.96,
+          "text" : "unexposed"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 5.04,
+          "start" : 4.5,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.858,
+          "end" : 5.52,
+          "start" : 5.04,
+          "text" : "gel,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 5.88,
+          "start" : 5.52,
+          "text" : "opened"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 6.06,
+          "start" : 5.88,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 6.24,
+          "start" : 6.06,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.48,
+          "start" : 6.24,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 6.6,
+          "start" : 6.48,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.78,
+          "start" : 6.6,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.847,
+          "end" : 6.96,
+          "start" : 6.78,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.931,
+          "end" : 7.5,
+          "start" : 6.96,
+          "text" : "milliliters"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 7.74,
+          "start" : 7.5,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.922,
+          "end" : 7.98,
+          "start" : 7.74,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.675,
+          "end" : 8.16,
+          "start" : 7.98,
+          "text" : "H"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 8.46,
+          "start" : 8.16,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.939,
+          "end" : 8.76,
+          "start" : 8.46,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 8.88,
+          "start" : 8.76,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.18,
+          "start" : 8.88,
+          "text" : "separate"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.42,
+          "start" : 9.18,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.513,
+          "end" : 9.96,
+          "start" : 9.42,
+          "text" : "milliliter"
+        },
+        {
+          "confidence" : 0.899,
+          "end" : 10.44,
+          "start" : 9.96,
+          "text" : "falcon"
+        },
+        {
+          "confidence" : 0.362,
+          "end" : 10.8,
+          "start" : 10.44,
+          "text" : "2,"
+        },
+        {
+          "confidence" : 0.733,
+          "end" : 10.98,
+          "start" : 10.8,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 11.22,
+          "start" : 10.98,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.451,
+          "end" : 11.28,
+          "start" : 11.22,
+          "text" : "gonna"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.82,
+          "start" : 11.28,
+          "text" : "incubate"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 11.88,
+          "start" : 11.82,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 12,
+          "start" : 11.88,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.42,
+          "start" : 12,
+          "text" : "45"
+        },
+        {
+          "confidence" : 0.519,
+          "end" : 12.9,
+          "start" : 12.42,
+          "text" : "minutes,"
+        },
+        {
+          "confidence" : 0.054,
+          "end" : 13.68,
+          "start" : 12.9,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 13.74,
+          "start" : 13.68,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 14.22,
+          "start" : 13.74,
+          "text" : "95"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 14.34,
+          "start" : 14.22,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.604,
+          "end" : 15.12,
+          "start" : 14.34,
+          "text" : "Celsius."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I've now taken, um, the unexposed hydro gel, opened it and put it in 3 milliliters of buffer H solution in a separate 15 milliliter falcon 2, and I'm gonna incubate it for 45 minutes, uh, at 95 degrees Celsius."
+}

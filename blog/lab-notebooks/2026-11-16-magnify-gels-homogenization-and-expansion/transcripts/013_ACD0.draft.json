@@ -1,0 +1,204 @@
+{
+  "clipId" : "ACD0DD03-53EC-412B-8AD5-CE985DBC0F28",
+  "createdAt" : "2026-11-16T15:11:27-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7902580645161289,
+      "end" : 15.524,
+      "start" : 0.12,
+      "text" : "I have now just set up. The 4th wash. Um, with one X buffer W solution for both the 2 uh, 15 milliliter falcon tubes with the 3 hydro shells inside.",
+      "words" : [
+        {
+          "confidence" : 0.995,
+          "end" : 1.38,
+          "start" : 0.12,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.419,
+          "end" : 1.56,
+          "start" : 1.38,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 1.74,
+          "start" : 1.56,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 1.98,
+          "start" : 1.74,
+          "text" : "just"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.28,
+          "start" : 1.98,
+          "text" : "set"
+        },
+        {
+          "confidence" : 0.556,
+          "end" : 2.82,
+          "start" : 2.28,
+          "text" : "up."
+        },
+        {
+          "confidence" : 0.396,
+          "end" : 3.96,
+          "start" : 2.82,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 4.98,
+          "start" : 3.96,
+          "text" : "4th"
+        },
+        {
+          "confidence" : 0.544,
+          "end" : 5.82,
+          "start" : 4.98,
+          "text" : "wash."
+        },
+        {
+          "confidence" : 0.311,
+          "end" : 6.9,
+          "start" : 5.82,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 7.02,
+          "start" : 6.9,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.922,
+          "end" : 7.32,
+          "start" : 7.02,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.874,
+          "end" : 7.56,
+          "start" : 7.32,
+          "text" : "X"
+        },
+        {
+          "confidence" : 0.637,
+          "end" : 8.04,
+          "start" : 7.56,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.747,
+          "end" : 8.16,
+          "start" : 8.04,
+          "text" : "W"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 8.58,
+          "start" : 8.16,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.76,
+          "start" : 8.58,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.94,
+          "start" : 8.76,
+          "text" : "both"
+        },
+        {
+          "confidence" : 0.909,
+          "end" : 9.54,
+          "start" : 8.94,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 9.84,
+          "start" : 9.54,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.367,
+          "end" : 10.5,
+          "start" : 9.84,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 10.74,
+          "start" : 10.5,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.613,
+          "end" : 11.52,
+          "start" : 10.74,
+          "text" : "milliliter"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 12.42,
+          "start" : 11.52,
+          "text" : "falcon"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 12.78,
+          "start" : 12.42,
+          "text" : "tubes"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 12.96,
+          "start" : 12.78,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.2,
+          "start" : 12.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 13.32,
+          "start" : 13.2,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.643,
+          "end" : 13.8,
+          "start" : 13.32,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.339,
+          "end" : 14.04,
+          "start" : 13.8,
+          "text" : "shells"
+        },
+        {
+          "confidence" : 0.634,
+          "end" : 14.58,
+          "start" : 14.04,
+          "text" : "inside."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I have now just set up. The 4th wash. Um, with one X buffer W solution for both the 2 uh, 15 milliliter falcon tubes with the 3 hydro shells inside."
+}

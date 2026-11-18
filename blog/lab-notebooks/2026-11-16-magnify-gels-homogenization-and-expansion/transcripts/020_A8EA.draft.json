@@ -1,0 +1,344 @@
+{
+  "clipId" : "A8EAFC8A-878F-4F9D-B9D0-AE6852615F2D",
+  "createdAt" : "2026-11-16T16:08:51-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8977391304347825,
+      "end" : 9.66,
+      "start" : 0,
+      "text" : "My issue might have been waiting for it to reach 4X expansion and then trying to do 11X expansion with the ionized water.",
+      "words" : [
+        {
+          "confidence" : 0.956,
+          "end" : 1.26,
+          "start" : 0,
+          "text" : "My"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 1.56,
+          "start" : 1.26,
+          "text" : "issue"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.92,
+          "start" : 1.56,
+          "text" : "might"
+        },
+        {
+          "confidence" : 0.883,
+          "end" : 2.16,
+          "start" : 1.92,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.28,
+          "start" : 2.16,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3,
+          "start" : 2.28,
+          "text" : "waiting"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 3.36,
+          "start" : 3,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.806,
+          "end" : 3.48,
+          "start" : 3.36,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 3.9,
+          "start" : 3.48,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.02,
+          "start" : 3.9,
+          "text" : "reach"
+        },
+        {
+          "confidence" : 0.657,
+          "end" : 4.5,
+          "start" : 4.02,
+          "text" : "4X"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 5.1,
+          "start" : 4.5,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.873,
+          "end" : 5.76,
+          "start" : 5.1,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 6,
+          "start" : 5.76,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 7.02,
+          "start" : 6,
+          "text" : "trying"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.26,
+          "start" : 7.02,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.32,
+          "start" : 7.26,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.569,
+          "end" : 7.92,
+          "start" : 7.32,
+          "text" : "11X"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 8.34,
+          "start" : 7.92,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.942,
+          "end" : 8.4,
+          "start" : 8.34,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.514,
+          "end" : 8.52,
+          "start" : 8.4,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.853,
+          "end" : 9.18,
+          "start" : 8.52,
+          "text" : "ionized"
+        },
+        {
+          "confidence" : 0.801,
+          "end" : 9.6,
+          "start" : 9.18,
+          "text" : "water."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7981666666666666,
+      "end" : 21.06,
+      "start" : 9.66,
+      "text" : "Instead, maybe I could try skipping directly to, um, the, uh, adding deionized water and seeing if it expands further, then, um, the expansion we got with the PDA solution.",
+      "words" : [
+        {
+          "confidence" : 0.717,
+          "end" : 10.5,
+          "start" : 9.66,
+          "text" : "Instead,"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 10.68,
+          "start" : 10.5,
+          "text" : "maybe"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 10.92,
+          "start" : 10.68,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.04,
+          "start" : 10.92,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 11.28,
+          "start" : 11.04,
+          "text" : "try"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 11.88,
+          "start" : 11.28,
+          "text" : "skipping"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.24,
+          "start" : 11.88,
+          "text" : "directly"
+        },
+        {
+          "confidence" : 0.487,
+          "end" : 12.78,
+          "start" : 12.24,
+          "text" : "to,"
+        },
+        {
+          "confidence" : 0.232,
+          "end" : 13.86,
+          "start" : 12.78,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.49,
+          "end" : 14.28,
+          "start" : 13.86,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.209,
+          "end" : 14.7,
+          "start" : 14.28,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 15,
+          "start" : 14.7,
+          "text" : "adding"
+        },
+        {
+          "confidence" : 0.364,
+          "end" : 15.78,
+          "start" : 15,
+          "text" : "deionized"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 16.02,
+          "start" : 15.78,
+          "text" : "water"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.32,
+          "start" : 16.02,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 16.5,
+          "start" : 16.32,
+          "text" : "seeing"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.74,
+          "start" : 16.5,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.92,
+          "start" : 16.74,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 17.22,
+          "start" : 16.92,
+          "text" : "expands"
+        },
+        {
+          "confidence" : 0.64,
+          "end" : 17.76,
+          "start" : 17.22,
+          "text" : "further,"
+        },
+        {
+          "confidence" : 0.336,
+          "end" : 18.36,
+          "start" : 17.76,
+          "text" : "then,"
+        },
+        {
+          "confidence" : 0.231,
+          "end" : 19.26,
+          "start" : 18.36,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 19.38,
+          "start" : 19.26,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.8,
+          "start" : 19.38,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 19.92,
+          "start" : 19.8,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 20.1,
+          "start" : 19.92,
+          "text" : "got"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 20.28,
+          "start" : 20.1,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.784,
+          "end" : 20.34,
+          "start" : 20.28,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.629,
+          "end" : 20.64,
+          "start" : 20.34,
+          "text" : "PDA"
+        },
+        {
+          "confidence" : 0.953,
+          "end" : 21,
+          "start" : 20.64,
+          "text" : "solution."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "My issue might have been waiting for it to reach 4X expansion and then trying to do 11X expansion with the ionized water. Instead, maybe I could try skipping directly to, um, the, uh, adding deionized water and seeing if it expands further, then, um, the expansion we got with the PDA solution."
+}

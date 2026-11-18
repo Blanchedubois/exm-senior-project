@@ -1,0 +1,108 @@
+{
+  "clipId" : "65251297-BA61-4F54-B889-510C050C1909",
+  "createdAt" : "2026-11-16T15:41:32-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9650000000000002,
+      "end" : 9.96,
+      "start" : 0.12,
+      "text" : "After 15 minutes, it's expanded to roughly 23 millimeters wide for each of the hydrogels.",
+      "words" : [
+        {
+          "confidence" : 0.995,
+          "end" : 1.38,
+          "start" : 0.12,
+          "text" : "After"
+        },
+        {
+          "confidence" : 0.926,
+          "end" : 2.22,
+          "start" : 1.38,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.699,
+          "end" : 2.7,
+          "start" : 2.22,
+          "text" : "minutes,"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 2.94,
+          "start" : 2.7,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.36,
+          "start" : 2.94,
+          "text" : "expanded"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.54,
+          "start" : 3.36,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.08,
+          "start" : 3.54,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 5.82,
+          "start" : 4.08,
+          "text" : "23"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 6.6,
+          "start" : 5.82,
+          "text" : "millimeters"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 7.08,
+          "start" : 6.6,
+          "text" : "wide"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 8.46,
+          "start" : 7.08,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.64,
+          "start" : 8.46,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.82,
+          "start" : 8.64,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.94,
+          "start" : 8.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 9.9,
+          "start" : 8.94,
+          "text" : "hydrogels."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "After 15 minutes, it's expanded to roughly 23 millimeters wide for each of the hydrogels."
+}

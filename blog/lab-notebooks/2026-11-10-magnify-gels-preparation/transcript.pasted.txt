@@ -1,0 +1,66 @@
+Transcription of the 10 Nov 2026 page as pasted by the author on 17 Nov 2026, kept verbatim.
+Note: in this copy every number and unit was dropped, and two passages repeat. The values
+(volumes, times, temperatures) are in transcript.draft.txt and entry.md in this folder.
+
+----------------------------------------------------------------------------------------------
+
+oday we're going to prepare six hydrogels for imaging using the Magnified Cell Culture Kit.
+2:17 PM
+Previously when we did the experimentation with four hydrogels using the Magnified Cell Culture Kit, we were only able to get to  expansion instead of  expansion even though we submerged the hydrogel in PBS for  plus in that solution. So we're going to try this again and try to see if we can get up to  expansion as promised by the kit.
+METHOD
+2:32 PM
+Today we'll be preparing six hydrogels with  bead samples for imaging tomorrow. What we're going to be doing is describing the methods. So first I will be making a  stock solution using  now red beads and then I'll
+2:33 PM
+Then we'll be preparing the activated gelling solution. And this works by taking a Solution A and Solution G from the fridge, pipetting  of Solution G into an MT2  Eppendorf tube, then pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipetting  of Solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipet
+2:33 PM
+IPEC  of the activation buffer to the  of Solution G to make the activated gelling solution. Now this gelling solution is not stable and should be used within  before premature gelling happens. And therefore, once that's prepared, we will take the activated gelling solution and pour it into each of the
+2:33 PM
+and the six silicone rings inside the six well plate. And then to ensure that the activated gelling solution soaks into the bead sample and the bead sample is fully cast into the activated gelling solution, we'll be putting it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in . And then from there, we're going to put it in  in .
+2:34 PM
+We're going to be doing the gelling process which involves putting it in  for  in an incubator with a kim white present in each of the wells of the six well plate. And then after that taking it out and putting it in the fridge at  ready for detachment tomorrow and for homogenization and then imaging.
+2:52 PM
+What I've done is I've taken six coverslips and I put them each into the wells of the six well plate and on top of the coverslip I've added a silicone ring.
+2:52 PM
+And then I've taken a  stock solution of  now red bead samples and I've put in  of the stock solution into each of the silicone rings of the six well plates.
+2:53 PM
+I've spread out the bead sample stock solution to make sure it touches everywhere consistently around the gap inside of the ring and waiting for it to dry. And I'm going to now prepare the activated gelling solution.
+2:53 PM
+
+What I've done differently is previously I had put, um, the silicon ring on top of the well of the 6 wall plate itself. So the gel is in contact with the bottom of the 6 wall plate, but I'm assuming that might expose it a bit to air. So what instead I've done is I'm going to sandwich it between 2 cover slips itself to ensure a consistency seal, and hopefully this will ensure 11 X expansion when we do expand it in PBS solution.
+IMPORTANT
+2:58 PM
+I've added another  of the stock bead solution to make a total of  for each of the silicone rings in each of the...
+2:58 PM
+Welles, the Six Well Plate of the Stock Solution. The issue is now that some of the Stock Solution is being sucked under the gap between the silicone ring and the cover slip due to capillary action. But we will see how that affects the hydrogel imaging tomorrow.
+3:06 PM
+Just pipeted  of Solution G into an MT2  Eppendorf Tube.
+3:07 PM
+Just pipetted  of Solution A into the activation tube and I'm vortexing it right now for about  to ensure complete dissolution.
+3:14 PM
+What I did is I took  of the activation buffer solution and put in  of Solution G to make the activated gelling solution. Then using a pipette, I gently sucked up and pushed out the activated gelling solution inside of the Eppendorf tube to gently mix the solution to make sure it's homogenized. Then I took  of the activated gelling solution.
+3:15 PM
+and put  into two of the six well plates where  for each of the wells. Then I put the cover slip on top and because this was overflowing, I pushed the cover slip down to make sure a complete seal was present and the excess solution squeezed out.
+3:16 PM
+I'm going to take two Eppendorf tubes and put  of Solution G into each of the Eppendorf tubes so I can make the other four gels. And then I'm going to put  into each of the Eppendorf tubes to make the activated gelling solution and put  into each of the wells that are left.
+3:21 PM
+I've then pipetted  into each of the rest of the four wells of the six-well plate and now I have sealed them with a coverslip. I ensured the coverslip has completely smushed against the silicone ring and the hydrogel sandwiched between the two.
+3:22 PM
+Cover Slips. I pressed it down gently to ensure a good seal where the cover slips do not drift or move apart. And I removed the excess activated gelling solution gently by dabbing it lightly with a Kim wipe. And then I put it now into the fridge at  for  to completely embed the bead sample into the hydrogen gel.
+TO DO
+3:24 PM
+might need to order Solution G vials since we've run out of Solution G vials completely or order more Magnified Expansion Kits which contain Solution G, specifically the Cell Culture Kits.
+3:26 PM
+Right now I've set the incubator at . I'm now cleaning the desk and the table, putting the pipettes back and getting ready for the curing process which will take two hours in the incubator.
+5:06 PM
+
+Result — Incubated hydrogels.
+5:06 PM
+I've just taken the hydrogels out.
+5:06 PM
+They've been incubated for 1 hour and 45 minutes. I chose 1 hour and 45 minutes simply because it's in between 1 hour and 30 minutes to 2 hours. Right now the hydrogels have some condensation inside the six-well.
+5:06 PM
+I'm still keeping the Kim wipe inside of each of the six wells and I'm putting the hydrogel six-well plate in the fridge at  overnight for me to image tomorrow.
+RESULT
+5:07 PM
+I've turned off everything and now I'm getting ready to close up for today as the hydrogels have been finished preparing.
+5:07 PM

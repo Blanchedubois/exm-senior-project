@@ -1,0 +1,90 @@
+{
+  "clipId" : "4D44BBC6-5F0F-42B9-97C7-09537D5E19C1",
+  "createdAt" : "2026-11-16T15:23:11-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9439166666666665,
+      "end" : 8.52,
+      "start" : 0.48,
+      "text" : "The unexposed hydro gel is roughly 19.25 millimeters wide at one X.",
+      "words" : [
+        {
+          "confidence" : 0.996,
+          "end" : 1.74,
+          "start" : 0.48,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 2.64,
+          "start" : 1.74,
+          "text" : "unexposed"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 3.12,
+          "start" : 2.64,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 3.48,
+          "start" : 3.12,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.72,
+          "start" : 3.48,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.2,
+          "start" : 3.72,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 6.06,
+          "start" : 4.2,
+          "text" : "19.25"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 7.08,
+          "start" : 6.06,
+          "text" : "millimeters"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.5,
+          "start" : 7.08,
+          "text" : "wide"
+        },
+        {
+          "confidence" : 0.965,
+          "end" : 7.8,
+          "start" : 7.5,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.696,
+          "end" : 7.98,
+          "start" : 7.8,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.827,
+          "end" : 8.46,
+          "start" : 7.98,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "The unexposed hydro gel is roughly 19.25 millimeters wide at one X."
+}

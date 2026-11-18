@@ -1,0 +1,2124 @@
+{
+  "clipId" : "B9AB2C68-D5AA-4F00-A856-F3AD56EB5311",
+  "createdAt" : "2026-11-10T14:34:37-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7142352941176471,
+      "end" : 6.84,
+      "start" : 0,
+      "text" : "Today, we'll be preparing uh 6 types of shows with 2 micrometer beat samples for imaging tomorrow.",
+      "words" : [
+        {
+          "confidence" : 0.522,
+          "end" : 0.6,
+          "start" : 0,
+          "text" : "Today,"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 0.84,
+          "start" : 0.6,
+          "text" : "we'll"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 0.9,
+          "start" : 0.84,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.26,
+          "start" : 0.9,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.216,
+          "end" : 1.56,
+          "start" : 1.26,
+          "text" : "uh"
+        },
+        {
+          "confidence" : 0.624,
+          "end" : 1.86,
+          "start" : 1.56,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.111,
+          "end" : 2.28,
+          "start" : 1.86,
+          "text" : "types"
+        },
+        {
+          "confidence" : 0.006,
+          "end" : 2.4,
+          "start" : 2.28,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.14,
+          "end" : 2.64,
+          "start" : 2.4,
+          "text" : "shows"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.88,
+          "start" : 2.64,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 3.24,
+          "start" : 2.88,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.869,
+          "end" : 4.32,
+          "start" : 3.24,
+          "text" : "micrometer"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 4.62,
+          "start" : 4.32,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.22,
+          "start" : 4.62,
+          "text" : "samples"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 5.76,
+          "start" : 5.22,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 6.24,
+          "start" : 5.76,
+          "text" : "imaging"
+        },
+        {
+          "confidence" : 0.759,
+          "end" : 6.78,
+          "start" : 6.24,
+          "text" : "tomorrow."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8364444444444445,
+      "end" : 9.36,
+      "start" : 6.84,
+      "text" : "What we're gonna be doing is describing the methods.",
+      "words" : [
+        {
+          "confidence" : 0.328,
+          "end" : 7.38,
+          "start" : 6.84,
+          "text" : "What"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 7.86,
+          "start" : 7.38,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.317,
+          "end" : 7.92,
+          "start" : 7.86,
+          "text" : "gonna"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 8.04,
+          "start" : 7.92,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.1,
+          "start" : 8.04,
+          "text" : "doing"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.28,
+          "start" : 8.1,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 8.7,
+          "start" : 8.28,
+          "text" : "describing"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 8.82,
+          "start" : 8.7,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 9.3,
+          "start" : 8.82,
+          "text" : "methods."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9475555555555558,
+      "end" : 16.98,
+      "start" : 9.36,
+      "text" : "So 1st I will be making a one to 100 stock solution using 2 micrometer now red beads.",
+      "words" : [
+        {
+          "confidence" : 0.892,
+          "end" : 9.96,
+          "start" : 9.36,
+          "text" : "So"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 10.32,
+          "start" : 9.96,
+          "text" : "1st"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.56,
+          "start" : 10.32,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 10.68,
+          "start" : 10.56,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.8,
+          "start" : 10.68,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.98,
+          "start" : 10.8,
+          "text" : "making"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 11.82,
+          "start" : 10.98,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 12,
+          "start" : 11.82,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.922,
+          "end" : 12.18,
+          "start" : 12,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 12.54,
+          "start" : 12.18,
+          "text" : "100"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.14,
+          "start" : 12.54,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 13.62,
+          "start" : 13.14,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 14.28,
+          "start" : 13.62,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 14.64,
+          "start" : 14.28,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.845,
+          "end" : 15.36,
+          "start" : 14.64,
+          "text" : "micrometer"
+        },
+        {
+          "confidence" : 0.905,
+          "end" : 15.54,
+          "start" : 15.36,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 15.72,
+          "start" : 15.54,
+          "text" : "red"
+        },
+        {
+          "confidence" : 0.704,
+          "end" : 16.26,
+          "start" : 15.72,
+          "text" : "beads."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9247500000000001,
+      "end" : 24.12,
+      "start" : 16.98,
+      "text" : "And then I'll be pipetting those on top of a cover slip, which is present in each 6 wells of the 6 well plate.",
+      "words" : [
+        {
+          "confidence" : 0.116,
+          "end" : 17.04,
+          "start" : 16.98,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 17.22,
+          "start" : 17.04,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 17.52,
+          "start" : 17.22,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.64,
+          "start" : 17.52,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.669,
+          "end" : 18.72,
+          "start" : 17.64,
+          "text" : "pipetting"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 18.9,
+          "start" : 18.72,
+          "text" : "those"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.26,
+          "start" : 18.9,
+          "text" : "on"
+        },
+        {
+          "confidence" : 1,
+          "end" : 19.44,
+          "start" : 19.26,
+          "text" : "top"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.56,
+          "start" : 19.44,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 19.68,
+          "start" : 19.56,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.86,
+          "start" : 19.68,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.784,
+          "end" : 20.46,
+          "start" : 19.86,
+          "text" : "slip,"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.58,
+          "start" : 20.46,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.7,
+          "start" : 20.58,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.88,
+          "start" : 20.7,
+          "text" : "present"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 21.24,
+          "start" : 20.88,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 21.42,
+          "start" : 21.24,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 21.84,
+          "start" : 21.42,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 22.38,
+          "start" : 21.84,
+          "text" : "wells"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 23.1,
+          "start" : 22.38,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 23.16,
+          "start" : 23.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 23.28,
+          "start" : 23.16,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 23.52,
+          "start" : 23.28,
+          "text" : "well"
+        },
+        {
+          "confidence" : 0.801,
+          "end" : 24.06,
+          "start" : 23.52,
+          "text" : "plate."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8921851851851853,
+      "end" : 34.74,
+      "start" : 24.12,
+      "text" : "And on top of the cover slip will be a silicone ring in which inside the ring, the beat sample stock solution will be pipe added into.",
+      "words" : [
+        {
+          "confidence" : 0.216,
+          "end" : 24.78,
+          "start" : 24.12,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 24.96,
+          "start" : 24.78,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 25.08,
+          "start" : 24.96,
+          "text" : "top"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 25.26,
+          "start" : 25.08,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 25.38,
+          "start" : 25.26,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 26.1,
+          "start" : 25.38,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 26.52,
+          "start" : 26.1,
+          "text" : "slip"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 26.7,
+          "start" : 26.52,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 26.82,
+          "start" : 26.7,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 27.06,
+          "start" : 26.82,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.964,
+          "end" : 27.54,
+          "start" : 27.06,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 27.78,
+          "start" : 27.54,
+          "text" : "ring"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 28.32,
+          "start" : 27.78,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.5,
+          "start" : 28.32,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.86,
+          "start" : 28.5,
+          "text" : "inside"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 29.16,
+          "start" : 28.86,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.584,
+          "end" : 29.52,
+          "start" : 29.16,
+          "text" : "ring,"
+        },
+        {
+          "confidence" : 0.834,
+          "end" : 30.12,
+          "start" : 29.52,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.797,
+          "end" : 31.02,
+          "start" : 30.12,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 31.44,
+          "start" : 31.02,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 31.74,
+          "start" : 31.44,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 32.22,
+          "start" : 31.74,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 32.7,
+          "start" : 32.22,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 32.94,
+          "start" : 32.7,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.84,
+          "end" : 33.9,
+          "start" : 32.94,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.116,
+          "end" : 34.14,
+          "start" : 33.9,
+          "text" : "added"
+        },
+        {
+          "confidence" : 0.853,
+          "end" : 34.68,
+          "start" : 34.14,
+          "text" : "into."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.934875,
+      "end" : 37.56,
+      "start" : 34.74,
+      "text" : "Then we'll be preparing the activated gel solution.",
+      "words" : [
+        {
+          "confidence" : 0.716,
+          "end" : 35.52,
+          "start" : 34.74,
+          "text" : "Then"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 35.82,
+          "start" : 35.52,
+          "text" : "we'll"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 35.94,
+          "start" : 35.82,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 36.18,
+          "start" : 35.94,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 36.36,
+          "start" : 36.18,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 36.66,
+          "start" : 36.36,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 37.02,
+          "start" : 36.66,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.891,
+          "end" : 37.5,
+          "start" : 37.02,
+          "text" : "solution."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8600599999999997,
+      "end" : 55.44,
+      "start" : 37.56,
+      "text" : "And this works by taking a solution A and solution G from the fridge, by pinning 500 microliters of solution G to an empty 2 milliliter, um, Eppendorf tube, then pipe ending 600 microliters of solution A into the provided activation tube and vortexing it to make the activation buffer.",
+      "words" : [
+        {
+          "confidence" : 0.556,
+          "end" : 38.1,
+          "start" : 37.56,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 38.46,
+          "start" : 38.1,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 39.12,
+          "start" : 38.46,
+          "text" : "works"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 39.36,
+          "start" : 39.12,
+          "text" : "by"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 39.66,
+          "start" : 39.36,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 39.96,
+          "start" : 39.66,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 40.26,
+          "start" : 39.96,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 40.56,
+          "start" : 40.26,
+          "text" : "A"
+        },
+        {
+          "confidence" : 0.704,
+          "end" : 40.8,
+          "start" : 40.56,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 41.04,
+          "start" : 40.8,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 41.28,
+          "start" : 41.04,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 41.52,
+          "start" : 41.28,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 41.58,
+          "start" : 41.52,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.691,
+          "end" : 42.12,
+          "start" : 41.58,
+          "text" : "fridge,"
+        },
+        {
+          "confidence" : 0.435,
+          "end" : 42.54,
+          "start" : 42.12,
+          "text" : "by"
+        },
+        {
+          "confidence" : 0.397,
+          "end" : 42.9,
+          "start" : 42.54,
+          "text" : "pinning"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 43.08,
+          "start" : 42.9,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.64,
+          "end" : 43.8,
+          "start" : 43.08,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.849,
+          "end" : 43.92,
+          "start" : 43.8,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.817,
+          "end" : 44.16,
+          "start" : 43.92,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.666,
+          "end" : 44.34,
+          "start" : 44.16,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.93,
+          "end" : 44.58,
+          "start" : 44.34,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 44.7,
+          "start" : 44.58,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 44.88,
+          "start" : 44.7,
+          "text" : "empty"
+        },
+        {
+          "confidence" : 0.679,
+          "end" : 45.06,
+          "start" : 44.88,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.603,
+          "end" : 46.2,
+          "start" : 45.06,
+          "text" : "milliliter,"
+        },
+        {
+          "confidence" : 0.34,
+          "end" : 46.5,
+          "start" : 46.2,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.726,
+          "end" : 47.64,
+          "start" : 46.5,
+          "text" : "Eppendorf"
+        },
+        {
+          "confidence" : 0.778,
+          "end" : 48.06,
+          "start" : 47.64,
+          "text" : "tube,"
+        },
+        {
+          "confidence" : 0.881,
+          "end" : 48.54,
+          "start" : 48.06,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.836,
+          "end" : 48.84,
+          "start" : 48.54,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.307,
+          "end" : 49.14,
+          "start" : 48.84,
+          "text" : "ending"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 49.62,
+          "start" : 49.14,
+          "text" : "600"
+        },
+        {
+          "confidence" : 0.852,
+          "end" : 50.4,
+          "start" : 49.62,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 50.52,
+          "start" : 50.4,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 50.76,
+          "start" : 50.52,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 51,
+          "start" : 50.76,
+          "text" : "A"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 51.3,
+          "start" : 51,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 51.48,
+          "start" : 51.3,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 51.84,
+          "start" : 51.48,
+          "text" : "provided"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 52.44,
+          "start" : 51.84,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 52.68,
+          "start" : 52.44,
+          "text" : "tube"
+        },
+        {
+          "confidence" : 0.938,
+          "end" : 53.22,
+          "start" : 52.68,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 53.94,
+          "start" : 53.22,
+          "text" : "vortexing"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 54.12,
+          "start" : 53.94,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 54.3,
+          "start" : 54.12,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 54.42,
+          "start" : 54.3,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 54.54,
+          "start" : 54.42,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 54.9,
+          "start" : 54.54,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.932,
+          "end" : 55.38,
+          "start" : 54.9,
+          "text" : "buffer."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9166521739130434,
+      "end" : 63.42,
+      "start" : 55.44,
+      "text" : "Then we pipe it 25 microliters of the activation buffer to the 500 microliters of solution G to make the activated geling solution.",
+      "words" : [
+        {
+          "confidence" : 0.813,
+          "end" : 55.98,
+          "start" : 55.44,
+          "text" : "Then"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 56.1,
+          "start" : 55.98,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 56.34,
+          "start" : 56.1,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.589,
+          "end" : 56.52,
+          "start" : 56.34,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 56.88,
+          "start" : 56.52,
+          "text" : "25"
+        },
+        {
+          "confidence" : 0.645,
+          "end" : 57.48,
+          "start" : 56.88,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.815,
+          "end" : 57.66,
+          "start" : 57.48,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 57.78,
+          "start" : 57.66,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 58.14,
+          "start" : 57.78,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 58.44,
+          "start" : 58.14,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.905,
+          "end" : 59.28,
+          "start" : 58.44,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 59.82,
+          "start" : 59.28,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 60.12,
+          "start" : 59.82,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.914,
+          "end" : 61.08,
+          "start" : 60.12,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 61.26,
+          "start" : 61.08,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 61.68,
+          "start" : 61.26,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 61.86,
+          "start" : 61.68,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 62.1,
+          "start" : 61.86,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 62.22,
+          "start" : 62.1,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 62.28,
+          "start" : 62.22,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 62.64,
+          "start" : 62.28,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.559,
+          "end" : 63,
+          "start" : 62.64,
+          "text" : "geling"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 63.36,
+          "start" : 63,
+          "text" : "solution."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8747894736842105,
+      "end" : 70.2,
+      "start" : 63.42,
+      "text" : "Now, this gelling solution is not stable and should be used within 15 minutes before, um, premature gelling happens.",
+      "words" : [
+        {
+          "confidence" : 0.543,
+          "end" : 64.02,
+          "start" : 63.42,
+          "text" : "Now,"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 64.08,
+          "start" : 64.02,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.733,
+          "end" : 64.62,
+          "start" : 64.08,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 64.92,
+          "start" : 64.62,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 65.16,
+          "start" : 64.92,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 65.46,
+          "start" : 65.16,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 65.82,
+          "start" : 65.46,
+          "text" : "stable"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 66.12,
+          "start" : 65.82,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 66.3,
+          "start" : 66.12,
+          "text" : "should"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 66.42,
+          "start" : 66.3,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 66.54,
+          "start" : 66.42,
+          "text" : "used"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 66.72,
+          "start" : 66.54,
+          "text" : "within"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 66.96,
+          "start" : 66.72,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 67.2,
+          "start" : 66.96,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.517,
+          "end" : 67.56,
+          "start" : 67.2,
+          "text" : "before,"
+        },
+        {
+          "confidence" : 0.248,
+          "end" : 68.46,
+          "start" : 67.56,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 69.3,
+          "start" : 68.46,
+          "text" : "premature"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 69.72,
+          "start" : 69.3,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.88,
+          "end" : 70.14,
+          "start" : 69.72,
+          "text" : "happens."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.81221875,
+      "end" : 81.06,
+      "start" : 70.2,
+      "text" : "Um, and therefore, uh, once that once that's prepared, we will take the activated gel solution and pour it into the, each of the 6 silicone rings inside the 6 wall plate.",
+      "words" : [
+        {
+          "confidence" : 0.097,
+          "end" : 70.92,
+          "start" : 70.2,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.677,
+          "end" : 71.1,
+          "start" : 70.92,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.757,
+          "end" : 71.58,
+          "start" : 71.1,
+          "text" : "therefore,"
+        },
+        {
+          "confidence" : 0.175,
+          "end" : 72.18,
+          "start" : 71.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.858,
+          "end" : 72.42,
+          "start" : 72.18,
+          "text" : "once"
+        },
+        {
+          "confidence" : 0.698,
+          "end" : 72.72,
+          "start" : 72.42,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.627,
+          "end" : 73.08,
+          "start" : 72.72,
+          "text" : "once"
+        },
+        {
+          "confidence" : 0.866,
+          "end" : 73.38,
+          "start" : 73.08,
+          "text" : "that's"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 73.8,
+          "start" : 73.38,
+          "text" : "prepared,"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 73.86,
+          "start" : 73.8,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 73.98,
+          "start" : 73.86,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 74.1,
+          "start" : 73.98,
+          "text" : "take"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 74.22,
+          "start" : 74.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 74.64,
+          "start" : 74.22,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.388,
+          "end" : 74.88,
+          "start" : 74.64,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 75.24,
+          "start" : 74.88,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 75.72,
+          "start" : 75.24,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.668,
+          "end" : 76.02,
+          "start" : 75.72,
+          "text" : "pour"
+        },
+        {
+          "confidence" : 0.637,
+          "end" : 76.2,
+          "start" : 76.02,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 76.32,
+          "start" : 76.2,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.315,
+          "end" : 77.28,
+          "start" : 76.32,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 77.4,
+          "start" : 77.28,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 77.58,
+          "start" : 77.4,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 77.7,
+          "start" : 77.58,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 77.88,
+          "start" : 77.7,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.818,
+          "end" : 78.84,
+          "start" : 77.88,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 79.2,
+          "start" : 78.84,
+          "text" : "rings"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 79.56,
+          "start" : 79.2,
+          "text" : "inside"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 79.92,
+          "start" : 79.56,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 80.16,
+          "start" : 79.92,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.925,
+          "end" : 80.4,
+          "start" : 80.16,
+          "text" : "wall"
+        },
+        {
+          "confidence" : 0.799,
+          "end" : 81,
+          "start" : 80.4,
+          "text" : "plate."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9028918918918918,
+      "end" : 96.24,
+      "start" : 81.06,
+      "text" : "And then to ensure that the activated gelling solution soaks into the beat sample and the beat sample is fully cast into the activated gelling solution, will be putting it in 15 minutes in 4 degrees Celsius.",
+      "words" : [
+        {
+          "confidence" : 0.415,
+          "end" : 81.48,
+          "start" : 81.06,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 81.66,
+          "start" : 81.48,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 82.14,
+          "start" : 81.66,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 82.56,
+          "start" : 82.14,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 82.8,
+          "start" : 82.56,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 83.46,
+          "start" : 82.8,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 83.88,
+          "start" : 83.46,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.723,
+          "end" : 84.24,
+          "start" : 83.88,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 84.6,
+          "start" : 84.24,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 86.16,
+          "start" : 84.6,
+          "text" : "soaks"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 86.4,
+          "start" : 86.16,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.917,
+          "end" : 87.48,
+          "start" : 86.4,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.496,
+          "end" : 88.02,
+          "start" : 87.48,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 88.56,
+          "start" : 88.02,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 88.8,
+          "start" : 88.56,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 88.92,
+          "start" : 88.8,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 89.04,
+          "start" : 88.92,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 89.34,
+          "start" : 89.04,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.958,
+          "end" : 89.58,
+          "start" : 89.34,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 89.94,
+          "start" : 89.58,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 90.42,
+          "start" : 89.94,
+          "text" : "cast"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 90.96,
+          "start" : 90.42,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.883,
+          "end" : 91.62,
+          "start" : 90.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.961,
+          "end" : 92.1,
+          "start" : 91.62,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.546,
+          "end" : 92.58,
+          "start" : 92.1,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.687,
+          "end" : 93.06,
+          "start" : 92.58,
+          "text" : "solution,"
+        },
+        {
+          "confidence" : 0.797,
+          "end" : 93.3,
+          "start" : 93.06,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 93.54,
+          "start" : 93.3,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 93.66,
+          "start" : 93.54,
+          "text" : "putting"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 93.9,
+          "start" : 93.66,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 94.32,
+          "start" : 93.9,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 94.56,
+          "start" : 94.32,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 94.8,
+          "start" : 94.56,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 95.04,
+          "start" : 94.8,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.932,
+          "end" : 95.22,
+          "start" : 95.04,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.652,
+          "end" : 95.46,
+          "start" : 95.22,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.748,
+          "end" : 96.18,
+          "start" : 95.46,
+          "text" : "Celsius."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8838604651162786,
+      "end" : 109.38,
+      "start" : 96.24,
+      "text" : "Uh, and then from there, we're going to be doing the geling process, which involves putting it in 37 degrees Celsius for 2 hours in an incubator, uh, with a Kim white present in each of the wells of the 6 wall plate.",
+      "words" : [
+        {
+          "confidence" : 0.155,
+          "end" : 96.96,
+          "start" : 96.24,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.656,
+          "end" : 97.26,
+          "start" : 96.96,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 97.5,
+          "start" : 97.26,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 97.74,
+          "start" : 97.5,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.729,
+          "end" : 98.1,
+          "start" : 97.74,
+          "text" : "there,"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 98.7,
+          "start" : 98.1,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 98.76,
+          "start" : 98.7,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.82,
+          "end" : 98.88,
+          "start" : 98.76,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 98.94,
+          "start" : 98.88,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 99.06,
+          "start" : 98.94,
+          "text" : "doing"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 99.24,
+          "start" : 99.06,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.761,
+          "end" : 99.66,
+          "start" : 99.24,
+          "text" : "geling"
+        },
+        {
+          "confidence" : 0.728,
+          "end" : 100.2,
+          "start" : 99.66,
+          "text" : "process,"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 100.5,
+          "start" : 100.2,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 100.98,
+          "start" : 100.5,
+          "text" : "involves"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 101.22,
+          "start" : 100.98,
+          "text" : "putting"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 101.46,
+          "start" : 101.22,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 101.64,
+          "start" : 101.46,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 102.12,
+          "start" : 101.64,
+          "text" : "37"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 102.36,
+          "start" : 102.12,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.819,
+          "end" : 102.72,
+          "start" : 102.36,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 103.26,
+          "start" : 102.72,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 103.44,
+          "start" : 103.26,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 103.8,
+          "start" : 103.44,
+          "text" : "hours"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 104.22,
+          "start" : 103.8,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 104.4,
+          "start" : 104.22,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.76,
+          "end" : 105.12,
+          "start" : 104.4,
+          "text" : "incubator,"
+        },
+        {
+          "confidence" : 0.186,
+          "end" : 105.84,
+          "start" : 105.12,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 105.96,
+          "start" : 105.84,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 106.08,
+          "start" : 105.96,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.805,
+          "end" : 106.26,
+          "start" : 106.08,
+          "text" : "Kim"
+        },
+        {
+          "confidence" : 0.503,
+          "end" : 106.56,
+          "start" : 106.26,
+          "text" : "white"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 106.86,
+          "start" : 106.56,
+          "text" : "present"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 107.16,
+          "start" : 106.86,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 107.28,
+          "start" : 107.16,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 107.7,
+          "start" : 107.28,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 107.82,
+          "start" : 107.7,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 108.36,
+          "start" : 107.82,
+          "text" : "wells"
+        },
+        {
+          "confidence" : 0.865,
+          "end" : 108.48,
+          "start" : 108.36,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 108.6,
+          "start" : 108.48,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 108.72,
+          "start" : 108.6,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 108.9,
+          "start" : 108.72,
+          "text" : "wall"
+        },
+        {
+          "confidence" : 0.791,
+          "end" : 109.26,
+          "start" : 108.9,
+          "text" : "plate."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.909,
+      "end" : 119.34,
+      "start" : 109.38,
+      "text" : "And then after that, taking it out and putting it in the fridge at 4 degrees Celsius, uh, ready for detachment tomorrow and for homogenization and then imaging.",
+      "words" : [
+        {
+          "confidence" : 0.519,
+          "end" : 109.92,
+          "start" : 109.38,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 110.04,
+          "start" : 109.92,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 110.22,
+          "start" : 110.04,
+          "text" : "after"
+        },
+        {
+          "confidence" : 0.545,
+          "end" : 110.58,
+          "start" : 110.22,
+          "text" : "that,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 110.76,
+          "start" : 110.58,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 111,
+          "start" : 110.76,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 111.18,
+          "start" : 111,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 111.48,
+          "start" : 111.18,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 111.66,
+          "start" : 111.48,
+          "text" : "putting"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 111.84,
+          "start" : 111.66,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 112.02,
+          "start" : 111.84,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 112.14,
+          "start" : 112.02,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 112.86,
+          "start" : 112.14,
+          "text" : "fridge"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 113.1,
+          "start" : 112.86,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.915,
+          "end" : 113.34,
+          "start" : 113.1,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.95,
+          "end" : 113.52,
+          "start" : 113.34,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.524,
+          "end" : 114.18,
+          "start" : 113.52,
+          "text" : "Celsius,"
+        },
+        {
+          "confidence" : 0.271,
+          "end" : 114.72,
+          "start" : 114.18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 114.9,
+          "start" : 114.72,
+          "text" : "ready"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 115.14,
+          "start" : 114.9,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 115.74,
+          "start" : 115.14,
+          "text" : "detachment"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 116.04,
+          "start" : 115.74,
+          "text" : "tomorrow"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 116.46,
+          "start" : 116.04,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 117.18,
+          "start" : 116.46,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 118.26,
+          "start" : 117.18,
+          "text" : "homogenization"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 118.5,
+          "start" : 118.26,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 118.68,
+          "start" : 118.5,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 119.28,
+          "start" : 118.68,
+          "text" : "imaging."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Today, we'll be preparing uh 6 types of shows with 2 micrometer beat samples for imaging tomorrow. What we're gonna be doing is describing the methods. So 1st I will be making a one to 100 stock solution using 2 micrometer now red beads. And then I'll be pipetting those on top of a cover slip, which is present in each 6 wells of the 6 well plate. And on top of the cover slip will be a silicone ring in which inside the ring, the beat sample stock solution will be pipe added into. Then we'll be preparing the activated gel solution. And this works by taking a solution A and solution G from the fridge, by pinning 500 microliters of solution G to an empty 2 milliliter, um, Eppendorf tube, then pipe ending 600 microliters of solution A into the provided activation tube and vortexing it to make the activation buffer. Then we pipe it 25 microliters of the activation buffer to the 500 microliters of solution G to make the activated geling solution. Now, this gelling solution is not stable and should be used within 15 minutes before, um, premature gelling happens. Um, and therefore, uh, once that once that's prepared, we will take the activated gel solution and pour it into the, each of the 6 silicone rings inside the 6 wall plate. And then to ensure that the activated gelling solution soaks into the beat sample and the beat sample is fully cast into the activated gelling solution, will be putting it in 15 minutes in 4 degrees Celsius. Uh, and then from there, we're going to be doing the geling process, which involves putting it in 37 degrees Celsius for 2 hours in an incubator, uh, with a Kim white present in each of the wells of the 6 wall plate. And then after that, taking it out and putting it in the fridge at 4 degrees Celsius, uh, ready for detachment tomorrow and for homogenization and then imaging."
+}

@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 13,
+      "entryDate" : "2026-11-10",
+      "id" : "B97A41C6-E231-4E9E-B189-41B0FD9BC2C6",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 3,
+        "voice" : 13
+      },
+      "title" : "10 Nov 2026: Magnify Gels Preparation  ",
+      "totalAudioSeconds" : 484.02197916666665
+    }
+  ],
+  "exportedAt" : "2026-11-10T17:35:47-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 26.5.2",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

@@ -1,0 +1,550 @@
+{
+  "clipId" : "5C7ECEBF-056C-417F-91A9-7010DCAFF2FF",
+  "createdAt" : "2026-11-16T16:17:17-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9403571428571428,
+      "end" : 8.4,
+      "start" : 0,
+      "text" : "The diameter of roughly the exposed hydro gel is 24 millimeters wide in diameter.",
+      "words" : [
+        {
+          "confidence" : 0.819,
+          "end" : 1.08,
+          "start" : 0,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.948,
+          "end" : 1.56,
+          "start" : 1.08,
+          "text" : "diameter"
+        },
+        {
+          "confidence" : 0.849,
+          "end" : 1.74,
+          "start" : 1.56,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.04,
+          "start" : 1.74,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 2.22,
+          "start" : 2.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.52,
+          "start" : 2.22,
+          "text" : "exposed"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 2.94,
+          "start" : 2.52,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.771,
+          "end" : 3.24,
+          "start" : 2.94,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 3.42,
+          "start" : 3.24,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.954,
+          "end" : 4.98,
+          "start" : 3.42,
+          "text" : "24"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 6.84,
+          "start" : 4.98,
+          "text" : "millimeters"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.2,
+          "start" : 6.84,
+          "text" : "wide"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 7.8,
+          "start" : 7.2,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.897,
+          "end" : 8.34,
+          "start" : 7.8,
+          "text" : "diameter."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8881666666666667,
+      "end" : 10.74,
+      "start" : 8.4,
+      "text" : "The diameter of the exposed hydrogen.",
+      "words" : [
+        {
+          "confidence" : 0.5,
+          "end" : 9.06,
+          "start" : 8.4,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.42,
+          "start" : 9.06,
+          "text" : "diameter"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.6,
+          "start" : 9.42,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.72,
+          "start" : 9.6,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 9.96,
+          "start" : 9.72,
+          "text" : "exposed"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 10.68,
+          "start" : 9.96,
+          "text" : "hydrogen."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7822777777777777,
+      "end" : 23.82,
+      "start" : 10.74,
+      "text" : "The 2nd one is 23.64 millimeters wide, and the diameter of the unexposed Hyjazelle is 22.6 millimeters wide.",
+      "words" : [
+        {
+          "confidence" : 0.576,
+          "end" : 10.86,
+          "start" : 10.74,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 11.04,
+          "start" : 10.86,
+          "text" : "2nd"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.16,
+          "start" : 11.04,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.58,
+          "start" : 11.16,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.895,
+          "end" : 14.28,
+          "start" : 11.58,
+          "text" : "23.64"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 15.06,
+          "start" : 14.28,
+          "text" : "millimeters"
+        },
+        {
+          "confidence" : 0.701,
+          "end" : 15.48,
+          "start" : 15.06,
+          "text" : "wide,"
+        },
+        {
+          "confidence" : 0.635,
+          "end" : 16.32,
+          "start" : 15.48,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 16.5,
+          "start" : 16.32,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.92,
+          "start" : 16.5,
+          "text" : "diameter"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 17.16,
+          "start" : 16.92,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 17.28,
+          "start" : 17.16,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 18.12,
+          "start" : 17.28,
+          "text" : "unexposed"
+        },
+        {
+          "confidence" : 0.186,
+          "end" : 18.72,
+          "start" : 18.12,
+          "text" : "Hyjazelle"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 19.5,
+          "start" : 18.72,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.797,
+          "end" : 22.2,
+          "start" : 19.5,
+          "text" : "22.6"
+        },
+        {
+          "confidence" : 0.005,
+          "end" : 23.4,
+          "start" : 22.2,
+          "text" : "millimeters"
+        },
+        {
+          "confidence" : 0.468,
+          "end" : 23.76,
+          "start" : 23.4,
+          "text" : "wide."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.826153846153846,
+      "end" : 30.54,
+      "start" : 23.88,
+      "text" : "Um, this shows it has expanded, but by far not to 11 X.",
+      "words" : [
+        {
+          "confidence" : 0.27,
+          "end" : 25.32,
+          "start" : 23.88,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.233,
+          "end" : 25.62,
+          "start" : 25.32,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 25.86,
+          "start" : 25.62,
+          "text" : "shows"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 26.28,
+          "start" : 25.86,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 26.46,
+          "start" : 26.28,
+          "text" : "has"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 27.24,
+          "start" : 26.46,
+          "text" : "expanded,"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 27.96,
+          "start" : 27.24,
+          "text" : "but"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 28.68,
+          "start" : 27.96,
+          "text" : "by"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 28.92,
+          "start" : 28.68,
+          "text" : "far"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 29.28,
+          "start" : 28.92,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 29.46,
+          "start" : 29.28,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 29.76,
+          "start" : 29.46,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.565,
+          "end" : 30.48,
+          "start" : 29.76,
+          "text" : "X."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.77975,
+      "end" : 40.98,
+      "start" : 30.54,
+      "text" : "The thickness of the hydrogen has expanded much more than the, um, the surrounding edges have, um, and compared to the initial mold size.",
+      "words" : [
+        {
+          "confidence" : 0.838,
+          "end" : 30.96,
+          "start" : 30.54,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 31.32,
+          "start" : 30.96,
+          "text" : "thickness"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 31.5,
+          "start" : 31.32,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 31.56,
+          "start" : 31.5,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.742,
+          "end" : 31.98,
+          "start" : 31.56,
+          "text" : "hydrogen"
+        },
+        {
+          "confidence" : 0.703,
+          "end" : 32.22,
+          "start" : 31.98,
+          "text" : "has"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 32.64,
+          "start" : 32.22,
+          "text" : "expanded"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 32.88,
+          "start" : 32.64,
+          "text" : "much"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 33.12,
+          "start" : 32.88,
+          "text" : "more"
+        },
+        {
+          "confidence" : 0.537,
+          "end" : 34.2,
+          "start" : 33.12,
+          "text" : "than"
+        },
+        {
+          "confidence" : 0.349,
+          "end" : 34.92,
+          "start" : 34.2,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.126,
+          "end" : 35.34,
+          "start" : 34.92,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.491,
+          "end" : 35.82,
+          "start" : 35.34,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 36.42,
+          "start" : 35.82,
+          "text" : "surrounding"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 36.78,
+          "start" : 36.42,
+          "text" : "edges"
+        },
+        {
+          "confidence" : 0.539,
+          "end" : 37.32,
+          "start" : 36.78,
+          "text" : "have,"
+        },
+        {
+          "confidence" : 0.111,
+          "end" : 38.76,
+          "start" : 37.32,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.596,
+          "end" : 39,
+          "start" : 38.76,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 39.42,
+          "start" : 39,
+          "text" : "compared"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 39.54,
+          "start" : 39.42,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 39.66,
+          "start" : 39.54,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 40.08,
+          "start" : 39.66,
+          "text" : "initial"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 40.38,
+          "start" : 40.08,
+          "text" : "mold"
+        },
+        {
+          "confidence" : 0.767,
+          "end" : 40.92,
+          "start" : 40.38,
+          "text" : "size."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8994285714285715,
+      "end" : 43.32,
+      "start" : 40.98,
+      "text" : "It would have been roughly 3X expansion.",
+      "words" : [
+        {
+          "confidence" : 0.595,
+          "end" : 41.46,
+          "start" : 40.98,
+          "text" : "It"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 41.58,
+          "start" : 41.46,
+          "text" : "would"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 41.7,
+          "start" : 41.58,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 41.82,
+          "start" : 41.7,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 42.12,
+          "start" : 41.82,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.75,
+          "end" : 42.54,
+          "start" : 42.12,
+          "text" : "3X"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 43.26,
+          "start" : 42.54,
+          "text" : "expansion."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "The diameter of roughly the exposed hydro gel is 24 millimeters wide in diameter. The diameter of the exposed hydrogen. The 2nd one is 23.64 millimeters wide, and the diameter of the unexposed Hyjazelle is 22.6 millimeters wide. Um, this shows it has expanded, but by far not to 11 X. The thickness of the hydrogen has expanded much more than the, um, the surrounding edges have, um, and compared to the initial mold size. It would have been roughly 3X expansion."
+}

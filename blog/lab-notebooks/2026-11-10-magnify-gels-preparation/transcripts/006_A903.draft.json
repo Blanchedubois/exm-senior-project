@@ -1,0 +1,186 @@
+{
+  "clipId" : "A903E649-84D4-4FA4-A78B-BD5F26F1ABF6",
+  "createdAt" : "2026-11-10T15:08:03-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8764642857142855,
+      "end" : 13.8,
+      "start" : 0,
+      "text" : "Just pipe headed, uh, 600 microliters of solution 8 into the activation tube, and I'm vortexing it right now for about 2 minutes to ensure complete uh, dissolution.",
+      "words" : [
+        {
+          "confidence" : 0.961,
+          "end" : 0.42,
+          "start" : 0,
+          "text" : "Just"
+        },
+        {
+          "confidence" : 0.755,
+          "end" : 0.84,
+          "start" : 0.42,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.399,
+          "end" : 1.5,
+          "start" : 0.84,
+          "text" : "headed,"
+        },
+        {
+          "confidence" : 0.371,
+          "end" : 2.4,
+          "start" : 1.5,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.94,
+          "start" : 2.4,
+          "text" : "600"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 3.96,
+          "start" : 2.94,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.943,
+          "end" : 4.56,
+          "start" : 3.96,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 5.04,
+          "start" : 4.56,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.573,
+          "end" : 5.34,
+          "start" : 5.04,
+          "text" : "8"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 5.64,
+          "start" : 5.34,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.82,
+          "start" : 5.64,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 6.24,
+          "start" : 5.82,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.701,
+          "end" : 6.84,
+          "start" : 6.24,
+          "text" : "tube,"
+        },
+        {
+          "confidence" : 0.853,
+          "end" : 7.2,
+          "start" : 6.84,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 7.5,
+          "start" : 7.2,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 8.16,
+          "start" : 7.5,
+          "text" : "vortexing"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.28,
+          "start" : 8.16,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.4,
+          "start" : 8.28,
+          "text" : "right"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.58,
+          "start" : 8.4,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 9.42,
+          "start" : 8.58,
+          "text" : "for"
+        },
+        {
+          "confidence" : 1,
+          "end" : 9.78,
+          "start" : 9.42,
+          "text" : "about"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 10.08,
+          "start" : 9.78,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.32,
+          "start" : 10.08,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.68,
+          "start" : 10.32,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 11.16,
+          "start" : 10.68,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.64,
+          "start" : 11.16,
+          "text" : "complete"
+        },
+        {
+          "confidence" : 0.363,
+          "end" : 12.9,
+          "start" : 11.64,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.941,
+          "end" : 13.68,
+          "start" : 12.9,
+          "text" : "dissolution."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Just pipe headed, uh, 600 microliters of solution 8 into the activation tube, and I'm vortexing it right now for about 2 minutes to ensure complete uh, dissolution."
+}

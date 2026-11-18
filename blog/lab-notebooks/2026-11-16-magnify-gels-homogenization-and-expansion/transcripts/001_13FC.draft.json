@@ -1,0 +1,562 @@
+{
+  "clipId" : "13FCCE7E-886C-44FE-9D37-8AAE5DC61EFA",
+  "createdAt" : "2026-11-16T13:00:42-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8722631578947366,
+      "end" : 15.48,
+      "start" : 0.12,
+      "text" : "Today, I will be, um, taking 2 of the hydrogels and testing them out to see if I can get them to 11X expansion under PBS solution, while the other 4 will be, uh, set for imaging tomorrow.",
+      "words" : [
+        {
+          "confidence" : 0.563,
+          "end" : 1.8,
+          "start" : 0.12,
+          "text" : "Today,"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.92,
+          "start" : 1.8,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 2.1,
+          "start" : 1.92,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.513,
+          "end" : 2.46,
+          "start" : 2.1,
+          "text" : "be,"
+        },
+        {
+          "confidence" : 0.245,
+          "end" : 2.88,
+          "start" : 2.46,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 3.3,
+          "start" : 2.88,
+          "text" : "taking"
+        },
+        {
+          "confidence" : 0.716,
+          "end" : 3.9,
+          "start" : 3.3,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 3.96,
+          "start" : 3.9,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.02,
+          "start" : 3.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.905,
+          "end" : 4.62,
+          "start" : 4.02,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.947,
+          "end" : 5.34,
+          "start" : 4.62,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.36,
+          "start" : 5.34,
+          "text" : "testing"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.54,
+          "start" : 6.36,
+          "text" : "them"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.78,
+          "start" : 6.54,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 7.74,
+          "start" : 6.78,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.8,
+          "start" : 7.74,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 7.98,
+          "start" : 7.8,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 8.04,
+          "start" : 7.98,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 8.16,
+          "start" : 8.04,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.28,
+          "start" : 8.16,
+          "text" : "get"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 8.4,
+          "start" : 8.28,
+          "text" : "them"
+        },
+        {
+          "confidence" : 0.919,
+          "end" : 8.52,
+          "start" : 8.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.503,
+          "end" : 9,
+          "start" : 8.52,
+          "text" : "11X"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 9.48,
+          "start" : 9,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.66,
+          "start" : 9.48,
+          "text" : "under"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 10.14,
+          "start" : 9.66,
+          "text" : "PBS"
+        },
+        {
+          "confidence" : 0.585,
+          "end" : 10.74,
+          "start" : 10.14,
+          "text" : "solution,"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 11.1,
+          "start" : 10.74,
+          "text" : "while"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.28,
+          "start" : 11.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.58,
+          "start" : 11.28,
+          "text" : "other"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 11.7,
+          "start" : 11.58,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 11.94,
+          "start" : 11.7,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.499,
+          "end" : 12.18,
+          "start" : 11.94,
+          "text" : "be,"
+        },
+        {
+          "confidence" : 0.125,
+          "end" : 12.48,
+          "start" : 12.18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.66,
+          "start" : 12.48,
+          "text" : "set"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.9,
+          "start" : 12.66,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.38,
+          "start" : 12.9,
+          "text" : "imaging"
+        },
+        {
+          "confidence" : 0.919,
+          "end" : 15.42,
+          "start" : 13.38,
+          "text" : "tomorrow."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8144444444444444,
+      "end" : 18.24,
+      "start" : 15.48,
+      "text" : "Right now, from the 6 hydrogen as I see.",
+      "words" : [
+        {
+          "confidence" : 0.818,
+          "end" : 15.6,
+          "start" : 15.48,
+          "text" : "Right"
+        },
+        {
+          "confidence" : 0.656,
+          "end" : 16.02,
+          "start" : 15.6,
+          "text" : "now,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 16.5,
+          "start" : 16.02,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 16.68,
+          "start" : 16.5,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 16.92,
+          "start" : 16.68,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.751,
+          "end" : 17.64,
+          "start" : 16.92,
+          "text" : "hydrogen"
+        },
+        {
+          "confidence" : 0.487,
+          "end" : 17.76,
+          "start" : 17.64,
+          "text" : "as"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 17.88,
+          "start" : 17.76,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.645,
+          "end" : 18.18,
+          "start" : 17.88,
+          "text" : "see."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9482439024390243,
+      "end" : 32.88,
+      "start" : 18.24,
+      "text" : "3 of them are still intact, while 2 of them seem to have been pushed out due to maybe an air bubble being present, pushing the hydro gel out, and therefore there's not a complete seal, and it's become completely dried.",
+      "words" : [
+        {
+          "confidence" : 0.768,
+          "end" : 18.78,
+          "start" : 18.24,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.02,
+          "start" : 18.78,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 19.14,
+          "start" : 19.02,
+          "text" : "them"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.44,
+          "start" : 19.14,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.68,
+          "start" : 19.44,
+          "text" : "still"
+        },
+        {
+          "confidence" : 0.78,
+          "end" : 20.58,
+          "start" : 19.68,
+          "text" : "intact,"
+        },
+        {
+          "confidence" : 0.873,
+          "end" : 21.66,
+          "start" : 20.58,
+          "text" : "while"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 21.9,
+          "start" : 21.66,
+          "text" : "2"
+        },
+        {
+          "confidence" : 1,
+          "end" : 22.08,
+          "start" : 21.9,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 22.2,
+          "start" : 22.08,
+          "text" : "them"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 22.56,
+          "start" : 22.2,
+          "text" : "seem"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 22.8,
+          "start" : 22.56,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 23.1,
+          "start" : 22.8,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 23.28,
+          "start" : 23.1,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 23.64,
+          "start" : 23.28,
+          "text" : "pushed"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 23.82,
+          "start" : 23.64,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 25.26,
+          "start" : 23.82,
+          "text" : "due"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 25.56,
+          "start" : 25.26,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 25.98,
+          "start" : 25.56,
+          "text" : "maybe"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 26.22,
+          "start" : 25.98,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 26.4,
+          "start" : 26.22,
+          "text" : "air"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 26.82,
+          "start" : 26.4,
+          "text" : "bubble"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 27.06,
+          "start" : 26.82,
+          "text" : "being"
+        },
+        {
+          "confidence" : 0.796,
+          "end" : 27.48,
+          "start" : 27.06,
+          "text" : "present,"
+        },
+        {
+          "confidence" : 0.767,
+          "end" : 27.84,
+          "start" : 27.48,
+          "text" : "pushing"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 28.02,
+          "start" : 27.84,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 28.38,
+          "start" : 28.02,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.943,
+          "end" : 28.68,
+          "start" : 28.38,
+          "text" : "gel"
+        },
+        {
+          "confidence" : 0.583,
+          "end" : 28.98,
+          "start" : 28.68,
+          "text" : "out,"
+        },
+        {
+          "confidence" : 0.898,
+          "end" : 29.4,
+          "start" : 28.98,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 29.76,
+          "start" : 29.4,
+          "text" : "therefore"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 30.18,
+          "start" : 29.76,
+          "text" : "there's"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 30.3,
+          "start" : 30.18,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 30.48,
+          "start" : 30.3,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 30.84,
+          "start" : 30.48,
+          "text" : "complete"
+        },
+        {
+          "confidence" : 0.676,
+          "end" : 31.32,
+          "start" : 30.84,
+          "text" : "seal,"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 31.44,
+          "start" : 31.32,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.68,
+          "start" : 31.44,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 31.8,
+          "start" : 31.68,
+          "text" : "become"
+        },
+        {
+          "confidence" : 1,
+          "end" : 32.22,
+          "start" : 31.8,
+          "text" : "completely"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 32.76,
+          "start" : 32.22,
+          "text" : "dried."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Today, I will be, um, taking 2 of the hydrogels and testing them out to see if I can get them to 11X expansion under PBS solution, while the other 4 will be, uh, set for imaging tomorrow. Right now, from the 6 hydrogen as I see. 3 of them are still intact, while 2 of them seem to have been pushed out due to maybe an air bubble being present, pushing the hydro gel out, and therefore there's not a complete seal, and it's become completely dried."
+}

@@ -1,0 +1,164 @@
+{
+  "clipId" : "B0B11653-6AC8-47AB-BE65-010BA51F33D2",
+  "createdAt" : "2026-11-16T16:10:07-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9167692307692307,
+      "end" : 5.28,
+      "start" : 0.36,
+      "text" : "The gels seem to be expanding a bit more with the DINIS water.",
+      "words" : [
+        {
+          "confidence" : 0.994,
+          "end" : 1.62,
+          "start" : 0.36,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.833,
+          "end" : 2.04,
+          "start" : 1.62,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.888,
+          "end" : 2.34,
+          "start" : 2.04,
+          "text" : "seem"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 2.52,
+          "start" : 2.34,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.58,
+          "start" : 2.52,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.12,
+          "start" : 2.58,
+          "text" : "expanding"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 3.42,
+          "start" : 3.12,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.54,
+          "start" : 3.42,
+          "text" : "bit"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.9,
+          "start" : 3.54,
+          "text" : "more"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 4.02,
+          "start" : 3.9,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 4.14,
+          "start" : 4.02,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.52,
+          "end" : 4.74,
+          "start" : 4.14,
+          "text" : "DINIS"
+        },
+        {
+          "confidence" : 0.737,
+          "end" : 5.22,
+          "start" : 4.74,
+          "text" : "water."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8756,
+      "end" : 8.76,
+      "start" : 5.28,
+      "text" : "Um, should have maybe gone to the step much earlier.",
+      "words" : [
+        {
+          "confidence" : 0.331,
+          "end" : 6.18,
+          "start" : 5.28,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.832,
+          "end" : 6.78,
+          "start" : 6.18,
+          "text" : "should"
+        },
+        {
+          "confidence" : 0.764,
+          "end" : 7.02,
+          "start" : 6.78,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 7.38,
+          "start" : 7.02,
+          "text" : "maybe"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.74,
+          "start" : 7.38,
+          "text" : "gone"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 7.92,
+          "start" : 7.74,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.863,
+          "end" : 8.04,
+          "start" : 7.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 8.16,
+          "start" : 8.04,
+          "text" : "step"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.4,
+          "start" : 8.16,
+          "text" : "much"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 8.7,
+          "start" : 8.4,
+          "text" : "earlier."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "The gels seem to be expanding a bit more with the DINIS water. Um, should have maybe gone to the step much earlier."
+}

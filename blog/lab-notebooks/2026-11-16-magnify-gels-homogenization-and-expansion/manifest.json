@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 25,
+      "entryDate" : "2026-11-16",
+      "id" : "8A0FA2A1-52B9-41C5-84F6-6EC378C96167",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 16,
+        "voice" : 23
+      },
+      "title" : "16 Nov 2026",
+      "totalAudioSeconds" : 500.5247708333333
+    }
+  ],
+  "exportedAt" : "2026-11-16T16:26:34-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 26.5.2",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

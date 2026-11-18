@@ -1,0 +1,296 @@
+{
+  "clipId" : "FBF86949-7BB8-4A50-B0C6-1951951F78A8",
+  "createdAt" : "2026-11-10T15:27:18-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8821999999999999,
+      "end" : 4.56,
+      "start" : 0,
+      "text" : "Right now, I've set the incubator at 37 degrees Celsius.",
+      "words" : [
+        {
+          "confidence" : 0.994,
+          "end" : 1.08,
+          "start" : 0,
+          "text" : "Right"
+        },
+        {
+          "confidence" : 0.6,
+          "end" : 1.38,
+          "start" : 1.08,
+          "text" : "now,"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 1.62,
+          "start" : 1.38,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.804,
+          "end" : 1.74,
+          "start" : 1.62,
+          "text" : "set"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 1.92,
+          "start" : 1.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 2.46,
+          "start" : 1.92,
+          "text" : "incubator"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 2.88,
+          "start" : 2.46,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 3.42,
+          "start" : 2.88,
+          "text" : "37"
+        },
+        {
+          "confidence" : 0.902,
+          "end" : 3.6,
+          "start" : 3.42,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.639,
+          "end" : 4.5,
+          "start" : 3.6,
+          "text" : "Celsius."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7748857142857143,
+      "end" : 20.28,
+      "start" : 4.56,
+      "text" : "Uh, I'm now cleaning uh, the desk and the table, uh, putting the pipets back, uh, uh, and getting ready for uh, the curing process, um, which will take 2 hours uh, in the incubator.",
+      "words" : [
+        {
+          "confidence" : 0.262,
+          "end" : 5.28,
+          "start" : 4.56,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 5.58,
+          "start" : 5.28,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.7,
+          "start" : 5.58,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 6.06,
+          "start" : 5.7,
+          "text" : "cleaning"
+        },
+        {
+          "confidence" : 0.422,
+          "end" : 7.02,
+          "start" : 6.06,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.9,
+          "end" : 7.8,
+          "start" : 7.02,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.98,
+          "start" : 7.8,
+          "text" : "desk"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 8.46,
+          "start" : 7.98,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 8.64,
+          "start" : 8.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.699,
+          "end" : 9.18,
+          "start" : 8.64,
+          "text" : "table,"
+        },
+        {
+          "confidence" : 0.222,
+          "end" : 9.72,
+          "start" : 9.18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 9.9,
+          "start" : 9.72,
+          "text" : "putting"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 10.08,
+          "start" : 9.9,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.528,
+          "end" : 10.56,
+          "start" : 10.08,
+          "text" : "pipets"
+        },
+        {
+          "confidence" : 0.539,
+          "end" : 11.64,
+          "start" : 10.56,
+          "text" : "back,"
+        },
+        {
+          "confidence" : 0.256,
+          "end" : 11.94,
+          "start" : 11.64,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.204,
+          "end" : 12.36,
+          "start" : 11.94,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 12.72,
+          "start" : 12.36,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.96,
+          "start" : 12.72,
+          "text" : "getting"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.26,
+          "start" : 12.96,
+          "text" : "ready"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.5,
+          "start" : 13.26,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.177,
+          "end" : 14.16,
+          "start" : 13.5,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 14.28,
+          "start" : 14.16,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 14.76,
+          "start" : 14.28,
+          "text" : "curing"
+        },
+        {
+          "confidence" : 0.665,
+          "end" : 15.6,
+          "start" : 14.76,
+          "text" : "process,"
+        },
+        {
+          "confidence" : 0.283,
+          "end" : 16.44,
+          "start" : 15.6,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 16.68,
+          "start" : 16.44,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 16.92,
+          "start" : 16.68,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 17.04,
+          "start" : 16.92,
+          "text" : "take"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.28,
+          "start" : 17.04,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 17.52,
+          "start" : 17.28,
+          "text" : "hours"
+        },
+        {
+          "confidence" : 0.18,
+          "end" : 18.84,
+          "start" : 17.52,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 19.02,
+          "start" : 18.84,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.5,
+          "start" : 19.02,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 20.22,
+          "start" : 19.5,
+          "text" : "incubator."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Right now, I've set the incubator at 37 degrees Celsius. Uh, I'm now cleaning uh, the desk and the table, uh, putting the pipets back, uh, uh, and getting ready for uh, the curing process, um, which will take 2 hours uh, in the incubator."
+}

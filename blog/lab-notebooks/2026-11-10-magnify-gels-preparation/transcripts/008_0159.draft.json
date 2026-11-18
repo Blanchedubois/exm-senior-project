@@ -1,0 +1,410 @@
+{
+  "clipId" : "015929C9-B67E-44AD-9208-7EFDEF773E26",
+  "createdAt" : "2026-11-10T15:17:23-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9215000000000001,
+      "end" : 11.64,
+      "start" : 0.9,
+      "text" : "I'm going to take 2 Eppendorf tubes and put 500 microliters of solution G into each of the Eppendorf tubes, so I can make the other 4 gels.",
+      "words" : [
+        {
+          "confidence" : 0.886,
+          "end" : 2.34,
+          "start" : 0.9,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.558,
+          "end" : 2.4,
+          "start" : 2.34,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.796,
+          "end" : 2.52,
+          "start" : 2.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.64,
+          "start" : 2.52,
+          "text" : "take"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 2.76,
+          "start" : 2.64,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.82,
+          "end" : 3.36,
+          "start" : 2.76,
+          "text" : "Eppendorf"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 3.72,
+          "start" : 3.36,
+          "text" : "tubes"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.96,
+          "start" : 3.72,
+          "text" : "and"
+        },
+        {
+          "confidence" : 1,
+          "end" : 4.08,
+          "start" : 3.96,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.32,
+          "start" : 4.08,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.826,
+          "end" : 5.22,
+          "start" : 4.32,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 5.76,
+          "start" : 5.22,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.91,
+          "end" : 6.24,
+          "start" : 5.76,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 6.54,
+          "start" : 6.24,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 6.84,
+          "start" : 6.54,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.02,
+          "start" : 6.84,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.14,
+          "start" : 7.02,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 7.26,
+          "start" : 7.14,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.731,
+          "end" : 7.92,
+          "start" : 7.26,
+          "text" : "Eppendorf"
+        },
+        {
+          "confidence" : 0.775,
+          "end" : 9,
+          "start" : 7.92,
+          "text" : "tubes,"
+        },
+        {
+          "confidence" : 0.92,
+          "end" : 9.12,
+          "start" : 9,
+          "text" : "so"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.3,
+          "start" : 9.12,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 9.36,
+          "start" : 9.3,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.48,
+          "start" : 9.36,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 9.66,
+          "start" : 9.48,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 10.26,
+          "start" : 9.66,
+          "text" : "other"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 10.56,
+          "start" : 10.26,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.7,
+          "end" : 11.58,
+          "start" : 10.56,
+          "text" : "gels."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8361944444444442,
+      "end" : 26.28,
+      "start" : 11.64,
+      "text" : "And then I'm going to put 25 microliters into each of the Ependorf tubes to make the activate geling solution and put 250 microliters off, uh, uh, into each of the wells that are left, uh,",
+      "words" : [
+        {
+          "confidence" : 0.368,
+          "end" : 12.18,
+          "start" : 11.64,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 12.42,
+          "start" : 12.18,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.78,
+          "start" : 12.42,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.84,
+          "start" : 12.78,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.02,
+          "start" : 12.84,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.14,
+          "start" : 13.02,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 13.74,
+          "start" : 13.14,
+          "text" : "25"
+        },
+        {
+          "confidence" : 0.869,
+          "end" : 15.18,
+          "start" : 13.74,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 15.66,
+          "start" : 15.18,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 15.9,
+          "start" : 15.66,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.02,
+          "start" : 15.9,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.08,
+          "start" : 16.02,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.715,
+          "end" : 16.62,
+          "start" : 16.08,
+          "text" : "Ependorf"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 16.86,
+          "start" : 16.62,
+          "text" : "tubes"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 16.98,
+          "start" : 16.86,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 17.1,
+          "start" : 16.98,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.472,
+          "end" : 17.16,
+          "start" : 17.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 17.46,
+          "start" : 17.16,
+          "text" : "activate"
+        },
+        {
+          "confidence" : 0.575,
+          "end" : 17.76,
+          "start" : 17.46,
+          "text" : "geling"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 18.06,
+          "start" : 17.76,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 18.24,
+          "start" : 18.06,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.42,
+          "start" : 18.24,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 19.14,
+          "start" : 18.42,
+          "text" : "250"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 19.74,
+          "start" : 19.14,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.272,
+          "end" : 20.16,
+          "start" : 19.74,
+          "text" : "off,"
+        },
+        {
+          "confidence" : 0.219,
+          "end" : 21.06,
+          "start" : 20.16,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.131,
+          "end" : 21.96,
+          "start" : 21.06,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 22.14,
+          "start" : 21.96,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 22.44,
+          "start" : 22.14,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 22.74,
+          "start" : 22.44,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 23.4,
+          "start" : 22.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 23.94,
+          "start" : 23.4,
+          "text" : "wells"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 24.54,
+          "start" : 23.94,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 24.72,
+          "start" : 24.54,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.507,
+          "end" : 25.44,
+          "start" : 24.72,
+          "text" : "left,"
+        },
+        {
+          "confidence" : 0.247,
+          "end" : 26.1,
+          "start" : 25.44,
+          "text" : "uh,"
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I'm going to take 2 Eppendorf tubes and put 500 microliters of solution G into each of the Eppendorf tubes, so I can make the other 4 gels. And then I'm going to put 25 microliters into each of the Ependorf tubes to make the activate geling solution and put 250 microliters off, uh, uh, into each of the wells that are left, uh,"
+}

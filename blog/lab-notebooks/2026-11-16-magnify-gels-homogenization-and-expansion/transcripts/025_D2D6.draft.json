@@ -1,0 +1,162 @@
+{
+  "clipId" : "D2D66AEA-A957-4F47-83CE-AA8531E5CF39",
+  "createdAt" : "2026-11-16T16:20:24-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9296666666666665,
+      "end" : 7.98,
+      "start" : 0,
+      "text" : "Important to do is to do some research on what could be inhibiting the ability for the hydrogen to swallow up to 11 X.",
+      "words" : [
+        {
+          "confidence" : 0.65,
+          "end" : 1.8,
+          "start" : 0.24,
+          "text" : "Important"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.98,
+          "start" : 1.8,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 2.1,
+          "start" : 1.98,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 2.4,
+          "start" : 2.1,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 2.64,
+          "start" : 2.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.76,
+          "start" : 2.64,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 2.94,
+          "start" : 2.76,
+          "text" : "some"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.3,
+          "start" : 2.94,
+          "text" : "research"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 3.9,
+          "start" : 3.3,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 4.14,
+          "start" : 3.9,
+          "text" : "what"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 4.38,
+          "start" : 4.14,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 4.56,
+          "start" : 4.38,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 5.1,
+          "start" : 4.56,
+          "text" : "inhibiting"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 5.28,
+          "start" : 5.1,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.64,
+          "start" : 5.28,
+          "text" : "ability"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 5.82,
+          "start" : 5.64,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 5.94,
+          "start" : 5.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.777,
+          "end" : 6.48,
+          "start" : 5.94,
+          "text" : "hydrogen"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 6.66,
+          "start" : 6.48,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.805,
+          "end" : 6.9,
+          "start" : 6.66,
+          "text" : "swallow"
+        },
+        {
+          "confidence" : 0.923,
+          "end" : 6.96,
+          "start" : 6.9,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 7.08,
+          "start" : 6.96,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.624,
+          "end" : 7.2,
+          "start" : 7.08,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.7,
+          "end" : 7.92,
+          "start" : 7.2,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Important to do is to do some research on what could be inhibiting the ability for the hydrogen to swallow up to 11 X."
+}
