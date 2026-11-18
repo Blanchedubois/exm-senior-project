@@ -1,6 +1,6 @@
 # Reorganisation plan: one public showcase repo
 
-Status: proposal (Phase 1). Nothing has been moved yet.
+Status: Phase 2 done (2026-11-18). Files are in the new layout on branch `public`; Phase 3 (READMEs) and Phase 4 (public GitHub repo) remain.
 
 ## Recommendation in one paragraph
 
@@ -28,7 +28,7 @@ exm-senior-project/
 │                              methodology and approach, status, links to everything below
 ├── docs/
 │   ├── proposal/              <- proposal/ (LaTeX source, PDF, figures)
-│   ├── presentations/         <- Subgroup presentations (PDF exports of the pptx)
+│   ├── presentations/         <- Subgroup presentations (pptx as given, plus the one PDF; no converter on this Mac)
 │   ├── weekly-reports/        <- Weekly reports (PDF)
 │   └── reports/               <- pipeline_derivation.pdf, Iris maths PDF, etc.
 ├── blog/                      <- blog/ (posts + images), unchanged
