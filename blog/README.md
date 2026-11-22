@@ -4,6 +4,8 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-11-20 | [Casting Magnify tissue-kit gels with the kit's own spacers: four thin gels ready to expand](2026-11-20-magnify-tissue-kit-gels-thin-spacers.md) |
+| 2026-11-19 | [A de-ionised water expansion that never happened: the last three gels had dried out](2026-11-19-magnify-di-water-attempt-gels-dried.md) |
 | 2026-11-19 | [In-progress report: a five-minute update on the project (slides)](2026-11-19-in-progress-report-presentation.md) |
 | 2026-11-17 | [Second Magnify bead-gel batch: a coverslip sandwich, and the gels still grew only about 1.2× in PBS and water](2026-11-17-magnify-second-batch-coverslip-sandwich.md) |
 | 2026-11-09 | [Testing the Magnify kit with bead gels: the "11×" gels expanded about 1.2–2.4×](2026-11-09-magnify-kit-bead-gels.md) |

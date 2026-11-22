@@ -1,0 +1,1264 @@
+{
+  "clipId" : "0659DC79-3A37-407A-BC1F-80D26F693A61",
+  "createdAt" : "2026-11-20T14:13:52-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8108604651162792,
+      "end" : 30.72,
+      "start" : 1.68,
+      "text" : "Today I'll be preparing roughly 6 hydrogels for the uh, uh, magnify, uh, freshly preserved tissues kit, uh, and the rough overview will be kicking out solution A and solution G from the fridge, type hitting 500 microliters of solution G into an empty, uh, 2 millilitre Eppendorf tube, then pipetting 600 microliters of solution A into an, uh, the provided activation tube, and Vork texting it to make the activation buffer, then pipetting 25 microliters of the activation buffer to the 500 microliters of solution",
+      "words" : [
+        {
+          "confidence" : 0.996,
+          "end" : 1.98,
+          "start" : 1.68,
+          "text" : "Today"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 2.46,
+          "start" : 1.98,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 2.52,
+          "start" : 2.46,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.88,
+          "start" : 2.52,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 4.02,
+          "start" : 2.88,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 4.44,
+          "start" : 4.02,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.783,
+          "end" : 5.64,
+          "start" : 4.44,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.06,
+          "start" : 5.64,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 6.42,
+          "start" : 6.06,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.301,
+          "end" : 7.08,
+          "start" : 6.42,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.232,
+          "end" : 7.5,
+          "start" : 7.08,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.729,
+          "end" : 8.4,
+          "start" : 7.5,
+          "text" : "magnify,"
+        },
+        {
+          "confidence" : 0.326,
+          "end" : 8.7,
+          "start" : 8.4,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 9.18,
+          "start" : 8.7,
+          "text" : "freshly"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 9.66,
+          "start" : 9.18,
+          "text" : "preserved"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 9.96,
+          "start" : 9.66,
+          "text" : "tissues"
+        },
+        {
+          "confidence" : 0.674,
+          "end" : 10.62,
+          "start" : 9.96,
+          "text" : "kit,"
+        },
+        {
+          "confidence" : 0.264,
+          "end" : 11.22,
+          "start" : 10.62,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.921,
+          "end" : 11.34,
+          "start" : 11.22,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 11.58,
+          "start" : 11.34,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 11.76,
+          "start" : 11.58,
+          "text" : "rough"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 12.18,
+          "start" : 11.76,
+          "text" : "overview"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 12.42,
+          "start" : 12.18,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 12.6,
+          "start" : 12.42,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.696,
+          "end" : 12.84,
+          "start" : 12.6,
+          "text" : "kicking"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 12.96,
+          "start" : 12.84,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 13.26,
+          "start" : 12.96,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 13.56,
+          "start" : 13.26,
+          "text" : "A"
+        },
+        {
+          "confidence" : 0.79,
+          "end" : 13.8,
+          "start" : 13.56,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.941,
+          "end" : 14.04,
+          "start" : 13.8,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 14.22,
+          "start" : 14.04,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 14.46,
+          "start" : 14.22,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 14.58,
+          "start" : 14.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.746,
+          "end" : 14.94,
+          "start" : 14.58,
+          "text" : "fridge,"
+        },
+        {
+          "confidence" : 0.321,
+          "end" : 15.18,
+          "start" : 14.94,
+          "text" : "type"
+        },
+        {
+          "confidence" : 0.78,
+          "end" : 15.54,
+          "start" : 15.18,
+          "text" : "hitting"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 15.78,
+          "start" : 15.54,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.884,
+          "end" : 16.5,
+          "start" : 15.78,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.7,
+          "end" : 16.68,
+          "start" : 16.5,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 16.92,
+          "start" : 16.68,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 17.1,
+          "start" : 16.92,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 17.4,
+          "start" : 17.1,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 17.58,
+          "start" : 17.4,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.667,
+          "end" : 18,
+          "start" : 17.58,
+          "text" : "empty,"
+        },
+        {
+          "confidence" : 0.243,
+          "end" : 18.18,
+          "start" : 18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.575,
+          "end" : 18.3,
+          "start" : 18.18,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.178,
+          "end" : 18.72,
+          "start" : 18.3,
+          "text" : "millilitre"
+        },
+        {
+          "confidence" : 0.817,
+          "end" : 19.32,
+          "start" : 18.72,
+          "text" : "Eppendorf"
+        },
+        {
+          "confidence" : 0.695,
+          "end" : 19.68,
+          "start" : 19.32,
+          "text" : "tube,"
+        },
+        {
+          "confidence" : 0.694,
+          "end" : 20.04,
+          "start" : 19.68,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.638,
+          "end" : 20.64,
+          "start" : 20.04,
+          "text" : "pipetting"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 21.12,
+          "start" : 20.64,
+          "text" : "600"
+        },
+        {
+          "confidence" : 0.804,
+          "end" : 21.78,
+          "start" : 21.12,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 21.9,
+          "start" : 21.78,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 22.14,
+          "start" : 21.9,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.806,
+          "end" : 22.32,
+          "start" : 22.14,
+          "text" : "A"
+        },
+        {
+          "confidence" : 0.629,
+          "end" : 22.56,
+          "start" : 22.32,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.124,
+          "end" : 22.92,
+          "start" : 22.56,
+          "text" : "an,"
+        },
+        {
+          "confidence" : 0.225,
+          "end" : 23.04,
+          "start" : 22.92,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 23.16,
+          "start" : 23.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 23.46,
+          "start" : 23.16,
+          "text" : "provided"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 23.88,
+          "start" : 23.46,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.706,
+          "end" : 24.24,
+          "start" : 23.88,
+          "text" : "tube,"
+        },
+        {
+          "confidence" : 0.922,
+          "end" : 24.54,
+          "start" : 24.24,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.713,
+          "end" : 24.84,
+          "start" : 24.54,
+          "text" : "Vork"
+        },
+        {
+          "confidence" : 0.356,
+          "end" : 25.32,
+          "start" : 24.84,
+          "text" : "texting"
+        },
+        {
+          "confidence" : 0.604,
+          "end" : 25.44,
+          "start" : 25.32,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 25.56,
+          "start" : 25.44,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 25.62,
+          "start" : 25.56,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 25.74,
+          "start" : 25.62,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 26.04,
+          "start" : 25.74,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.82,
+          "end" : 26.94,
+          "start" : 26.04,
+          "text" : "buffer,"
+        },
+        {
+          "confidence" : 0.767,
+          "end" : 27.06,
+          "start" : 26.94,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.7,
+          "end" : 27.54,
+          "start" : 27.06,
+          "text" : "pipetting"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 27.84,
+          "start" : 27.54,
+          "text" : "25"
+        },
+        {
+          "confidence" : 0.79,
+          "end" : 28.32,
+          "start" : 27.84,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.961,
+          "end" : 28.44,
+          "start" : 28.32,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.86,
+          "end" : 28.56,
+          "start" : 28.44,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 28.86,
+          "start" : 28.56,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 29.16,
+          "start" : 28.86,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 29.28,
+          "start" : 29.16,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 29.4,
+          "start" : 29.28,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 29.52,
+          "start" : 29.4,
+          "text" : "500"
+        },
+        {
+          "confidence" : 0.851,
+          "end" : 30.3,
+          "start" : 29.52,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 30.42,
+          "start" : 30.3,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.498,
+          "end" : 30.72,
+          "start" : 30.42,
+          "text" : "solution"
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9394705882352942,
+      "end" : 36.36,
+      "start" : 30.72,
+      "text" : "G to make the activated gelling solution, and I have roughly 15 minutes before premature gelling happens.",
+      "words" : [
+        {
+          "confidence" : 0.989,
+          "end" : 31.02,
+          "start" : 30.72,
+          "text" : "G"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 31.74,
+          "start" : 31.02,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 31.92,
+          "start" : 31.74,
+          "text" : "make"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 32.04,
+          "start" : 31.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 32.46,
+          "start" : 32.04,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.805,
+          "end" : 32.88,
+          "start" : 32.46,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.708,
+          "end" : 33.42,
+          "start" : 32.88,
+          "text" : "solution,"
+        },
+        {
+          "confidence" : 0.817,
+          "end" : 33.72,
+          "start" : 33.42,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 33.84,
+          "start" : 33.72,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 33.96,
+          "start" : 33.84,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 34.32,
+          "start" : 33.96,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.967,
+          "end" : 34.62,
+          "start" : 34.32,
+          "text" : "15"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 34.8,
+          "start" : 34.62,
+          "text" : "minutes"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 35.04,
+          "start" : 34.8,
+          "text" : "before"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 35.58,
+          "start" : 35.04,
+          "text" : "premature"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 36,
+          "start" : 35.58,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.834,
+          "end" : 36.3,
+          "start" : 36,
+          "text" : "happens."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8343953488372092,
+      "end" : 52.44,
+      "start" : 36.6,
+      "text" : "Now I'm pipetting, um, the activated gelling solution into a cover sip with a silicone ring, uh, and sandwiching it with another cover slip, and then incubating it for 37 uh, uh, degree Celsius for 2 hours or 45 degrees Celsius for one.",
+      "words" : [
+        {
+          "confidence" : 0.383,
+          "end" : 36.9,
+          "start" : 36.6,
+          "text" : "Now"
+        },
+        {
+          "confidence" : 0.885,
+          "end" : 37.2,
+          "start" : 36.9,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.461,
+          "end" : 37.8,
+          "start" : 37.2,
+          "text" : "pipetting,"
+        },
+        {
+          "confidence" : 0.199,
+          "end" : 38.58,
+          "start" : 37.8,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 38.76,
+          "start" : 38.58,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 39.18,
+          "start" : 38.76,
+          "text" : "activated"
+        },
+        {
+          "confidence" : 0.669,
+          "end" : 39.54,
+          "start" : 39.18,
+          "text" : "gelling"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 39.84,
+          "start" : 39.54,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 40.08,
+          "start" : 39.84,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 40.26,
+          "start" : 40.08,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 40.44,
+          "start" : 40.26,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 40.86,
+          "start" : 40.44,
+          "text" : "sip"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 41.04,
+          "start" : 40.86,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 41.22,
+          "start" : 41.04,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 41.76,
+          "start" : 41.22,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.534,
+          "end" : 42.18,
+          "start" : 41.76,
+          "text" : "ring,"
+        },
+        {
+          "confidence" : 0.238,
+          "end" : 42.96,
+          "start" : 42.18,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.929,
+          "end" : 43.14,
+          "start" : 42.96,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 43.92,
+          "start" : 43.14,
+          "text" : "sandwiching"
+        },
+        {
+          "confidence" : 0.846,
+          "end" : 44.4,
+          "start" : 43.92,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 44.7,
+          "start" : 44.4,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 45,
+          "start" : 44.7,
+          "text" : "another"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 45.54,
+          "start" : 45,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.691,
+          "end" : 46.14,
+          "start" : 45.54,
+          "text" : "slip,"
+        },
+        {
+          "confidence" : 0.929,
+          "end" : 46.38,
+          "start" : 46.14,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 46.56,
+          "start" : 46.38,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 47.22,
+          "start" : 46.56,
+          "text" : "incubating"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 47.4,
+          "start" : 47.22,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 47.7,
+          "start" : 47.4,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 48.36,
+          "start" : 47.7,
+          "text" : "37"
+        },
+        {
+          "confidence" : 0.016,
+          "end" : 48.84,
+          "start" : 48.36,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.23,
+          "end" : 49.08,
+          "start" : 48.84,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.873,
+          "end" : 49.38,
+          "start" : 49.08,
+          "text" : "degree"
+        },
+        {
+          "confidence" : 0.769,
+          "end" : 49.62,
+          "start" : 49.38,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 50.1,
+          "start" : 49.62,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 50.22,
+          "start" : 50.1,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 50.34,
+          "start" : 50.22,
+          "text" : "hours"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 50.64,
+          "start" : 50.34,
+          "text" : "or"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 51.18,
+          "start" : 50.64,
+          "text" : "45"
+        },
+        {
+          "confidence" : 0.89,
+          "end" : 51.42,
+          "start" : 51.18,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 51.66,
+          "start" : 51.42,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 52.08,
+          "start" : 51.66,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.749,
+          "end" : 52.32,
+          "start" : 52.08,
+          "text" : "one."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7210000000000001,
+      "end" : 52.86,
+      "start" : 52.44,
+      "text" : "5 hours.",
+      "words" : [
+        {
+          "confidence" : 0.642,
+          "end" : 52.5,
+          "start" : 52.44,
+          "text" : "5"
+        },
+        {
+          "confidence" : 0.8,
+          "end" : 52.8,
+          "start" : 52.5,
+          "text" : "hours."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.86005,
+      "end" : 58.5,
+      "start" : 53.22,
+      "text" : "Um, and it's critical to ensure that the plastic sheet cover does not drift as it can introduce air bubbles.",
+      "words" : [
+        {
+          "confidence" : 0.153,
+          "end" : 53.88,
+          "start" : 53.22,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.733,
+          "end" : 54,
+          "start" : 53.88,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 54.3,
+          "start" : 54,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 54.54,
+          "start" : 54.3,
+          "text" : "critical"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 54.72,
+          "start" : 54.54,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 55.02,
+          "start" : 54.72,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.425,
+          "end" : 55.14,
+          "start" : 55.02,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 55.26,
+          "start" : 55.14,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 55.44,
+          "start" : 55.26,
+          "text" : "plastic"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 55.74,
+          "start" : 55.44,
+          "text" : "sheet"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 55.92,
+          "start" : 55.74,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 56.46,
+          "start" : 55.92,
+          "text" : "does"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 56.64,
+          "start" : 56.46,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 56.94,
+          "start" : 56.64,
+          "text" : "drift"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 57.12,
+          "start" : 56.94,
+          "text" : "as"
+        },
+        {
+          "confidence" : 0.316,
+          "end" : 57.24,
+          "start" : 57.12,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 57.36,
+          "start" : 57.24,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 57.66,
+          "start" : 57.36,
+          "text" : "introduce"
+        },
+        {
+          "confidence" : 0.948,
+          "end" : 57.9,
+          "start" : 57.66,
+          "text" : "air"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 58.44,
+          "start" : 57.9,
+          "text" : "bubbles."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7959393939393938,
+      "end" : 68.94,
+      "start" : 58.5,
+      "text" : "Uh, and uh, I'll leave it after that in the fridge at 40 degrees Celsius, uh, until Monday to start jello detachment and see if I can expand it to, um, 11 X.",
+      "words" : [
+        {
+          "confidence" : 0.09,
+          "end" : 58.98,
+          "start" : 58.5,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.855,
+          "end" : 59.16,
+          "start" : 58.98,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.101,
+          "end" : 59.64,
+          "start" : 59.16,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 59.88,
+          "start" : 59.64,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 60,
+          "start" : 59.88,
+          "text" : "leave"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 60.12,
+          "start" : 60,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 60.36,
+          "start" : 60.12,
+          "text" : "after"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 60.54,
+          "start" : 60.36,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 60.84,
+          "start" : 60.54,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 60.96,
+          "start" : 60.84,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 61.2,
+          "start" : 60.96,
+          "text" : "fridge"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 61.62,
+          "start" : 61.2,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.554,
+          "end" : 61.86,
+          "start" : 61.62,
+          "text" : "40"
+        },
+        {
+          "confidence" : 0.441,
+          "end" : 62.22,
+          "start" : 61.86,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.465,
+          "end" : 62.88,
+          "start" : 62.22,
+          "text" : "Celsius,"
+        },
+        {
+          "confidence" : 0.177,
+          "end" : 63.42,
+          "start" : 62.88,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 63.6,
+          "start" : 63.42,
+          "text" : "until"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 64.02,
+          "start" : 63.6,
+          "text" : "Monday"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 64.62,
+          "start" : 64.02,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 64.8,
+          "start" : 64.62,
+          "text" : "start"
+        },
+        {
+          "confidence" : 0.345,
+          "end" : 65.46,
+          "start" : 64.8,
+          "text" : "jello"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 65.82,
+          "start" : 65.46,
+          "text" : "detachment"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 66,
+          "start" : 65.82,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 66.12,
+          "start" : 66,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 66.3,
+          "start" : 66.12,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.876,
+          "end" : 66.36,
+          "start" : 66.3,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 66.48,
+          "start" : 66.36,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 66.72,
+          "start" : 66.48,
+          "text" : "expand"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 66.9,
+          "start" : 66.72,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.496,
+          "end" : 67.2,
+          "start" : 66.9,
+          "text" : "to,"
+        },
+        {
+          "confidence" : 0.392,
+          "end" : 68.1,
+          "start" : 67.2,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 68.4,
+          "start" : 68.1,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.644,
+          "end" : 68.82,
+          "start" : 68.4,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Today I'll be preparing roughly 6 hydrogels for the uh, uh, magnify, uh, freshly preserved tissues kit, uh, and the rough overview will be kicking out solution A and solution G from the fridge, type hitting 500 microliters of solution G into an empty, uh, 2 millilitre Eppendorf tube, then pipetting 600 microliters of solution A into an, uh, the provided activation tube, and Vork texting it to make the activation buffer, then pipetting 25 microliters of the activation buffer to the 500 microliters of solution G to make the activated gelling solution, and I have roughly 15 minutes before premature gelling happens. Now I'm pipetting, um, the activated gelling solution into a cover sip with a silicone ring, uh, and sandwiching it with another cover slip, and then incubating it for 37 uh, uh, degree Celsius for 2 hours or 45 degrees Celsius for one. 5 hours. Um, and it's critical to ensure that the plastic sheet cover does not drift as it can introduce air bubbles. Uh, and uh, I'll leave it after that in the fridge at 40 degrees Celsius, uh, until Monday to start jello detachment and see if I can expand it to, um, 11 X."
+}

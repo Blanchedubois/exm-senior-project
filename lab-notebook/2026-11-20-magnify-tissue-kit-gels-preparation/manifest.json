@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 7,
+      "entryDate" : "2026-11-20",
+      "id" : "F3ECB306-09CC-4C1F-B5CF-1513C3980305",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 3,
+        "voice" : 7
+      },
+      "title" : "20 Nov 2026: Preparing Tissue Magnify Kit Hydrogels",
+      "totalAudioSeconds" : 205.76487500000002
+    }
+  ],
+  "exportedAt" : "2026-11-22T18:00:21-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 27.2.1",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

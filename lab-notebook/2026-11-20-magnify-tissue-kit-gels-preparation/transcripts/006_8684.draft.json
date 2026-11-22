@@ -1,0 +1,108 @@
+{
+  "clipId" : "86846316-39E3-43DA-A87A-B4BFFFFF12DE",
+  "createdAt" : "2026-11-20T16:35:53-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9307333333333335,
+      "end" : 5.46,
+      "start" : 0.6,
+      "text" : "I take the gels out of the incubator, and I put it in the fridge.",
+      "words" : [
+        {
+          "confidence" : 0.894,
+          "end" : 0.9,
+          "start" : 0.6,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 1.14,
+          "start" : 0.9,
+          "text" : "take"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 1.32,
+          "start" : 1.14,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 1.56,
+          "start" : 1.32,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 1.8,
+          "start" : 1.56,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 1.92,
+          "start" : 1.8,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 2.04,
+          "start" : 1.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.771,
+          "end" : 3,
+          "start" : 2.04,
+          "text" : "incubator,"
+        },
+        {
+          "confidence" : 0.896,
+          "end" : 4.08,
+          "start" : 3,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 4.2,
+          "start" : 4.08,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.32,
+          "start" : 4.2,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.44,
+          "start" : 4.32,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.682,
+          "end" : 4.56,
+          "start" : 4.44,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.68,
+          "start" : 4.56,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.948,
+          "end" : 5.34,
+          "start" : 4.68,
+          "text" : "fridge."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I take the gels out of the incubator, and I put it in the fridge."
+}

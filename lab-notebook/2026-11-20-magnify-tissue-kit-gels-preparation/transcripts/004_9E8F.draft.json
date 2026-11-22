@@ -1,0 +1,778 @@
+{
+  "clipId" : "9E8F85B9-16A1-4F42-B25F-F1A42BF74631",
+  "createdAt" : "2026-11-20T14:36:27-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.76625,
+      "end" : 12.84,
+      "start" : 0.78,
+      "text" : "I pipetted 25 microliters of uh, the uh, activation buffer into uh, solution G, uh, and then uh, using the pipet, gently mixed it.",
+      "words" : [
+        {
+          "confidence" : 0.998,
+          "end" : 1.08,
+          "start" : 0.78,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.867,
+          "end" : 1.8,
+          "start" : 1.08,
+          "text" : "pipetted"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 2.4,
+          "start" : 1.8,
+          "text" : "25"
+        },
+        {
+          "confidence" : 0.735,
+          "end" : 3.12,
+          "start" : 2.4,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 3.3,
+          "start" : 3.12,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.394,
+          "end" : 4.08,
+          "start" : 3.3,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 4.56,
+          "start" : 4.08,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.305,
+          "end" : 5.22,
+          "start" : 4.56,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 6.12,
+          "start" : 5.22,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 6.54,
+          "start" : 6.12,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 6.84,
+          "start" : 6.54,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.17,
+          "end" : 7.62,
+          "start" : 6.84,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.922,
+          "end" : 7.98,
+          "start" : 7.62,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.547,
+          "end" : 8.64,
+          "start" : 7.98,
+          "text" : "G,"
+        },
+        {
+          "confidence" : 0.304,
+          "end" : 9.3,
+          "start" : 8.64,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 9.48,
+          "start" : 9.3,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 9.66,
+          "start" : 9.48,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.25,
+          "end" : 10.26,
+          "start" : 9.66,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 10.56,
+          "start" : 10.26,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 10.86,
+          "start" : 10.56,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.499,
+          "end" : 11.64,
+          "start" : 10.86,
+          "text" : "pipet,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.94,
+          "start" : 11.64,
+          "text" : "gently"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 12.42,
+          "start" : 11.94,
+          "text" : "mixed"
+        },
+        {
+          "confidence" : 0.659,
+          "end" : 12.78,
+          "start" : 12.42,
+          "text" : "it."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7522222222222223,
+      "end" : 21.42,
+      "start" : 13.2,
+      "text" : "Um, uh, pipe and mixing it, uh, and then pipe added 100 microliters into each of the cover slips, as you can see in the image above.",
+      "words" : [
+        {
+          "confidence" : 0.205,
+          "end" : 13.8,
+          "start" : 13.2,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.268,
+          "end" : 14.34,
+          "start" : 13.8,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.678,
+          "end" : 14.7,
+          "start" : 14.34,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.127,
+          "end" : 14.88,
+          "start" : 14.7,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 15.24,
+          "start" : 14.88,
+          "text" : "mixing"
+        },
+        {
+          "confidence" : 0.563,
+          "end" : 15.48,
+          "start" : 15.24,
+          "text" : "it,"
+        },
+        {
+          "confidence" : 0.128,
+          "end" : 15.96,
+          "start" : 15.48,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.932,
+          "end" : 16.08,
+          "start" : 15.96,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 16.2,
+          "start" : 16.08,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.864,
+          "end" : 16.44,
+          "start" : 16.2,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.112,
+          "end" : 16.68,
+          "start" : 16.44,
+          "text" : "added"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.52,
+          "start" : 16.68,
+          "text" : "100"
+        },
+        {
+          "confidence" : 0.954,
+          "end" : 18.3,
+          "start" : 17.52,
+          "text" : "microliters"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 18.48,
+          "start" : 18.3,
+          "text" : "into"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.66,
+          "start" : 18.48,
+          "text" : "each"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 18.84,
+          "start" : 18.66,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 18.96,
+          "start" : 18.84,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 19.26,
+          "start" : 18.96,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.713,
+          "end" : 19.68,
+          "start" : 19.26,
+          "text" : "slips,"
+        },
+        {
+          "confidence" : 0.875,
+          "end" : 19.8,
+          "start" : 19.68,
+          "text" : "as"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 19.98,
+          "start" : 19.8,
+          "text" : "you"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 20.4,
+          "start" : 19.98,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 20.58,
+          "start" : 20.4,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.279,
+          "end" : 20.76,
+          "start" : 20.58,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.755,
+          "end" : 20.82,
+          "start" : 20.76,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 21,
+          "start" : 20.82,
+          "text" : "image"
+        },
+        {
+          "confidence" : 0.933,
+          "end" : 21.36,
+          "start" : 21,
+          "text" : "above."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.870181818181818,
+      "end" : 26.04,
+      "start" : 21.78,
+      "text" : "There are some air bulbs in 3 of the cover slips, one covers that doesn't have any air bubbles, which is good.",
+      "words" : [
+        {
+          "confidence" : 0.81,
+          "end" : 22.08,
+          "start" : 21.78,
+          "text" : "There"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 22.26,
+          "start" : 22.08,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 22.38,
+          "start" : 22.26,
+          "text" : "some"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 22.56,
+          "start" : 22.38,
+          "text" : "air"
+        },
+        {
+          "confidence" : 0.827,
+          "end" : 22.92,
+          "start" : 22.56,
+          "text" : "bulbs"
+        },
+        {
+          "confidence" : 0.687,
+          "end" : 23.1,
+          "start" : 22.92,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 23.22,
+          "start" : 23.1,
+          "text" : "3"
+        },
+        {
+          "confidence" : 0.607,
+          "end" : 23.4,
+          "start" : 23.22,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.903,
+          "end" : 23.64,
+          "start" : 23.4,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 23.7,
+          "start" : 23.64,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.791,
+          "end" : 24.18,
+          "start" : 23.7,
+          "text" : "slips,"
+        },
+        {
+          "confidence" : 0.93,
+          "end" : 24.24,
+          "start" : 24.18,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.588,
+          "end" : 24.48,
+          "start" : 24.24,
+          "text" : "covers"
+        },
+        {
+          "confidence" : 0.43,
+          "end" : 24.6,
+          "start" : 24.48,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 24.9,
+          "start" : 24.6,
+          "text" : "doesn't"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 24.96,
+          "start" : 24.9,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 25.02,
+          "start" : 24.96,
+          "text" : "any"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 25.14,
+          "start" : 25.02,
+          "text" : "air"
+        },
+        {
+          "confidence" : 0.928,
+          "end" : 25.62,
+          "start" : 25.14,
+          "text" : "bubbles,"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 25.68,
+          "start" : 25.62,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 25.74,
+          "start" : 25.68,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.834,
+          "end" : 25.98,
+          "start" : 25.74,
+          "text" : "good."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8786250000000001,
+      "end" : 30.18,
+      "start" : 26.34,
+      "text" : "Other than that, I'm going to now incubated.",
+      "words" : [
+        {
+          "confidence" : 0.547,
+          "end" : 27.06,
+          "start" : 26.76,
+          "text" : "Other"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 27.18,
+          "start" : 27.06,
+          "text" : "than"
+        },
+        {
+          "confidence" : 0.761,
+          "end" : 27.42,
+          "start" : 27.18,
+          "text" : "that,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 28.92,
+          "start" : 27.42,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 28.98,
+          "start" : 28.92,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 29.16,
+          "start" : 28.98,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 29.34,
+          "start" : 29.16,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.748,
+          "end" : 30.12,
+          "start" : 29.34,
+          "text" : "incubated."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7627837837837838,
+      "end" : 42.78,
+      "start" : 30.66,
+      "text" : "at 37 degrees Celsius for uh, 2 hours, uh, and then uh, put a Kim wipe inside, and then um, put it in the fridge uh, at 4 degrees Celsius, uh, for the rest of the, um,",
+      "words" : [
+        {
+          "confidence" : 0.956,
+          "end" : 30.96,
+          "start" : 30.66,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.32,
+          "start" : 30.96,
+          "text" : "37"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 31.5,
+          "start" : 31.32,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 31.8,
+          "start" : 31.5,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 32.58,
+          "start" : 31.8,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.223,
+          "end" : 33.3,
+          "start" : 32.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 33.72,
+          "start" : 33.3,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.522,
+          "end" : 34.68,
+          "start" : 33.72,
+          "text" : "hours,"
+        },
+        {
+          "confidence" : 0.104,
+          "end" : 35.1,
+          "start" : 34.68,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.929,
+          "end" : 35.22,
+          "start" : 35.1,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 35.34,
+          "start" : 35.22,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.154,
+          "end" : 35.7,
+          "start" : 35.34,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 35.88,
+          "start" : 35.7,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 36,
+          "start" : 35.88,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.29,
+          "end" : 36.12,
+          "start" : 36,
+          "text" : "Kim"
+        },
+        {
+          "confidence" : 0.926,
+          "end" : 36.48,
+          "start" : 36.12,
+          "text" : "wipe"
+        },
+        {
+          "confidence" : 0.531,
+          "end" : 37.08,
+          "start" : 36.48,
+          "text" : "inside,"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 37.32,
+          "start" : 37.08,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 37.5,
+          "start" : 37.32,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.227,
+          "end" : 37.98,
+          "start" : 37.5,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 38.22,
+          "start" : 37.98,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 38.46,
+          "start" : 38.22,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 38.58,
+          "start" : 38.46,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 38.7,
+          "start" : 38.58,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 38.94,
+          "start" : 38.7,
+          "text" : "fridge"
+        },
+        {
+          "confidence" : 0.145,
+          "end" : 39.48,
+          "start" : 38.94,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 39.54,
+          "start" : 39.48,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 39.72,
+          "start" : 39.54,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 39.96,
+          "start" : 39.72,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.478,
+          "end" : 40.68,
+          "start" : 39.96,
+          "text" : "Celsius,"
+        },
+        {
+          "confidence" : 0.248,
+          "end" : 41.28,
+          "start" : 40.68,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 41.46,
+          "start" : 41.28,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 41.64,
+          "start" : 41.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 41.7,
+          "start" : 41.64,
+          "text" : "rest"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 41.88,
+          "start" : 41.7,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.511,
+          "end" : 42.36,
+          "start" : 41.88,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.452,
+          "end" : 42.66,
+          "start" : 42.36,
+          "text" : "um,"
+        }
+      ]
+    },
+    {
+      "confidence" : 0.6915,
+      "end" : 45.18,
+      "start" : 44.58,
+      "text" : "The day.",
+      "words" : [
+        {
+          "confidence" : 0.52,
+          "end" : 44.88,
+          "start" : 44.58,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.863,
+          "end" : 45.12,
+          "start" : 44.88,
+          "text" : "day."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I pipetted 25 microliters of uh, the uh, activation buffer into uh, solution G, uh, and then uh, using the pipet, gently mixed it. Um, uh, pipe and mixing it, uh, and then pipe added 100 microliters into each of the cover slips, as you can see in the image above. There are some air bulbs in 3 of the cover slips, one covers that doesn't have any air bubbles, which is good. Other than that, I'm going to now incubated. at 37 degrees Celsius for uh, 2 hours, uh, and then uh, put a Kim wipe inside, and then um, put it in the fridge uh, at 4 degrees Celsius, uh, for the rest of the, um, The day."
+}

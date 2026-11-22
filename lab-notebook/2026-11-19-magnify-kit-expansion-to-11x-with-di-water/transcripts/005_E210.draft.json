@@ -1,0 +1,740 @@
+{
+  "clipId" : "E21088D8-9CFE-43A9-9CB9-DE3C02AA3885",
+  "createdAt" : "2026-11-19T13:57:14-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8308125,
+      "end" : 7.8,
+      "start" : 0.72,
+      "text" : "Um, Instead, uh, we're going to end the experiment for today, clean up all the equipment.",
+      "words" : [
+        {
+          "confidence" : 0.36,
+          "end" : 1.38,
+          "start" : 0.72,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.795,
+          "end" : 2.58,
+          "start" : 1.38,
+          "text" : "Instead,"
+        },
+        {
+          "confidence" : 0.144,
+          "end" : 3.18,
+          "start" : 2.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 3.42,
+          "start" : 3.18,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.767,
+          "end" : 3.54,
+          "start" : 3.42,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.769,
+          "end" : 3.66,
+          "start" : 3.54,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.9,
+          "start" : 3.66,
+          "text" : "end"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.02,
+          "start" : 3.9,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.32,
+          "start" : 4.02,
+          "text" : "experiment"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 4.5,
+          "start" : 4.32,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.676,
+          "end" : 4.98,
+          "start" : 4.5,
+          "text" : "today,"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 5.58,
+          "start" : 4.98,
+          "text" : "clean"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 5.82,
+          "start" : 5.58,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 6.06,
+          "start" : 5.82,
+          "text" : "all"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 6.36,
+          "start" : 6.06,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.953,
+          "end" : 7.74,
+          "start" : 6.36,
+          "text" : "equipment."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7527692307692309,
+      "end" : 11.64,
+      "start" : 7.8,
+      "text" : "I'm going to clean up the 6 wall plate and the silicone rings.",
+      "words" : [
+        {
+          "confidence" : 0.991,
+          "end" : 8.1,
+          "start" : 7.8,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.439,
+          "end" : 8.16,
+          "start" : 8.1,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.295,
+          "end" : 8.28,
+          "start" : 8.16,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 8.34,
+          "start" : 8.28,
+          "text" : "clean"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 8.46,
+          "start" : 8.34,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.497,
+          "end" : 8.64,
+          "start" : 8.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.596,
+          "end" : 8.76,
+          "start" : 8.64,
+          "text" : "6"
+        },
+        {
+          "confidence" : 0.756,
+          "end" : 8.94,
+          "start" : 8.76,
+          "text" : "wall"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 9.24,
+          "start" : 8.94,
+          "text" : "plate"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 9.66,
+          "start" : 9.24,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.681,
+          "end" : 9.84,
+          "start" : 9.66,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.918,
+          "end" : 10.62,
+          "start" : 9.84,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.662,
+          "end" : 11.46,
+          "start" : 10.62,
+          "text" : "rings."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9018695652173914,
+      "end" : 27.48,
+      "start" : 11.88,
+      "text" : "And instead I'm going to do some more research on the cell culture kit, for the magnify kit, and see issues and possible hurdles that could exist from previous experimentation, that could be similar to our scenario where we're not able to get 11 X expansion.",
+      "words" : [
+        {
+          "confidence" : 0.328,
+          "end" : 12.18,
+          "start" : 11.88,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.875,
+          "end" : 12.54,
+          "start" : 12.18,
+          "text" : "instead"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 12.9,
+          "start" : 12.54,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 12.96,
+          "start" : 12.9,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 13.08,
+          "start" : 12.96,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 13.14,
+          "start" : 13.08,
+          "text" : "do"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 13.26,
+          "start" : 13.14,
+          "text" : "some"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 13.38,
+          "start" : 13.26,
+          "text" : "more"
+        },
+        {
+          "confidence" : 1,
+          "end" : 13.62,
+          "start" : 13.38,
+          "text" : "research"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 13.98,
+          "start" : 13.62,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.652,
+          "end" : 14.58,
+          "start" : 13.98,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.836,
+          "end" : 14.76,
+          "start" : 14.58,
+          "text" : "cell"
+        },
+        {
+          "confidence" : 0.636,
+          "end" : 15.18,
+          "start" : 14.76,
+          "text" : "culture"
+        },
+        {
+          "confidence" : 0.647,
+          "end" : 16.02,
+          "start" : 15.18,
+          "text" : "kit,"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 16.14,
+          "start" : 16.02,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 16.32,
+          "start" : 16.14,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.945,
+          "end" : 16.8,
+          "start" : 16.32,
+          "text" : "magnify"
+        },
+        {
+          "confidence" : 0.684,
+          "end" : 17.88,
+          "start" : 16.8,
+          "text" : "kit,"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 18.24,
+          "start" : 17.88,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 18.48,
+          "start" : 18.24,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 19.32,
+          "start" : 18.48,
+          "text" : "issues"
+        },
+        {
+          "confidence" : 0.823,
+          "end" : 19.68,
+          "start" : 19.32,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.883,
+          "end" : 19.86,
+          "start" : 19.68,
+          "text" : "possible"
+        },
+        {
+          "confidence" : 0.899,
+          "end" : 20.52,
+          "start" : 19.86,
+          "text" : "hurdles"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 20.82,
+          "start" : 20.52,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 21,
+          "start" : 20.82,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 21.24,
+          "start" : 21,
+          "text" : "exist"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 21.84,
+          "start" : 21.24,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 22.08,
+          "start" : 21.84,
+          "text" : "previous"
+        },
+        {
+          "confidence" : 0.765,
+          "end" : 23.28,
+          "start" : 22.08,
+          "text" : "experimentation,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 24.06,
+          "start" : 23.28,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 24.18,
+          "start" : 24.06,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 24.36,
+          "start" : 24.18,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 24.42,
+          "start" : 24.36,
+          "text" : "similar"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 24.78,
+          "start" : 24.42,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 24.9,
+          "start" : 24.78,
+          "text" : "our"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 25.38,
+          "start" : 24.9,
+          "text" : "scenario"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 25.74,
+          "start" : 25.38,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.897,
+          "end" : 26.04,
+          "start" : 25.74,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 26.1,
+          "start" : 26.04,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 26.22,
+          "start" : 26.1,
+          "text" : "able"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 26.34,
+          "start" : 26.22,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 26.46,
+          "start" : 26.34,
+          "text" : "get"
+        },
+        {
+          "confidence" : 0.844,
+          "end" : 26.64,
+          "start" : 26.46,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.353,
+          "end" : 27,
+          "start" : 26.64,
+          "text" : "X"
+        },
+        {
+          "confidence" : 0.889,
+          "end" : 27.42,
+          "start" : 27,
+          "text" : "expansion."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7433714285714283,
+      "end" : 38.34,
+      "start" : 28.32,
+      "text" : "Then, from there, I'll also be studying a bit more about setting up the nanoscribe for printing of the traditional markers and trying to transfer it onto the tech SEM hydrogel, but that's for later.",
+      "words" : [
+        {
+          "confidence" : 0.477,
+          "end" : 28.8,
+          "start" : 28.32,
+          "text" : "Then,"
+        },
+        {
+          "confidence" : 0.961,
+          "end" : 28.92,
+          "start" : 28.8,
+          "text" : "from"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 29.22,
+          "start" : 28.92,
+          "text" : "there,"
+        },
+        {
+          "confidence" : 0.875,
+          "end" : 29.52,
+          "start" : 29.22,
+          "text" : "I'll"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 29.64,
+          "start" : 29.52,
+          "text" : "also"
+        },
+        {
+          "confidence" : 0.19,
+          "end" : 29.82,
+          "start" : 29.64,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.662,
+          "end" : 30.24,
+          "start" : 29.82,
+          "text" : "studying"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 30.36,
+          "start" : 30.24,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 30.42,
+          "start" : 30.36,
+          "text" : "bit"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 30.54,
+          "start" : 30.42,
+          "text" : "more"
+        },
+        {
+          "confidence" : 0.777,
+          "end" : 30.78,
+          "start" : 30.54,
+          "text" : "about"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 31.38,
+          "start" : 30.78,
+          "text" : "setting"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 31.56,
+          "start" : 31.38,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.955,
+          "end" : 31.68,
+          "start" : 31.56,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.582,
+          "end" : 32.34,
+          "start" : 31.68,
+          "text" : "nanoscribe"
+        },
+        {
+          "confidence" : 0.892,
+          "end" : 32.46,
+          "start" : 32.34,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 33.06,
+          "start" : 32.46,
+          "text" : "printing"
+        },
+        {
+          "confidence" : 0.216,
+          "end" : 33.24,
+          "start" : 33.06,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.942,
+          "end" : 33.36,
+          "start" : 33.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 33.66,
+          "start" : 33.36,
+          "text" : "traditional"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 33.96,
+          "start" : 33.66,
+          "text" : "markers"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 34.2,
+          "start" : 33.96,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.508,
+          "end" : 34.32,
+          "start" : 34.2,
+          "text" : "trying"
+        },
+        {
+          "confidence" : 0.61,
+          "end" : 34.44,
+          "start" : 34.32,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.251,
+          "end" : 34.68,
+          "start" : 34.44,
+          "text" : "transfer"
+        },
+        {
+          "confidence" : 0.348,
+          "end" : 34.92,
+          "start" : 34.68,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.652,
+          "end" : 35.04,
+          "start" : 34.92,
+          "text" : "onto"
+        },
+        {
+          "confidence" : 0.941,
+          "end" : 35.76,
+          "start" : 35.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.333,
+          "end" : 36.42,
+          "start" : 35.76,
+          "text" : "tech"
+        },
+        {
+          "confidence" : 0.371,
+          "end" : 36.84,
+          "start" : 36.42,
+          "text" : "SEM"
+        },
+        {
+          "confidence" : 0.671,
+          "end" : 37.44,
+          "start" : 36.84,
+          "text" : "hydrogel,"
+        },
+        {
+          "confidence" : 0.47,
+          "end" : 37.68,
+          "start" : 37.44,
+          "text" : "but"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 37.92,
+          "start" : 37.68,
+          "text" : "that's"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 38.04,
+          "start" : 37.92,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.862,
+          "end" : 38.28,
+          "start" : 38.04,
+          "text" : "later."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9289999999999999,
+      "end" : 40.26,
+      "start" : 38.88,
+      "text" : "Ending it for today now.",
+      "words" : [
+        {
+          "confidence" : 0.686,
+          "end" : 39.54,
+          "start" : 39.12,
+          "text" : "Ending"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 39.66,
+          "start" : 39.54,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 39.78,
+          "start" : 39.66,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 39.9,
+          "start" : 39.78,
+          "text" : "today"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 40.2,
+          "start" : 39.9,
+          "text" : "now."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Um, Instead, uh, we're going to end the experiment for today, clean up all the equipment. I'm going to clean up the 6 wall plate and the silicone rings. And instead I'm going to do some more research on the cell culture kit, for the magnify kit, and see issues and possible hurdles that could exist from previous experimentation, that could be similar to our scenario where we're not able to get 11 X expansion. Then, from there, I'll also be studying a bit more about setting up the nanoscribe for printing of the traditional markers and trying to transfer it onto the tech SEM hydrogel, but that's for later. Ending it for today now."
+}

@@ -1,0 +1,68 @@
+{
+  "markers" : [
+
+  ],
+  "pageDuration" : 145.634,
+  "segments" : [
+    {
+      "clipEnd" : 30.728,
+      "clipId" : "46304804-EBB9-4418-BEE3-8335E0E1DD38",
+      "clipStart" : 0,
+      "pageEnd" : 30.728,
+      "pageStart" : 0,
+      "wallStart" : "2026-11-19T13:47:42-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 31.728,
+      "pageStart" : 30.728
+    },
+    {
+      "clipEnd" : 22.425,
+      "clipId" : "9B49162D-8D68-4DED-845E-553B2495EF2D",
+      "clipStart" : 0,
+      "pageEnd" : 54.153,
+      "pageStart" : 31.728,
+      "wallStart" : "2026-11-19T13:49:44-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 55.153,
+      "pageStart" : 54.153
+    },
+    {
+      "clipEnd" : 25.737,
+      "clipId" : "A20C4C8C-C7C6-465E-995C-F6BD9B158357",
+      "clipStart" : 0,
+      "pageEnd" : 80.89,
+      "pageStart" : 55.153,
+      "wallStart" : "2026-11-19T13:52:07-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 81.89,
+      "pageStart" : 80.89
+    },
+    {
+      "clipEnd" : 21.689,
+      "clipId" : "CB7D2C0B-2EE3-4421-A843-0BD88016362F",
+      "clipStart" : 0,
+      "pageEnd" : 103.579,
+      "pageStart" : 81.89,
+      "wallStart" : "2026-11-19T13:54:02-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 104.579,
+      "pageStart" : 103.579
+    },
+    {
+      "clipEnd" : 41.055,
+      "clipId" : "E21088D8-9CFE-43A9-9CB9-DE3C02AA3885",
+      "clipStart" : 0,
+      "pageEnd" : 145.634,
+      "pageStart" : 104.579,
+      "wallStart" : "2026-11-19T13:56:32-05:00"
+    }
+  ]
+}

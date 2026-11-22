@@ -1,0 +1,94 @@
+{
+  "markers" : [
+
+  ],
+  "pageDuration" : 211.764875,
+  "segments" : [
+    {
+      "clipEnd" : 72.44335416666667,
+      "clipId" : "0659DC79-3A37-407A-BC1F-80D26F693A61",
+      "clipStart" : 0,
+      "pageEnd" : 72.44335416666667,
+      "pageStart" : 0,
+      "wallStart" : "2026-11-20T14:12:37-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 73.44335416666667,
+      "pageStart" : 72.44335416666667
+    },
+    {
+      "clipEnd" : 38.97952083333333,
+      "clipId" : "9027970D-4F3E-49AE-AB66-FA55B971BBA3",
+      "clipStart" : 0,
+      "pageEnd" : 112.422875,
+      "pageStart" : 73.44335416666667,
+      "wallStart" : "2026-11-20T14:24:10-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 113.422875,
+      "pageStart" : 112.422875
+    },
+    {
+      "clipEnd" : 17.341,
+      "clipId" : "569296A8-096B-44DB-B237-1098D5AE43AE",
+      "clipStart" : 0,
+      "pageEnd" : 130.763875,
+      "pageStart" : 113.422875,
+      "wallStart" : "2026-11-20T14:29:05-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 131.763875,
+      "pageStart" : 130.763875
+    },
+    {
+      "clipEnd" : 47.149,
+      "clipId" : "9E8F85B9-16A1-4F42-B25F-F1A42BF74631",
+      "clipStart" : 0,
+      "pageEnd" : 178.912875,
+      "pageStart" : 131.763875,
+      "wallStart" : "2026-11-20T14:35:39-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 179.912875,
+      "pageStart" : 178.912875
+    },
+    {
+      "clipEnd" : 17.433,
+      "clipId" : "F7761BA3-98C8-48C1-A930-ABD754622E58",
+      "clipStart" : 0,
+      "pageEnd" : 197.345875,
+      "pageStart" : 179.912875,
+      "wallStart" : "2026-11-20T14:39:17-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 198.345875,
+      "pageStart" : 197.345875
+    },
+    {
+      "clipEnd" : 6.762,
+      "clipId" : "86846316-39E3-43DA-A87A-B4BFFFFF12DE",
+      "clipStart" : 0,
+      "pageEnd" : 205.107875,
+      "pageStart" : 198.345875,
+      "wallStart" : "2026-11-20T16:35:46-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 206.107875,
+      "pageStart" : 205.107875
+    },
+    {
+      "clipEnd" : 5.657,
+      "clipId" : "E426D7F5-B427-412C-BBEF-855A66B1A0A0",
+      "clipStart" : 0,
+      "pageEnd" : 211.764875,
+      "pageStart" : 206.107875,
+      "wallStart" : "2026-11-20T16:41:21-05:00"
+    }
+  ]
+}

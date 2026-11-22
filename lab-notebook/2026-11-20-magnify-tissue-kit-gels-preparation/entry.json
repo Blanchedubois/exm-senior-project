@@ -1,0 +1,516 @@
+{
+  "createdAt" : "2026-11-20T14:10:05-05:00",
+  "customFields" : {
+
+  },
+  "entryDate" : "2026-11-20",
+  "entryDateTime" : "2026-11-20T14:10:05-05:00",
+  "id" : "F3ECB306-09CC-4C1F-B5CF-1513C3980305",
+  "isPinned" : false,
+  "modifiedAt" : "2026-11-20T16:41:27-05:00",
+  "notebookId" : "5C514266-EAAB-4FCE-B5B4-039158DF5FC1",
+  "notebookTitle" : "PHYS 352: Lab notebook",
+  "pageAudio" : {
+    "duration" : 211.764875,
+    "file" : "page.m4a",
+    "gapBetweenClips" : 0.4,
+    "gapBetweenSections" : 1,
+    "segments" : "page.segments.json"
+  },
+  "place" : {
+    "administrativeArea" : "OH",
+    "altitude" : 232.52622270985142,
+    "capturedAt" : "2026-11-20T14:11:18-05:00",
+    "country" : "United States",
+    "horizontalAccuracy" : 10.000400579822283,
+    "latitude" : 41.503183070309625,
+    "locality" : "Cleveland",
+    "longitude" : -81.60701862576765,
+    "name" : "Case Western Reserve University"
+  },
+  "schemaVersion" : 1,
+  "sections" : [
+    {
+      "clips" : [
+        {
+          "duration" : 72.44335416666667,
+          "endedAt" : "2026-11-20T14:13:50-05:00",
+          "file" : "audio/001_0659.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "0659DC79-3A37-407A-BC1F-80D26F693A61",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 232.52622270985142,
+            "capturedAt" : "2026-11-20T14:11:18-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 10.000400579822283,
+            "latitude" : 41.503183070309625,
+            "locality" : "Cleveland",
+            "longitude" : -81.60701862576765,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T14:12:37-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/001_0659.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T14:12:37-05:00",
+      "id" : "7CB4D4CF-E167-4478-A0FC-C423DB51C131",
+      "kind" : "voice",
+      "label" : {
+        "color" : "orange",
+        "name" : "Method",
+        "symbol" : "list.number"
+      },
+      "order" : 0,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 232.52622270985142,
+        "capturedAt" : "2026-11-20T14:11:18-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 10.000400579822283,
+        "latitude" : 41.503183070309625,
+        "locality" : "Cleveland",
+        "longitude" : -81.60701862576765,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 38.97952083333333,
+          "endedAt" : "2026-11-20T14:24:49-05:00",
+          "file" : "audio/002_9027.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "9027970D-4F3E-49AE-AB66-FA55B971BBA3",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 232.52622270985142,
+            "capturedAt" : "2026-11-20T14:24:09-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 14.04948508736321,
+            "latitude" : 41.503198423551325,
+            "locality" : "Cleveland",
+            "longitude" : -81.60700705892786,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T14:24:10-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/002_9027.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T14:24:10-05:00",
+      "id" : "A65CA7A5-BAA3-4D41-8556-3D554B646AE5",
+      "kind" : "voice",
+      "label" : {
+        "color" : "amber",
+        "name" : "Important",
+        "symbol" : "star.fill"
+      },
+      "order" : 1,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 232.52622270985142,
+        "capturedAt" : "2026-11-20T14:24:09-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 14.04948508736321,
+        "latitude" : 41.503198423551325,
+        "locality" : "Cleveland",
+        "longitude" : -81.60700705892786,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "caption" : "Here, instead of using the silicon rings, I've instead used the stickers provided by the magnify, uh, freshly preserved tissues kit, uh, and uh, that will make the hydro gels much, much thinner in thickness uh, and potentially result in lemon X expansion.",
+      "createdAt" : "2026-11-20T14:25:02-05:00",
+      "id" : "B475B89F-CD34-4C3E-8FE1-49DEE88C7C40",
+      "images" : [
+        {
+          "capturedAt" : "2026-11-20T14:25:02-05:00",
+          "file" : "images/0002_photo.heic",
+          "height" : 4032,
+          "source" : "camera",
+          "width" : 3024
+        }
+      ],
+      "kind" : "image",
+      "order" : 2,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 232.52622270985142,
+        "capturedAt" : "2026-11-20T14:24:09-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 14.04948508736321,
+        "latitude" : 41.503198423551325,
+        "locality" : "Cleveland",
+        "longitude" : -81.60700705892786,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 17.341,
+          "endedAt" : "2026-11-20T14:29:23-05:00",
+          "file" : "audio/003_5692.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "569296A8-096B-44DB-B237-1098D5AE43AE",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 229.77479043467645,
+            "capturedAt" : "2026-11-20T14:29:05-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 8.760186843494127,
+            "latitude" : 41.50316820237907,
+            "locality" : "Cleveland",
+            "longitude" : -81.60702804767728,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T14:29:05-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/003_5692.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T14:29:05-05:00",
+      "id" : "FC6C9EE8-6E03-4422-94D9-D55780DF3D16",
+      "kind" : "voice",
+      "order" : 3,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 229.77479043467645,
+        "capturedAt" : "2026-11-20T14:29:05-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 8.760186843494127,
+        "latitude" : 41.50316820237907,
+        "locality" : "Cleveland",
+        "longitude" : -81.60702804767728,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "caption" : "Vortexing it for 2 minutes, previously, I used to vortex it for roughly 15 seconds. Hopefully this time will be different to ensure it's fully dissolved.",
+      "createdAt" : "2026-11-20T14:29:52-05:00",
+      "id" : "C40C6D68-C974-4FFC-9270-D4F5FFFBC156",
+      "images" : [
+        {
+          "capturedAt" : "2026-11-20T14:29:50-05:00",
+          "file" : "images/0004_photo.heic",
+          "height" : 3024,
+          "source" : "camera",
+          "width" : 4032
+        }
+      ],
+      "kind" : "image",
+      "order" : 4,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 229.77479043467645,
+        "capturedAt" : "2026-11-20T14:29:05-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 8.760186843494127,
+        "latitude" : 41.50316820237907,
+        "locality" : "Cleveland",
+        "longitude" : -81.60702804767728,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "caption" : "Just mixed, um, the activation gelling solution together, uh, and pipe petted 100 micro uh, liters into each of the cover slips and sandwiched it between another cover slip. Uh, 3 of the car slips have noticeable air bubbles inside, uh, because I poorly uh, moved one of the cover slips, uh, across each other, uh, which introduced an air bubble. One cover slip still has no air bubbles, which is good. Um, but uh, for next time, I should not move the covers with it.",
+      "createdAt" : "2026-11-20T14:34:45-05:00",
+      "id" : "95D3FC42-E231-42B6-BAE2-B89DFD1B1311",
+      "images" : [
+        {
+          "capturedAt" : "2026-11-20T14:34:45-05:00",
+          "file" : "images/0005_photo.heic",
+          "height" : 4032,
+          "source" : "camera",
+          "width" : 3024
+        }
+      ],
+      "kind" : "image",
+      "order" : 5,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 229.69300197047363,
+        "capturedAt" : "2026-11-20T14:34:43-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 10.999506010682552,
+        "latitude" : 41.503168985753874,
+        "locality" : "Cleveland",
+        "longitude" : -81.60705046304032,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 47.149,
+          "endedAt" : "2026-11-20T14:36:26-05:00",
+          "file" : "audio/004_9E8F.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "9E8F85B9-16A1-4F42-B25F-F1A42BF74631",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 229.69300197047363,
+            "capturedAt" : "2026-11-20T14:34:43-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 10.999506010682552,
+            "latitude" : 41.503168985753874,
+            "locality" : "Cleveland",
+            "longitude" : -81.60705046304032,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T14:35:39-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/004_9E8F.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T14:35:39-05:00",
+      "id" : "377883BC-EFE6-46A1-B21C-745FE1881176",
+      "kind" : "voice",
+      "order" : 6,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 229.69300197047363,
+        "capturedAt" : "2026-11-20T14:34:43-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 10.999506010682552,
+        "latitude" : 41.503168985753874,
+        "locality" : "Cleveland",
+        "longitude" : -81.60705046304032,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 17.433,
+          "endedAt" : "2026-11-20T14:39:34-05:00",
+          "file" : "audio/005_F776.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "F7761BA3-98C8-48C1-A930-ABD754622E58",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 229.24622623359812,
+            "capturedAt" : "2026-11-20T14:39:06-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 9.241473946736857,
+            "latitude" : 41.503181557944586,
+            "locality" : "Cleveland",
+            "longitude" : -81.60700890690102,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T14:39:17-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/005_F776.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T14:39:17-05:00",
+      "id" : "52C1FE14-059D-4323-8137-139E12FF86B5",
+      "kind" : "voice",
+      "order" : 7,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 229.24622623359812,
+        "capturedAt" : "2026-11-20T14:39:06-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 9.241473946736857,
+        "latitude" : 41.503181557944586,
+        "locality" : "Cleveland",
+        "longitude" : -81.60700890690102,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 6.762,
+          "endedAt" : "2026-11-20T16:35:53-05:00",
+          "file" : "audio/006_8684.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "86846316-39E3-43DA-A87A-B4BFFFFF12DE",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "iPhone microphone"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 233.67622270985143,
+            "capturedAt" : "2026-11-20T16:35:42-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 15.28864213263617,
+            "latitude" : 41.50295577849576,
+            "locality" : "Cleveland",
+            "longitude" : -81.60725507790929,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T16:35:46-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/006_8684.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T16:35:46-05:00",
+      "id" : "40B3B8A0-241D-4635-AAC3-59225E99AB0E",
+      "kind" : "voice",
+      "order" : 8,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 233.67622270985143,
+        "capturedAt" : "2026-11-20T16:35:42-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 15.28864213263617,
+        "latitude" : 41.50295577849576,
+        "locality" : "Cleveland",
+        "longitude" : -81.60725507790929,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 5.657,
+          "endedAt" : "2026-11-20T16:41:26-05:00",
+          "file" : "audio/007_E426.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "E426D7F5-B427-412C-BBEF-855A66B1A0A0",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 234.90622270985142,
+            "capturedAt" : "2026-11-20T16:41:16-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 15.939571418831214,
+            "latitude" : 41.50295122458591,
+            "locality" : "Cleveland",
+            "longitude" : -81.60699271783567,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-20T16:41:21-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/007_E426.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-20T16:41:20-05:00",
+      "id" : "7F38004E-D0A9-4BF4-91AF-00A60DDF6EDA",
+      "kind" : "voice",
+      "order" : 9,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 234.90622270985142,
+        "capturedAt" : "2026-11-20T16:41:16-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 15.939571418831214,
+        "latitude" : 41.50295122458591,
+        "locality" : "Cleveland",
+        "longitude" : -81.60699271783567,
+        "name" : "Case Western Reserve University"
+      }
+    }
+  ],
+  "tags" : [
+
+  ],
+  "timeZone" : "America/New_York",
+  "title" : "20 Nov 2026: Preparing Tissue Magnify Kit Hydrogels",
+  "titleIsAutomatic" : false
+}

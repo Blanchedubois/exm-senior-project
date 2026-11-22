@@ -6,6 +6,8 @@ linked in the right-hand column interpret each session.
 
 | Session | What happened | Write-up |
 |---|---|---|
+| [2026-11-20 Magnify tissue kit: gels preparation](2026-11-20-magnify-tissue-kit-gels-preparation/) | Cast four thin gels from the Magnify tissue kit on its adhesive spacers, sandwiched between coverslips; incubated and refrigerated for expansion on 23 November | [Thin-spacer gels post](../blog/2026-11-20-magnify-tissue-kit-gels-thin-spacers.md) |
+| [2026-11-19 Magnify kit: expansion to 11× with de-ionised water](2026-11-19-magnify-kit-expansion-to-11x-with-di-water/) | Planned PBS then de-ionised water expansion of the three leftover gels; found them dried out, cleaned up | [Dried gels post](../blog/2026-11-19-magnify-di-water-attempt-gels-dried.md) |
 | [2026-11-16 Magnify gels: homogenisation and expansion](2026-11-16-magnify-gels-homogenization-and-expansion/) | Homogenised three of the second-batch gels and expanded them in PBS and water; ruler measurements | [Second batch post](../blog/2026-11-17-magnify-second-batch-coverslip-sandwich.md) |
 | [2026-11-10 Magnify gels: preparation](2026-11-10-magnify-gels-preparation/) | Cast six bead gels from the Magnify kit, each sandwiched between coverslips | [Second batch post](../blog/2026-11-17-magnify-second-batch-coverslip-sandwich.md) |
 | [2026-11-04 Magnify kit: preparation and imaging](2026-11-04-magnify-kit-preparation-and-imaging/) | First four Magnify bead gels, homogenised and not, 1× and nominal 11×; imaged on the IX83 at 561 nm | [First batch post](../blog/2026-11-09-magnify-kit-bead-gels.md) |

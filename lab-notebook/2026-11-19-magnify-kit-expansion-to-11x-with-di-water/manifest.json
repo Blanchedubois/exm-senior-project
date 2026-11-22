@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 5,
+      "entryDate" : "2026-11-19",
+      "id" : "A7CDB79F-FE3E-437E-8A01-418EA1FFB68D",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 1,
+        "voice" : 5
+      },
+      "title" : "19 Nov 2026: Magnify Kit Expansion to 11x w Deionized water",
+      "totalAudioSeconds" : 141.63400000000001
+    }
+  ],
+  "exportedAt" : "2026-11-22T18:00:48-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 27.2.1",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

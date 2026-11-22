@@ -1,0 +1,664 @@
+{
+  "clipId" : "9027970D-4F3E-49AE-AB66-FA55B971BBA3",
+  "createdAt" : "2026-11-20T14:24:50-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8329374999999998,
+      "end" : 19.32,
+      "start" : 0.42,
+      "text" : "So what I've done is I've taken the 4 cover slips, square cover slips of 18 by 18 millimeter cover slips, uh, and then I've, uh, actually, instead of using silicon rings, what I've instead used are, um, the spacers that come with the, uh, magnify kit itself.",
+      "words" : [
+        {
+          "confidence" : 0.999,
+          "end" : 0.72,
+          "start" : 0.42,
+          "text" : "So"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 0.96,
+          "start" : 0.72,
+          "text" : "what"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.2,
+          "start" : 0.96,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.32,
+          "start" : 1.2,
+          "text" : "done"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.5,
+          "start" : 1.32,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.8,
+          "start" : 1.5,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 1.92,
+          "start" : 1.8,
+          "text" : "taken"
+        },
+        {
+          "confidence" : 0.742,
+          "end" : 2.16,
+          "start" : 1.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 2.34,
+          "start" : 2.16,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 2.64,
+          "start" : 2.34,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.815,
+          "end" : 3.36,
+          "start" : 2.64,
+          "text" : "slips,"
+        },
+        {
+          "confidence" : 0.9,
+          "end" : 3.9,
+          "start" : 3.36,
+          "text" : "square"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 4.08,
+          "start" : 3.9,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 4.5,
+          "start" : 4.08,
+          "text" : "slips"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 4.92,
+          "start" : 4.5,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 5.16,
+          "start" : 4.92,
+          "text" : "18"
+        },
+        {
+          "confidence" : 0.872,
+          "end" : 5.46,
+          "start" : 5.16,
+          "text" : "by"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 5.64,
+          "start" : 5.46,
+          "text" : "18"
+        },
+        {
+          "confidence" : 0.874,
+          "end" : 6.24,
+          "start" : 5.64,
+          "text" : "millimeter"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 6.48,
+          "start" : 6.24,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.78,
+          "end" : 7.08,
+          "start" : 6.48,
+          "text" : "slips,"
+        },
+        {
+          "confidence" : 0.336,
+          "end" : 7.8,
+          "start" : 7.08,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.845,
+          "end" : 7.92,
+          "start" : 7.8,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 8.1,
+          "start" : 7.92,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.737,
+          "end" : 8.58,
+          "start" : 8.1,
+          "text" : "I've,"
+        },
+        {
+          "confidence" : 0.247,
+          "end" : 8.82,
+          "start" : 8.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.647,
+          "end" : 9.24,
+          "start" : 8.82,
+          "text" : "actually,"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.54,
+          "start" : 9.24,
+          "text" : "instead"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.72,
+          "start" : 9.54,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.84,
+          "start" : 9.72,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.858,
+          "end" : 10.44,
+          "start" : 9.84,
+          "text" : "silicon"
+        },
+        {
+          "confidence" : 0.842,
+          "end" : 10.98,
+          "start" : 10.44,
+          "text" : "rings,"
+        },
+        {
+          "confidence" : 0.419,
+          "end" : 11.1,
+          "start" : 10.98,
+          "text" : "what"
+        },
+        {
+          "confidence" : 0.521,
+          "end" : 11.34,
+          "start" : 11.1,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 11.64,
+          "start" : 11.34,
+          "text" : "instead"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 11.88,
+          "start" : 11.64,
+          "text" : "used"
+        },
+        {
+          "confidence" : 0.464,
+          "end" : 13.2,
+          "start" : 11.88,
+          "text" : "are,"
+        },
+        {
+          "confidence" : 0.281,
+          "end" : 13.62,
+          "start" : 13.2,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.978,
+          "end" : 13.98,
+          "start" : 13.62,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 15.24,
+          "start" : 13.98,
+          "text" : "spacers"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 15.9,
+          "start" : 15.24,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.14,
+          "start" : 15.9,
+          "text" : "come"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.38,
+          "start" : 16.14,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.413,
+          "end" : 16.92,
+          "start" : 16.38,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.136,
+          "end" : 17.22,
+          "start" : 16.92,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.855,
+          "end" : 17.76,
+          "start" : 17.22,
+          "text" : "magnify"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 18.06,
+          "start" : 17.76,
+          "text" : "kit"
+        },
+        {
+          "confidence" : 0.738,
+          "end" : 19.26,
+          "start" : 18.06,
+          "text" : "itself."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9697499999999999,
+      "end" : 21.9,
+      "start" : 19.32,
+      "text" : "I'm assuming that the thickness matters a lot.",
+      "words" : [
+        {
+          "confidence" : 0.996,
+          "end" : 19.8,
+          "start" : 19.38,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 1,
+          "end" : 20.16,
+          "start" : 19.8,
+          "text" : "assuming"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 20.34,
+          "start" : 20.16,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.52,
+          "start" : 20.34,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.88,
+          "start" : 20.52,
+          "text" : "thickness"
+        },
+        {
+          "confidence" : 1,
+          "end" : 21.36,
+          "start" : 20.88,
+          "text" : "matters"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 21.54,
+          "start" : 21.36,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 21.84,
+          "start" : 21.54,
+          "text" : "lot."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7637755102040817,
+      "end" : 38.04,
+      "start" : 22.32,
+      "text" : "Uh, uh, and is actually restricting the expansion to full 11 X. Um, and so what I've done is, uh, I'm using the stickers, uh, where I'm going to be placing the, uh, piper and the, hydrogel onto those stickers instead, uh, and sandwicing it between 2 cover slips.",
+      "words" : [
+        {
+          "confidence" : 0.134,
+          "end" : 22.86,
+          "start" : 22.32,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.115,
+          "end" : 23.28,
+          "start" : 22.86,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.965,
+          "end" : 23.4,
+          "start" : 23.28,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 23.58,
+          "start" : 23.4,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 23.76,
+          "start" : 23.58,
+          "text" : "actually"
+        },
+        {
+          "confidence" : 1,
+          "end" : 24.42,
+          "start" : 23.76,
+          "text" : "restricting"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 24.6,
+          "start" : 24.42,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 25.08,
+          "start" : 24.6,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 25.2,
+          "start" : 25.08,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.88,
+          "end" : 25.32,
+          "start" : 25.2,
+          "text" : "full"
+        },
+        {
+          "confidence" : 0.787,
+          "end" : 25.56,
+          "start" : 25.32,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.472,
+          "end" : 26.1,
+          "start" : 25.56,
+          "text" : "X."
+        },
+        {
+          "confidence" : 0.242,
+          "end" : 27.06,
+          "start" : 26.1,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.668,
+          "end" : 27.24,
+          "start" : 27.06,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 27.42,
+          "start" : 27.24,
+          "text" : "so"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 27.6,
+          "start" : 27.42,
+          "text" : "what"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 27.96,
+          "start" : 27.6,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.02,
+          "start" : 27.96,
+          "text" : "done"
+        },
+        {
+          "confidence" : 0.521,
+          "end" : 28.38,
+          "start" : 28.02,
+          "text" : "is,"
+        },
+        {
+          "confidence" : 0.231,
+          "end" : 28.68,
+          "start" : 28.38,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 28.92,
+          "start" : 28.68,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 29.04,
+          "start" : 28.92,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 29.22,
+          "start" : 29.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.693,
+          "end" : 29.88,
+          "start" : 29.22,
+          "text" : "stickers,"
+        },
+        {
+          "confidence" : 0.201,
+          "end" : 30.6,
+          "start" : 29.88,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 30.84,
+          "start" : 30.6,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 31.08,
+          "start" : 30.84,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 31.14,
+          "start" : 31.08,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.26,
+          "start" : 31.14,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.38,
+          "start" : 31.26,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.62,
+          "start" : 31.38,
+          "text" : "placing"
+        },
+        {
+          "confidence" : 0.493,
+          "end" : 32.22,
+          "start" : 31.62,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.058,
+          "end" : 32.46,
+          "start" : 32.22,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.626,
+          "end" : 32.82,
+          "start" : 32.46,
+          "text" : "piper"
+        },
+        {
+          "confidence" : 0.317,
+          "end" : 33.06,
+          "start" : 32.82,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.177,
+          "end" : 33.48,
+          "start" : 33.06,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.754,
+          "end" : 34.14,
+          "start" : 33.48,
+          "text" : "hydrogel"
+        },
+        {
+          "confidence" : 0.964,
+          "end" : 34.38,
+          "start" : 34.14,
+          "text" : "onto"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 34.68,
+          "start" : 34.38,
+          "text" : "those"
+        },
+        {
+          "confidence" : 1,
+          "end" : 34.98,
+          "start" : 34.68,
+          "text" : "stickers"
+        },
+        {
+          "confidence" : 0.538,
+          "end" : 35.46,
+          "start" : 34.98,
+          "text" : "instead,"
+        },
+        {
+          "confidence" : 0.063,
+          "end" : 36.12,
+          "start" : 35.46,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 36.18,
+          "start" : 36.12,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.866,
+          "end" : 36.72,
+          "start" : 36.18,
+          "text" : "sandwicing"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 36.84,
+          "start" : 36.72,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 37.02,
+          "start" : 36.84,
+          "text" : "between"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 37.26,
+          "start" : 37.02,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 37.44,
+          "start" : 37.26,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.839,
+          "end" : 37.92,
+          "start" : 37.44,
+          "text" : "slips."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "So what I've done is I've taken the 4 cover slips, square cover slips of 18 by 18 millimeter cover slips, uh, and then I've, uh, actually, instead of using silicon rings, what I've instead used are, um, the spacers that come with the, uh, magnify kit itself. I'm assuming that the thickness matters a lot. Uh, uh, and is actually restricting the expansion to full 11 X. Um, and so what I've done is, uh, I'm using the stickers, uh, where I'm going to be placing the, uh, piper and the, hydrogel onto those stickers instead, uh, and sandwicing it between 2 cover slips."
+}

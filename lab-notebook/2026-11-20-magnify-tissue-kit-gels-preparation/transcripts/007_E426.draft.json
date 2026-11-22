@@ -1,0 +1,74 @@
+{
+  "clipId" : "E426D7F5-B427-412C-BBEF-855A66B1A0A0",
+  "createdAt" : "2026-11-20T16:41:27-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7529999999999999,
+      "end" : 3.9,
+      "start" : 1.62,
+      "text" : "Close down for today.",
+      "words" : [
+        {
+          "confidence" : 0.587,
+          "end" : 1.92,
+          "start" : 1.62,
+          "text" : "Close"
+        },
+        {
+          "confidence" : 0.547,
+          "end" : 2.28,
+          "start" : 1.92,
+          "text" : "down"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.46,
+          "start" : 2.28,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.881,
+          "end" : 3.3,
+          "start" : 2.46,
+          "text" : "today."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.66025,
+      "end" : 5.64,
+      "start" : 3.96,
+      "text" : "Uh, lab day over.",
+      "words" : [
+        {
+          "confidence" : 0.223,
+          "end" : 4.44,
+          "start" : 3.96,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.588,
+          "end" : 4.62,
+          "start" : 4.44,
+          "text" : "lab"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 4.92,
+          "start" : 4.62,
+          "text" : "day"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 5.58,
+          "start" : 4.92,
+          "text" : "over."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Close down for today. Uh, lab day over."
+}

@@ -1,0 +1,388 @@
+{
+  "clipId" : "CB7D2C0B-2EE3-4421-A843-0BD88016362F",
+  "createdAt" : "2026-11-19T13:54:24-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7671538461538463,
+      "end" : 5.22,
+      "start" : 0.72,
+      "text" : "Uh, a problem is, uh, I've noticed the hydrogels have completely dried up.",
+      "words" : [
+        {
+          "confidence" : 0.221,
+          "end" : 1.2,
+          "start" : 0.72,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.277,
+          "end" : 1.44,
+          "start" : 1.2,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.62,
+          "start" : 1.44,
+          "text" : "problem"
+        },
+        {
+          "confidence" : 0.595,
+          "end" : 2.28,
+          "start" : 1.62,
+          "text" : "is,"
+        },
+        {
+          "confidence" : 0.164,
+          "end" : 2.76,
+          "start" : 2.28,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.914,
+          "end" : 3.06,
+          "start" : 2.76,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 3.3,
+          "start" : 3.06,
+          "text" : "noticed"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 3.54,
+          "start" : 3.3,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.9,
+          "end" : 4.2,
+          "start" : 3.54,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 4.32,
+          "start" : 4.2,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.5,
+          "start" : 4.32,
+          "text" : "completely"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.86,
+          "start" : 4.5,
+          "text" : "dried"
+        },
+        {
+          "confidence" : 0.955,
+          "end" : 5.16,
+          "start" : 4.86,
+          "text" : "up."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8783703703703704,
+      "end" : 15.48,
+      "start" : 5.28,
+      "text" : "It has not been sealed fully to the point where the hydrogels are now, like, completely taut, and therefore, today, we cannot expand it to 11 X.",
+      "words" : [
+        {
+          "confidence" : 0.787,
+          "end" : 5.58,
+          "start" : 5.28,
+          "text" : "It"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 5.76,
+          "start" : 5.58,
+          "text" : "has"
+        },
+        {
+          "confidence" : 0.949,
+          "end" : 5.88,
+          "start" : 5.76,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 6.06,
+          "start" : 5.88,
+          "text" : "been"
+        },
+        {
+          "confidence" : 1,
+          "end" : 6.42,
+          "start" : 6.06,
+          "text" : "sealed"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.78,
+          "start" : 6.42,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 7.08,
+          "start" : 6.78,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.2,
+          "start" : 7.08,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.32,
+          "start" : 7.2,
+          "text" : "point"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.62,
+          "start" : 7.32,
+          "text" : "where"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.86,
+          "start" : 7.62,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.835,
+          "end" : 8.4,
+          "start" : 7.86,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.52,
+          "start" : 8.4,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.554,
+          "end" : 8.76,
+          "start" : 8.52,
+          "text" : "now,"
+        },
+        {
+          "confidence" : 0.456,
+          "end" : 8.94,
+          "start" : 8.76,
+          "text" : "like,"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.12,
+          "start" : 8.94,
+          "text" : "completely"
+        },
+        {
+          "confidence" : 0.716,
+          "end" : 9.9,
+          "start" : 9.12,
+          "text" : "taut,"
+        },
+        {
+          "confidence" : 0.89,
+          "end" : 10.92,
+          "start" : 9.9,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.728,
+          "end" : 11.46,
+          "start" : 10.92,
+          "text" : "therefore,"
+        },
+        {
+          "confidence" : 0.545,
+          "end" : 12.06,
+          "start" : 11.46,
+          "text" : "today,"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.18,
+          "start" : 12.06,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 12.3,
+          "start" : 12.18,
+          "text" : "cannot"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.9,
+          "start" : 12.3,
+          "text" : "expand"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 13.14,
+          "start" : 12.9,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 13.8,
+          "start" : 13.14,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.875,
+          "end" : 14.1,
+          "start" : 13.8,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.485,
+          "end" : 15.42,
+          "start" : 14.1,
+          "text" : "X."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8615789473684211,
+      "end" : 21.42,
+      "start" : 15.48,
+      "text" : "And we should prepare the new gels and try to see if we can expand it to 11 X.",
+      "words" : [
+        {
+          "confidence" : 0.336,
+          "end" : 16.26,
+          "start" : 15.96,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 16.44,
+          "start" : 16.26,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.56,
+          "start" : 16.44,
+          "text" : "should"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.98,
+          "start" : 16.56,
+          "text" : "prepare"
+        },
+        {
+          "confidence" : 0.958,
+          "end" : 17.28,
+          "start" : 16.98,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 18.06,
+          "start" : 17.28,
+          "text" : "new"
+        },
+        {
+          "confidence" : 0.96,
+          "end" : 18.48,
+          "start" : 18.06,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 19.44,
+          "start" : 18.48,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 19.56,
+          "start" : 19.44,
+          "text" : "try"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 19.68,
+          "start" : 19.56,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 19.8,
+          "start" : 19.68,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 19.86,
+          "start" : 19.8,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.652,
+          "end" : 19.98,
+          "start" : 19.86,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 20.04,
+          "start" : 19.98,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.28,
+          "start" : 20.04,
+          "text" : "expand"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 20.4,
+          "start" : 20.28,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.231,
+          "end" : 20.64,
+          "start" : 20.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.672,
+          "end" : 20.94,
+          "start" : 20.64,
+          "text" : "11"
+        },
+        {
+          "confidence" : 0.763,
+          "end" : 21.36,
+          "start" : 20.94,
+          "text" : "X."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Uh, a problem is, uh, I've noticed the hydrogels have completely dried up. It has not been sealed fully to the point where the hydrogels are now, like, completely taut, and therefore, today, we cannot expand it to 11 X. And we should prepare the new gels and try to see if we can expand it to 11 X."
+}
