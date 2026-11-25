@@ -1,0 +1,976 @@
+{
+  "clipId" : "4F0EB328-F89A-43F4-8FAF-2EB152433A70",
+  "createdAt" : "2026-11-24T13:56:00-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8162941176470587,
+      "end" : 8.64,
+      "start" : 1.68,
+      "text" : "Today we're going to be preparing uh, hydrogels uh, for the magnified, uh, freshly preserved tissues kit.",
+      "words" : [
+        {
+          "confidence" : 0.997,
+          "end" : 1.98,
+          "start" : 1.68,
+          "text" : "Today"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.58,
+          "start" : 1.98,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.64,
+          "start" : 2.58,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.76,
+          "start" : 2.64,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.759,
+          "end" : 2.88,
+          "start" : 2.76,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.36,
+          "start" : 2.88,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.292,
+          "end" : 4.08,
+          "start" : 3.36,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.839,
+          "end" : 4.74,
+          "start" : 4.08,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.262,
+          "end" : 5.28,
+          "start" : 4.74,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 5.4,
+          "start" : 5.28,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 5.58,
+          "start" : 5.4,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.567,
+          "end" : 6.3,
+          "start" : 5.58,
+          "text" : "magnified,"
+        },
+        {
+          "confidence" : 0.261,
+          "end" : 6.66,
+          "start" : 6.3,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 7.32,
+          "start" : 6.66,
+          "text" : "freshly"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 7.8,
+          "start" : 7.32,
+          "text" : "preserved"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 8.1,
+          "start" : 7.8,
+          "text" : "tissues"
+        },
+        {
+          "confidence" : 0.952,
+          "end" : 8.58,
+          "start" : 8.1,
+          "text" : "kit."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9332941176470588,
+      "end" : 15.06,
+      "start" : 9,
+      "text" : "Previously, I prepared the gels using the molds that they provided, but it did not fully polymerized.",
+      "words" : [
+        {
+          "confidence" : 0.601,
+          "end" : 10.08,
+          "start" : 9.3,
+          "text" : "Previously,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 10.26,
+          "start" : 10.08,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 10.74,
+          "start" : 10.26,
+          "text" : "prepared"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 10.92,
+          "start" : 10.74,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 11.22,
+          "start" : 10.92,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 12.24,
+          "start" : 11.22,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.42,
+          "start" : 12.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.934,
+          "end" : 12.72,
+          "start" : 12.42,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.84,
+          "start" : 12.72,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.96,
+          "start" : 12.84,
+          "text" : "they"
+        },
+        {
+          "confidence" : 0.911,
+          "end" : 13.44,
+          "start" : 12.96,
+          "text" : "provided,"
+        },
+        {
+          "confidence" : 0.728,
+          "end" : 13.74,
+          "start" : 13.44,
+          "text" : "but"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 13.86,
+          "start" : 13.74,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 13.98,
+          "start" : 13.86,
+          "text" : "did"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 14.1,
+          "start" : 13.98,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 14.34,
+          "start" : 14.1,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.83,
+          "end" : 15,
+          "start" : 14.34,
+          "text" : "polymerized."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8596111111111111,
+      "end" : 21.06,
+      "start" : 15.36,
+      "text" : "And the possible issues that could have arised were, um, the fact that the molds were too thin.",
+      "words" : [
+        {
+          "confidence" : 0.341,
+          "end" : 15.66,
+          "start" : 15.36,
+          "text" : "And"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 15.84,
+          "start" : 15.66,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.02,
+          "start" : 15.84,
+          "text" : "possible"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.38,
+          "start" : 16.02,
+          "text" : "issues"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.68,
+          "start" : 16.38,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 16.86,
+          "start" : 16.68,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 17.04,
+          "start" : 16.86,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 17.46,
+          "start" : 17.04,
+          "text" : "arised"
+        },
+        {
+          "confidence" : 0.476,
+          "end" : 18.42,
+          "start" : 17.46,
+          "text" : "were,"
+        },
+        {
+          "confidence" : 0.35,
+          "end" : 19.32,
+          "start" : 18.42,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.726,
+          "end" : 19.74,
+          "start" : 19.32,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.92,
+          "start" : 19.74,
+          "text" : "fact"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 20.04,
+          "start" : 19.92,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.16,
+          "start" : 20.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 20.46,
+          "start" : 20.16,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 20.58,
+          "start" : 20.46,
+          "text" : "were"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.7,
+          "start" : 20.58,
+          "text" : "too"
+        },
+        {
+          "confidence" : 0.706,
+          "end" : 21,
+          "start" : 20.7,
+          "text" : "thin."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8976875,
+      "end" : 25.56,
+      "start" : 21.48,
+      "text" : "Uh, and the fact that there was a fully proper seal between the 2 cover slips.",
+      "words" : [
+        {
+          "confidence" : 0.113,
+          "end" : 22.02,
+          "start" : 21.48,
+          "text" : "Uh,"
+        },
+        {
+          "confidence" : 0.859,
+          "end" : 22.14,
+          "start" : 22.02,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 22.5,
+          "start" : 22.14,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 22.68,
+          "start" : 22.5,
+          "text" : "fact"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 22.92,
+          "start" : 22.68,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 23.1,
+          "start" : 22.92,
+          "text" : "there"
+        },
+        {
+          "confidence" : 0.665,
+          "end" : 23.22,
+          "start" : 23.1,
+          "text" : "was"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 23.46,
+          "start" : 23.22,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 23.76,
+          "start" : 23.46,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 23.94,
+          "start" : 23.76,
+          "text" : "proper"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 24.36,
+          "start" : 23.94,
+          "text" : "seal"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 24.54,
+          "start" : 24.36,
+          "text" : "between"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 24.72,
+          "start" : 24.54,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 24.78,
+          "start" : 24.72,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 24.96,
+          "start" : 24.78,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.84,
+          "end" : 25.5,
+          "start" : 24.96,
+          "text" : "slips."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.87,
+      "end" : 51.66,
+      "start" : 25.98,
+      "text" : "So to mitigate that, we're going to have a control, which is using the silicon rings, a thicker version of um, the molds that they provide, uh, to test whether the hydrogel, uh, polymerizes uh, in the silicon rings versus the molds that they provide, and 2 using clamps to clamp down the cover slips to ensure the molds uh, uh, that they provide are fully sealed, so we can ensure polymerization.",
+      "words" : [
+        {
+          "confidence" : 0.722,
+          "end" : 26.28,
+          "start" : 25.98,
+          "text" : "So"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 27.06,
+          "start" : 26.28,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 27.48,
+          "start" : 27.06,
+          "text" : "mitigate"
+        },
+        {
+          "confidence" : 0.855,
+          "end" : 27.72,
+          "start" : 27.48,
+          "text" : "that,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 28.02,
+          "start" : 27.72,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.14,
+          "start" : 28.02,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.26,
+          "start" : 28.14,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 28.38,
+          "start" : 28.26,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 28.56,
+          "start" : 28.38,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.741,
+          "end" : 29.1,
+          "start" : 28.56,
+          "text" : "control,"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 29.22,
+          "start" : 29.1,
+          "text" : "which"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 29.4,
+          "start" : 29.22,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 29.82,
+          "start" : 29.4,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 30.12,
+          "start" : 29.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.605,
+          "end" : 30.66,
+          "start" : 30.12,
+          "text" : "silicon"
+        },
+        {
+          "confidence" : 0.812,
+          "end" : 31.2,
+          "start" : 30.66,
+          "text" : "rings,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 31.38,
+          "start" : 31.2,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 31.8,
+          "start" : 31.38,
+          "text" : "thicker"
+        },
+        {
+          "confidence" : 1,
+          "end" : 31.98,
+          "start" : 31.8,
+          "text" : "version"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 32.28,
+          "start" : 31.98,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.213,
+          "end" : 33.12,
+          "start" : 32.28,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.658,
+          "end" : 33.42,
+          "start" : 33.12,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 33.84,
+          "start" : 33.42,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 33.96,
+          "start" : 33.84,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 34.08,
+          "start" : 33.96,
+          "text" : "they"
+        },
+        {
+          "confidence" : 0.767,
+          "end" : 34.56,
+          "start" : 34.08,
+          "text" : "provide,"
+        },
+        {
+          "confidence" : 0.25,
+          "end" : 35.34,
+          "start" : 34.56,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 35.46,
+          "start" : 35.34,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 35.7,
+          "start" : 35.46,
+          "text" : "test"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 36,
+          "start" : 35.7,
+          "text" : "whether"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 36.42,
+          "start" : 36,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.602,
+          "end" : 37.26,
+          "start" : 36.42,
+          "text" : "hydrogel,"
+        },
+        {
+          "confidence" : 0.173,
+          "end" : 37.62,
+          "start" : 37.26,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 38.34,
+          "start" : 37.62,
+          "text" : "polymerizes"
+        },
+        {
+          "confidence" : 0.152,
+          "end" : 39,
+          "start" : 38.34,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 39.12,
+          "start" : 39,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 39.24,
+          "start" : 39.12,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.908,
+          "end" : 39.72,
+          "start" : 39.24,
+          "text" : "silicon"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 40.02,
+          "start" : 39.72,
+          "text" : "rings"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 40.2,
+          "start" : 40.02,
+          "text" : "versus"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 40.5,
+          "start" : 40.2,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.829,
+          "end" : 40.8,
+          "start" : 40.5,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 40.92,
+          "start" : 40.8,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 41.04,
+          "start" : 40.92,
+          "text" : "they"
+        },
+        {
+          "confidence" : 0.674,
+          "end" : 41.52,
+          "start" : 41.04,
+          "text" : "provide,"
+        },
+        {
+          "confidence" : 0.895,
+          "end" : 41.76,
+          "start" : 41.52,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.836,
+          "end" : 41.94,
+          "start" : 41.76,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 42.42,
+          "start" : 41.94,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 42.9,
+          "start" : 42.42,
+          "text" : "clamps"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 43.38,
+          "start" : 42.9,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 43.74,
+          "start" : 43.38,
+          "text" : "clamp"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 43.98,
+          "start" : 43.74,
+          "text" : "down"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 44.16,
+          "start" : 43.98,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 44.52,
+          "start" : 44.16,
+          "text" : "cover"
+        },
+        {
+          "confidence" : 0.935,
+          "end" : 45,
+          "start" : 44.52,
+          "text" : "slips"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 45.48,
+          "start" : 45,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 45.9,
+          "start" : 45.48,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 46.14,
+          "start" : 45.9,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 46.44,
+          "start" : 46.14,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.108,
+          "end" : 47.82,
+          "start" : 46.44,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.179,
+          "end" : 48,
+          "start" : 47.82,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 48.06,
+          "start" : 48,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 48.24,
+          "start" : 48.06,
+          "text" : "they"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 48.54,
+          "start" : 48.24,
+          "text" : "provide"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 48.72,
+          "start" : 48.54,
+          "text" : "are"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 48.96,
+          "start" : 48.72,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.684,
+          "end" : 49.98,
+          "start" : 48.96,
+          "text" : "sealed,"
+        },
+        {
+          "confidence" : 0.63,
+          "end" : 50.1,
+          "start" : 49.98,
+          "text" : "so"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 50.28,
+          "start" : 50.1,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 50.4,
+          "start" : 50.28,
+          "text" : "can"
+        },
+        {
+          "confidence" : 0.965,
+          "end" : 50.76,
+          "start" : 50.4,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.924,
+          "end" : 51.6,
+          "start" : 50.76,
+          "text" : "polymerization."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8805384615384615,
+      "end" : 56.04,
+      "start" : 52.14,
+      "text" : "Um, and so that's the current process we're going to be doing today.",
+      "words" : [
+        {
+          "confidence" : 0.166,
+          "end" : 52.68,
+          "start" : 52.14,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.602,
+          "end" : 52.92,
+          "start" : 52.68,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 53.16,
+          "start" : 52.92,
+          "text" : "so"
+        },
+        {
+          "confidence" : 0.984,
+          "end" : 54.24,
+          "start" : 53.16,
+          "text" : "that's"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 54.36,
+          "start" : 54.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 1,
+          "end" : 54.6,
+          "start" : 54.36,
+          "text" : "current"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 54.9,
+          "start" : 54.6,
+          "text" : "process"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 55.38,
+          "start" : 54.9,
+          "text" : "we're"
+        },
+        {
+          "confidence" : 0.886,
+          "end" : 55.44,
+          "start" : 55.38,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.841,
+          "end" : 55.56,
+          "start" : 55.44,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 55.62,
+          "start" : 55.56,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 55.68,
+          "start" : 55.62,
+          "text" : "doing"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 55.98,
+          "start" : 55.68,
+          "text" : "today."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Today we're going to be preparing uh, hydrogels uh, for the magnified, uh, freshly preserved tissues kit. Previously, I prepared the gels using the molds that they provided, but it did not fully polymerized. And the possible issues that could have arised were, um, the fact that the molds were too thin. Uh, and the fact that there was a fully proper seal between the 2 cover slips. So to mitigate that, we're going to have a control, which is using the silicon rings, a thicker version of um, the molds that they provide, uh, to test whether the hydrogel, uh, polymerizes uh, in the silicon rings versus the molds that they provide, and 2 using clamps to clamp down the cover slips to ensure the molds uh, uh, that they provide are fully sealed, so we can ensure polymerization. Um, and so that's the current process we're going to be doing today."
+}

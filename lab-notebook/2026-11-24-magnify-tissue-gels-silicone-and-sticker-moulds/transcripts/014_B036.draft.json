@@ -1,0 +1,348 @@
+{
+  "clipId" : "B036625E-9847-48D0-9E2B-EFBDEE22C776",
+  "createdAt" : "2026-11-24T16:39:04-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8399999999999999,
+      "end" : 5.34,
+      "start" : 0.96,
+      "text" : "I've taken the hydro gels out of the incubator, even though it's been one hour and 30 minutes.",
+      "words" : [
+        {
+          "confidence" : 0.92,
+          "end" : 1.44,
+          "start" : 0.96,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.97,
+          "end" : 1.62,
+          "start" : 1.44,
+          "text" : "taken"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 2.04,
+          "start" : 1.62,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 2.52,
+          "start" : 2.04,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.479,
+          "end" : 2.76,
+          "start" : 2.52,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 3,
+          "start" : 2.76,
+          "text" : "out"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 3.06,
+          "start" : 3,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 3.18,
+          "start" : 3.06,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.777,
+          "end" : 3.9,
+          "start" : 3.18,
+          "text" : "incubator,"
+        },
+        {
+          "confidence" : 0.947,
+          "end" : 3.96,
+          "start" : 3.9,
+          "text" : "even"
+        },
+        {
+          "confidence" : 0.133,
+          "end" : 4.08,
+          "start" : 3.96,
+          "text" : "though"
+        },
+        {
+          "confidence" : 0.735,
+          "end" : 4.26,
+          "start" : 4.08,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.905,
+          "end" : 4.32,
+          "start" : 4.26,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 4.44,
+          "start" : 4.32,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.912,
+          "end" : 4.62,
+          "start" : 4.44,
+          "text" : "hour"
+        },
+        {
+          "confidence" : 0.65,
+          "end" : 4.74,
+          "start" : 4.62,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.95,
+          "end" : 4.86,
+          "start" : 4.74,
+          "text" : "30"
+        },
+        {
+          "confidence" : 0.853,
+          "end" : 5.28,
+          "start" : 4.86,
+          "text" : "minutes."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9367999999999999,
+      "end" : 8.46,
+      "start" : 5.46,
+      "text" : "That's the minimum time required.",
+      "words" : [
+        {
+          "confidence" : 0.896,
+          "end" : 5.94,
+          "start" : 5.46,
+          "text" : "That's"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 6.18,
+          "start" : 5.94,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 6.9,
+          "start" : 6.18,
+          "text" : "minimum"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 7.38,
+          "start" : 6.9,
+          "text" : "time"
+        },
+        {
+          "confidence" : 0.835,
+          "end" : 8.4,
+          "start" : 7.38,
+          "text" : "required."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.824,
+      "end" : 16.2,
+      "start" : 8.94,
+      "text" : "Um, and I'm putting it in the fridge uh, at 4 degrees Celsius, uh, for expansion tomorrow.",
+      "words" : [
+        {
+          "confidence" : 0.419,
+          "end" : 9.54,
+          "start" : 8.94,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.929,
+          "end" : 9.96,
+          "start" : 9.54,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 10.32,
+          "start" : 9.96,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.943,
+          "end" : 10.5,
+          "start" : 10.32,
+          "text" : "putting"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.8,
+          "start" : 10.5,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.04,
+          "start" : 10.8,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.28,
+          "start" : 11.04,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.7,
+          "start" : 11.28,
+          "text" : "fridge"
+        },
+        {
+          "confidence" : 0.186,
+          "end" : 12.54,
+          "start" : 11.7,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 12.6,
+          "start" : 12.54,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.916,
+          "end" : 12.78,
+          "start" : 12.6,
+          "text" : "4"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 13.02,
+          "start" : 12.78,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.484,
+          "end" : 13.92,
+          "start" : 13.02,
+          "text" : "Celsius,"
+        },
+        {
+          "confidence" : 0.256,
+          "end" : 14.58,
+          "start" : 13.92,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 15.12,
+          "start" : 14.58,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 15.66,
+          "start" : 15.12,
+          "text" : "expansion"
+        },
+        {
+          "confidence" : 0.952,
+          "end" : 16.14,
+          "start" : 15.66,
+          "text" : "tomorrow."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8515454545454546,
+      "end" : 19.5,
+      "start" : 16.86,
+      "text" : "Um, I'm gonna shut down for the rest of the day.",
+      "words" : [
+        {
+          "confidence" : 0.276,
+          "end" : 17.4,
+          "start" : 16.86,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 18.12,
+          "start" : 17.4,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.28,
+          "end" : 18.18,
+          "start" : 18.12,
+          "text" : "gonna"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 18.42,
+          "start" : 18.18,
+          "text" : "shut"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 18.66,
+          "start" : 18.42,
+          "text" : "down"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 18.78,
+          "start" : 18.66,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.9,
+          "start" : 18.78,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.02,
+          "start" : 18.9,
+          "text" : "rest"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 19.26,
+          "start" : 19.02,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 19.32,
+          "start" : 19.26,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.839,
+          "end" : 19.44,
+          "start" : 19.32,
+          "text" : "day."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I've taken the hydro gels out of the incubator, even though it's been one hour and 30 minutes. That's the minimum time required. Um, and I'm putting it in the fridge uh, at 4 degrees Celsius, uh, for expansion tomorrow. Um, I'm gonna shut down for the rest of the day."
+}

@@ -1,0 +1,326 @@
+{
+  "clipId" : "5C54D726-4AB4-4C25-9079-BEEA036658A9",
+  "createdAt" : "2026-11-24T14:16:16-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9404374999999999,
+      "end" : 6.48,
+      "start" : 0.66,
+      "text" : "Something annoys because of the large water content that is present in such a thin mold.",
+      "words" : [
+        {
+          "confidence" : 0.993,
+          "end" : 1.14,
+          "start" : 0.66,
+          "text" : "Something"
+        },
+        {
+          "confidence" : 0.27,
+          "end" : 1.5,
+          "start" : 1.14,
+          "text" : "annoys"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 1.8,
+          "start" : 1.5,
+          "text" : "because"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 1.92,
+          "start" : 1.8,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 2.04,
+          "start" : 1.92,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.22,
+          "start" : 2.04,
+          "text" : "large"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.52,
+          "start" : 2.22,
+          "text" : "water"
+        },
+        {
+          "confidence" : 1,
+          "end" : 3,
+          "start" : 2.52,
+          "text" : "content"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.24,
+          "start" : 3,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.36,
+          "start" : 3.24,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.54,
+          "start" : 3.36,
+          "text" : "present"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.02,
+          "start" : 3.54,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 4.8,
+          "start" : 4.02,
+          "text" : "such"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.04,
+          "start" : 4.8,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.34,
+          "start" : 5.04,
+          "text" : "thin"
+        },
+        {
+          "confidence" : 0.826,
+          "end" : 6.42,
+          "start" : 5.34,
+          "text" : "mold."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8387941176470586,
+      "end" : 18.6,
+      "start" : 6.72,
+      "text" : "Um, I'm going to wait for it to dry out, uh, the beat sample intentionally so that I can, uh, have a nice mold, uh, place on top without it being too watered down.",
+      "words" : [
+        {
+          "confidence" : 0.33,
+          "end" : 7.26,
+          "start" : 6.72,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 7.56,
+          "start" : 7.26,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 1,
+          "end" : 7.74,
+          "start" : 7.56,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.92,
+          "start" : 7.74,
+          "text" : "to"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.04,
+          "start" : 7.92,
+          "text" : "wait"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.22,
+          "start" : 8.04,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.4,
+          "start" : 8.22,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.58,
+          "start" : 8.4,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.76,
+          "start" : 8.58,
+          "text" : "dry"
+        },
+        {
+          "confidence" : 0.494,
+          "end" : 9.36,
+          "start" : 8.76,
+          "text" : "out,"
+        },
+        {
+          "confidence" : 0.337,
+          "end" : 10.08,
+          "start" : 9.36,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.926,
+          "end" : 10.2,
+          "start" : 10.08,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.501,
+          "end" : 10.38,
+          "start" : 10.2,
+          "text" : "beat"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 10.8,
+          "start" : 10.38,
+          "text" : "sample"
+        },
+        {
+          "confidence" : 0.969,
+          "end" : 12.36,
+          "start" : 10.8,
+          "text" : "intentionally"
+        },
+        {
+          "confidence" : 1,
+          "end" : 12.6,
+          "start" : 12.36,
+          "text" : "so"
+        },
+        {
+          "confidence" : 1,
+          "end" : 12.78,
+          "start" : 12.6,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 13.02,
+          "start" : 12.78,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.505,
+          "end" : 13.5,
+          "start" : 13.02,
+          "text" : "can,"
+        },
+        {
+          "confidence" : 0.291,
+          "end" : 14.16,
+          "start" : 13.5,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 14.34,
+          "start" : 14.16,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 15,
+          "start" : 14.34,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 15.42,
+          "start" : 15,
+          "text" : "nice"
+        },
+        {
+          "confidence" : 0.666,
+          "end" : 15.96,
+          "start" : 15.42,
+          "text" : "mold,"
+        },
+        {
+          "confidence" : 0.226,
+          "end" : 16.56,
+          "start" : 15.96,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.538,
+          "end" : 16.68,
+          "start" : 16.56,
+          "text" : "place"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.98,
+          "start" : 16.68,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 17.1,
+          "start" : 16.98,
+          "text" : "top"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.4,
+          "start" : 17.1,
+          "text" : "without"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 17.58,
+          "start" : 17.4,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 17.76,
+          "start" : 17.58,
+          "text" : "being"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 17.88,
+          "start" : 17.76,
+          "text" : "too"
+        },
+        {
+          "confidence" : 0.94,
+          "end" : 18.24,
+          "start" : 17.88,
+          "text" : "watered"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 18.48,
+          "start" : 18.24,
+          "text" : "down."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Something annoys because of the large water content that is present in such a thin mold. Um, I'm going to wait for it to dry out, uh, the beat sample intentionally so that I can, uh, have a nice mold, uh, place on top without it being too watered down."
+}

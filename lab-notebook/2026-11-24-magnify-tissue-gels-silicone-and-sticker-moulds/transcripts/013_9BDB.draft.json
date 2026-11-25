@@ -1,0 +1,356 @@
+{
+  "clipId" : "9BDB7811-2BF6-4C7B-B991-1DF4EE216AAE",
+  "createdAt" : "2026-11-24T15:04:43-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8997419354838708,
+      "end" : 10.38,
+      "start" : 0.9,
+      "text" : "An idea I've come up with is, um, to create a better seal, maybe I could add some weights to use gravity to to push down, to ensure a perfect seal.",
+      "words" : [
+        {
+          "confidence" : 0.822,
+          "end" : 1.2,
+          "start" : 0.9,
+          "text" : "An"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.5,
+          "start" : 1.2,
+          "text" : "idea"
+        },
+        {
+          "confidence" : 0.983,
+          "end" : 1.92,
+          "start" : 1.5,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.98,
+          "start" : 1.92,
+          "text" : "come"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.16,
+          "start" : 1.98,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 2.34,
+          "start" : 2.16,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.516,
+          "end" : 2.94,
+          "start" : 2.34,
+          "text" : "is,"
+        },
+        {
+          "confidence" : 0.476,
+          "end" : 3.42,
+          "start" : 2.94,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 3.54,
+          "start" : 3.42,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.9,
+          "start" : 3.54,
+          "text" : "create"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 4.02,
+          "start" : 3.9,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.14,
+          "start" : 4.02,
+          "text" : "better"
+        },
+        {
+          "confidence" : 0.807,
+          "end" : 4.74,
+          "start" : 4.14,
+          "text" : "seal,"
+        },
+        {
+          "confidence" : 0.808,
+          "end" : 4.92,
+          "start" : 4.74,
+          "text" : "maybe"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 5.16,
+          "start" : 4.92,
+          "text" : "I"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 5.28,
+          "start" : 5.16,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 5.46,
+          "start" : 5.28,
+          "text" : "add"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.7,
+          "start" : 5.46,
+          "text" : "some"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 6.12,
+          "start" : 5.7,
+          "text" : "weights"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.36,
+          "start" : 6.12,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.54,
+          "start" : 6.36,
+          "text" : "use"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.02,
+          "start" : 6.54,
+          "text" : "gravity"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 7.26,
+          "start" : 7.02,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.68,
+          "end" : 8.04,
+          "start" : 7.26,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.28,
+          "start" : 8.04,
+          "text" : "push"
+        },
+        {
+          "confidence" : 0.586,
+          "end" : 8.88,
+          "start" : 8.28,
+          "text" : "down,"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 8.94,
+          "start" : 8.88,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.917,
+          "end" : 9.36,
+          "start" : 8.94,
+          "text" : "ensure"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 9.54,
+          "start" : 9.36,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.72,
+          "start" : 9.54,
+          "text" : "perfect"
+        },
+        {
+          "confidence" : 0.405,
+          "end" : 10.32,
+          "start" : 9.72,
+          "text" : "seal."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.814375,
+      "end" : 19.56,
+      "start" : 10.8,
+      "text" : "That might be a really good idea for uh, next time when I, uh, uh, prepare the hydro gels using the magnify kits molds.",
+      "words" : [
+        {
+          "confidence" : 0.506,
+          "end" : 11.1,
+          "start" : 10.8,
+          "text" : "That"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 11.34,
+          "start" : 11.1,
+          "text" : "might"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.46,
+          "start" : 11.34,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 11.64,
+          "start" : 11.46,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.82,
+          "start" : 11.64,
+          "text" : "really"
+        },
+        {
+          "confidence" : 1,
+          "end" : 11.94,
+          "start" : 11.82,
+          "text" : "good"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.12,
+          "start" : 11.94,
+          "text" : "idea"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 12.42,
+          "start" : 12.12,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.356,
+          "end" : 13.14,
+          "start" : 12.42,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 13.32,
+          "start" : 13.14,
+          "text" : "next"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 13.56,
+          "start" : 13.32,
+          "text" : "time"
+        },
+        {
+          "confidence" : 0.975,
+          "end" : 13.8,
+          "start" : 13.56,
+          "text" : "when"
+        },
+        {
+          "confidence" : 0.532,
+          "end" : 14.22,
+          "start" : 13.8,
+          "text" : "I,"
+        },
+        {
+          "confidence" : 0.416,
+          "end" : 14.58,
+          "start" : 14.22,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.163,
+          "end" : 15.42,
+          "start" : 14.58,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.796,
+          "end" : 16.38,
+          "start" : 15.42,
+          "text" : "prepare"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 16.5,
+          "start" : 16.38,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.952,
+          "end" : 16.86,
+          "start" : 16.5,
+          "text" : "hydro"
+        },
+        {
+          "confidence" : 0.588,
+          "end" : 17.1,
+          "start" : 16.86,
+          "text" : "gels"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 17.46,
+          "start" : 17.1,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 17.64,
+          "start" : 17.46,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.901,
+          "end" : 18.72,
+          "start" : 17.64,
+          "text" : "magnify"
+        },
+        {
+          "confidence" : 0.462,
+          "end" : 19.02,
+          "start" : 18.72,
+          "text" : "kits"
+        },
+        {
+          "confidence" : 0.962,
+          "end" : 19.5,
+          "start" : 19.02,
+          "text" : "molds."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "An idea I've come up with is, um, to create a better seal, maybe I could add some weights to use gravity to to push down, to ensure a perfect seal. That might be a really good idea for uh, next time when I, uh, uh, prepare the hydro gels using the magnify kits molds."
+}

@@ -1,0 +1,234 @@
+{
+  "clipId" : "C656FE46-C938-4292-87E9-699E815A4F8E",
+  "createdAt" : "2026-11-24T14:33:31-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9280833333333329,
+      "end" : 12.9,
+      "start" : 0.48,
+      "text" : "What could be of a great interest in investing in a very thin silicone rings in such a way that you can create thinner molds and therefore, um, kind of potentially uh, result in larger expansion?",
+      "words" : [
+        {
+          "confidence" : 0.995,
+          "end" : 0.78,
+          "start" : 0.48,
+          "text" : "What"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.08,
+          "start" : 0.78,
+          "text" : "could"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.26,
+          "start" : 1.08,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.44,
+          "start" : 1.26,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 1.8,
+          "start" : 1.44,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.16,
+          "start" : 1.8,
+          "text" : "great"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.46,
+          "start" : 2.16,
+          "text" : "interest"
+        },
+        {
+          "confidence" : 0.841,
+          "end" : 2.88,
+          "start" : 2.46,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.54,
+          "start" : 2.88,
+          "text" : "investing"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 3.9,
+          "start" : 3.54,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.942,
+          "end" : 4.02,
+          "start" : 3.9,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.14,
+          "start" : 4.02,
+          "text" : "very"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 4.38,
+          "start" : 4.14,
+          "text" : "thin"
+        },
+        {
+          "confidence" : 0.709,
+          "end" : 5.52,
+          "start" : 4.38,
+          "text" : "silicone"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 5.94,
+          "start" : 5.52,
+          "text" : "rings"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 6.54,
+          "start" : 5.94,
+          "text" : "in"
+        },
+        {
+          "confidence" : 1,
+          "end" : 6.72,
+          "start" : 6.54,
+          "text" : "such"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 6.9,
+          "start" : 6.72,
+          "text" : "a"
+        },
+        {
+          "confidence" : 1,
+          "end" : 7.02,
+          "start" : 6.9,
+          "text" : "way"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.2,
+          "start" : 7.02,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.38,
+          "start" : 7.2,
+          "text" : "you"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 7.5,
+          "start" : 7.38,
+          "text" : "can"
+        },
+        {
+          "confidence" : 1,
+          "end" : 7.8,
+          "start" : 7.5,
+          "text" : "create"
+        },
+        {
+          "confidence" : 1,
+          "end" : 8.16,
+          "start" : 7.8,
+          "text" : "thinner"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 8.58,
+          "start" : 8.16,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.76,
+          "start" : 8.58,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.711,
+          "end" : 9.18,
+          "start" : 8.76,
+          "text" : "therefore,"
+        },
+        {
+          "confidence" : 0.4,
+          "end" : 9.96,
+          "start" : 9.18,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.837,
+          "end" : 10.26,
+          "start" : 9.96,
+          "text" : "kind"
+        },
+        {
+          "confidence" : 0.951,
+          "end" : 10.44,
+          "start" : 10.26,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.92,
+          "start" : 10.44,
+          "text" : "potentially"
+        },
+        {
+          "confidence" : 0.255,
+          "end" : 11.4,
+          "start" : 10.92,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.64,
+          "start" : 11.4,
+          "text" : "result"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.88,
+          "start" : 11.64,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.3,
+          "start" : 11.88,
+          "text" : "larger"
+        },
+        {
+          "confidence" : 0.952,
+          "end" : 12.84,
+          "start" : 12.3,
+          "text" : "expansion?"
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "What could be of a great interest in investing in a very thin silicone rings in such a way that you can create thinner molds and therefore, um, kind of potentially uh, result in larger expansion?"
+}

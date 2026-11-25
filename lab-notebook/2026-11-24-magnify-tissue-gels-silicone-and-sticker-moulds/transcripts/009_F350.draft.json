@@ -1,0 +1,120 @@
+{
+  "clipId" : "F3501BAF-B817-4EB6-93C6-2E654AD0D5FA",
+  "createdAt" : "2026-11-24T14:33:44-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9348823529411764,
+      "end" : 6.462,
+      "start" : 0.72,
+      "text" : "I've now put the hydrogels to be incubated at 37 degrees Celsius for the next 2 hours.",
+      "words" : [
+        {
+          "confidence" : 0.971,
+          "end" : 1.2,
+          "start" : 0.72,
+          "text" : "I've"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 1.32,
+          "start" : 1.2,
+          "text" : "now"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.5,
+          "start" : 1.32,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 1.62,
+          "start" : 1.5,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.803,
+          "end" : 2.22,
+          "start" : 1.62,
+          "text" : "hydrogels"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.46,
+          "start" : 2.22,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 2.58,
+          "start" : 2.46,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 3.06,
+          "start" : 2.58,
+          "text" : "incubated"
+        },
+        {
+          "confidence" : 0.952,
+          "end" : 3.54,
+          "start" : 3.06,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.14,
+          "start" : 3.54,
+          "text" : "37"
+        },
+        {
+          "confidence" : 0.883,
+          "end" : 4.26,
+          "start" : 4.14,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.844,
+          "end" : 4.56,
+          "start" : 4.26,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 5.64,
+          "start" : 4.56,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.523,
+          "end" : 5.76,
+          "start" : 5.64,
+          "text" : "the"
+        },
+        {
+          "confidence" : 1,
+          "end" : 5.88,
+          "start" : 5.76,
+          "text" : "next"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 6.06,
+          "start" : 5.88,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.951,
+          "end" : 6.462,
+          "start" : 6.06,
+          "text" : "hours."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I've now put the hydrogels to be incubated at 37 degrees Celsius for the next 2 hours."
+}

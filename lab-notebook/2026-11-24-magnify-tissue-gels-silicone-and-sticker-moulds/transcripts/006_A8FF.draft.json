@@ -1,0 +1,320 @@
+{
+  "clipId" : "A8FFFBF8-F4B3-407C-899F-F942673A36EF",
+  "createdAt" : "2026-11-24T14:17:33-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8338000000000001,
+      "end" : 8.82,
+      "start" : 0.54,
+      "text" : "Just put in the incubator for roughly 5 50 degrees Celsius, roughly uh, 20 minutes, uh, and then we'll see if it's fully dried up.",
+      "words" : [
+        {
+          "confidence" : 0.974,
+          "end" : 0.84,
+          "start" : 0.54,
+          "text" : "Just"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 1.08,
+          "start" : 0.84,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.971,
+          "end" : 1.32,
+          "start" : 1.08,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.942,
+          "end" : 1.44,
+          "start" : 1.32,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 1.86,
+          "start" : 1.44,
+          "text" : "incubator"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 2.04,
+          "start" : 1.86,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.946,
+          "end" : 2.52,
+          "start" : 2.04,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.599,
+          "end" : 2.76,
+          "start" : 2.52,
+          "text" : "5"
+        },
+        {
+          "confidence" : 0.77,
+          "end" : 3.24,
+          "start" : 2.76,
+          "text" : "50"
+        },
+        {
+          "confidence" : 0.554,
+          "end" : 3.54,
+          "start" : 3.24,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.526,
+          "end" : 4.5,
+          "start" : 3.54,
+          "text" : "Celsius,"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 5.22,
+          "start" : 4.5,
+          "text" : "roughly"
+        },
+        {
+          "confidence" : 0.407,
+          "end" : 5.7,
+          "start" : 5.22,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 5.94,
+          "start" : 5.7,
+          "text" : "20"
+        },
+        {
+          "confidence" : 0.525,
+          "end" : 6.66,
+          "start" : 5.94,
+          "text" : "minutes,"
+        },
+        {
+          "confidence" : 0.255,
+          "end" : 7.32,
+          "start" : 6.66,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.933,
+          "end" : 7.44,
+          "start" : 7.32,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 7.56,
+          "start" : 7.44,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 7.86,
+          "start" : 7.56,
+          "text" : "we'll"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 7.92,
+          "start" : 7.86,
+          "text" : "see"
+        },
+        {
+          "confidence" : 0.864,
+          "end" : 7.98,
+          "start" : 7.92,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.921,
+          "end" : 8.16,
+          "start" : 7.98,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.786,
+          "end" : 8.34,
+          "start" : 8.16,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 8.52,
+          "start" : 8.34,
+          "text" : "dried"
+        },
+        {
+          "confidence" : 0.944,
+          "end" : 8.76,
+          "start" : 8.52,
+          "text" : "up."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7955416666666665,
+      "end" : 18.18,
+      "start" : 8.82,
+      "text" : "I'm going to be preparing the, uh, activation buffer and uh, the solution G, uh, ready for me to pipe at the molds in.",
+      "words" : [
+        {
+          "confidence" : 0.995,
+          "end" : 9.24,
+          "start" : 8.82,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.512,
+          "end" : 9.3,
+          "start" : 9.24,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.505,
+          "end" : 9.42,
+          "start" : 9.3,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 9.54,
+          "start" : 9.42,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.84,
+          "start" : 9.54,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.5,
+          "end" : 10.38,
+          "start" : 9.84,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.383,
+          "end" : 11.58,
+          "start" : 10.38,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.9,
+          "end" : 12.6,
+          "start" : 11.58,
+          "text" : "activation"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 13.08,
+          "start" : 12.6,
+          "text" : "buffer"
+        },
+        {
+          "confidence" : 0.86,
+          "end" : 13.68,
+          "start" : 13.08,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.28,
+          "end" : 14.34,
+          "start" : 13.68,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 14.46,
+          "start" : 14.34,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.931,
+          "end" : 14.82,
+          "start" : 14.46,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.519,
+          "end" : 15.54,
+          "start" : 14.82,
+          "text" : "G,"
+        },
+        {
+          "confidence" : 0.345,
+          "end" : 16.14,
+          "start" : 15.54,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 16.5,
+          "start" : 16.14,
+          "text" : "ready"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 16.74,
+          "start" : 16.5,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 16.98,
+          "start" : 16.74,
+          "text" : "me"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 17.22,
+          "start" : 16.98,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 17.4,
+          "start" : 17.22,
+          "text" : "pipe"
+        },
+        {
+          "confidence" : 0.869,
+          "end" : 17.58,
+          "start" : 17.4,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.965,
+          "end" : 17.7,
+          "start" : 17.58,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.833,
+          "end" : 17.94,
+          "start" : 17.7,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.743,
+          "end" : 18.12,
+          "start" : 17.94,
+          "text" : "in."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Just put in the incubator for roughly 5 50 degrees Celsius, roughly uh, 20 minutes, uh, and then we'll see if it's fully dried up. I'm going to be preparing the, uh, activation buffer and uh, the solution G, uh, ready for me to pipe at the molds in."
+}

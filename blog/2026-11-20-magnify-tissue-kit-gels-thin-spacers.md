@@ -2,6 +2,8 @@
 
 *2026-11-20*
 
+> **Update, 24 November:** these gels did not fully polymerise, most likely because the sticker moulds are thin and the top coverslip never sealed. A new batch was cast on 24 November in both sticker moulds and silicone rings; see the [lab notebook](../lab-notebook/2026-11-24-magnify-tissue-gels-silicone-and-sticker-moulds/).
+
 After the [second bead-gel batch](2026-11-17-magnify-second-batch-coverslip-sandwich.md) still reached only about 1.2× and the three leftover gels [dried out](2026-11-19-magnify-di-water-attempt-gels-dried.md) before they could be tried in de-ionised water, I cast a fresh batch on 20 November from the Magnify kit for fixed tissue. Two things changed: the gels are much thinner, cast on the kit's own adhesive spacer stickers instead of silicone rings, and the activation buffer was vortexed for two minutes instead of about fifteen seconds. The expansion attempt comes on Monday 23 November, so there is no result yet.
 
 The raw lab notebook (voice notes, transcripts and photos) is in [`lab-notebook/2026-11-20-magnify-tissue-kit-gels-preparation/`](../lab-notebook/2026-11-20-magnify-tissue-kit-gels-preparation/).

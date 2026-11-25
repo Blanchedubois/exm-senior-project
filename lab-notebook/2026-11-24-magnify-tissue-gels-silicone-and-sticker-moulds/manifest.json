@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 15,
+      "entryDate" : "2026-11-24",
+      "id" : "67EFF9ED-6F85-419E-942F-D33E6B3DF7AA",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 7,
+        "voice" : 15
+      },
+      "title" : "24 Nov 2026: Magnify Tissue Gel Preparation  Silicon and Sticker Moulds",
+      "totalAudioSeconds" : 393.8003541666667
+    }
+  ],
+  "exportedAt" : "2026-11-24T20:13:02-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 27.2.1",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

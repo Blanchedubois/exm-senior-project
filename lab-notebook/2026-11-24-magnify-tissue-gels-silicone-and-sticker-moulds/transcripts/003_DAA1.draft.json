@@ -1,0 +1,290 @@
+{
+  "clipId" : "DAA1F360-FE82-4AFF-BA45-9BA5606C472A",
+  "createdAt" : "2026-11-24T14:07:21-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.9153333333333334,
+      "end" : 7.8,
+      "start" : 0.24,
+      "text" : "I'm going to be preparing a one to 100 stock solution of uh 2 micrometer nail red beads.",
+      "words" : [
+        {
+          "confidence" : 0.999,
+          "end" : 0.72,
+          "start" : 0.24,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 0.84,
+          "start" : 0.72,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 0.96,
+          "start" : 0.84,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 1.08,
+          "start" : 0.96,
+          "text" : "be"
+        },
+        {
+          "confidence" : 1,
+          "end" : 1.5,
+          "start" : 1.08,
+          "text" : "preparing"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 2.4,
+          "start" : 1.5,
+          "text" : "a"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 2.64,
+          "start" : 2.4,
+          "text" : "one"
+        },
+        {
+          "confidence" : 0.936,
+          "end" : 2.88,
+          "start" : 2.64,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 3.3,
+          "start" : 2.88,
+          "text" : "100"
+        },
+        {
+          "confidence" : 0.98,
+          "end" : 3.66,
+          "start" : 3.3,
+          "text" : "stock"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 4.26,
+          "start" : 3.66,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.937,
+          "end" : 4.98,
+          "start" : 4.26,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.48,
+          "end" : 5.28,
+          "start" : 4.98,
+          "text" : "uh"
+        },
+        {
+          "confidence" : 0.987,
+          "end" : 5.64,
+          "start" : 5.28,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.749,
+          "end" : 6.36,
+          "start" : 5.64,
+          "text" : "micrometer"
+        },
+        {
+          "confidence" : 0.701,
+          "end" : 6.78,
+          "start" : 6.36,
+          "text" : "nail"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 7.02,
+          "start" : 6.78,
+          "text" : "red"
+        },
+        {
+          "confidence" : 0.793,
+          "end" : 7.74,
+          "start" : 7.02,
+          "text" : "beads."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7828076923076922,
+      "end" : 19.68,
+      "start" : 8.04,
+      "text" : "Um, and this will be used, uh, uh, to create bead samples using the hydrogels, uh, if we were to image it on the, Um, microscope.",
+      "words" : [
+        {
+          "confidence" : 0.33,
+          "end" : 8.58,
+          "start" : 8.04,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.896,
+          "end" : 8.76,
+          "start" : 8.58,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.12,
+          "start" : 8.76,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 9.3,
+          "start" : 9.12,
+          "text" : "will"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.48,
+          "start" : 9.3,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.506,
+          "end" : 9.96,
+          "start" : 9.48,
+          "text" : "used,"
+        },
+        {
+          "confidence" : 0.337,
+          "end" : 10.62,
+          "start" : 9.96,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.334,
+          "end" : 11.1,
+          "start" : 10.62,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 11.28,
+          "start" : 11.1,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.64,
+          "start" : 11.28,
+          "text" : "create"
+        },
+        {
+          "confidence" : 0.548,
+          "end" : 11.94,
+          "start" : 11.64,
+          "text" : "bead"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 12.3,
+          "start" : 11.94,
+          "text" : "samples"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 12.54,
+          "start" : 12.3,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 12.78,
+          "start" : 12.54,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.765,
+          "end" : 13.86,
+          "start" : 12.78,
+          "text" : "hydrogels,"
+        },
+        {
+          "confidence" : 0.222,
+          "end" : 14.34,
+          "start" : 13.86,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.93,
+          "end" : 14.46,
+          "start" : 14.34,
+          "text" : "if"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 14.58,
+          "start" : 14.46,
+          "text" : "we"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 14.7,
+          "start" : 14.58,
+          "text" : "were"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 14.88,
+          "start" : 14.7,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 15.06,
+          "start" : 14.88,
+          "text" : "image"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 15.42,
+          "start" : 15.06,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 15.54,
+          "start" : 15.42,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.437,
+          "end" : 16.98,
+          "start" : 15.54,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.209,
+          "end" : 18.9,
+          "start" : 16.98,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.893,
+          "end" : 19.56,
+          "start" : 18.9,
+          "text" : "microscope."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "I'm going to be preparing a one to 100 stock solution of uh 2 micrometer nail red beads. Um, and this will be used, uh, uh, to create bead samples using the hydrogels, uh, if we were to image it on the, Um, microscope."
+}

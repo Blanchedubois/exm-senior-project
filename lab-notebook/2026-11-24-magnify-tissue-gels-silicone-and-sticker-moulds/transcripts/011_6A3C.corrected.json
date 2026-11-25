@@ -1,0 +1,200 @@
+{
+  "clipId" : "6A3CF4EA-885E-4FE8-B52B-9A4AB773119B",
+  "corrected" : true,
+  "createdAt" : "2026-11-24T14:39:10-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.8216,
+      "end" : 12.3,
+      "original" : "Instead, label the, uh, 2 Petri dishes with the hydrogels, uh, and then seal it with parafilm and put it in the fridge at 40 degrees Celsius for 50 minutes.",
+      "start" : 1.26,
+      "text" : "Instead, label the, uh, 2 Petri dishes with the hydrogels, uh, and then seal it with parafilm and put it in the fridge at 40 degrees Celsius for 15 minutes.",
+      "words" : [
+        {
+          "confidence" : 0.315,
+          "end" : 1.92,
+          "start" : 1.26,
+          "text" : "Instead,"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 2.34,
+          "start" : 1.92,
+          "text" : "label"
+        },
+        {
+          "confidence" : 0.515,
+          "end" : 3.24,
+          "start" : 2.34,
+          "text" : "the,"
+        },
+        {
+          "confidence" : 0.355,
+          "end" : 3.66,
+          "start" : 3.24,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.738,
+          "end" : 3.96,
+          "start" : 3.66,
+          "text" : "2"
+        },
+        {
+          "confidence" : 0.64,
+          "end" : 4.86,
+          "start" : 3.96,
+          "text" : "Petri"
+        },
+        {
+          "confidence" : 0.988,
+          "end" : 5.28,
+          "start" : 4.86,
+          "text" : "dishes"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 5.58,
+          "start" : 5.28,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.968,
+          "end" : 6.12,
+          "start" : 5.58,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.773,
+          "end" : 7.74,
+          "start" : 6.12,
+          "text" : "hydrogels,"
+        },
+        {
+          "confidence" : 0.234,
+          "end" : 7.98,
+          "start" : 7.74,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.957,
+          "end" : 8.1,
+          "start" : 7.98,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 8.22,
+          "start" : 8.1,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 8.58,
+          "start" : 8.22,
+          "text" : "seal"
+        },
+        {
+          "confidence" : 0.775,
+          "end" : 8.7,
+          "start" : 8.58,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.77,
+          "end" : 8.88,
+          "start" : 8.7,
+          "text" : "with"
+        },
+        {
+          "confidence" : 0.679,
+          "end" : 9.42,
+          "start" : 8.88,
+          "text" : "parafilm"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.54,
+          "start" : 9.42,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.66,
+          "start" : 9.54,
+          "text" : "put"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 9.84,
+          "start" : 9.66,
+          "text" : "it"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 9.96,
+          "start" : 9.84,
+          "text" : "in"
+        },
+        {
+          "confidence" : 1,
+          "end" : 10.14,
+          "start" : 9.96,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 10.38,
+          "start" : 10.14,
+          "text" : "fridge"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 10.68,
+          "start" : 10.38,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.845,
+          "end" : 10.86,
+          "start" : 10.68,
+          "text" : "40"
+        },
+        {
+          "confidence" : 0.748,
+          "end" : 11.1,
+          "start" : 10.86,
+          "text" : "degrees"
+        },
+        {
+          "confidence" : 0.837,
+          "end" : 11.4,
+          "start" : 11.1,
+          "text" : "Celsius"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 11.82,
+          "start" : 11.4,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.599,
+          "end" : 11.94,
+          "start" : 11.82,
+          "text" : "50"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 12.24,
+          "start" : 11.94,
+          "text" : "minutes."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "Instead, label the, uh, 2 Petri dishes with the hydrogels, uh, and then seal it with parafilm and put it in the fridge at 40 degrees Celsius for 15 minutes."
+}
