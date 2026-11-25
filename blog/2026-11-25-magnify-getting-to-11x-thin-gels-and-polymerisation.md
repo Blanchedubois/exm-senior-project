@@ -8,7 +8,7 @@ Three weeks of Magnify bead gels have produced gels that expand to about 1.2 to 
 
 **1. The expansion liquid.** Both batches were expanded in 1× PBS, which the kit sheet rates at about 4×. The kit's website says 11× takes a series of immersions in PBS, or immersion in de-ionised water. So far no gel has had a proper water expansion: the [19 November attempt](2026-11-19-magnify-di-water-attempt-gels-dried.md) found the last three gels dried out before they could be tried.
 
-**2. The gel is too thick.** Every gel so far was cast in a silicone ring, so each one is as thick as the ring. A thick gel swells in all three directions, and the top and bottom faces can constrain how far it spreads in the plane. The wrinkling seen on the earlier gels fits this: a gel that wants to grow in-plane but can't do so freely buckles instead. A thin gel has much less of this constraint. The kit ships with thin adhesive spacer stickers for exactly this reason, so the fix seemed simple: cast on the stickers instead of the rings.
+**2. The gel is too thick.** Every gel so far was cast in a silicone ring, so each one is as thick as the ring. A thick gel swells in all three directions, and the top and bottom faces can constrain how far it spreads in the plane. The wrinkling seen on the gels in the [16 November session](../lab-notebook/2026-11-16-magnify-gels-homogenization-and-expansion/) fits this: a gel that wants to grow in-plane but can't do so freely buckles instead. A thin gel has much less of this constraint. The kit ships with thin adhesive spacer stickers for exactly this reason, so the fix seemed simple: cast on the stickers instead of the rings.
 
 ## Going thin created a new problem: the gels did not set
 
