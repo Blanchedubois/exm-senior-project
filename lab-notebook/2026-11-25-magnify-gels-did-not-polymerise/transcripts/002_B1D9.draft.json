@@ -1,0 +1,734 @@
+{
+  "clipId" : "B1D92BBE-25CC-46AA-83C5-B24EBA952807",
+  "createdAt" : "2026-11-25T14:12:12-05:00",
+  "engine" : "SpeechAnalyzer/SpeechTranscriber",
+  "locale" : "en_US",
+  "segments" : [
+    {
+      "confidence" : 0.7369600000000002,
+      "end" : 12.9,
+      "start" : 1.56,
+      "text" : "This is solution problem instead of uh, uh, an actual mold problem because both fix silicon molds and uh, um, then molds have not polymerized.",
+      "words" : [
+        {
+          "confidence" : 0.812,
+          "end" : 1.86,
+          "start" : 1.56,
+          "text" : "This"
+        },
+        {
+          "confidence" : 0.211,
+          "end" : 2.34,
+          "start" : 1.86,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.908,
+          "end" : 2.7,
+          "start" : 2.34,
+          "text" : "solution"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 3,
+          "start" : 2.7,
+          "text" : "problem"
+        },
+        {
+          "confidence" : 0.829,
+          "end" : 3.78,
+          "start" : 3,
+          "text" : "instead"
+        },
+        {
+          "confidence" : 0.972,
+          "end" : 4.5,
+          "start" : 3.78,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.17,
+          "end" : 5.1,
+          "start" : 4.5,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.189,
+          "end" : 5.4,
+          "start" : 5.1,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 5.58,
+          "start" : 5.4,
+          "text" : "an"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 5.94,
+          "start" : 5.58,
+          "text" : "actual"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 6.18,
+          "start" : 5.94,
+          "text" : "mold"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 6.42,
+          "start" : 6.18,
+          "text" : "problem"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 6.78,
+          "start" : 6.42,
+          "text" : "because"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 7.14,
+          "start" : 6.78,
+          "text" : "both"
+        },
+        {
+          "confidence" : 0.15,
+          "end" : 7.86,
+          "start" : 7.14,
+          "text" : "fix"
+        },
+        {
+          "confidence" : 0.663,
+          "end" : 8.34,
+          "start" : 7.86,
+          "text" : "silicon"
+        },
+        {
+          "confidence" : 0.761,
+          "end" : 8.7,
+          "start" : 8.34,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.819,
+          "end" : 9.24,
+          "start" : 8.7,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.32,
+          "end" : 9.9,
+          "start" : 9.24,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.391,
+          "end" : 10.86,
+          "start" : 9.9,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.736,
+          "end" : 11.16,
+          "start" : 10.86,
+          "text" : "then"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 11.76,
+          "start" : 11.16,
+          "text" : "molds"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 11.88,
+          "start" : 11.76,
+          "text" : "have"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 12,
+          "start" : 11.88,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.704,
+          "end" : 12.84,
+          "start" : 12,
+          "text" : "polymerized."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.9327200000000001,
+      "end" : 21.9,
+      "start" : 13.32,
+      "text" : "Um, this is probably because the kit bought in the middle of summer and since it's been so many months since I'm using the kit.",
+      "words" : [
+        {
+          "confidence" : 0.275,
+          "end" : 13.86,
+          "start" : 13.32,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.776,
+          "end" : 14.1,
+          "start" : 13.86,
+          "text" : "this"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 14.28,
+          "start" : 14.1,
+          "text" : "is"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 14.46,
+          "start" : 14.28,
+          "text" : "probably"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 14.82,
+          "start" : 14.46,
+          "text" : "because"
+        },
+        {
+          "confidence" : 0.911,
+          "end" : 15.9,
+          "start" : 14.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.963,
+          "end" : 16.92,
+          "start" : 15.9,
+          "text" : "kit"
+        },
+        {
+          "confidence" : 0.955,
+          "end" : 17.46,
+          "start" : 16.92,
+          "text" : "bought"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 17.82,
+          "start" : 17.46,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 17.94,
+          "start" : 17.82,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 18.12,
+          "start" : 17.94,
+          "text" : "middle"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 18.3,
+          "start" : 18.12,
+          "text" : "of"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 18.42,
+          "start" : 18.3,
+          "text" : "summer"
+        },
+        {
+          "confidence" : 0.847,
+          "end" : 19.5,
+          "start" : 18.42,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.99,
+          "end" : 19.74,
+          "start" : 19.5,
+          "text" : "since"
+        },
+        {
+          "confidence" : 0.973,
+          "end" : 20.1,
+          "start" : 19.74,
+          "text" : "it's"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 20.16,
+          "start" : 20.1,
+          "text" : "been"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 20.34,
+          "start" : 20.16,
+          "text" : "so"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 20.46,
+          "start" : 20.34,
+          "text" : "many"
+        },
+        {
+          "confidence" : 0.999,
+          "end" : 20.58,
+          "start" : 20.46,
+          "text" : "months"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 20.82,
+          "start" : 20.58,
+          "text" : "since"
+        },
+        {
+          "confidence" : 0.986,
+          "end" : 21.18,
+          "start" : 20.82,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 21.24,
+          "start" : 21.18,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.977,
+          "end" : 21.42,
+          "start" : 21.24,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.708,
+          "end" : 21.84,
+          "start" : 21.42,
+          "text" : "kit."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.7933125000000001,
+      "end" : 29.04,
+      "start" : 22.38,
+      "text" : "The solutions might not be fully stable, and therefore, um, uh, cannot even polymerize at all.",
+      "words" : [
+        {
+          "confidence" : 0.333,
+          "end" : 22.68,
+          "start" : 22.38,
+          "text" : "The"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 23.28,
+          "start" : 22.68,
+          "text" : "solutions"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 23.46,
+          "start" : 23.28,
+          "text" : "might"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 23.58,
+          "start" : 23.46,
+          "text" : "not"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 23.7,
+          "start" : 23.58,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.998,
+          "end" : 24.42,
+          "start" : 23.7,
+          "text" : "fully"
+        },
+        {
+          "confidence" : 0.702,
+          "end" : 24.96,
+          "start" : 24.42,
+          "text" : "stable,"
+        },
+        {
+          "confidence" : 0.877,
+          "end" : 25.74,
+          "start" : 24.96,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.706,
+          "end" : 26.34,
+          "start" : 25.74,
+          "text" : "therefore,"
+        },
+        {
+          "confidence" : 0.264,
+          "end" : 27.06,
+          "start" : 26.34,
+          "text" : "um,"
+        },
+        {
+          "confidence" : 0.183,
+          "end" : 27.48,
+          "start" : 27.06,
+          "text" : "uh,"
+        },
+        {
+          "confidence" : 0.958,
+          "end" : 27.72,
+          "start" : 27.48,
+          "text" : "cannot"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 28.02,
+          "start" : 27.72,
+          "text" : "even"
+        },
+        {
+          "confidence" : 0.871,
+          "end" : 28.62,
+          "start" : 28.02,
+          "text" : "polymerize"
+        },
+        {
+          "confidence" : 0.903,
+          "end" : 28.74,
+          "start" : 28.62,
+          "text" : "at"
+        },
+        {
+          "confidence" : 0.918,
+          "end" : 28.98,
+          "start" : 28.74,
+          "text" : "all."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8877037037037037,
+      "end" : 37.56,
+      "start" : 29.04,
+      "text" : "So I'm going to be waiting for the magnified kit to arrive and for the self-culture kit and try to polymerize those gels, using the thin molds.",
+      "words" : [
+        {
+          "confidence" : 0.567,
+          "end" : 29.34,
+          "start" : 29.04,
+          "text" : "So"
+        },
+        {
+          "confidence" : 0.853,
+          "end" : 29.58,
+          "start" : 29.34,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.574,
+          "end" : 29.64,
+          "start" : 29.58,
+          "text" : "going"
+        },
+        {
+          "confidence" : 0.406,
+          "end" : 29.7,
+          "start" : 29.64,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.883,
+          "end" : 29.76,
+          "start" : 29.7,
+          "text" : "be"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 29.94,
+          "start" : 29.76,
+          "text" : "waiting"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 30.06,
+          "start" : 29.94,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.974,
+          "end" : 30.18,
+          "start" : 30.06,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.8,
+          "end" : 30.54,
+          "start" : 30.18,
+          "text" : "magnified"
+        },
+        {
+          "confidence" : 0.989,
+          "end" : 30.9,
+          "start" : 30.54,
+          "text" : "kit"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 31.08,
+          "start" : 30.9,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.996,
+          "end" : 31.38,
+          "start" : 31.08,
+          "text" : "arrive"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 31.68,
+          "start" : 31.38,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.894,
+          "end" : 32.7,
+          "start" : 31.68,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.959,
+          "end" : 32.88,
+          "start" : 32.7,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.839,
+          "end" : 33.48,
+          "start" : 32.88,
+          "text" : "self-culture"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 33.78,
+          "start" : 33.48,
+          "text" : "kit"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 33.96,
+          "start" : 33.78,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 34.62,
+          "start" : 33.96,
+          "text" : "try"
+        },
+        {
+          "confidence" : 0.913,
+          "end" : 34.74,
+          "start" : 34.62,
+          "text" : "to"
+        },
+        {
+          "confidence" : 0.865,
+          "end" : 35.22,
+          "start" : 34.74,
+          "text" : "polymerize"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 35.34,
+          "start" : 35.22,
+          "text" : "those"
+        },
+        {
+          "confidence" : 0.671,
+          "end" : 35.88,
+          "start" : 35.34,
+          "text" : "gels,"
+        },
+        {
+          "confidence" : 0.992,
+          "end" : 36.78,
+          "start" : 35.88,
+          "text" : "using"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 36.96,
+          "start" : 36.78,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 37.14,
+          "start" : 36.96,
+          "text" : "thin"
+        },
+        {
+          "confidence" : 0.896,
+          "end" : 37.5,
+          "start" : 37.14,
+          "text" : "molds."
+        }
+      ]
+    },
+    {
+      "confidence" : 0.8689523809523808,
+      "end" : 44.46,
+      "start" : 38.16,
+      "text" : "Um, and in the meantime, while I'm waiting for that focus on the nanoscribe game that up and running and working.",
+      "words" : [
+        {
+          "confidence" : 0.199,
+          "end" : 38.64,
+          "start" : 38.16,
+          "text" : "Um,"
+        },
+        {
+          "confidence" : 0.602,
+          "end" : 38.82,
+          "start" : 38.64,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.991,
+          "end" : 39.18,
+          "start" : 38.82,
+          "text" : "in"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 39.3,
+          "start" : 39.18,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.844,
+          "end" : 39.78,
+          "start" : 39.3,
+          "text" : "meantime,"
+        },
+        {
+          "confidence" : 0.764,
+          "end" : 39.96,
+          "start" : 39.78,
+          "text" : "while"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 40.32,
+          "start" : 39.96,
+          "text" : "I'm"
+        },
+        {
+          "confidence" : 0.997,
+          "end" : 40.38,
+          "start" : 40.32,
+          "text" : "waiting"
+        },
+        {
+          "confidence" : 0.993,
+          "end" : 40.56,
+          "start" : 40.38,
+          "text" : "for"
+        },
+        {
+          "confidence" : 0.981,
+          "end" : 40.68,
+          "start" : 40.56,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.513,
+          "end" : 40.98,
+          "start" : 40.68,
+          "text" : "focus"
+        },
+        {
+          "confidence" : 0.994,
+          "end" : 41.34,
+          "start" : 40.98,
+          "text" : "on"
+        },
+        {
+          "confidence" : 0.982,
+          "end" : 41.88,
+          "start" : 41.34,
+          "text" : "the"
+        },
+        {
+          "confidence" : 0.631,
+          "end" : 42.66,
+          "start" : 41.88,
+          "text" : "nanoscribe"
+        },
+        {
+          "confidence" : 0.976,
+          "end" : 43.2,
+          "start" : 42.66,
+          "text" : "game"
+        },
+        {
+          "confidence" : 0.995,
+          "end" : 43.38,
+          "start" : 43.2,
+          "text" : "that"
+        },
+        {
+          "confidence" : 0.985,
+          "end" : 43.62,
+          "start" : 43.38,
+          "text" : "up"
+        },
+        {
+          "confidence" : 0.956,
+          "end" : 43.74,
+          "start" : 43.62,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.979,
+          "end" : 43.92,
+          "start" : 43.74,
+          "text" : "running"
+        },
+        {
+          "confidence" : 0.966,
+          "end" : 44.1,
+          "start" : 43.92,
+          "text" : "and"
+        },
+        {
+          "confidence" : 0.921,
+          "end" : 44.4,
+          "start" : 44.1,
+          "text" : "working."
+        }
+      ]
+    }
+  ],
+  "source" : "onDeviceDraft",
+  "text" : "This is solution problem instead of uh, uh, an actual mold problem because both fix silicon molds and uh, um, then molds have not polymerized. Um, this is probably because the kit bought in the middle of summer and since it's been so many months since I'm using the kit. The solutions might not be fully stable, and therefore, um, uh, cannot even polymerize at all. So I'm going to be waiting for the magnified kit to arrive and for the self-culture kit and try to polymerize those gels, using the thin molds. Um, and in the meantime, while I'm waiting for that focus on the nanoscribe game that up and running and working."
+}

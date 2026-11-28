@@ -1,0 +1,209 @@
+{
+  "createdAt" : "2026-11-25T14:00:56-05:00",
+  "customFields" : {
+
+  },
+  "entryDate" : "2026-11-25",
+  "entryDateTime" : "2026-11-25T14:00:56-05:00",
+  "id" : "BCD8BD31-B64E-4AFA-B3AE-4FF148530985",
+  "isPinned" : false,
+  "modifiedAt" : "2026-11-25T14:12:39-05:00",
+  "notebookId" : "5C514266-EAAB-4FCE-B5B4-039158DF5FC1",
+  "notebookTitle" : "PHYS 352: Lab notebook",
+  "pageAudio" : {
+    "duration" : 69.584,
+    "file" : "page.m4a",
+    "gapBetweenClips" : 0.4,
+    "gapBetweenSections" : 1,
+    "segments" : "page.segments.json"
+  },
+  "place" : {
+    "administrativeArea" : "OH",
+    "altitude" : 238.0400228780301,
+    "capturedAt" : "2026-11-25T14:00:29-05:00",
+    "country" : "United States",
+    "horizontalAccuracy" : 13.889110011648873,
+    "latitude" : 41.50311647100181,
+    "locality" : "Cleveland",
+    "longitude" : -81.60703617564491,
+    "name" : "Case Western Reserve University"
+  },
+  "schemaVersion" : 1,
+  "sections" : [
+    {
+      "clips" : [
+        {
+          "duration" : 23.804,
+          "endedAt" : "2026-11-25T14:01:20-05:00",
+          "file" : "audio/001_2D13.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "2D1374B8-1A8D-47B4-9C27-25466AECAAB9",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 238.0400228780301,
+            "capturedAt" : "2026-11-25T14:00:29-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 13.889110011648873,
+            "latitude" : 41.50311647100181,
+            "locality" : "Cleveland",
+            "longitude" : -81.60703617564491,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-25T14:00:56-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/001_2D13.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-25T14:00:56-05:00",
+      "id" : "10BD2785-418F-44FE-BB46-112CC9653D45",
+      "kind" : "voice",
+      "order" : 0,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 238.0400228780301,
+        "capturedAt" : "2026-11-25T14:00:29-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 13.889110011648873,
+        "latitude" : 41.50311647100181,
+        "locality" : "Cleveland",
+        "longitude" : -81.60703617564491,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "caption" : "The moles they gave for the tissue samples have been unpolemerized.",
+      "createdAt" : "2026-11-25T14:01:28-05:00",
+      "id" : "038F1FB0-A254-4C5F-939C-2C416A4132D8",
+      "images" : [
+        {
+          "capturedAt" : "2026-11-25T14:01:27-05:00",
+          "file" : "images/0001_photo.heic",
+          "height" : 4032,
+          "source" : "camera",
+          "width" : 3024
+        }
+      ],
+      "kind" : "image",
+      "order" : 1,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 238.0400228780301,
+        "capturedAt" : "2026-11-25T14:00:29-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 13.889110011648873,
+        "latitude" : 41.50311647100181,
+        "locality" : "Cleveland",
+        "longitude" : -81.60703617564491,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "caption" : "The silicon molds used have been uncolorized as well.",
+      "createdAt" : "2026-11-25T14:01:42-05:00",
+      "id" : "5AFE0F47-2D59-4296-B9E1-844622655D14",
+      "images" : [
+        {
+          "capturedAt" : "2026-11-25T14:01:41-05:00",
+          "file" : "images/0002_photo.heic",
+          "height" : 4032,
+          "source" : "camera",
+          "width" : 3024
+        }
+      ],
+      "kind" : "image",
+      "order" : 2,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 238.0400228780301,
+        "capturedAt" : "2026-11-25T14:00:29-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 13.889110011648873,
+        "latitude" : 41.50311647100181,
+        "locality" : "Cleveland",
+        "longitude" : -81.60703617564491,
+        "name" : "Case Western Reserve University"
+      }
+    },
+    {
+      "clips" : [
+        {
+          "duration" : 44.78,
+          "endedAt" : "2026-11-25T14:12:11-05:00",
+          "file" : "audio/002_B1D9.m4a",
+          "format" : {
+            "bitrate" : 96000,
+            "channels" : 1,
+            "codec" : "aac-lc",
+            "sampleRate" : 48000
+          },
+          "id" : "B1D92BBE-25CC-46AA-83C5-B24EBA952807",
+          "input" : {
+            "device" : "iPhone",
+            "route" : "WH-1000XM6"
+          },
+          "markers" : [
+
+          ],
+          "order" : 0,
+          "place" : {
+            "administrativeArea" : "OH",
+            "altitude" : 238.0400228780301,
+            "capturedAt" : "2026-11-25T14:10:07-05:00",
+            "country" : "United States",
+            "horizontalAccuracy" : 19.6093047638398,
+            "latitude" : 41.50290835667981,
+            "locality" : "Cleveland",
+            "longitude" : -81.60731229296238,
+            "name" : "Case Western Reserve University"
+          },
+          "recoveryFailed" : false,
+          "startedAt" : "2026-11-25T14:11:26-05:00",
+          "timeZone" : "America/New_York",
+          "transcript" : "transcripts/002_B1D9.draft.json",
+          "trimIn" : 0
+        }
+      ],
+      "createdAt" : "2026-11-25T14:11:26-05:00",
+      "id" : "5E52B4A3-44AD-4244-84AD-993A77F6DE2F",
+      "kind" : "voice",
+      "label" : {
+        "color" : "green",
+        "name" : "Result",
+        "symbol" : "checkmark.seal.fill"
+      },
+      "order" : 3,
+      "place" : {
+        "administrativeArea" : "OH",
+        "altitude" : 238.0400228780301,
+        "capturedAt" : "2026-11-25T14:10:07-05:00",
+        "country" : "United States",
+        "horizontalAccuracy" : 19.6093047638398,
+        "latitude" : 41.50290835667981,
+        "locality" : "Cleveland",
+        "longitude" : -81.60731229296238,
+        "name" : "Case Western Reserve University"
+      }
+    }
+  ],
+  "tags" : [
+
+  ],
+  "timeZone" : "America/New_York",
+  "title" : "25 Nov 2026: Gels did not polymerise, solution issue not mould",
+  "titleIsAutomatic" : false
+}

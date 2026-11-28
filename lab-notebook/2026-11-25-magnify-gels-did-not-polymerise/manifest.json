@@ -1,0 +1,40 @@
+{
+  "author" : {
+    "name" : "Tejasvin Shrikanth"
+  },
+  "checksums" : {
+    "algorithm" : "sha256",
+    "path" : "checksums.txt"
+  },
+  "entries" : [
+    {
+      "clipCount" : 2,
+      "entryDate" : "2026-11-25",
+      "id" : "BCD8BD31-B64E-4AFA-B3AE-4FF148530985",
+      "path" : "./",
+      "sectionCounts" : {
+        "image" : 2,
+        "voice" : 2
+      },
+      "title" : "25 Nov 2026: Gels did not polymerise, solution issue not mould",
+      "totalAudioSeconds" : 68.584
+    }
+  ],
+  "exportedAt" : "2026-11-27T23:45:12-05:00",
+  "exportedBy" : {
+    "app" : "Memo Notebooks",
+    "build" : "1",
+    "device" : "iPhone",
+    "os" : "iOS 27.2.1",
+    "version" : "0.1.0"
+  },
+  "format" : "memonotebooks-bundle",
+  "options" : {
+    "gapsRendered" : true,
+    "imageTranscode" : "none",
+    "includeDraftTranscripts" : true,
+    "includePageAudio" : true
+  },
+  "schemaVersion" : 1,
+  "scope" : "entry"
+}

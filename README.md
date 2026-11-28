@@ -139,6 +139,10 @@ including the experiments that did not go to plan.
   expanded about 1.2 to 2.4×, traced to expanding in PBS rather than water
   ([ix83-bead-analysis](projects/ix83-bead-analysis/),
   [blog](blog/2026-11-17-magnify-second-batch-coverslip-sandwich.md)).
+- Two batches of thinner gels from the MAGNIFY fixed tissue kit failed to
+  polymerise in any mould, including thick silicone-ring controls, which points
+  at degraded kit reagents rather than the mould; waiting on a new cell culture
+  kit ([blog](blog/2026-11-27-magnify-gels-did-not-set-solution-not-mould.md)).
 - TExM hardware: iris stretcher CAD and nine-channel strain-gauge firmware
   ([texm-iris-stretcher](projects/texm-iris-stretcher/)).
 

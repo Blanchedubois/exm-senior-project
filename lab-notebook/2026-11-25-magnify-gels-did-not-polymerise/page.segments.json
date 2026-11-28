@@ -1,0 +1,29 @@
+{
+  "markers" : [
+
+  ],
+  "pageDuration" : 69.584,
+  "segments" : [
+    {
+      "clipEnd" : 23.804,
+      "clipId" : "2D1374B8-1A8D-47B4-9C27-25466AECAAB9",
+      "clipStart" : 0,
+      "pageEnd" : 23.804,
+      "pageStart" : 0,
+      "wallStart" : "2026-11-25T14:00:56-05:00"
+    },
+    {
+      "gap" : 1,
+      "pageEnd" : 24.804,
+      "pageStart" : 23.804
+    },
+    {
+      "clipEnd" : 44.78,
+      "clipId" : "B1D92BBE-25CC-46AA-83C5-B24EBA952807",
+      "clipStart" : 0,
+      "pageEnd" : 69.584,
+      "pageStart" : 24.804,
+      "wallStart" : "2026-11-25T14:11:26-05:00"
+    }
+  ]
+}

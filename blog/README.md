@@ -4,6 +4,7 @@ Occasional updates on the ArUco fiducial marker project: design decisions, print
 
 | Date | Post |
 |---|---|
+| 2026-11-27 | [Getting Magnify gels to 11×: thinner gels, gels that would not set, and a control that pointed at the kit](2026-11-27-magnify-gels-did-not-set-solution-not-mould.md) |
 | 2026-11-20 | [Casting Magnify tissue-kit gels with the kit's own spacers: four thin gels ready to expand](2026-11-20-magnify-tissue-kit-gels-thin-spacers.md) |
 | 2026-11-19 | [A de-ionised water expansion that never happened: the last three gels had dried out](2026-11-19-magnify-di-water-attempt-gels-dried.md) |
 | 2026-11-19 | [In-progress report: a five-minute update on the project (slides)](2026-11-19-in-progress-report-presentation.md) |
